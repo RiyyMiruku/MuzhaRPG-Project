@@ -82,6 +82,10 @@ def validate_asset_name(name: str) -> None:
 # === Path helpers ===
 
 
+def _project_root() -> Path:
+    return Path(__file__).resolve().parents[1]
+
+
 def output_dir() -> Path:
     """art_source/ 根目錄。"""
     return Path(__file__).resolve().parent.parent / "art_source"
@@ -406,6 +410,35 @@ def list_prompts(asset_type: str, name: str) -> dict[str, str]:
     bucket = _bucket_for(asset_type)
     entry = _read_asset(bucket, name) or {}
     return dict(entry.get("prompts") or {})
+
+
+def export_surface_map() -> Path:
+    """Walk all tileset asset.json files; write {tileset_name: surface_id}
+    to game/assets/audio/surface_map.json. Tilesets without a non-null
+    surface_id are skipped. Returns the output path.
+    """
+    root = _project_root()
+    tilesets_dir = root / "art_source" / "tilesets"
+    out_dir = root / "game" / "assets" / "audio"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / "surface_map.json"
+
+    mapping: dict[str, str] = {}
+    if tilesets_dir.exists():
+        for asset_json in sorted(tilesets_dir.glob("*/asset.json")):
+            try:
+                entry = json.loads(asset_json.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            surface = entry.get("surface_id")
+            if isinstance(surface, str) and surface:
+                mapping[asset_json.parent.name] = surface
+
+    out_path.write_text(
+        json.dumps(mapping, ensure_ascii=False, indent=2, sort_keys=True),
+        encoding="utf-8",
+    )
+    return out_path
 
 
 def set_prompt(asset_type: str, name: str, stage: str, prompt: str) -> None:
