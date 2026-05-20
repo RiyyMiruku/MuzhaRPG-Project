@@ -1,0 +1,34 @@
+{
+  "grass": {
+    "label_zh": "草地",
+    "label_en": "Grass"
+  },
+  "dirt": {
+    "label_zh": "泥土",
+    "label_en": "Dirt"
+  },
+  "stone": {
+    "label_zh": "石板",
+    "label_en": "Stone"
+  },
+  "concrete": {
+    "label_zh": "水泥",
+    "label_en": "Concrete"
+  },
+  "asphalt": {
+    "label_zh": "柏油",
+    "label_en": "Asphalt"
+  },
+  "wood": {
+    "label_zh": "木地板",
+    "label_en": "Wood"
+  },
+  "tatami": {
+    "label_zh": "榻榻米",
+    "label_en": "Tatami"
+  },
+  "tile": {
+    "label_zh": "磁磚",
+    "label_en": "Tile"
+  }
+}
