@@ -47,6 +47,7 @@ def test_export_skips_tilesets_without_surface_id(tmp_project):
     _write_tileset(tmp_project, "with_surface", {"surface_id": "wood"})
     _write_tileset(tmp_project, "no_surface", {})              # missing key
     _write_tileset(tmp_project, "null_surface", {"surface_id": None})  # explicit null
+    _write_tileset(tmp_project, "empty_surface", {"surface_id": ""})  # empty string
 
     manifest.export_surface_map()
 

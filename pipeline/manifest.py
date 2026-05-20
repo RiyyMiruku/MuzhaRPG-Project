@@ -414,8 +414,9 @@ def list_prompts(asset_type: str, name: str) -> dict[str, str]:
 
 def export_surface_map() -> Path:
     """Walk all tileset asset.json files; write {tileset_name: surface_id}
-    to game/assets/audio/surface_map.json. Tilesets without a non-null
-    surface_id are skipped. Returns the output path.
+    to game/assets/audio/surface_map.json. Tilesets with surface_id that is
+    missing, null, not a string, or empty string are skipped. Returns the
+    output path.
     """
     root = _project_root()
     tilesets_dir = root / "art_source" / "tilesets"
@@ -428,7 +429,8 @@ def export_surface_map() -> Path:
         for asset_json in sorted(tilesets_dir.glob("*/asset.json")):
             try:
                 entry = json.loads(asset_json.read_text(encoding="utf-8"))
-            except Exception:
+            except (json.JSONDecodeError, OSError) as e:
+                print(f"[export_surface_map] skipping {asset_json}: {e}")
                 continue
             surface = entry.get("surface_id")
             if isinstance(surface, str) and surface:
