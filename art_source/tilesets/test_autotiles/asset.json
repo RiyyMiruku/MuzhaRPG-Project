@@ -11,6 +11,7 @@
   "lower": "cobble stone",
   "upper": "green grass",
   "tile_size": 16,
+  "surface_id": "grass",
   "topdown_path": "art_source\\tilesets\\test_autotiles\\test_autotiles_topdown.png",
   "stages": {
     "generate_atlas": {

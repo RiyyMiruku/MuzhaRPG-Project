@@ -13,6 +13,7 @@
   "lower": "worn dark grey asphalt road surface with faded white line markings",
   "upper": "light grey concrete sidewalk slab with expansion joint lines",
   "tile_size": 16,
+  "surface_id": "asphalt",
   "topdown_path": "art_source\\tilesets\\street_asphalt_sidewalk\\street_asphalt_sidewalk_topdown.png",
   "stages": {
     "generate_atlas": {

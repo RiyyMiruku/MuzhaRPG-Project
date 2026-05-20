@@ -11,6 +11,7 @@
   "lower": "compacted brown earth ground with small pebbles, traditional taiwanese back courtyard",
   "upper": "patchy green grass with small wildflowers and weeds",
   "tile_size": 16,
+  "surface_id": "grass",
   "topdown_path": "art_source\\tilesets\\courtyard_dirt_grass\\courtyard_dirt_grass_topdown.png",
   "stages": {
     "generate_atlas": {

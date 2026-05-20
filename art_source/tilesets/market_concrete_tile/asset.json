@@ -12,6 +12,7 @@
   "lower": "weathered grey concrete pavement",
   "upper": "small red square ceramic floor tiles",
   "tile_size": 16,
+  "surface_id": "concrete",
   "topdown_path": "art_source\\tilesets\\market_concrete_tile\\market_concrete_tile_topdown.png",
   "stages": {
     "generate_atlas": {

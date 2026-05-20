@@ -57,6 +57,12 @@ def parse_args() -> argparse.Namespace:
                         help="自由形 category tag (e.g. 'vendor', 'decoration')")
     parser.add_argument("--chapter", default=None,
                         help="所屬章節 tag (e.g. '1', '2', 'prologue')")
+    parser.add_argument(
+        "--surface-id",
+        default=None,
+        help="腳步聲材質標籤 (grass/dirt/stone/concrete/asphalt/wood/tatami/tile)。"
+             "詞彙表是 game/assets/audio/surfaces.json。",
+    )
     return parser.parse_args()
 
 
@@ -168,10 +174,14 @@ def main() -> None:
     if tags:
         manifest.add_tags(ctx.asset_type, ctx.name, tags)
 
+    if args.surface_id is not None:
+        manifest.upsert_tileset(name=ctx.name, fields={"surface_id": args.surface_id})
+
     generate_atlas(ctx)
     iso_project(ctx)
     verify_in_godot(ctx)
     import_to_godot(ctx)
+    manifest.export_surface_map()
     print(f"\n[autotile] {ctx.name} 完成。")
 
 
