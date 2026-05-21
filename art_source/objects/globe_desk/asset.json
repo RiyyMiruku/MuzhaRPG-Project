@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T23:09:57",
+  "updated_at": "2026-05-21T23:11:19",
+  "tags": [
+    "zone:zone_law_office",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "972104d3-e238-4d25-b95c-ff281f0171d2",
+  "kind": "iso_prop",
+  "description": "small desk globe on wooden stand, office or study decoration",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T23:11:19",
+      "paths": [
+        "art_source\\objects\\globe_desk\\globe_desk.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T23:11:19",
+      "paths": [
+        "art_source\\objects\\globe_desk\\globe_desk.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T23:11:19",
+      "paths": [
+        "game\\assets\\textures\\props\\globe_desk.png",
+        "game\\src\\maps\\props\\globe_desk.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\globe_desk\\globe_desk.png",
+  "imported_at": "2026-05-21T23:11:19",
+  "game_png_path": "game\\assets\\textures\\props\\globe_desk.png",
+  "game_tscn_path": "game\\src\\maps\\props\\globe_desk.tscn",
+  "collision": "bottom_16x16"
+}

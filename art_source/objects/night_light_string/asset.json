@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:45:23",
+  "updated_at": "2026-05-21T22:49:05",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "46593abe-c67a-4dde-9d8c-3105ac339468",
+  "kind": "iso_prop",
+  "description": "string of bare light bulbs hung between poles, night market warm glow",
+  "size": {
+    "width": 48,
+    "height": 48
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:49:05",
+      "paths": [
+        "art_source\\objects\\night_light_string\\night_light_string.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:49:05",
+      "paths": [
+        "art_source\\objects\\night_light_string\\night_light_string.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:49:05",
+      "paths": [
+        "game\\assets\\textures\\props\\night_light_string.png",
+        "game\\src\\maps\\props\\night_light_string.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\night_light_string\\night_light_string.png",
+  "imported_at": "2026-05-21T22:49:05",
+  "game_png_path": "game\\assets\\textures\\props\\night_light_string.png",
+  "game_tscn_path": "game\\src\\maps\\props\\night_light_string.tscn",
+  "collision": "none"
+}

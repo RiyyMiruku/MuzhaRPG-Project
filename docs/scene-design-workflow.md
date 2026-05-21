@@ -18,12 +18,24 @@
 
 ### A. 加新 prop 素材
 
+**方法 1：Dashboard 生成（推薦）**
+
+1. 啟動 Dashboard：`uv run uvicorn tools.asset_dashboard.backend.server:app --port 8765`
+2. 在 Dashboard 生成 PNG（PNG 會存到 `art_source/objects/<name>/`）
+3. 跑同步腳本：`uv run python scripts/sync_props.py`
+   - 自動偵測有 PNG 但缺 .tscn 的 prop
+   - 自動產出 `.tscn`（含 Sprite2D + 碰撞 + 互動區）到 `game/src/maps/props/`
+   - 自動複製 PNG 到 `game/assets/textures/props/`
+4. Godot `Ctrl+Shift+R` 重掃後，從檔案系統拖 `.tscn` 到 zone 的 `YSortRoot`
+
+**方法 2：AI 指令生成**
+
 1. 跟 AI 說：`我要加一個 prop 叫 X，描述是 ...，幫我跑 orchestrator`
 2. AI 會跑：`pipeline/orchestrators/prop.py --name X --kind iso_prop --description "..." --zone <z> --category <c>`
 3. `import_to_godot` stage 自動把 PNG + `.tscn` 放進 Godot 正確位置
 4. Godot `Ctrl+Shift+R` 重掃後，從檔案系統拖 `.tscn` 到 zone 的 `YSortRoot`
 
-> `import_assets.py` 已刪除；所有 prop 匯入改由 orchestrator 的 `import_to_godot` stage 自動完成。
+> 物件清單見 [zone-object-checklist.md](zone-object-checklist.md)。
 
 ### B. 加新 autotile（地形）
 

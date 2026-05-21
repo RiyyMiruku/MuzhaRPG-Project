@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:37:19",
+  "updated_at": "2026-05-21T22:02:44",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "cb690b13-55f3-4290-b21e-67c129325ebc",
+  "kind": "iso_prop",
+  "description": "rusty closed metal rolling shutter door, abandoned shop front",
+  "size": {
+    "width": 64,
+    "height": 64
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:38:59",
+      "paths": [
+        "art_source\\objects\\shutter_closed_rusty\\shutter_closed_rusty.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:38:59",
+      "paths": [
+        "art_source\\objects\\shutter_closed_rusty\\shutter_closed_rusty.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:38:59",
+      "paths": [
+        "game\\assets\\textures\\props\\shutter_closed_rusty.png",
+        "game\\src\\maps\\props\\shutter_closed_rusty.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\shutter_closed_rusty\\shutter_closed_rusty.png",
+  "imported_at": "2026-05-21T21:38:59",
+  "game_png_path": "game\\assets\\textures\\props\\shutter_closed_rusty.png",
+  "game_tscn_path": "game\\src\\maps\\props\\shutter_closed_rusty.tscn",
+  "collision": "bottom_16x16"
+}

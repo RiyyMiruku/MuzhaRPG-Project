@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:40:48",
+  "updated_at": "2026-05-21T22:02:47",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "5ac808b5-8f99-48e7-9750-9ca412de372f",
+  "kind": "iso_prop",
+  "description": "grey dusty cloth draped over furniture, abandoned room",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:41:23",
+      "paths": [
+        "art_source\\objects\\dusty_cloth_cover\\dusty_cloth_cover.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:41:23",
+      "paths": [
+        "art_source\\objects\\dusty_cloth_cover\\dusty_cloth_cover.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:41:23",
+      "paths": [
+        "game\\assets\\textures\\props\\dusty_cloth_cover.png",
+        "game\\src\\maps\\props\\dusty_cloth_cover.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\dusty_cloth_cover\\dusty_cloth_cover.png",
+  "imported_at": "2026-05-21T21:41:23",
+  "game_png_path": "game\\assets\\textures\\props\\dusty_cloth_cover.png",
+  "game_tscn_path": "game\\src\\maps\\props\\dusty_cloth_cover.tscn",
+  "collision": "none"
+}

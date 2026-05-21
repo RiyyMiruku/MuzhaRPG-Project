@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:12:11",
+  "updated_at": "2026-05-21T22:13:02",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "fda0005a-39ce-46af-b8cf-f417367d0f6b",
+  "kind": "iso_prop",
+  "description": "set of colored recycling bins, blue yellow green, modern urban",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:13:02",
+      "paths": [
+        "art_source\\objects\\recycling_bin_set\\recycling_bin_set.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:13:02",
+      "paths": [
+        "art_source\\objects\\recycling_bin_set\\recycling_bin_set.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:13:02",
+      "paths": [
+        "game\\assets\\textures\\props\\recycling_bin_set.png",
+        "game\\src\\maps\\props\\recycling_bin_set.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\recycling_bin_set\\recycling_bin_set.png",
+  "imported_at": "2026-05-21T22:13:02",
+  "game_png_path": "game\\assets\\textures\\props\\recycling_bin_set.png",
+  "game_tscn_path": "game\\src\\maps\\props\\recycling_bin_set.tscn",
+  "collision": "bottom_16x16"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:08:43",
+  "updated_at": "2026-05-21T22:09:34",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "17094354-0449-4786-aef8-bdc190a8fea3",
+  "kind": "iso_prop",
+  "description": "tea egg pot with dark soy broth and eggs floating, convenience stall",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:09:34",
+      "paths": [
+        "art_source\\objects\\tea_egg_pot\\tea_egg_pot.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:09:34",
+      "paths": [
+        "art_source\\objects\\tea_egg_pot\\tea_egg_pot.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:09:34",
+      "paths": [
+        "game\\assets\\textures\\props\\tea_egg_pot.png",
+        "game\\src\\maps\\props\\tea_egg_pot.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\tea_egg_pot\\tea_egg_pot.png",
+  "imported_at": "2026-05-21T22:09:34",
+  "game_png_path": "game\\assets\\textures\\props\\tea_egg_pot.png",
+  "game_tscn_path": "game\\src\\maps\\props\\tea_egg_pot.tscn",
+  "collision": "bottom_16x16"
+}

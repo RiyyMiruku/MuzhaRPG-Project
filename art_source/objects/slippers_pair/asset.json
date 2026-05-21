@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:09:15",
+  "updated_at": "2026-05-21T22:10:47",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "7f08b1b9-dcfc-4798-9cbc-8b5d0ba05379",
+  "kind": "iso_prop",
+  "description": "pair of blue-white taiwanese flip flops at doorstep",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:10:47",
+      "paths": [
+        "art_source\\objects\\slippers_pair\\slippers_pair.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:10:47",
+      "paths": [
+        "art_source\\objects\\slippers_pair\\slippers_pair.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:10:47",
+      "paths": [
+        "game\\assets\\textures\\props\\slippers_pair.png",
+        "game\\src\\maps\\props\\slippers_pair.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\slippers_pair\\slippers_pair.png",
+  "imported_at": "2026-05-21T22:10:47",
+  "game_png_path": "game\\assets\\textures\\props\\slippers_pair.png",
+  "game_tscn_path": "game\\src\\maps\\props\\slippers_pair.tscn",
+  "collision": "none"
+}

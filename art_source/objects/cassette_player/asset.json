@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:45:10",
+  "updated_at": "2026-05-21T22:46:00",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "63fcec24-09ce-45f5-81bc-10079a4c2180",
+  "kind": "iso_prop",
+  "description": "portable cassette tape player with headphones, 1980s music device, on desk",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:46:00",
+      "paths": [
+        "art_source\\objects\\cassette_player\\cassette_player.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:46:00",
+      "paths": [
+        "art_source\\objects\\cassette_player\\cassette_player.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:46:00",
+      "paths": [
+        "game\\assets\\textures\\props\\cassette_player.png",
+        "game\\src\\maps\\props\\cassette_player.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\cassette_player\\cassette_player.png",
+  "imported_at": "2026-05-21T22:46:00",
+  "game_png_path": "game\\assets\\textures\\props\\cassette_player.png",
+  "game_tscn_path": "game\\src\\maps\\props\\cassette_player.tscn",
+  "collision": "none"
+}

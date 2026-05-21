@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T23:00:59",
+  "updated_at": "2026-05-21T23:06:21",
+  "tags": [
+    "zone:zone_law_office",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "eecec39c-0cae-4096-a083-74b0a6d30c03",
+  "kind": "iso_prop",
+  "description": "set of rubber stamps and red ink pad on desk, official documents",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T23:06:21",
+      "paths": [
+        "art_source\\objects\\rubber_stamp_set\\rubber_stamp_set.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T23:06:21",
+      "paths": [
+        "art_source\\objects\\rubber_stamp_set\\rubber_stamp_set.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T23:06:21",
+      "paths": [
+        "game\\assets\\textures\\props\\rubber_stamp_set.png",
+        "game\\src\\maps\\props\\rubber_stamp_set.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\rubber_stamp_set\\rubber_stamp_set.png",
+  "imported_at": "2026-05-21T23:06:21",
+  "game_png_path": "game\\assets\\textures\\props\\rubber_stamp_set.png",
+  "game_tscn_path": "game\\src\\maps\\props\\rubber_stamp_set.tscn",
+  "collision": "bottom_16x16"
+}

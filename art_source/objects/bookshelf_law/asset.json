@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:48:01",
+  "updated_at": "2026-05-21T22:02:48",
+  "tags": [
+    "zone:zone_apartment_muzha",
+    "zone:zone_law_office",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "710a1e98-442a-4a23-9f21-a8836b47f755",
+  "kind": "iso_prop",
+  "description": "tall wooden bookshelf filled with law books and binders",
+  "size": {
+    "width": 64,
+    "height": 64
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:49:28",
+      "paths": [
+        "art_source\\objects\\bookshelf_law\\bookshelf_law.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:49:28",
+      "paths": [
+        "art_source\\objects\\bookshelf_law\\bookshelf_law.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:49:28",
+      "paths": [
+        "game\\assets\\textures\\props\\bookshelf_law.png",
+        "game\\src\\maps\\props\\bookshelf_law.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\bookshelf_law\\bookshelf_law.png",
+  "imported_at": "2026-05-21T21:49:28",
+  "game_png_path": "game\\assets\\textures\\props\\bookshelf_law.png",
+  "game_tscn_path": "game\\src\\maps\\props\\bookshelf_law.tscn",
+  "collision": "bottom_16x16"
+}

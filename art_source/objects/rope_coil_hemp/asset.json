@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T23:12:43",
+  "updated_at": "2026-05-21T23:15:31",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "5340fcb7-263d-49e6-ad45-f3937b15be6c",
+  "kind": "iso_prop",
+  "description": "coiled hemp rope hanging on wall hook, utility storage",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T23:15:31",
+      "paths": [
+        "art_source\\objects\\rope_coil_hemp\\rope_coil_hemp.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T23:15:31",
+      "paths": [
+        "art_source\\objects\\rope_coil_hemp\\rope_coil_hemp.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T23:15:31",
+      "paths": [
+        "game\\assets\\textures\\props\\rope_coil_hemp.png",
+        "game\\src\\maps\\props\\rope_coil_hemp.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\rope_coil_hemp\\rope_coil_hemp.png",
+  "imported_at": "2026-05-21T23:15:31",
+  "game_png_path": "game\\assets\\textures\\props\\rope_coil_hemp.png",
+  "game_tscn_path": "game\\src\\maps\\props\\rope_coil_hemp.tscn",
+  "collision": "none"
+}

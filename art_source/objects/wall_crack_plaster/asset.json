@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:54:57",
+  "updated_at": "2026-05-21T22:56:11",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "abffbaa6-707c-4fd6-a708-535ef1dd6c57",
+  "kind": "iso_prop",
+  "description": "cracked plaster wall detail, exposed brick underneath, aging building",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:56:11",
+      "paths": [
+        "art_source\\objects\\wall_crack_plaster\\wall_crack_plaster.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:56:11",
+      "paths": [
+        "art_source\\objects\\wall_crack_plaster\\wall_crack_plaster.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:56:11",
+      "paths": [
+        "game\\assets\\textures\\props\\wall_crack_plaster.png",
+        "game\\src\\maps\\props\\wall_crack_plaster.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\wall_crack_plaster\\wall_crack_plaster.png",
+  "imported_at": "2026-05-21T22:56:11",
+  "game_png_path": "game\\assets\\textures\\props\\wall_crack_plaster.png",
+  "game_tscn_path": "game\\src\\maps\\props\\wall_crack_plaster.tscn",
+  "collision": "bottom_16x16"
+}

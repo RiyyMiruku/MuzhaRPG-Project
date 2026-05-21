@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T23:15:32",
+  "updated_at": "2026-05-21T23:16:04",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "b02d825d-e5d8-4715-9e9a-ba504ab463b3",
+  "kind": "iso_prop",
+  "description": "galvanized metal bucket, utility washing bucket",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T23:16:04",
+      "paths": [
+        "art_source\\objects\\bucket_metal_wash\\bucket_metal_wash.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T23:16:04",
+      "paths": [
+        "art_source\\objects\\bucket_metal_wash\\bucket_metal_wash.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T23:16:04",
+      "paths": [
+        "game\\assets\\textures\\props\\bucket_metal_wash.png",
+        "game\\src\\maps\\props\\bucket_metal_wash.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\bucket_metal_wash\\bucket_metal_wash.png",
+  "imported_at": "2026-05-21T23:16:04",
+  "game_png_path": "game\\assets\\textures\\props\\bucket_metal_wash.png",
+  "game_tscn_path": "game\\src\\maps\\props\\bucket_metal_wash.tscn",
+  "collision": "none"
+}

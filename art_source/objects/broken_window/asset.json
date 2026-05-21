@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:55:22",
+  "updated_at": "2026-05-21T22:56:49",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "d504a2ac-ebc8-41a3-86aa-e68ec601f107",
+  "kind": "iso_prop",
+  "description": "window with broken glass pane and cracks, abandoned building",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:56:48",
+      "paths": [
+        "art_source\\objects\\broken_window\\broken_window.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:56:49",
+      "paths": [
+        "art_source\\objects\\broken_window\\broken_window.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:56:49",
+      "paths": [
+        "game\\assets\\textures\\props\\broken_window.png",
+        "game\\src\\maps\\props\\broken_window.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\broken_window\\broken_window.png",
+  "imported_at": "2026-05-21T22:56:49",
+  "game_png_path": "game\\assets\\textures\\props\\broken_window.png",
+  "game_tscn_path": "game\\src\\maps\\props\\broken_window.tscn",
+  "collision": "bottom_16x16"
+}

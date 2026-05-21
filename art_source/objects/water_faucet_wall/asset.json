@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:38:31",
+  "updated_at": "2026-05-21T22:02:44",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "fc251ec1-f925-4f60-bdcc-fd22cd37bd4e",
+  "kind": "iso_prop",
+  "description": "wall-mounted water faucet with wet puddle below, outdoor market washing area",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:39:08",
+      "paths": [
+        "art_source\\objects\\water_faucet_wall\\water_faucet_wall.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:39:08",
+      "paths": [
+        "art_source\\objects\\water_faucet_wall\\water_faucet_wall.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:39:08",
+      "paths": [
+        "game\\assets\\textures\\props\\water_faucet_wall.png",
+        "game\\src\\maps\\props\\water_faucet_wall.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\water_faucet_wall\\water_faucet_wall.png",
+  "imported_at": "2026-05-21T21:39:08",
+  "game_png_path": "game\\assets\\textures\\props\\water_faucet_wall.png",
+  "game_tscn_path": "game\\src\\maps\\props\\water_faucet_wall.tscn",
+  "collision": "bottom_16x16"
+}

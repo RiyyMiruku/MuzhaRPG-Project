@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:11:17",
+  "updated_at": "2026-05-21T22:11:49",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "1368d671-fbe8-4d71-a626-d45db1b6470f",
+  "kind": "iso_prop",
+  "description": "sleeping stray tabby cat curled on cardboard box, market alley",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:11:49",
+      "paths": [
+        "art_source\\objects\\stray_cat_sleeping\\stray_cat_sleeping.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:11:49",
+      "paths": [
+        "art_source\\objects\\stray_cat_sleeping\\stray_cat_sleeping.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:11:49",
+      "paths": [
+        "game\\assets\\textures\\props\\stray_cat_sleeping.png",
+        "game\\src\\maps\\props\\stray_cat_sleeping.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\stray_cat_sleeping\\stray_cat_sleeping.png",
+  "imported_at": "2026-05-21T22:11:49",
+  "game_png_path": "game\\assets\\textures\\props\\stray_cat_sleeping.png",
+  "game_tscn_path": "game\\src\\maps\\props\\stray_cat_sleeping.tscn",
+  "collision": "bottom_16x16"
+}

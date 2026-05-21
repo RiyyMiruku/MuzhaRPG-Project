@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:06:51",
+  "updated_at": "2026-05-21T22:07:19",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "420c3a98-1c81-464f-b8d2-1e221cc98cf8",
+  "kind": "iso_prop",
+  "description": "brown kraft paper medicine bag, wrapped and tied, traditional pharmacy",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:07:19",
+      "paths": [
+        "art_source\\objects\\medicine_bag_paper\\medicine_bag_paper.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:07:19",
+      "paths": [
+        "art_source\\objects\\medicine_bag_paper\\medicine_bag_paper.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:07:19",
+      "paths": [
+        "game\\assets\\textures\\props\\medicine_bag_paper.png",
+        "game\\src\\maps\\props\\medicine_bag_paper.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\medicine_bag_paper\\medicine_bag_paper.png",
+  "imported_at": "2026-05-21T22:07:19",
+  "game_png_path": "game\\assets\\textures\\props\\medicine_bag_paper.png",
+  "game_tscn_path": "game\\src\\maps\\props\\medicine_bag_paper.tscn",
+  "collision": "none"
+}

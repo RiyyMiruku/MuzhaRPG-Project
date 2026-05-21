@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:39:54",
+  "updated_at": "2026-05-21T22:02:45",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "20186369-0e74-4068-a153-0948770e144d",
+  "kind": "iso_prop",
+  "description": "stack of handwritten chinese medicine prescription papers",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:40:13",
+      "paths": [
+        "art_source\\objects\\prescription_paper_stack\\prescription_paper_stack.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:40:13",
+      "paths": [
+        "art_source\\objects\\prescription_paper_stack\\prescription_paper_stack.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:40:13",
+      "paths": [
+        "game\\assets\\textures\\props\\prescription_paper_stack.png",
+        "game\\src\\maps\\props\\prescription_paper_stack.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\prescription_paper_stack\\prescription_paper_stack.png",
+  "imported_at": "2026-05-21T21:40:13",
+  "game_png_path": "game\\assets\\textures\\props\\prescription_paper_stack.png",
+  "game_tscn_path": "game\\src\\maps\\props\\prescription_paper_stack.tscn",
+  "collision": "bottom_16x16"
+}

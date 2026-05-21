@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:11:11",
+  "updated_at": "2026-05-21T22:11:48",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "47c7bd7e-b228-46e0-ab99-3933f92e8687",
+  "kind": "iso_prop",
+  "description": "round cast iron manhole cover with decorative pattern, street ground",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:11:48",
+      "paths": [
+        "art_source\\objects\\manhole_cover_round\\manhole_cover_round.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:11:48",
+      "paths": [
+        "art_source\\objects\\manhole_cover_round\\manhole_cover_round.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:11:48",
+      "paths": [
+        "game\\assets\\textures\\props\\manhole_cover_round.png",
+        "game\\src\\maps\\props\\manhole_cover_round.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\manhole_cover_round\\manhole_cover_round.png",
+  "imported_at": "2026-05-21T22:11:48",
+  "game_png_path": "game\\assets\\textures\\props\\manhole_cover_round.png",
+  "game_tscn_path": "game\\src\\maps\\props\\manhole_cover_round.tscn",
+  "collision": "none"
+}

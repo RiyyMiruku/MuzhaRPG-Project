@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:11:40",
+  "updated_at": "2026-05-21T22:12:06",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "a56bbf8c-17ab-4566-ac32-edddf878067a",
+  "kind": "iso_prop",
+  "description": "footprints in dusty floor, someone has been here recently",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:12:06",
+      "paths": [
+        "art_source\\objects\\footprint_dust\\footprint_dust.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:12:06",
+      "paths": [
+        "art_source\\objects\\footprint_dust\\footprint_dust.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:12:06",
+      "paths": [
+        "game\\assets\\textures\\props\\footprint_dust.png",
+        "game\\src\\maps\\props\\footprint_dust.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\footprint_dust\\footprint_dust.png",
+  "imported_at": "2026-05-21T22:12:06",
+  "game_png_path": "game\\assets\\textures\\props\\footprint_dust.png",
+  "game_tscn_path": "game\\src\\maps\\props\\footprint_dust.tscn",
+  "collision": "none"
+}
