@@ -19,6 +19,7 @@ export function AssetDetail({ asset, onBack, onDeleted }: Props) {
   const [refreshKey, setRefreshKey] = useState(0)
   const bumpRefresh = () => setRefreshKey((k) => k + 1)
   const [syncing, setSyncing] = useState(false)
+  const [flipping, setFlipping] = useState(false)
 
   const onSyncFromPixellab = async () => {
     if (!window.confirm(
@@ -70,6 +71,27 @@ export function AssetDetail({ asset, onBack, onDeleted }: Props) {
             >
               <RefreshCw className={"h-4 w-4 " + (syncing ? "animate-spin" : "")} />
               {syncing ? "Syncing…" : "Sync from Pixellab"}
+            </button>
+          )}
+          {asset.asset_type === "object" && (
+            <button
+              type="button"
+              onClick={async () => {
+                const newVal = !asset.extra.flip_h
+                setFlipping(true)
+                try {
+                  await api.remakeWithOverrides(asset.asset_type, asset.name, "import_to_godot", { flip_h: newVal })
+                } catch (e) {
+                  window.alert(`Flip failed: ${(e as Error).message}`)
+                } finally {
+                  setFlipping(false)
+                }
+              }}
+              disabled={flipping}
+              className="rounded bg-stone-700 px-3 py-1.5 text-sm hover:bg-stone-600 disabled:opacity-50"
+              title="Toggle Sprite2D.flip_h — re-runs import_to_godot stage (no Pixellab credits)"
+            >
+              {flipping ? "Flipping…" : asset.extra.flip_h ? "Unflip horizontal" : "Flip horizontal"}
             </button>
           )}
           <button
