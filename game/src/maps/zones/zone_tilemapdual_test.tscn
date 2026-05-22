@@ -120,9 +120,9 @@ sources/0 = SubResource("TileSetAtlasSource_grass")
 [node name="ZoneTileMapDualTest" type="Node2D" unique_id=1441759259]
 script = ExtResource("4_baker")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["ground_layer"] unique_id=1222053290]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1222053290]
 
-[node name="TileMapDual" type="TileMapLayer" parent="TileMapLayer" unique_id=745097711]
+[node name="TileMapDual" type="TileMapLayer" parent="TileMapLayer" unique_id=745097711 groups=["ground_layer"]]
 material = ExtResource("1_ghost")
 tile_map_data = PackedByteArray(0, 0, 2, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 255, 255, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 2, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_grass")

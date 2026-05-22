@@ -350,9 +350,9 @@ sources/1 = SubResource("TileSetAtlasSource_18pv5")
 
 [node name="ZoneIsoTest" type="Node2D" unique_id=2054134833]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["ground_layer"] unique_id=948645659]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=948645659]
 
-[node name="TileMapDual" type="TileMapLayer" parent="TileMapLayer" unique_id=316398911]
+[node name="TileMapDual" type="TileMapLayer" parent="TileMapLayer" unique_id=316398911 groups=["ground_layer"]]
 material = ExtResource("1_nmdmb")
 tile_map_data = PackedByteArray("AAD7/+n/AAAAAAMAAAD7/+j/AAAAAAMAAAD7/+f/AAACAAEAAAD7/+b/AAACAAEAAAD7/+X/AAAAAAMAAAD7/+T/AAAAAAMAAAD7/+P/AAAAAAMAAAD7/+L/AAAAAAMAAAD6/+n/AAAAAAMAAAD6/+j/AAAAAAMAAAD6/+f/AAAAAAMAAAD6/+b/AAACAAEAAAD6/+X/AAACAAEAAAD6/+T/AAACAAEAAAD6/+P/AAAAAAMAAAD6/+L/AAAAAAMAAAD5/+n/AAAAAAMAAAD5/+j/AAAAAAMAAAD5/+f/AAACAAEAAAD5/+b/AAAAAAMAAAD5/+X/AAAAAAMAAAD5/+T/AAAAAAMAAAD5/+P/AAACAAEAAAD5/+L/AAAAAAMAAAA=")
 tile_set = SubResource("TileSet_3avjs")
@@ -360,7 +360,7 @@ script = ExtResource("3_yvcc5")
 godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
-[node name="TileMapDual2" type="TileMapLayer" parent="TileMapLayer" unique_id=844545930]
+[node name="TileMapDual2" type="TileMapLayer" parent="TileMapLayer" unique_id=844545930 groups=["ground_layer"]]
 material = ExtResource("1_nmdmb")
 tile_map_data = PackedByteArray("AAAAAOn/AAACAAEAAAAAAOj/AAACAAEAAAAAAOf/AAAAAAMAAAAAAOb/AAAAAAMAAAAAAOX/AAAAAAMAAAAAAOT/AAACAAEAAAAAAOP/AAAAAAMAAAAAAOL/AAAAAAMAAAD//+n/AAAAAAMAAAD//+j/AAACAAEAAAD//+f/AAACAAEAAAD//+b/AAACAAEAAAD//+X/AAACAAEAAAD//+T/AAAAAAMAAAD//+P/AAAAAAMAAAD//+L/AAAAAAMAAAD+/+n/AAACAAEAAAD+/+j/AAAAAAMAAAD+/+f/AAAAAAMAAAD+/+b/AAAAAAMAAAD+/+X/AAACAAEAAAD+/+T/AAACAAEAAAD+/+P/AAAAAAMAAAD+/+L/AAAAAAMAAAA=")
 tile_set = SubResource("TileSet_lrpms")
@@ -368,7 +368,7 @@ script = ExtResource("3_yvcc5")
 godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
-[node name="TileMapDual3" type="TileMapLayer" parent="TileMapLayer" unique_id=784995288]
+[node name="TileMapDual3" type="TileMapLayer" parent="TileMapLayer" unique_id=784995288 groups=["ground_layer"]]
 material = ExtResource("1_nmdmb")
 tile_map_data = PackedByteArray("AAAGAOr/AQAAAAMAAAAGAOn/AQAAAAMAAAAGAOj/AQACAAEAAAAGAOf/AQAAAAMAAAAGAOb/AQAAAAMAAAAGAOX/AQAAAAMAAAAGAOT/AQAAAAMAAAAGAOP/AQAAAAMAAAAGAOL/AQAAAAMAAAAFAOr/AQAAAAMAAAAFAOn/AQAAAAMAAAAFAOj/AQAAAAMAAAAFAOf/AQACAAEAAAAFAOb/AQACAAEAAAAFAOX/AQAAAAMAAAAFAOT/AQACAAEAAAAFAOP/AQACAAEAAAAFAOL/AQAAAAMAAAAEAOr/AQACAAEAAAAEAOn/AQAAAAMAAAAEAOj/AQACAAEAAAAEAOf/AQACAAEAAAAEAOb/AQAAAAMAAAAEAOX/AQACAAEAAAAEAOT/AQACAAEAAAAEAOP/AQAAAAMAAAAEAOL/AQAAAAMAAAADAOr/AQAAAAMAAAADAOn/AQACAAEAAAADAOj/AQAAAAMAAAADAOf/AQACAAEAAAADAOb/AQAAAAMAAAADAOX/AQAAAAMAAAADAOT/AQAAAAMAAAADAOP/AQACAAEAAAADAOL/AQAAAAMAAAA=")
 tile_set = SubResource("TileSet_lbkkt")
