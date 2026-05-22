@@ -17,12 +17,23 @@ extends Node2D
 @export_tool_button("Lock YAML (frozen: true)") var _lock_action: Callable = _lock_yaml
 @export_tool_button("Unlock YAML") var _unlock_action: Callable = _unlock_yaml
 
+## Era toggle buttons — only shown in Inspector for hybrid zones (yaml_paths
+## contains ≥2 YAMLs; see _validate_property below).
 @export_tool_button("Era: Show 1983") var _show_1983_action: Callable = func() -> void: _show_era("1983")
 @export_tool_button("Era: Show Modern") var _show_modern_action: Callable = func() -> void: _show_era("modern")
 @export_tool_button("Era: Show Both") var _show_both_action: Callable = _show_both_eras
 
 @export_tool_button("Refresh Showcase from tags") var _refresh_showcase_action: Callable = _refresh_showcase
 @export_tool_button("Clear Showcase") var _clear_showcase_action: Callable = _clear_showcase
+
+
+## Hide era toggle buttons on non-hybrid zones (single-era or test scenes).
+func _validate_property(property: Dictionary) -> void:
+	const _ERA_BTNS: Array[String] = [
+		"_show_1983_action", "_show_modern_action", "_show_both_action"
+	]
+	if property.name in _ERA_BTNS and yaml_paths.size() < 2:
+		property.usage = PROPERTY_USAGE_NONE
 
 
 func _lock_yaml() -> void:
