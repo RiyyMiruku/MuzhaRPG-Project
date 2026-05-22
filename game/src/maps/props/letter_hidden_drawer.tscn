@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca66nqx2765uon"]
+[gd_scene format=3 uid="uid://dh8up0gxlpysn"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://c8bltht4uhi63d" path="res://assets/textures/props/letter_hidden_drawer.png" id="3_tex"]

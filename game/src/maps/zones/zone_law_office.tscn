@@ -1,29 +1,42 @@
 [gd_scene format=4 uid="uid://cks76gskgebjv"]
 
-[ext_resource type="Script" uid="uid://bn5kbb0wyxbmb" path="res://tools/zone_baker.gd" id="1_baker"]
-[ext_resource type="Script" uid="uid://d3hai2d47t4ra" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
+[ext_resource type="Script" uid="uid://dmaeqfb1v35v0" path="res://tools/zone_baker.gd" id="1_baker"]
+[ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="3_ghost_mat"]
 [ext_resource type="PackedScene" path="res://src/entities/player/Player.tscn" id="4_player"]
-[ext_resource type="Script" uid="uid://cta2qegm3nku1" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
-[ext_resource type="Script" uid="uid://d3pa6x3pkf81c" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_pcam_host_script"]
-[ext_resource type="Texture2D" uid="uid://b2ccd6twaxt0" path="res://assets/textures/tilesets/market_tile_concrete.png" id="7_atlas_market_concret"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_pcam_host_script"]
+[ext_resource type="Texture2D" uid="uid://chiheg4h6wpxj" path="res://assets/textures/tilesets/market_tile_concrete.png" id="7_atlas_market_concret"]
 [ext_resource type="PackedScene" path="res://src/entities/npcs/BaseNPC.tscn" id="8_base_npc"]
-[ext_resource type="PackedScene" path="res://src/core/components/ZoneTransitionArea.tscn" id="9_zone_transition_area"]
+[ext_resource type="PackedScene" uid="uid://cu5f7uuu238si" path="res://src/core/components/ZoneTransitionArea.tscn" id="9_zone_transition_area"]
 [ext_resource type="PackedScene" uid="uid://n0pjqq7nwawg" path="res://src/maps/props/law_office_muzha.tscn" id="10_prop_law_office_muzh"]
 [ext_resource type="PackedScene" uid="uid://mpxuvx03qfeb" path="res://src/maps/props/shop_counter_wood.tscn" id="11_prop_shop_counter_wo"]
 [ext_resource type="PackedScene" uid="uid://b3bjje8647nw3" path="res://src/maps/props/notebook_leather.tscn" id="12_prop_notebook_leathe"]
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/lawyer_muzha.tres" id="13_npccfg_lawyer_muzha"]
-[ext_resource type="Script" uid="uid://k3da00wfirxt" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_ybjxd"]
-[ext_resource type="PackedScene" path="res://src/maps/props/bookshelf_law.tscn" id="100_bookshelf_"]
-[ext_resource type="PackedScene" path="res://src/maps/props/certificate_frame.tscn" id="101_certificat"]
-[ext_resource type="PackedScene" path="res://src/maps/props/desk_lamp_brass.tscn" id="102_desk_lamp_"]
-[ext_resource type="PackedScene" path="res://src/maps/props/filing_cabinet_metal.tscn" id="103_filing_cab"]
-[ext_resource type="PackedScene" path="res://src/maps/props/filing_tray_stack.tscn" id="104_filing_tra"]
-[ext_resource type="PackedScene" path="res://src/maps/props/potted_plant_office.tscn" id="105_potted_pla"]
-[ext_resource type="PackedScene" path="res://src/maps/props/rotary_phone.tscn" id="106_rotary_pho"]
-[ext_resource type="PackedScene" path="res://src/maps/props/rubber_stamp_set.tscn" id="107_rubber_sta"]
-[ext_resource type="PackedScene" path="res://src/maps/props/typewriter_old.tscn" id="108_typewriter"]
-[ext_resource type="PackedScene" path="res://src/maps/props/wall_clock_round.tscn" id="109_wall_clock"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_ybjxd"]
+[ext_resource type="PackedScene" uid="uid://dy2waisj6ybp8" path="res://src/maps/props/barber_chair_red.tscn" id="25_fuuc0"]
+[ext_resource type="Script" uid="uid://hdy8npgtu2it" path="res://src/maps/props/Prop.gd" id="26_lmlic"]
+[ext_resource type="PackedScene" uid="uid://6s411nu177x6" path="res://src/maps/props/barber_pole_spiral.tscn" id="27_7q34v"]
+[ext_resource type="PackedScene" uid="uid://c8r8abhc40ls6" path="res://src/maps/props/coffee_mug.tscn" id="28_pj8h2"]
+[ext_resource type="PackedScene" uid="uid://4rl00dsojycq" path="res://src/maps/props/fabric_roll_shelf.tscn" id="29_d1ptu"]
+[ext_resource type="PackedScene" uid="uid://dt7i1oe136rc8" path="res://src/maps/props/folding_table.tscn" id="30_jkmby"]
+[ext_resource type="PackedScene" uid="uid://bvc782qvbccyo" path="res://src/maps/props/globe_desk.tscn" id="31_tpowv"]
+[ext_resource type="PackedScene" uid="uid://cph2ogxfymbmt" path="res://src/maps/props/laptop_modern.tscn" id="32_ymwnp"]
+[ext_resource type="PackedScene" uid="uid://bytb8urikch3e" path="res://src/maps/props/letter_envelope.tscn" id="33_ohxgd"]
+[ext_resource type="PackedScene" uid="uid://cy2pk50hhjjvf" path="res://src/maps/props/moving_box_taped.tscn" id="34_pgn1e"]
+[ext_resource type="PackedScene" uid="uid://6n7nh4grg3vi" path="res://src/maps/props/paper_weight_jade.tscn" id="35_4jmiv"]
+[ext_resource type="PackedScene" uid="uid://e2tlwojxn62l" path="res://src/maps/props/sewing_machine_old.tscn" id="36_1q38m"]
+[ext_resource type="PackedScene" uid="uid://dpil0ptblhtmi" path="res://src/maps/props/suitcase_travel.tscn" id="37_wg1jd"]
+[ext_resource type="PackedScene" uid="uid://ctc2fg0qrvqap" path="res://src/maps/props/bookshelf_law.tscn" id="100_bookshelf_"]
+[ext_resource type="PackedScene" uid="uid://cr7iounyjp8ba" path="res://src/maps/props/certificate_frame.tscn" id="101_certificat"]
+[ext_resource type="PackedScene" uid="uid://3s44j7getycl" path="res://src/maps/props/desk_lamp_brass.tscn" id="102_desk_lamp_"]
+[ext_resource type="PackedScene" uid="uid://0yn2piguvncg" path="res://src/maps/props/filing_cabinet_metal.tscn" id="103_filing_cab"]
+[ext_resource type="PackedScene" uid="uid://c17shapwt44bt" path="res://src/maps/props/filing_tray_stack.tscn" id="104_filing_tra"]
+[ext_resource type="PackedScene" uid="uid://508cb13dbeum" path="res://src/maps/props/potted_plant_office.tscn" id="105_potted_pla"]
+[ext_resource type="PackedScene" uid="uid://duxlb0kuuajml" path="res://src/maps/props/rotary_phone.tscn" id="106_rotary_pho"]
+[ext_resource type="PackedScene" uid="uid://cdqckdc02hq3l" path="res://src/maps/props/rubber_stamp_set.tscn" id="107_rubber_sta"]
+[ext_resource type="PackedScene" uid="uid://bhvge50hb2vll" path="res://src/maps/props/typewriter_old.tscn" id="108_typewriter"]
+[ext_resource type="PackedScene" uid="uid://cmc5iso46itls" path="res://src/maps/props/wall_clock_round.tscn" id="109_wall_clock"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybjxd"]
 texture = ExtResource("7_atlas_market_concret")
@@ -182,60 +195,61 @@ godot_4_3_compatibility = false
 y_sort_enabled = true
 
 [node name="Player" parent="YSortRoot" unique_id=599072748 instance=ExtResource("4_player")]
-position = Vector2(0, 0)
 
-[node name="law_office_muzha" parent="YSortRoot" unique_id=225183697 instance=ExtResource("10_prop_law_office_muzh") groups=["prop", "prop"]]
+[node name="law_office_muzha" parent="YSortRoot" unique_id=225183697 groups=["prop"] instance=ExtResource("10_prop_law_office_muzh")]
 position = Vector2(96, -48)
 
-[node name="shop_counter_wood" parent="YSortRoot" unique_id=114281984 instance=ExtResource("11_prop_shop_counter_wo") groups=["prop", "prop"]]
+[node name="shop_counter_wood" parent="YSortRoot" unique_id=114281984 groups=["prop"] instance=ExtResource("11_prop_shop_counter_wo")]
 
-[node name="notebook_leather" parent="YSortRoot" unique_id=545646217 instance=ExtResource("12_prop_notebook_leathe") groups=["prop", "prop"]]
+[node name="notebook_leather" parent="YSortRoot" unique_id=545646217 groups=["prop"] instance=ExtResource("12_prop_notebook_leathe")]
 position = Vector2(16, -8)
 
-[node name="LawyerMuzha" parent="YSortRoot" unique_id=1374193425 instance=ExtResource("8_base_npc") groups=["npc", "npc"]]
+[node name="LawyerMuzha" parent="YSortRoot" unique_id=1374193425 groups=["npc"] instance=ExtResource("8_base_npc")]
 position = Vector2(32, -16)
 npc_config = ExtResource("13_npccfg_lawyer_muzha")
 
-[node name="mod_bookshelf" parent="YSortRoot" unique_id=357109965 instance=ExtResource("100_bookshelf_") groups=["prop", "era_modern"]]
+[node name="mod_bookshelf" parent="YSortRoot" unique_id=357109965 groups=["era_modern", "prop"] instance=ExtResource("100_bookshelf_")]
 position = Vector2(-59, -43)
 
-[node name="mod_bookshelf2" parent="YSortRoot" unique_id=357109966 instance=ExtResource("100_bookshelf_") groups=["prop", "era_modern"]]
+[node name="mod_bookshelf2" parent="YSortRoot" unique_id=357109966 groups=["era_modern", "prop"] instance=ExtResource("100_bookshelf_")]
 position = Vector2(58, -48)
 
-[node name="mod_cabinet" parent="YSortRoot" unique_id=357109967 instance=ExtResource("103_filing_cab") groups=["prop", "era_modern"]]
+[node name="mod_cabinet" parent="YSortRoot" unique_id=357109967 groups=["era_modern", "prop"] instance=ExtResource("103_filing_cab")]
 position = Vector2(-48, -5)
 
-[node name="mod_lamp" parent="YSortRoot" unique_id=357109968 instance=ExtResource("102_desk_lamp_") groups=["prop", "era_modern"]]
+[node name="mod_lamp" parent="YSortRoot" unique_id=357109968 groups=["era_modern", "prop"] instance=ExtResource("102_desk_lamp_")]
 position = Vector2(-4, -2)
 
-[node name="mod_clock" parent="YSortRoot" unique_id=357109969 instance=ExtResource("109_wall_clock") groups=["prop", "era_modern"]]
+[node name="mod_clock" parent="YSortRoot" unique_id=357109969 groups=["era_modern", "prop"] instance=ExtResource("109_wall_clock")]
 position = Vector2(2, -58)
 
-[node name="mod_plant" parent="YSortRoot" unique_id=357109970 instance=ExtResource("105_potted_pla") groups=["prop", "era_modern"]]
+[node name="mod_plant" parent="YSortRoot" unique_id=357109970 groups=["era_modern", "prop"] instance=ExtResource("105_potted_pla")]
 position = Vector2(45, 7)
 
-[node name="mod_cert" parent="YSortRoot" unique_id=357109971 instance=ExtResource("101_certificat") groups=["prop", "era_modern"]]
+[node name="mod_cert" parent="YSortRoot" unique_id=357109971 groups=["era_modern", "prop"] instance=ExtResource("101_certificat")]
 position = Vector2(-35, -56)
 
-[node name="mod_cert2" parent="YSortRoot" unique_id=357109972 instance=ExtResource("101_certificat") groups=["prop", "era_modern"]]
+[node name="mod_cert2" parent="YSortRoot" unique_id=357109972 groups=["era_modern", "prop"] instance=ExtResource("101_certificat")]
 position = Vector2(36, -51)
 
-[node name="mod_typewriter" parent="YSortRoot" unique_id=357109973 instance=ExtResource("108_typewriter") groups=["prop", "era_modern"]]
+[node name="mod_typewriter" parent="YSortRoot" unique_id=357109973 groups=["era_modern", "prop"] instance=ExtResource("108_typewriter")]
 position = Vector2(23, -7)
 
-[node name="mod_phone" parent="YSortRoot" unique_id=357109974 instance=ExtResource("106_rotary_pho") groups=["prop", "era_modern"]]
+[node name="mod_phone" parent="YSortRoot" unique_id=357109974 groups=["era_modern", "prop"] instance=ExtResource("106_rotary_pho")]
 position = Vector2(-7, 3)
 
-[node name="mod_stamp" parent="YSortRoot" unique_id=357109975 instance=ExtResource("107_rubber_sta") groups=["prop", "era_modern"]]
+[node name="mod_stamp" parent="YSortRoot" unique_id=357109975 groups=["era_modern", "prop"] instance=ExtResource("107_rubber_sta")]
 position = Vector2(-1, 11)
 
-[node name="mod_tray" parent="YSortRoot" unique_id=357109976 instance=ExtResource("104_filing_tra") groups=["prop", "era_modern"]]
+[node name="mod_tray" parent="YSortRoot" unique_id=357109976 groups=["era_modern", "prop"] instance=ExtResource("104_filing_tra")]
 position = Vector2(15, 5)
+
+[node name="rubber_stamp_set" parent="YSortRoot" unique_id=319154920 instance=ExtResource("107_rubber_sta")]
+position = Vector2(117, -121)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1757539213]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(-96, 48)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1934283897]
@@ -245,7 +259,6 @@ script = ExtResource("6_pcam_host_script")
 
 [node name="DefaultCam" type="Node2D" parent="." unique_id=428744041 node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(-96, 48)
 script = ExtResource("5_pcam_script")
 follow_mode = 1
 follow_target = NodePath("../YSortRoot/Player")
@@ -255,7 +268,97 @@ tween_on_load = false
 
 [node name="Transitions" type="Node2D" parent="." unique_id=364630184]
 
-[node name="ToMarket" parent="Transitions" unique_id=547090674 instance=ExtResource("9_zone_transition_area") groups=["transition", "transition"]]
+[node name="ToMarket" parent="Transitions" unique_id=547090674 groups=["transition"] instance=ExtResource("9_zone_transition_area")]
 position = Vector2(-128, 64)
 target_zone = "zone_market"
 entry_point = "from_law_office"
+
+[node name="Showcase" type="Node2D" parent="." unique_id=1576189485]
+position = Vector2(400, -400)
+
+[node name="barber_chair_red" type="Node2D" parent="Showcase" unique_id=1021006170 instance=ExtResource("25_fuuc0")]
+script = ExtResource("26_lmlic")
+
+[node name="barber_pole_spiral" type="Node2D" parent="Showcase" unique_id=1364084683 instance=ExtResource("27_7q34v")]
+position = Vector2(96, 0)
+script = ExtResource("26_lmlic")
+
+[node name="bookshelf_law" type="Node2D" parent="Showcase" unique_id=1786564933 instance=ExtResource("100_bookshelf_")]
+position = Vector2(192, 0)
+script = ExtResource("26_lmlic")
+
+[node name="certificate_frame" type="Node2D" parent="Showcase" unique_id=574189483 instance=ExtResource("101_certificat")]
+position = Vector2(288, 0)
+script = ExtResource("26_lmlic")
+
+[node name="coffee_mug" type="Node2D" parent="Showcase" unique_id=607665572 instance=ExtResource("28_pj8h2")]
+position = Vector2(384, 0)
+script = ExtResource("26_lmlic")
+
+[node name="desk_lamp_brass" type="Node2D" parent="Showcase" unique_id=198710555 instance=ExtResource("102_desk_lamp_")]
+position = Vector2(480, 0)
+script = ExtResource("26_lmlic")
+
+[node name="fabric_roll_shelf" type="Node2D" parent="Showcase" unique_id=606080481 instance=ExtResource("29_d1ptu")]
+position = Vector2(0, 80)
+script = ExtResource("26_lmlic")
+
+[node name="filing_cabinet_metal" type="Node2D" parent="Showcase" unique_id=1903461048 instance=ExtResource("103_filing_cab")]
+position = Vector2(96, 80)
+script = ExtResource("26_lmlic")
+
+[node name="filing_tray_stack" type="Node2D" parent="Showcase" unique_id=2145185058 instance=ExtResource("104_filing_tra")]
+position = Vector2(192, 80)
+script = ExtResource("26_lmlic")
+
+[node name="folding_table" type="Node2D" parent="Showcase" unique_id=1266545385 instance=ExtResource("30_jkmby")]
+position = Vector2(288, 80)
+script = ExtResource("26_lmlic")
+
+[node name="globe_desk" type="Node2D" parent="Showcase" unique_id=1897261227 instance=ExtResource("31_tpowv")]
+position = Vector2(384, 80)
+script = ExtResource("26_lmlic")
+
+[node name="laptop_modern" type="Node2D" parent="Showcase" unique_id=1255143173 instance=ExtResource("32_ymwnp")]
+position = Vector2(480, 80)
+script = ExtResource("26_lmlic")
+
+[node name="law_office_muzha" type="Node2D" parent="Showcase" unique_id=1022384216 instance=ExtResource("10_prop_law_office_muzh")]
+position = Vector2(0, 160)
+script = ExtResource("26_lmlic")
+
+[node name="letter_envelope" type="Node2D" parent="Showcase" unique_id=1703705990 instance=ExtResource("33_ohxgd")]
+position = Vector2(96, 160)
+script = ExtResource("26_lmlic")
+
+[node name="moving_box_taped" type="Node2D" parent="Showcase" unique_id=213387822 instance=ExtResource("34_pgn1e")]
+position = Vector2(192, 160)
+script = ExtResource("26_lmlic")
+
+[node name="paper_weight_jade" type="Node2D" parent="Showcase" unique_id=55359711 instance=ExtResource("35_4jmiv")]
+position = Vector2(288, 160)
+script = ExtResource("26_lmlic")
+
+[node name="potted_plant_office" type="Node2D" parent="Showcase" unique_id=1684638252 instance=ExtResource("105_potted_pla")]
+position = Vector2(384, 160)
+script = ExtResource("26_lmlic")
+
+[node name="rotary_phone" type="Node2D" parent="Showcase" unique_id=694761827 instance=ExtResource("106_rotary_pho")]
+position = Vector2(480, 160)
+script = ExtResource("26_lmlic")
+
+[node name="rubber_stamp_set" type="Node2D" parent="Showcase" unique_id=1642552253 instance=ExtResource("107_rubber_sta")]
+position = Vector2(0, 240)
+script = ExtResource("26_lmlic")
+
+[node name="sewing_machine_old" type="Node2D" parent="Showcase" unique_id=1925960266 instance=ExtResource("36_1q38m")]
+position = Vector2(96, 240)
+script = ExtResource("26_lmlic")
+
+[node name="suitcase_travel" type="Node2D" parent="Showcase" unique_id=191885698 instance=ExtResource("37_wg1jd")]
+position = Vector2(192, 240)
+script = ExtResource("26_lmlic")
+
+[node name="typewriter_old" type="Node2D" parent="Showcase" unique_id=860001209 instance=ExtResource("108_typewriter")]
+position = Vector2(288, 240)
+script = ExtResource("26_lmlic")

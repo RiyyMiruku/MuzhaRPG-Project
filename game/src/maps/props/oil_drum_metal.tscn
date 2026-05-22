@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfwu5aqc888bal"]
+[gd_scene format=3 uid="uid://h4l2nvhjenu2"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cw7h26np41z8rj" path="res://assets/textures/props/oil_drum_metal.png" id="3_tex"]

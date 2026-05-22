@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://csiulee7zqi5af"]
+[gd_scene format=3 uid="uid://bhvge50hb2vll"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://c8ho2ebfo9ckwf" path="res://assets/textures/props/typewriter_old.png" id="3_tex"]

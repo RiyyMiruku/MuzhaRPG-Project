@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbmr3h26x510we"]
+[gd_scene format=3 uid="uid://dwubg4kokl41e"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://c2xc4823f2ozwg" path="res://assets/textures/props/qr_code_sign.png" id="3_tex"]

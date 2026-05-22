@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm5dwtsr3e79ij"]
+[gd_scene format=3 uid="uid://dt7i1oe136rc8"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cc59ytfkk63rrf" path="res://assets/textures/props/folding_table.png" id="3_tex"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cww2xop2sd1zdp"]
+[gd_scene format=3 uid="uid://b1ow4fw0eeuw4"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://ceplhx6bhthusp" path="res://assets/textures/props/meat_hook_rack.png" id="3_tex"]

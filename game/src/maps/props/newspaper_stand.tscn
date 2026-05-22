@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmde6p3mza841j"]
+[gd_scene format=3 uid="uid://c18rwx8xy7mu8"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cu75wxw64vw2qd" path="res://assets/textures/props/newspaper_stand.png" id="3_tex"]

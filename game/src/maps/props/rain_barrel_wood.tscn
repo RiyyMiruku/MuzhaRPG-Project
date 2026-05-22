@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3neo9icczas0d"]
+[gd_scene format=3 uid="uid://dvls35abgfss0"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cq1v17rl5hxiid" path="res://assets/textures/props/rain_barrel_wood.png" id="3_tex"]

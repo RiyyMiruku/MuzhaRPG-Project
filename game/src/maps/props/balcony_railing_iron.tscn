@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2o73ebtdl54vj"]
+[gd_scene format=3 uid="uid://cxf67xrb2b4o6"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cjddnlcaxwjc1d" path="res://assets/textures/props/balcony_railing_iron.png" id="3_tex"]

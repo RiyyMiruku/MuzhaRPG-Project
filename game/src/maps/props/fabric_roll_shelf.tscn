@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8md8dhaddsp1m"]
+[gd_scene format=3 uid="uid://4rl00dsojycq"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cdcg0bzttgvjba" path="res://assets/textures/props/fabric_roll_shelf.png" id="3_tex"]

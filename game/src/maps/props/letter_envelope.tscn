@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5lz2zaqsoed1i"]
+[gd_scene format=3 uid="uid://bytb8urikch3e"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cfl5gjzg1anr4o" path="res://assets/textures/props/letter_envelope.png" id="3_tex"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://czxl07epwl275j"]
+[gd_scene format=3 uid="uid://6s411nu177x6"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://ckf3u88kj6ozoj" path="res://assets/textures/props/barber_pole_spiral.png" id="3_tex"]

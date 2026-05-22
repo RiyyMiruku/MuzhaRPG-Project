@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceawzv9e0osazd"]
+[gd_scene format=3 uid="uid://cplda8uhi5jdl"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://c1j4w5j5hsv3fj" path="res://assets/textures/props/herb_scale_brass.png" id="3_tex"]

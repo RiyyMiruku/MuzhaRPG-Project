@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0orqus3efw84p"]
+[gd_scene format=3 uid="uid://wyupg1cu28xd"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cnvhy7d2x67kjo" path="res://assets/textures/props/tofu_stall_bucket.png" id="3_tex"]

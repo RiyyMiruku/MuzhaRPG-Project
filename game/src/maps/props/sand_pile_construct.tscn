@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctk34o3e55iwza"]
+[gd_scene format=3 uid="uid://cj4ypt6mp2ocg"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cyg3rbf647cz0i" path="res://assets/textures/props/sand_pile_construct.png" id="3_tex"]
