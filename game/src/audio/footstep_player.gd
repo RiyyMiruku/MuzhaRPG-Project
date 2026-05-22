@@ -11,8 +11,10 @@ func get_step_distance() -> float:
 	var scene: Node = get_tree().current_scene
 	if scene != null:
 		var v: Variant = scene.get("footstep_step_distance")
-		if v is float and v > 0.0:
-			return v
+		# Accept float OR int — Inspector enforces float on the @export, but
+		# metadata-driven overrides (e.g. via scene.set_meta) may come as int.
+		if (v is float or v is int) and float(v) > 0.0:
+			return float(v)
 	return DEFAULT_STEP_DISTANCE
 
 var _player: AudioStreamPlayer

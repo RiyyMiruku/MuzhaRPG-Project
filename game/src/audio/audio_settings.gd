@@ -57,12 +57,16 @@ func _save() -> void:
 		push_warning("[AudioSettings] failed to open %s for write" % SAVE_PATH)
 		return
 	f.store_string(JSON.stringify(data, "\t"))
+	f.close()
+	if FileAccess.get_open_error() != OK:
+		push_warning("[AudioSettings] write error for %s" % SAVE_PATH)
 
 func _load() -> void:
 	var f: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	if f == null:
 		return  # first run, use defaults
 	var text: String = f.get_as_text()
+	f.close()
 	var parsed: Variant = JSON.parse_string(text)
 	if not (parsed is Dictionary):
 		push_warning("[AudioSettings] %s is not a JSON object" % SAVE_PATH)

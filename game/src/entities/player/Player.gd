@@ -64,6 +64,10 @@ func _surface_under_player() -> String:
 	var ts: TileSet = best_layer.tile_set
 	if ts.get_source_count() == 0:
 		return ""
+	# Assumes single-source-per-zone (one tileset PNG per zone). Multi-source
+	# tilesets (e.g. dirt+grass+sand on one TileMap) would need cell-based
+	# lookup of which source the cell-under-player draws from — defer to
+	# future zone where that pattern appears.
 	var src: TileSetSource = ts.get_source(ts.get_source_id(0))
 	if not (src is TileSetAtlasSource):
 		return ""
