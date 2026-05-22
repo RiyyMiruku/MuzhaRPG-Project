@@ -350,7 +350,7 @@ sources/1 = SubResource("TileSetAtlasSource_18pv5")
 
 [node name="ZoneIsoTest" type="Node2D" unique_id=2054134833]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=948645659]
+[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["ground_layer"] unique_id=948645659]
 
 [node name="TileMapDual" type="TileMapLayer" parent="TileMapLayer" unique_id=316398911]
 material = ExtResource("1_nmdmb")

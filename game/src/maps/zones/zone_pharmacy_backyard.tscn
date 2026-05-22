@@ -162,7 +162,7 @@ theme_override_font_sizes/font_size = 14
 text = "榮昌中藥行後院 (1983)"
 horizontal_alignment = 1
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1090454771]
+[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["ground_layer"] unique_id=1090454771]
 
 [node name="TileMapDual" type="TileMapLayer" parent="TileMapLayer" unique_id=494669438]
 material = ExtResource("3_ghost_mat")

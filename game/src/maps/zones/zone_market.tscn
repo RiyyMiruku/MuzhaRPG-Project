@@ -172,7 +172,7 @@ horizontal_alignment = 1
 
 [node name="EraTint" type="CanvasModulate" parent="." unique_id=2056708120]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1849498531]
+[node name="TileMapLayer" type="TileMapLayer" parent="." groups=["ground_layer"] unique_id=1849498531]
 
 [node name="TileMapDual" type="TileMapLayer" parent="TileMapLayer" unique_id=137088661 groups=["era_1983", "era_modern"]]
 material = ExtResource("3_ghost_mat")
