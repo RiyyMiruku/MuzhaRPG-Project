@@ -2,7 +2,7 @@
 ## 依 surface_id 播放對應資料夾的隨機腳步聲。lazy-load + cache。
 extends Node
 
-const STEP_DISTANCE: float = 18.0
+const STEP_DISTANCE: float = 28.0
 
 var _player: AudioStreamPlayer
 ## surface_id -> AudioStreamRandomizer (or null if no clips found)
