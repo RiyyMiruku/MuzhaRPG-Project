@@ -1,7 +1,6 @@
 ## FootstepPlayer — autoload
 ## 依 surface_id 播放對應資料夾的隨機腳步聲。lazy-load + cache。
-## 各 zone 在 YAML 設 audio.footstep_step_distance 覆寫節奏；
-## build_zone.py 會 emit 成 root node 的 metadata。
+## 各 zone 可在 root node 設 metadata "footstep_step_distance" 覆寫節奏。
 extends Node
 
 const DEFAULT_STEP_DISTANCE: float = 40.0
