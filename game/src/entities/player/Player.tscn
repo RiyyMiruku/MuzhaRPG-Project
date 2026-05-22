@@ -1,30 +1,27 @@
-[gd_scene format=3 uid="uid://muzha_player"]
+[gd_scene format=3 uid="uid://cns52wkajcwa0"]
 
-[ext_resource type="Script" path="res://src/entities/player/Player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://w8gggf38vqo3" path="res://src/entities/player/Player.gd" id="1_player"]
 
 [sub_resource type="CapsuleShape2D" id="body_shape"]
-radius = 6.0
+radius = 5.0
 height = 10.0
 
 [sub_resource type="CircleShape2D" id="interact_shape"]
 radius = 28.0
 
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_player")
-collision_layer = 1
+[node name="Player" type="CharacterBody2D" unique_id=788884532]
 collision_mask = 7
+script = ExtResource("1_player")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=153430626]
 scale = Vector2(0.5, 0.5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=872455351]
 shape = SubResource("body_shape")
 
-[node name="InteractArea" type="Area2D" parent="."]
+[node name="InteractArea" type="Area2D" parent="." unique_id=1887268020]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea" unique_id=365493474]
 shape = SubResource("interact_shape")

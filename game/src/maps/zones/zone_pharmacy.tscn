@@ -28,6 +28,29 @@
 [ext_resource type="PackedScene" uid="uid://cs2ft3rrpnlpe" path="res://src/maps/props/hanging_wood_sign.tscn" id="26_k6xyd"]
 [ext_resource type="PackedScene" uid="uid://b3bjje8647nw3" path="res://src/maps/props/notebook_leather.tscn" id="27_xi1pe"]
 [ext_resource type="Texture2D" uid="uid://d0e611gsqi8q1" path="res://assets/textures/props/id_card_old.png" id="28_drsgr"]
+[ext_resource type="PackedScene" path="res://src/maps/props/altar_table_wood.tscn" id="100_altar_tabl"]
+[ext_resource type="PackedScene" path="res://src/maps/props/cigarette_ashtray.tscn" id="101_cigarette_"]
+[ext_resource type="PackedScene" path="res://src/maps/props/cobweb_corner.tscn" id="102_cobweb_cor"]
+[ext_resource type="PackedScene" path="res://src/maps/props/deity_statue_small.tscn" id="103_deity_stat"]
+[ext_resource type="PackedScene" path="res://src/maps/props/dusty_cloth_cover.tscn" id="104_dusty_clot"]
+[ext_resource type="PackedScene" path="res://src/maps/props/fan_standing.tscn" id="105_fan_standi"]
+[ext_resource type="PackedScene" path="res://src/maps/props/footprint_dust.tscn" id="106_footprint_"]
+[ext_resource type="PackedScene" path="res://src/maps/props/herb_drying_tray.tscn" id="107_herb_dryin"]
+[ext_resource type="PackedScene" path="res://src/maps/props/herb_jar_broken.tscn" id="108_herb_jar_b"]
+[ext_resource type="PackedScene" path="res://src/maps/props/herb_jar_ceramic.tscn" id="109_herb_jar_c"]
+[ext_resource type="PackedScene" path="res://src/maps/props/herb_scale_brass.tscn" id="110_herb_scale"]
+[ext_resource type="PackedScene" path="res://src/maps/props/key_ring_wall.tscn" id="111_key_ring_w"]
+[ext_resource type="PackedScene" path="res://src/maps/props/light_bulb_hanging.tscn" id="112_light_bulb"]
+[ext_resource type="PackedScene" path="res://src/maps/props/lucky_cat_ceramic.tscn" id="113_lucky_cat_"]
+[ext_resource type="PackedScene" path="res://src/maps/props/mortar_pestle_stone.tscn" id="114_mortar_pes"]
+[ext_resource type="PackedScene" path="res://src/maps/props/old_tv_box.tscn" id="115_old_tv_box"]
+[ext_resource type="PackedScene" path="res://src/maps/props/prescription_paper_stack.tscn" id="116_prescripti"]
+[ext_resource type="PackedScene" path="res://src/maps/props/radio_old_brown.tscn" id="117_radio_old_"]
+[ext_resource type="PackedScene" path="res://src/maps/props/slippers_pair.tscn" id="118_slippers_p"]
+[ext_resource type="PackedScene" path="res://src/maps/props/tea_set_ceramic.tscn" id="119_tea_set_ce"]
+[ext_resource type="PackedScene" path="res://src/maps/props/thermos_flask.tscn" id="120_thermos_fl"]
+[ext_resource type="PackedScene" path="res://src/maps/props/umbrella_stand.tscn" id="121_umbrella_s"]
+[ext_resource type="PackedScene" path="res://src/maps/props/wall_clock_round.tscn" id="122_wall_clock"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ya1b0"]
 texture = ExtResource("7_atlas_market_concret")
@@ -322,7 +345,7 @@ godot_4_3_compatibility = false
 y_sort_enabled = true
 
 [node name="Player" parent="YSortRoot" unique_id=2115685882 instance=ExtResource("4_player")]
-position = Vector2(-112, 56)
+position = Vector2(0, 0)
 
 [node name="shop_counter_wood_1983" parent="YSortRoot" unique_id=44492569 groups=["era_1983"] instance=ExtResource("10_prop_shop_counter_wo")]
 visible = false
@@ -410,6 +433,110 @@ npc_config = ExtResource("22_npccfg_lin_ama")
 visible = false
 position = Vector2(-160, 48)
 npc_config = ExtResource("23_npccfg_lin_xiaowei")
+
+[node name="1983_herb_jar" parent="YSortRoot" unique_id=349957310 groups=["era_1983"] instance=ExtResource("109_herb_jar_c")]
+visible = false
+position = Vector2(-37, -48)
+
+[node name="1983_herb_jar2" parent="YSortRoot" unique_id=349957311 groups=["era_1983"] instance=ExtResource("109_herb_jar_c")]
+visible = false
+position = Vector2(-12, -46)
+
+[node name="1983_herb_jar3" parent="YSortRoot" unique_id=349957312 groups=["era_1983"] instance=ExtResource("109_herb_jar_c")]
+visible = false
+position = Vector2(20, -49)
+
+[node name="1983_herb_scale" parent="YSortRoot" unique_id=349957313 groups=["era_1983"] instance=ExtResource("110_herb_scale")]
+visible = false
+position = Vector2(25, -9)
+
+[node name="1983_prescription" parent="YSortRoot" unique_id=349957314 groups=["era_1983"] instance=ExtResource("116_prescripti")]
+visible = false
+position = Vector2(1, -4)
+
+[node name="1983_mortar" parent="YSortRoot" unique_id=349957315 groups=["era_1983"] instance=ExtResource("114_mortar_pes")]
+visible = false
+position = Vector2(38, 0)
+
+[node name="1983_drying_tray" parent="YSortRoot" unique_id=349957316 groups=["era_1983"] instance=ExtResource("107_herb_dryin")]
+visible = false
+position = Vector2(-58, 39)
+
+[node name="1983_altar" parent="YSortRoot" unique_id=349957317 groups=["era_1983"] instance=ExtResource("100_altar_tabl")]
+visible = false
+position = Vector2(70, -35)
+
+[node name="1983_tea_set" parent="YSortRoot" unique_id=349957318 groups=["era_1983"] instance=ExtResource("119_tea_set_ce")]
+visible = false
+position = Vector2(-3, 7)
+
+[node name="1983_radio" parent="YSortRoot" unique_id=349957319 groups=["era_1983"] instance=ExtResource("117_radio_old_")]
+visible = false
+position = Vector2(-45, -16)
+
+[node name="1983_clock" parent="YSortRoot" unique_id=349957320 groups=["era_1983"] instance=ExtResource("122_wall_clock")]
+visible = false
+position = Vector2(12, -72)
+
+[node name="1983_deity" parent="YSortRoot" unique_id=349957321 groups=["era_1983"] instance=ExtResource("103_deity_stat")]
+visible = false
+position = Vector2(65, -27)
+
+[node name="1983_lucky_cat" parent="YSortRoot" unique_id=349957322 groups=["era_1983"] instance=ExtResource("113_lucky_cat_")]
+visible = false
+position = Vector2(-2, 15)
+
+[node name="1983_slippers" parent="YSortRoot" unique_id=349957323 groups=["era_1983"] instance=ExtResource("118_slippers_p")]
+visible = false
+position = Vector2(10, 61)
+
+[node name="1983_fan" parent="YSortRoot" unique_id=349957324 groups=["era_1983"] instance=ExtResource("105_fan_standi")]
+visible = false
+position = Vector2(-53, 1)
+
+[node name="1983_tv" parent="YSortRoot" unique_id=349957325 groups=["era_1983"] instance=ExtResource("115_old_tv_box")]
+visible = false
+position = Vector2(50, 32)
+
+[node name="1983_thermos" parent="YSortRoot" unique_id=349957326 groups=["era_1983"] instance=ExtResource("120_thermos_fl")]
+visible = false
+position = Vector2(18, 1)
+
+[node name="1983_ashtray" parent="YSortRoot" unique_id=349957327 groups=["era_1983"] instance=ExtResource("101_cigarette_")]
+visible = false
+position = Vector2(-2, 4)
+
+[node name="1983_key_ring" parent="YSortRoot" unique_id=349957328 groups=["era_1983"] instance=ExtResource("111_key_ring_w")]
+visible = false
+position = Vector2(65, -57)
+
+[node name="1983_umbrella" parent="YSortRoot" unique_id=349957329 groups=["era_1983"] instance=ExtResource("121_umbrella_s")]
+visible = false
+position = Vector2(10, 65)
+
+[node name="mod_cobweb" parent="YSortRoot" unique_id=349957330 groups=["era_modern"] instance=ExtResource("102_cobweb_cor")]
+position = Vector2(-58, -50)
+
+[node name="mod_cobweb2" parent="YSortRoot" unique_id=349957331 groups=["era_modern"] instance=ExtResource("102_cobweb_cor")]
+position = Vector2(64, -66)
+
+[node name="mod_dusty_cloth" parent="YSortRoot" unique_id=349957332 groups=["era_modern"] instance=ExtResource("104_dusty_clot")]
+position = Vector2(-22, -16)
+
+[node name="mod_dusty_cloth2" parent="YSortRoot" unique_id=349957333 groups=["era_modern"] instance=ExtResource("104_dusty_clot")]
+position = Vector2(17, 37)
+
+[node name="mod_broken_jar" parent="YSortRoot" unique_id=349957334 groups=["era_modern"] instance=ExtResource("108_herb_jar_b")]
+position = Vector2(-23, 18)
+
+[node name="mod_broken_jar2" parent="YSortRoot" unique_id=349957335 groups=["era_modern"] instance=ExtResource("108_herb_jar_b")]
+position = Vector2(38, 13)
+
+[node name="mod_bulb" parent="YSortRoot" unique_id=349957336 groups=["era_modern"] instance=ExtResource("112_light_bulb")]
+position = Vector2(9, -34)
+
+[node name="mod_footprint" parent="YSortRoot" unique_id=349957337 groups=["era_modern"] instance=ExtResource("106_footprint_")]
+position = Vector2(41, -3)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1336082689]
 physics_interpolation_mode = 1

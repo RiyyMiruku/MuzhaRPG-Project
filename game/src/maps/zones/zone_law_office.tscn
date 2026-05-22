@@ -14,6 +14,16 @@
 [ext_resource type="PackedScene" uid="uid://b3bjje8647nw3" path="res://src/maps/props/notebook_leather.tscn" id="12_prop_notebook_leathe"]
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/lawyer_muzha.tres" id="13_npccfg_lawyer_muzha"]
 [ext_resource type="Script" uid="uid://k3da00wfirxt" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_ybjxd"]
+[ext_resource type="PackedScene" path="res://src/maps/props/bookshelf_law.tscn" id="100_bookshelf_"]
+[ext_resource type="PackedScene" path="res://src/maps/props/certificate_frame.tscn" id="101_certificat"]
+[ext_resource type="PackedScene" path="res://src/maps/props/desk_lamp_brass.tscn" id="102_desk_lamp_"]
+[ext_resource type="PackedScene" path="res://src/maps/props/filing_cabinet_metal.tscn" id="103_filing_cab"]
+[ext_resource type="PackedScene" path="res://src/maps/props/filing_tray_stack.tscn" id="104_filing_tra"]
+[ext_resource type="PackedScene" path="res://src/maps/props/potted_plant_office.tscn" id="105_potted_pla"]
+[ext_resource type="PackedScene" path="res://src/maps/props/rotary_phone.tscn" id="106_rotary_pho"]
+[ext_resource type="PackedScene" path="res://src/maps/props/rubber_stamp_set.tscn" id="107_rubber_sta"]
+[ext_resource type="PackedScene" path="res://src/maps/props/typewriter_old.tscn" id="108_typewriter"]
+[ext_resource type="PackedScene" path="res://src/maps/props/wall_clock_round.tscn" id="109_wall_clock"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybjxd"]
 texture = ExtResource("7_atlas_market_concret")
@@ -172,7 +182,7 @@ godot_4_3_compatibility = false
 y_sort_enabled = true
 
 [node name="Player" parent="YSortRoot" unique_id=599072748 instance=ExtResource("4_player")]
-position = Vector2(-96, 48)
+position = Vector2(0, 0)
 
 [node name="law_office_muzha" parent="YSortRoot" unique_id=225183697 instance=ExtResource("10_prop_law_office_muzh")]
 position = Vector2(96, -48)
@@ -185,6 +195,42 @@ position = Vector2(16, -8)
 [node name="LawyerMuzha" parent="YSortRoot" unique_id=1374193425 instance=ExtResource("8_base_npc")]
 position = Vector2(32, -16)
 npc_config = ExtResource("13_npccfg_lawyer_muzha")
+
+[node name="mod_bookshelf" parent="YSortRoot" unique_id=357109965 groups=["era_modern"] instance=ExtResource("100_bookshelf_")]
+position = Vector2(-59, -43)
+
+[node name="mod_bookshelf2" parent="YSortRoot" unique_id=357109966 groups=["era_modern"] instance=ExtResource("100_bookshelf_")]
+position = Vector2(58, -48)
+
+[node name="mod_cabinet" parent="YSortRoot" unique_id=357109967 groups=["era_modern"] instance=ExtResource("103_filing_cab")]
+position = Vector2(-48, -5)
+
+[node name="mod_lamp" parent="YSortRoot" unique_id=357109968 groups=["era_modern"] instance=ExtResource("102_desk_lamp_")]
+position = Vector2(-4, -2)
+
+[node name="mod_clock" parent="YSortRoot" unique_id=357109969 groups=["era_modern"] instance=ExtResource("109_wall_clock")]
+position = Vector2(2, -58)
+
+[node name="mod_plant" parent="YSortRoot" unique_id=357109970 groups=["era_modern"] instance=ExtResource("105_potted_pla")]
+position = Vector2(45, 7)
+
+[node name="mod_cert" parent="YSortRoot" unique_id=357109971 groups=["era_modern"] instance=ExtResource("101_certificat")]
+position = Vector2(-35, -56)
+
+[node name="mod_cert2" parent="YSortRoot" unique_id=357109972 groups=["era_modern"] instance=ExtResource("101_certificat")]
+position = Vector2(36, -51)
+
+[node name="mod_typewriter" parent="YSortRoot" unique_id=357109973 groups=["era_modern"] instance=ExtResource("108_typewriter")]
+position = Vector2(23, -7)
+
+[node name="mod_phone" parent="YSortRoot" unique_id=357109974 groups=["era_modern"] instance=ExtResource("106_rotary_pho")]
+position = Vector2(-7, 3)
+
+[node name="mod_stamp" parent="YSortRoot" unique_id=357109975 groups=["era_modern"] instance=ExtResource("107_rubber_sta")]
+position = Vector2(-1, 11)
+
+[node name="mod_tray" parent="YSortRoot" unique_id=357109976 groups=["era_modern"] instance=ExtResource("104_filing_tra")]
+position = Vector2(15, 5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1757539213]
 physics_interpolation_mode = 1

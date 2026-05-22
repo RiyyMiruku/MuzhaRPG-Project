@@ -80,14 +80,26 @@ func _flash_and_swap(tint: CanvasModulate, target_era: String) -> void:
 	await tween.finished
 
 func _swap_visibility(target_era: String) -> void:
-	# 遍歷所有 era_* group,只留 target_era 的可見
+	# 遍歷所有 era_* group,只留 target_era 的可見 + 碰撞啟用
 	for era_key: String in TINT_PRESETS:
 		var group_name: String = ERA_GROUP_PREFIX + era_key
 		var nodes: Array[Node] = get_tree().get_nodes_in_group(group_name)
-		var visible_flag: bool = (era_key == target_era)
+		var active: bool = (era_key == target_era)
 		for n: Node in nodes:
 			if n is CanvasItem:
-				(n as CanvasItem).visible = visible_flag
+				(n as CanvasItem).visible = active
+			# 停用/啟用碰撞體，避免隱藏物件擋路
+			_set_physics_enabled(n, active)
+
+
+func _set_physics_enabled(node: Node, enabled: bool) -> void:
+	for child in node.get_children():
+		if child is CollisionShape2D:
+			child.disabled = not enabled
+		elif child is StaticBody2D or child is Area2D:
+			_set_physics_enabled(child, enabled)
+		elif child is CollisionPolygon2D:
+			child.disabled = not enabled
 
 func _find_era_tint() -> CanvasModulate:
 	# 假設 EraTint 在當前 zone 內名為 "EraTint",透過 group 找最穩
