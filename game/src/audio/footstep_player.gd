@@ -15,12 +15,15 @@ func _ready() -> void:
 
 func play(surface_id: String) -> void:
 	if surface_id == "":
+		print("[FootstepPlayer] play skipped (empty surface_id)")
 		return
 	var stream: AudioStreamRandomizer = _get_stream(surface_id)
 	if stream == null:
+		print("[FootstepPlayer] no stream for '%s'" % surface_id)
 		return
 	_player.stream = stream
 	_player.play()
+	print("[FootstepPlayer] playing '%s'" % surface_id)
 
 func _get_stream(surface_id: String) -> AudioStreamRandomizer:
 	if _streams_by_surface.has(surface_id):
@@ -29,6 +32,7 @@ func _get_stream(surface_id: String) -> AudioStreamRandomizer:
 	var dir_path: String = "res://assets/audio/footsteps/" + surface_id + "/"
 	var dir: DirAccess = DirAccess.open(dir_path)
 	if dir == null:
+		print("[FootstepPlayer] dir not found: %s" % dir_path)
 		_streams_by_surface[surface_id] = null
 		return null
 
@@ -39,13 +43,16 @@ func _get_stream(surface_id: String) -> AudioStreamRandomizer:
 			continue
 		var s: AudioStream = load(dir_path + fname)
 		if s == null:
+			print("[FootstepPlayer] failed load %s%s" % [dir_path, fname])
 			continue
 		randomizer.add_stream(-1, s)
 		added += 1
 
 	if added == 0:
+		print("[FootstepPlayer] no clips in %s" % dir_path)
 		_streams_by_surface[surface_id] = null
 		return null
 
+	print("[FootstepPlayer] loaded %d clips for '%s'" % [added, surface_id])
 	_streams_by_surface[surface_id] = randomizer
 	return randomizer

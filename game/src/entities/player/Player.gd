@@ -47,23 +47,45 @@ func _update_footsteps() -> void:
 		return
 	_step_accum = 0.0
 	var surface_id: String = _surface_under_player()
+	print("[Footstep] step → surface_id='%s'" % surface_id)
 	FootstepPlayer.play(surface_id)
 
 func _surface_under_player() -> String:
 	## 找站位下方最上層的 ground TileMapLayer，回它 TileSet 對應的 surface_id。
 	## Ground layer 須加進 "ground_layer" group，並用 z_index 表達疊放順序。
+	var nodes: Array = get_tree().get_nodes_in_group("ground_layer")
+	print("[Footstep]   ground_layer count=%d" % nodes.size())
 	var best_layer: TileMapLayer = null
-	for node in get_tree().get_nodes_in_group("ground_layer"):
+	for node in nodes:
 		if node is TileMapLayer:
 			if best_layer == null or node.z_index > best_layer.z_index:
 				best_layer = node
-	if best_layer == null or best_layer.tile_set == null:
+	if best_layer == null:
+		print("[Footstep]   no TileMapLayer node in group")
+		return ""
+	print("[Footstep]   picked layer=%s z=%d tile_set=%s" % [best_layer.name, best_layer.z_index, best_layer.tile_set])
+	if best_layer.tile_set == null:
+		print("[Footstep]   layer.tile_set is null")
 		return ""
 	var ts_path: String = best_layer.tile_set.resource_path
+	print("[Footstep]   tile_set.resource_path='%s'" % ts_path)
 	if ts_path == "":
-		return ""
+		# Fallback: try first atlas source's texture path
+		var ts: TileSet = best_layer.tile_set
+		if ts.get_source_count() > 0:
+			var src: TileSetSource = ts.get_source(ts.get_source_id(0))
+			if src is TileSetAtlasSource:
+				var tex: Texture2D = (src as TileSetAtlasSource).texture
+				if tex != null:
+					ts_path = tex.resource_path
+					print("[Footstep]   fallback texture path='%s'" % ts_path)
+		if ts_path == "":
+			return ""
 	var tileset_name: String = ts_path.get_file().get_basename()
-	return SurfaceRegistry.surface_for_tileset(tileset_name)
+	print("[Footstep]   tileset_name='%s'" % tileset_name)
+	var result: String = SurfaceRegistry.surface_for_tileset(tileset_name)
+	print("[Footstep]   registry → '%s'" % result)
+	return result
 
 func _on_state_changed(new_state: GameManager.GameState) -> void:
 	var can_move: bool = new_state == GameManager.GameState.EXPLORING
