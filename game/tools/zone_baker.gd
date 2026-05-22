@@ -19,6 +19,10 @@ extends Node2D
 @export_tool_button("Lock YAML (frozen: true)") var _lock_action: Callable = _lock_yaml
 @export_tool_button("Unlock YAML") var _unlock_action: Callable = _unlock_yaml
 
+@export_tool_button("Era: Show 1983") var _show_1983_action: Callable = func() -> void: _show_era("1983")
+@export_tool_button("Era: Show Modern") var _show_modern_action: Callable = func() -> void: _show_era("modern")
+@export_tool_button("Era: Show Both") var _show_both_action: Callable = _show_both_eras
+
 
 func _bake_terrain() -> void:
 	var tmd: TileMapLayer = _get_dual()
@@ -114,3 +118,36 @@ func _get_dual() -> TileMapLayer:
 	if node is TileMapLayer:
 		return node
 	return null
+
+
+# ── Era editor toggles ──────────────────────────────────────────────────────
+## Show only nodes in group "era_<which>"; hide nodes in other "era_*" groups.
+## Runtime EraManager 會在 _ready() 重設可見性，此操作只影響 editor view。
+## 存場景後 visible 旗標會進 .tscn，可接受(runtime 會 override)。
+func _show_era(which: String) -> void:
+	var eras: Array[String] = ["1983", "modern"]
+	for e in eras:
+		var should_show: bool = (e == which)
+		_set_era_visible(e, should_show)
+	print("[zone_baker] Era view: %s only. Save (Ctrl+S) to persist." % which)
+
+
+func _show_both_eras() -> void:
+	_set_era_visible("1983", true)
+	_set_era_visible("modern", true)
+	print("[zone_baker] Era view: both visible.")
+
+
+## Walk descendants of this zone root; toggle visible on any node in era_<e>.
+## Constrained to current scene (avoids leaking across open scenes in editor).
+func _set_era_visible(era: String, visible_flag: bool) -> void:
+	var group_name: String = "era_" + era
+	_apply_visible_recursive(self, group_name, visible_flag)
+
+
+func _apply_visible_recursive(node: Node, group_name: String, visible_flag: bool) -> void:
+	if node.is_in_group(group_name):
+		if node is CanvasItem:
+			(node as CanvasItem).visible = visible_flag
+	for child in node.get_children():
+		_apply_visible_recursive(child, group_name, visible_flag)
