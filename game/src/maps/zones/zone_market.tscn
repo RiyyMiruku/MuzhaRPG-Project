@@ -264,7 +264,6 @@ visible = false
 position = Vector2(-72, 116)
 
 [node name="1983_ATaoYi" parent="YSortRoot" unique_id=1339565450 groups=["era_1983"] instance=ExtResource("8_base_npc")]
-visible = false
 position = Vector2(-191, 176)
 npc_config = ExtResource("18_npccfg_a_tao_yi")
 
