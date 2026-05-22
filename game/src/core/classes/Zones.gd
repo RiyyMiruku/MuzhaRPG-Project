@@ -25,14 +25,13 @@ const STARTING: String = "zone_apartment_muzha"
 ##   pharmacy ↔ pharmacy_backyard
 ##
 ## Era 機制:
-##   zone_pharmacy 與 zone_market 是 hybrid 場景(同一 .tscn 內含 1983 / modern
+##   所有章節 1 zone 皆為 hybrid 場景(同一 .tscn 內含 1983 / modern
 ##   兩套節點,以 group `era_1983` / `era_modern` 標記)。
 ##   EraManager(autoload,未實作)透過 `get_tree().get_nodes_in_group("era_<era>")`
 ##   切換 visible + tween EraTint CanvasModulate.color。
 ##   ZoneManager 不參與 era 切換 — era 切換不離開 zone,是 in-place toggle。
 ##
-##   單時空 zone(backyard / apartment / law_office) 沒 era group,
-##   無論當前 era 都長一樣。
+##   各 zone 的 era 物件由 zone_baker.gd 的 era toggle 按鈕切換預覽。
 const ALL: Dictionary = {
 	"zone_apartment_muzha": {
 		"display": "木柵老公寓",

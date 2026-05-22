@@ -1,0 +1,234 @@
+# 榮昌中藥行後院 (1983) — 第一章結尾關鍵場景
+# 林榮華(=父親)房間、阿嬤燒香場景
+zone: zone_pharmacy_backyard
+era: "1983"
+label: "榮昌中藥行後院 (1983)"
+size: [22, 17]
+
+tilemap:
+  atlas: courtyard_grass_dirt
+  terrain: 1
+  fill: rect
+
+props:
+  # 後院區
+  - id: incense_burner_brass
+    anchor: center
+    offset: [-3, 0]
+
+  - id: lantern_paper_red
+    anchor: north_wall
+    offset: [-5, 1]
+
+  - id: lantern_paper_red
+    anchor: north_wall
+    offset: [5, 1]
+    rename: lantern_paper_red_2
+
+  # 上鎖房間入口
+  - id: iron_gate_rusted
+    anchor: east_wall
+    offset: [-2, 0]
+
+  # 林榮華遺物
+  - id: notebook_leather
+    anchor: east_wall
+    offset: [-1, -1]
+
+  - id: fountain_pen_old
+    anchor: east_wall
+    offset: [-1, 0]
+
+  - id: photograph_old
+    anchor: east_wall
+    offset: [-1, 1]
+
+  # 生活場景
+  - id: well_stone_old
+    anchor: center
+    offset: [3, 0]
+
+  - id: clothesline_bamboo
+    anchor: west_wall
+    offset: [2, -1]
+
+  - id: potted_plant_clay
+    anchor: center
+    offset: [-1, 1]
+
+  - id: potted_plant_clay
+    anchor: center
+    offset: [1, 0]
+    rename: 1983_plant2
+
+  - id: potted_plant_clay
+    anchor: center
+    offset: [0, -1]
+    rename: 1983_plant3
+
+  - id: broom_dustpan
+    anchor: center
+    offset: [2, 2]
+
+  - id: door_wooden_locked
+    anchor: east_wall
+    offset: [0, 0]
+
+  - id: desk_wooden_old
+    anchor: east_wall
+    offset: [-1, -2]
+
+  - id: bed_single_old
+    anchor: east_wall
+    offset: [-1, 2]
+
+  - id: newspaper_clipping_wall
+    anchor: east_wall
+    offset: [0, -2]
+
+  - id: newspaper_clipping_wall
+    anchor: east_wall
+    offset: [0, -1]
+    rename: 1983_clipping2
+
+  - id: stone_bench_garden
+    anchor: west_wall
+    offset: [2, 1]
+
+  - id: herb_garden_patch
+    anchor: center
+    offset: [0, 2]
+
+  - id: washing_board_wood
+    anchor: west_wall
+    offset: [1, 2]
+
+  # 新增裝飾物件
+  - id: rain_barrel_wood
+    anchor: west_wall
+    offset: [1, 1]
+
+  - id: water_faucet_wall
+    anchor: west_wall
+    offset: [1, 0]
+
+  - id: mosquito_coil
+    anchor: center
+    offset: [-1, 2]
+
+  - id: bucket_metal_wash
+    anchor: west_wall
+    offset: [1, 2]
+    rename: 1983_bucket
+
+  - id: rain_gutter_pipe
+    anchor: west_wall
+    offset: [0, -1]
+
+  - id: wooden_stool_old
+    anchor: center
+    offset: [1, 2]
+
+  - id: flower_pot_ceramic
+    anchor: center
+    offset: [2, -1]
+
+  - id: flower_pot_ceramic
+    anchor: center
+    offset: [3, 1]
+    rename: 1983_flower_pot2
+
+  - id: moss_patch_wall
+    anchor: west_wall
+    offset: [0, -2]
+
+  - id: moss_patch_wall
+    anchor: east_wall
+    offset: [0, -2]
+    rename: 1983_moss2
+
+  - id: vine_wall_climbing
+    anchor: west_wall
+    offset: [0, -3]
+
+  - id: vine_wall_climbing
+    anchor: east_wall
+    offset: [0, -2]
+    rename: 1983_vine2
+
+  - id: radio_old_brown
+    anchor: east_wall
+    offset: [-1, 0]
+    rename: 1983_radio
+
+  - id: thermos_flask
+    anchor: east_wall
+    offset: [-2, -1]
+
+  - id: slippers_pair
+    anchor: east_wall
+    offset: [-2, 1]
+
+  - id: weed_crack_ground
+    anchor: center
+    offset: [0, 3]
+
+  - id: weed_crack_ground
+    anchor: center
+    offset: [2, 3]
+    rename: 1983_weed2
+
+  - id: puddle_water
+    anchor: west_wall
+    offset: [2, 1]
+    rename: 1983_puddle
+
+  - id: stray_cat_sleeping
+    anchor: center
+    offset: [-1, 0]
+
+  - id: rusty_pipe_exposed
+    anchor: west_wall
+    offset: [0, 0]
+
+  - id: cobweb_corner
+    anchor: east_wall
+    offset: [0, -3]
+
+  - id: cobweb_corner
+    anchor: west_wall
+    offset: [0, -2]
+    rename: 1983_cobweb2
+
+  - id: fan_standing
+    anchor: east_wall
+    offset: [-2, 0]
+
+  - id: plastic_chair_red
+    anchor: center
+    offset: [1, 1]
+
+  - id: light_bulb_hanging
+    anchor: center
+    offset: [2, -1]
+
+  - id: light_bulb_hanging
+    anchor: west_wall
+    offset: [2, -2]
+    rename: 1983_light_bulb2
+
+npcs:
+  - id: lin_ama
+    anchor: relative_to(incense_burner_brass)
+    offset: [-1, 0]
+
+transitions:
+  - target_zone: zone_pharmacy
+    entry_point: from_backyard
+    anchor: west_wall
+    offset: [0, 0]
+    rename: ToPharmacy
+
+player_spawn:
+  anchor: west_wall
+  offset: [1, 0]

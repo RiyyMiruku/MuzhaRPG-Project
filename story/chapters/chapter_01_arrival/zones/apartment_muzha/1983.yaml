@@ -1,0 +1,108 @@
+# 老公寓 (1983) — 林家在木柵的住處
+zone: zone_apartment_muzha
+era: "1983"
+label: "木柵老公寓 (1983)"
+size: [22, 17]
+
+tilemap:
+  atlas: market_tile_concrete
+  terrain: 1
+  fill: rect
+
+props:
+  - id: bed_single_old
+    anchor: east_wall
+    offset: [-2, 1]
+
+  - id: desk_wooden_old
+    anchor: center
+    offset: [0, 0]
+
+  - id: wooden_stool_old
+    anchor: center
+    offset: [0, 1]
+
+  - id: radio_old_brown
+    anchor: east_wall
+    offset: [-2, -1]
+
+  - id: fan_standing
+    anchor: west_wall
+    offset: [2, 1]
+
+  - id: sewing_machine_old
+    anchor: west_wall
+    offset: [2, 0]
+
+  - id: thermos_flask
+    anchor: center
+    offset: [1, 0]
+
+  - id: clock_alarm_wind
+    anchor: east_wall
+    offset: [-2, 0]
+
+  - id: birdcage_bamboo
+    anchor: east_wall
+    offset: [-3, -1]
+
+  - id: shoe_rack_wood
+    anchor: south_wall
+    offset: [-3, -1]
+
+  - id: slippers_pair
+    anchor: south_wall
+    offset: [-2, -1]
+
+  - id: cathay_calendar_1983
+    anchor: north_wall
+    offset: [-3, 0]
+
+  - id: photo_frame_family
+    anchor: north_wall
+    offset: [0, 0]
+
+  - id: mirror_round_wall
+    anchor: north_wall
+    offset: [3, 0]
+
+  - id: rice_cooker_big
+    anchor: west_wall
+    offset: [2, 2]
+
+  - id: tea_set_ceramic
+    anchor: center
+    offset: [-1, 0]
+
+  - id: old_tv_box
+    anchor: east_wall
+    offset: [-3, 0]
+
+  - id: mosquito_coil
+    anchor: west_wall
+    offset: [3, 2]
+
+  - id: flower_pot_ceramic
+    anchor: south_wall
+    offset: [3, -1]
+
+  - id: potted_plant_clay
+    anchor: east_wall
+    offset: [-3, 2]
+
+  - id: light_bulb_hanging
+    anchor: center
+    offset: [0, -2]
+
+npcs: []
+
+transitions:
+  - target_zone: zone_market
+    entry_point: from_apartment
+    anchor: south_wall
+    offset: [0, 1]
+    rename: ToMarket
+
+player_spawn:
+  anchor: south_wall
+  offset: [0, -1]

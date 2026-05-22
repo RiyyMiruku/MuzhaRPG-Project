@@ -1,0 +1,97 @@
+# 老公寓 (現代) — 阿謙住處 / 父親遺物翻找
+zone: zone_apartment_muzha
+era: "modern"
+label: "木柵老公寓 (現代)"
+size: [22, 17]
+
+tilemap:
+  atlas: market_tile_concrete
+  terrain: 1
+  fill: rect
+
+props:
+  - id: id_card_old
+    anchor: center
+    offset: [0, 0]
+
+  - id: photograph_old
+    anchor: center
+    offset: [1, 0]
+
+  - id: notebook_leather
+    anchor: center
+    offset: [-1, 0]
+
+  - id: fountain_pen_old
+    anchor: center
+    offset: [0, 1]
+
+  - id: old_apartment_muzha
+    anchor: north_wall
+    offset: [0, 2]
+
+  - id: suitcase_travel
+    anchor: west_wall
+    offset: [2, 2]
+
+  - id: laptop_modern
+    anchor: center
+    offset: [0, 0]
+    rename: mod_laptop
+
+  - id: coffee_mug
+    anchor: center
+    offset: [1, 0]
+    rename: mod_coffee
+
+  - id: moving_box_taped
+    anchor: west_wall
+    offset: [2, 3]
+
+  - id: moving_box_taped
+    anchor: west_wall
+    offset: [3, 3]
+    rename: mod_box2
+
+  - id: folding_table
+    anchor: center
+    offset: [0, 0]
+    rename: mod_table
+
+  - id: letter_envelope
+    anchor: center
+    offset: [1, -1]
+
+  - id: backpack_travel
+    anchor: east_wall
+    offset: [-2, 2]
+
+  - id: sticky_notes_wall
+    anchor: north_wall
+    offset: [-2, 0]
+
+  - id: mattress_floor
+    anchor: east_wall
+    offset: [-2, 1]
+
+  - id: water_bottle_plastic
+    anchor: center
+    offset: [2, 1]
+
+  - id: photo_frame_family
+    anchor: north_wall
+    offset: [0, 0]
+    rename: mod_photo
+
+npcs: []
+
+transitions:
+  - target_zone: zone_market
+    entry_point: from_apartment
+    anchor: south_wall
+    offset: [0, 1]
+    rename: ToMarket
+
+player_spawn:
+  anchor: south_wall
+  offset: [0, -1]

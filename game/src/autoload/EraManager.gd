@@ -81,11 +81,24 @@ func _flash_and_swap(tint: CanvasModulate, target_era: String) -> void:
 
 func _swap_visibility(target_era: String) -> void:
 	# 遍歷所有 era_* group,只留 target_era 的可見 + 碰撞啟用
+	# 先收集所有 era 節點,若節點同時屬於目標 era group 則保持可見
+	var target_group: String = ERA_GROUP_PREFIX + target_era
+	var seen: Dictionary = {}  # node instance id → bool (should be active)
 	for era_key: String in TINT_PRESETS:
 		var group_name: String = ERA_GROUP_PREFIX + era_key
 		var nodes: Array[Node] = get_tree().get_nodes_in_group(group_name)
-		var active: bool = (era_key == target_era)
+		var is_target: bool = (era_key == target_era)
 		for n: Node in nodes:
+			var id: int = n.get_instance_id()
+			# 只要節點屬於目標 era group 就標記為 active
+			if is_target:
+				seen[id] = true
+			elif not seen.has(id):
+				seen[id] = false
+	for era_key: String in TINT_PRESETS:
+		var group_name: String = ERA_GROUP_PREFIX + era_key
+		for n: Node in get_tree().get_nodes_in_group(group_name):
+			var active: bool = seen.get(n.get_instance_id(), false)
 			if n is CanvasItem:
 				(n as CanvasItem).visible = active
 			# 停用/啟用碰撞體，避免隱藏物件擋路
