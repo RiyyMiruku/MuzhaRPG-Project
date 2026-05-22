@@ -42,3 +42,4 @@ known_facts = Array[String]([
 "今年是 1983 年,阿謙這個新來的年輕人比我大不了幾歲"
 ])
 personality_voice = "語速快、句尾常 dropp 字、語氣帶嘲諷。常用『反正』『隨便』『你也覺得很怪對不對』。"
+has_walk_animation = true

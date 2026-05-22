@@ -40,3 +40,4 @@ known_facts = Array[String]([
 "我跟夫家的祕密保持距離,把家照顧好就好"
 ])
 personality_voice = "語氣溫和、實在,常笑說自己『嫁進來才知道』。被問敏感事會輕輕帶過,不會像阿嬤那樣冷硬。"
+has_walk_animation = true

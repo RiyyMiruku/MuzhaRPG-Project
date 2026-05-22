@@ -36,6 +36,11 @@ extends Resource
 @export_range(-100, 100, 5) var initial_relationship: int = 0
 
 # ── 走動行為（可選）────────────────────────────────────────────────────────
+## 該 NPC 的 spritesheet 是否含 walk_<dir> 動畫(art-pipeline 的 "moving" 類別)。
+## False = 美術只生了 idle frame,啟用 wander 會看到圖滑行。下面 wander_* 欄位
+## 只在此值為 true 時於 Inspector 顯示。
+@export var has_walk_animation: bool = false
+
 ## NPC 自動走動的半徑(像素)。0 = 完全靜止(預設,向下相容)。
 ## NPC 會在以 spawn 位置為中心、半徑 wander_radius 的圓內隨機亂走。
 @export_range(0.0, 256.0, 8.0) var wander_radius: float = 0.0
@@ -44,6 +49,15 @@ extends Resource
 ## 兩段走動之間的停頓時間範圍(秒)。每次到點後隨機取 [min, max] 秒停下。
 @export var wander_pause_min: float = 1.5
 @export var wander_pause_max: float = 3.5
+
+
+## Hide wander_* fields in Inspector unless the NPC actually has walk frames.
+func _validate_property(property: Dictionary) -> void:
+	const _WANDER_FIELDS: Array[String] = [
+		"wander_radius", "wander_speed", "wander_pause_min", "wander_pause_max",
+	]
+	if property.name in _WANDER_FIELDS and not has_walk_animation:
+		property.usage &= ~PROPERTY_USAGE_EDITOR
 
 
 # ── 自動推導路徑（不用手填）────────────────────────────────────────────────
