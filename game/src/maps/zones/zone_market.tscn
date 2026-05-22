@@ -1,14 +1,14 @@
 [gd_scene format=4 uid="uid://di6oyaa20lu3e"]
 
-[ext_resource type="Script" uid="uid://bn5kbb0wyxbmb" path="res://tools/zone_baker.gd" id="1_baker"]
-[ext_resource type="Script" uid="uid://d3hai2d47t4ra" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
+[ext_resource type="Script" uid="uid://dmaeqfb1v35v0" path="res://tools/zone_baker.gd" id="1_baker"]
+[ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="3_ghost_mat"]
-[ext_resource type="PackedScene" uid="uid://cns52wkajcwa0" path="res://src/entities/player/Player.tscn" id="4_player"]
-[ext_resource type="Script" uid="uid://cta2qegm3nku1" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
+[ext_resource type="PackedScene" path="res://src/entities/player/Player.tscn" id="4_player"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
 [ext_resource type="PackedScene" uid="uid://dofyekh17l2nk" path="res://src/maps/props/market_awning.tscn" id="5_u0ibd"]
 [ext_resource type="PackedScene" uid="uid://c3c3rk6ulrx8p" path="res://src/maps/props/pharmacy_rongchang_modern.tscn" id="5_wmj5h"]
-[ext_resource type="Script" uid="uid://d3pa6x3pkf81c" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_pcam_host_script"]
-[ext_resource type="Texture2D" uid="uid://c8o3f4cl5mle" path="res://assets/textures/tilesets/street_sidewalk_asphalt.png" id="7_atlas_street_asphalt"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_pcam_host_script"]
+[ext_resource type="Texture2D" uid="uid://cgqdtackmxryn" path="res://assets/textures/tilesets/street_sidewalk_asphalt.png" id="7_atlas_street_asphalt"]
 [ext_resource type="PackedScene" path="res://src/entities/npcs/BaseNPC.tscn" id="8_base_npc"]
 [ext_resource type="PackedScene" uid="uid://b2loedn70xna4" path="res://src/maps/props/iron_gate_rusted.tscn" id="8_vipgw"]
 [ext_resource type="PackedScene" uid="uid://cu5f7uuu238si" path="res://src/core/components/ZoneTransitionArea.tscn" id="9_zone_transition_area"]
@@ -22,7 +22,7 @@
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/a_tao_yi.tres" id="18_npccfg_a_tao_yi"]
 [ext_resource type="PackedScene" uid="uid://k357cjsoq4xj" path="res://src/maps/props/wooden_stool_old.tscn" id="19_vipgw"]
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/lao_zhou.tres" id="23_npccfg_lao_zhou"]
-[ext_resource type="Script" uid="uid://k3da00wfirxt" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="23_t0w5p"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="23_t0w5p"]
 [ext_resource type="PackedScene" uid="uid://b2f0pycaxks5h" path="res://src/maps/props/bamboo_steamer.tscn" id="100_bamboo_ste"]
 [ext_resource type="PackedScene" uid="uid://d0jhse02xxlqv" path="res://src/maps/props/banner_cloth_sale.tscn" id="101_banner_clo"]
 [ext_resource type="PackedScene" uid="uid://br5xkye72mosr" path="res://src/maps/props/bicycle_parked.tscn" id="102_bicycle_pa"]
@@ -217,234 +217,234 @@ y_sort_enabled = true
 [node name="Player" parent="YSortRoot" unique_id=1265905023 instance=ExtResource("4_player")]
 position = Vector2(-22, 45)
 
-[node name="1983_pharmacy_rongchang" parent="YSortRoot" unique_id=871580648 instance=ExtResource("15_peqgg") groups=["prop", "era_1983"]]
+[node name="1983_pharmacy_rongchang" parent="YSortRoot" unique_id=871580648 groups=["era_1983", "prop"] instance=ExtResource("15_peqgg")]
 visible = false
 position = Vector2(213, -172)
 
-[node name="1983_shophouse_concrete" parent="YSortRoot" unique_id=544377171 instance=ExtResource("10_mxx5g") groups=["prop", "era_1983"]]
+[node name="1983_shophouse_concrete" parent="YSortRoot" unique_id=544377171 groups=["era_1983", "prop"] instance=ExtResource("10_mxx5g")]
 visible = false
 position = Vector2(115, -26)
 
-[node name="1983_shophouse_concrete2" parent="YSortRoot" unique_id=695053019 instance=ExtResource("10_mxx5g") groups=["prop", "era_1983"]]
+[node name="1983_shophouse_concrete2" parent="YSortRoot" unique_id=695053019 groups=["era_1983", "prop"] instance=ExtResource("10_mxx5g")]
 visible = false
 position = Vector2(60, -1)
 
-[node name="1983_shophouse_minnan" parent="YSortRoot" unique_id=1803321095 instance=ExtResource("13_sm02n") groups=["prop", "era_1983"]]
+[node name="1983_shophouse_minnan" parent="YSortRoot" unique_id=1803321095 groups=["era_1983", "prop"] instance=ExtResource("13_sm02n")]
 visible = false
 position = Vector2(223, 39)
 
-[node name="1983_vegetable_stall" parent="YSortRoot" unique_id=2057972996 instance=ExtResource("11_em73r") groups=["prop", "era_1983"]]
+[node name="1983_vegetable_stall" parent="YSortRoot" unique_id=2057972996 groups=["era_1983", "prop"] instance=ExtResource("11_em73r")]
 visible = false
 position = Vector2(-142, -185)
 
-[node name="1983_vegetable_stall2" parent="YSortRoot" unique_id=1194066009 instance=ExtResource("11_em73r") groups=["prop", "era_1983"]]
+[node name="1983_vegetable_stall2" parent="YSortRoot" unique_id=1194066009 groups=["era_1983", "prop"] instance=ExtResource("11_em73r")]
 visible = false
 position = Vector2(-190, -156)
 
-[node name="1983_vegetable_stall3" parent="YSortRoot" unique_id=1031425273 instance=ExtResource("11_em73r") groups=["prop", "era_1983"]]
+[node name="1983_vegetable_stall3" parent="YSortRoot" unique_id=1031425273 groups=["era_1983", "prop"] instance=ExtResource("11_em73r")]
 visible = false
 position = Vector2(-242, -128)
 
-[node name="1983_basket_produce" parent="YSortRoot" unique_id=924898969 instance=ExtResource("11_mxx5g") groups=["prop", "era_1983"]]
+[node name="1983_basket_produce" parent="YSortRoot" unique_id=924898969 groups=["era_1983", "prop"] instance=ExtResource("11_mxx5g")]
 visible = false
 position = Vector2(-120, -19)
 
-[node name="1983_basket_produce2" parent="YSortRoot" unique_id=867839654 instance=ExtResource("11_mxx5g") groups=["prop", "era_1983"]]
+[node name="1983_basket_produce2" parent="YSortRoot" unique_id=867839654 groups=["era_1983", "prop"] instance=ExtResource("11_mxx5g")]
 visible = false
 position = Vector2(-138, -28)
 
-[node name="1983_basket_produce3" parent="YSortRoot" unique_id=1330108422 instance=ExtResource("11_mxx5g") groups=["prop", "era_1983"]]
+[node name="1983_basket_produce3" parent="YSortRoot" unique_id=1330108422 groups=["era_1983", "prop"] instance=ExtResource("11_mxx5g")]
 visible = false
 position = Vector2(-108, -35)
 
-[node name="1983_basket_produce4" parent="YSortRoot" unique_id=700806994 instance=ExtResource("11_mxx5g") groups=["prop", "era_1983"]]
+[node name="1983_basket_produce4" parent="YSortRoot" unique_id=700806994 groups=["era_1983", "prop"] instance=ExtResource("11_mxx5g")]
 visible = false
 position = Vector2(-297, -119)
 
-[node name="1983_basket_produce5" parent="YSortRoot" unique_id=1261580535 instance=ExtResource("11_mxx5g") groups=["prop", "era_1983"]]
+[node name="1983_basket_produce5" parent="YSortRoot" unique_id=1261580535 groups=["era_1983", "prop"] instance=ExtResource("11_mxx5g")]
 visible = false
 position = Vector2(-93, -27)
 
-[node name="1983_lantern_red" parent="YSortRoot" unique_id=1815505794 instance=ExtResource("15_dakvp") groups=["prop", "era_1983"]]
+[node name="1983_lantern_red" parent="YSortRoot" unique_id=1815505794 groups=["era_1983", "prop"] instance=ExtResource("15_dakvp")]
 visible = false
 z_index = 1
 position = Vector2(237, -182)
 
-[node name="1983_lantern_red2" parent="YSortRoot" unique_id=1588622674 instance=ExtResource("15_dakvp") groups=["prop", "era_1983"]]
+[node name="1983_lantern_red2" parent="YSortRoot" unique_id=1588622674 groups=["era_1983", "prop"] instance=ExtResource("15_dakvp")]
 visible = false
 position = Vector2(152, -225)
 
-[node name="1983_awning" parent="YSortRoot" unique_id=2138741280 instance=ExtResource("5_u0ibd") groups=["prop", "era_1983"]]
+[node name="1983_awning" parent="YSortRoot" unique_id=2138741280 groups=["era_1983", "prop"] instance=ExtResource("5_u0ibd")]
 visible = false
 position = Vector2(-96, -62)
 
-[node name="1983_awning2" parent="YSortRoot" unique_id=1970786988 instance=ExtResource("5_u0ibd") groups=["prop", "era_1983"]]
+[node name="1983_awning2" parent="YSortRoot" unique_id=1970786988 groups=["era_1983", "prop"] instance=ExtResource("5_u0ibd")]
 visible = false
 position = Vector2(-141, -85)
 
-[node name="1983_chair_red" parent="YSortRoot" unique_id=726110928 instance=ExtResource("16_wmj5h") groups=["prop", "era_1983"]]
+[node name="1983_chair_red" parent="YSortRoot" unique_id=726110928 groups=["era_1983", "prop"] instance=ExtResource("16_wmj5h")]
 visible = false
 position = Vector2(-118, 94)
 
-[node name="1983_chair_red2" parent="YSortRoot" unique_id=1757332894 instance=ExtResource("16_wmj5h") groups=["prop", "era_1983"]]
+[node name="1983_chair_red2" parent="YSortRoot" unique_id=1757332894 groups=["era_1983", "prop"] instance=ExtResource("16_wmj5h")]
 visible = false
 position = Vector2(-95, 104)
 
-[node name="1983_chair_red3" parent="YSortRoot" unique_id=1036058259 instance=ExtResource("16_wmj5h") groups=["prop", "era_1983"]]
+[node name="1983_chair_red3" parent="YSortRoot" unique_id=1036058259 groups=["era_1983", "prop"] instance=ExtResource("16_wmj5h")]
 visible = false
 position = Vector2(-71, 116)
 
-[node name="1983_ATaoYi" parent="YSortRoot" unique_id=1339565450 instance=ExtResource("8_base_npc") groups=["npc", "era_1983"]]
+[node name="1983_ATaoYi" parent="YSortRoot" unique_id=1339565450 groups=["era_1983", "npc"] instance=ExtResource("8_base_npc")]
 visible = false
 position = Vector2(51, 149)
 npc_config = ExtResource("18_npccfg_a_tao_yi")
 
-[node name="mod_LaoZhou" parent="YSortRoot" unique_id=307474150 instance=ExtResource("8_base_npc") groups=["npc", "era_modern"]]
+[node name="mod_LaoZhou" parent="YSortRoot" unique_id=307474150 groups=["era_modern", "npc"] instance=ExtResource("8_base_npc")]
 position = Vector2(-107, 129)
 npc_config = ExtResource("23_npccfg_lao_zhou")
 
-[node name="mod_pharmacy" parent="YSortRoot" unique_id=695023410 instance=ExtResource("5_wmj5h") groups=["prop", "era_modern"]]
+[node name="mod_pharmacy" parent="YSortRoot" unique_id=695023410 groups=["era_modern", "prop"] instance=ExtResource("5_wmj5h")]
 position = Vector2(-114, -2)
 
-[node name="mod_shophouse_minnan" parent="YSortRoot" unique_id=222813101 instance=ExtResource("13_sm02n") groups=["prop", "era_modern"]]
+[node name="mod_shophouse_minnan" parent="YSortRoot" unique_id=222813101 groups=["era_modern", "prop"] instance=ExtResource("13_sm02n")]
 position = Vector2(227, 41)
 
-[node name="mod_shophouse_concrete" parent="YSortRoot" unique_id=98979065 instance=ExtResource("10_mxx5g") groups=["prop", "era_modern"]]
+[node name="mod_shophouse_concrete" parent="YSortRoot" unique_id=98979065 groups=["era_modern", "prop"] instance=ExtResource("10_mxx5g")]
 position = Vector2(110, -26)
 
-[node name="mod_shophouse_concrete2" parent="YSortRoot" unique_id=1256514847 instance=ExtResource("10_mxx5g") groups=["prop", "era_modern"]]
+[node name="mod_shophouse_concrete2" parent="YSortRoot" unique_id=1256514847 groups=["era_modern", "prop"] instance=ExtResource("10_mxx5g")]
 position = Vector2(59, -1)
 
-[node name="mod_iron_gate" parent="YSortRoot" unique_id=244402020 instance=ExtResource("8_vipgw") groups=["prop", "era_modern"]]
+[node name="mod_iron_gate" parent="YSortRoot" unique_id=244402020 groups=["era_modern", "prop"] instance=ExtResource("8_vipgw")]
 position = Vector2(327, 190)
 
-[node name="mod_stool" parent="YSortRoot" unique_id=2137640707 instance=ExtResource("19_vipgw") groups=["prop", "era_modern"]]
+[node name="mod_stool" parent="YSortRoot" unique_id=2137640707 groups=["era_modern", "prop"] instance=ExtResource("19_vipgw")]
 position = Vector2(-164, 21)
 
-[node name="mod_stool2" parent="YSortRoot" unique_id=1556460639 instance=ExtResource("19_vipgw") groups=["prop", "era_modern"]]
+[node name="mod_stool2" parent="YSortRoot" unique_id=1556460639 groups=["era_modern", "prop"] instance=ExtResource("19_vipgw")]
 position = Vector2(-190, 21)
 
-[node name="1983_meat_hook" parent="YSortRoot" unique_id=786579303 instance=ExtResource("112_meat_hook_") groups=["prop", "era_1983"]]
+[node name="1983_meat_hook" parent="YSortRoot" unique_id=786579303 groups=["era_1983", "prop"] instance=ExtResource("112_meat_hook_")]
 visible = false
 position = Vector2(-216, -64)
 
-[node name="1983_fish_stall" parent="YSortRoot" unique_id=786579304 instance=ExtResource("109_fish_stall") groups=["prop", "era_1983"]]
+[node name="1983_fish_stall" parent="YSortRoot" unique_id=786579304 groups=["era_1983", "prop"] instance=ExtResource("109_fish_stall")]
 visible = false
 position = Vector2(-215, -185)
 
-[node name="1983_tofu_stall" parent="YSortRoot" unique_id=786579305 instance=ExtResource("126_tofu_stall") groups=["prop", "era_1983"]]
+[node name="1983_tofu_stall" parent="YSortRoot" unique_id=786579305 groups=["era_1983", "prop"] instance=ExtResource("126_tofu_stall")]
 visible = false
 position = Vector2(-162, -36)
 
-[node name="1983_scale" parent="YSortRoot" unique_id=786579306 instance=ExtResource("111_market_sca") groups=["prop", "era_1983"]]
+[node name="1983_scale" parent="YSortRoot" unique_id=786579306 groups=["era_1983", "prop"] instance=ExtResource("111_market_sca")]
 visible = false
 position = Vector2(-186, -98)
 
-[node name="1983_motorcycle" parent="YSortRoot" unique_id=786579307 instance=ExtResource("113_motorcycle") groups=["prop", "era_1983"]]
+[node name="1983_motorcycle" parent="YSortRoot" unique_id=786579307 groups=["era_1983", "prop"] instance=ExtResource("113_motorcycle")]
 visible = false
 position = Vector2(280, 201)
 
-[node name="1983_pole" parent="YSortRoot" unique_id=786579308 instance=ExtResource("118_power_pole") groups=["prop", "era_1983"]]
+[node name="1983_pole" parent="YSortRoot" unique_id=786579308 groups=["era_1983", "prop"] instance=ExtResource("118_power_pole")]
 visible = false
 position = Vector2(-258, 4)
 
-[node name="1983_pole2" parent="YSortRoot" unique_id=786579309 instance=ExtResource("118_power_pole") groups=["prop", "era_1983"]]
+[node name="1983_pole2" parent="YSortRoot" unique_id=786579309 groups=["era_1983", "prop"] instance=ExtResource("118_power_pole")]
 visible = false
 position = Vector2(368, 19)
 
-[node name="1983_banner" parent="YSortRoot" unique_id=786579310 instance=ExtResource("101_banner_clo") groups=["prop", "era_1983"]]
+[node name="1983_banner" parent="YSortRoot" unique_id=786579310 groups=["era_1983", "prop"] instance=ExtResource("101_banner_clo")]
 visible = false
 position = Vector2(-77, -135)
 
-[node name="1983_trash" parent="YSortRoot" unique_id=786579311 instance=ExtResource("127_trash_bin_") groups=["prop", "era_1983"]]
+[node name="1983_trash" parent="YSortRoot" unique_id=786579311 groups=["era_1983", "prop"] instance=ExtResource("127_trash_bin_")]
 visible = false
 position = Vector2(-222, 10)
 
-[node name="1983_faucet" parent="YSortRoot" unique_id=786579312 instance=ExtResource("129_water_fauc") groups=["prop", "era_1983"]]
+[node name="1983_faucet" parent="YSortRoot" unique_id=786579312 groups=["era_1983", "prop"] instance=ExtResource("129_water_fauc")]
 visible = false
 position = Vector2(-140, 126)
 
-[node name="1983_boxes" parent="YSortRoot" unique_id=786579313 instance=ExtResource("105_cardboard_") groups=["prop", "era_1983"]]
+[node name="1983_boxes" parent="YSortRoot" unique_id=786579313 groups=["era_1983", "prop"] instance=ExtResource("105_cardboard_")]
 visible = false
 position = Vector2(-284, 28)
 
-[node name="1983_bicycle" parent="YSortRoot" unique_id=786579314 instance=ExtResource("102_bicycle_pa") groups=["prop", "era_1983"]]
+[node name="1983_bicycle" parent="YSortRoot" unique_id=786579314 groups=["era_1983", "prop"] instance=ExtResource("102_bicycle_pa")]
 visible = false
 position = Vector2(256, 174)
 
-[node name="1983_newspaper" parent="YSortRoot" unique_id=786579315 instance=ExtResource("115_newspaper_") groups=["prop", "era_1983"]]
+[node name="1983_newspaper" parent="YSortRoot" unique_id=786579315 groups=["era_1983", "prop"] instance=ExtResource("115_newspaper_")]
 visible = false
 position = Vector2(-289, -26)
 
-[node name="1983_phone" parent="YSortRoot" unique_id=786579316 instance=ExtResource("117_phone_boot") groups=["prop", "era_1983"]]
+[node name="1983_phone" parent="YSortRoot" unique_id=786579316 groups=["era_1983", "prop"] instance=ExtResource("117_phone_boot")]
 visible = false
 position = Vector2(330, -1)
 
-[node name="1983_wonton" parent="YSortRoot" unique_id=786579317 instance=ExtResource("130_wonton_sou") groups=["prop", "era_1983"]]
+[node name="1983_wonton" parent="YSortRoot" unique_id=786579317 groups=["era_1983", "prop"] instance=ExtResource("130_wonton_sou")]
 visible = false
 position = Vector2(-188, -49)
 
-[node name="1983_tea_egg" parent="YSortRoot" unique_id=786579318 instance=ExtResource("125_tea_egg_po") groups=["prop", "era_1983"]]
+[node name="1983_tea_egg" parent="YSortRoot" unique_id=786579318 groups=["era_1983", "prop"] instance=ExtResource("125_tea_egg_po")]
 visible = false
 position = Vector2(-130, -41)
 
-[node name="1983_sugarcane" parent="YSortRoot" unique_id=786579319 instance=ExtResource("124_sugarcane_") groups=["prop", "era_1983"]]
+[node name="1983_sugarcane" parent="YSortRoot" unique_id=786579319 groups=["era_1983", "prop"] instance=ExtResource("124_sugarcane_")]
 visible = false
 position = Vector2(233, 210)
 
-[node name="1983_mailbox" parent="YSortRoot" unique_id=786579320 instance=ExtResource("110_mailbox_gr") groups=["prop", "era_1983"]]
+[node name="1983_mailbox" parent="YSortRoot" unique_id=786579320 groups=["era_1983", "prop"] instance=ExtResource("110_mailbox_gr")]
 visible = false
 position = Vector2(-199, 27)
 
-[node name="1983_cat" parent="YSortRoot" unique_id=786579321 instance=ExtResource("122_stray_cat_") groups=["prop", "era_1983"]]
+[node name="1983_cat" parent="YSortRoot" unique_id=786579321 groups=["era_1983", "prop"] instance=ExtResource("122_stray_cat_")]
 visible = false
 position = Vector2(-151, 96)
 
-[node name="1983_dog" parent="YSortRoot" unique_id=786579322 instance=ExtResource("123_stray_dog_") groups=["prop", "era_1983"]]
+[node name="1983_dog" parent="YSortRoot" unique_id=786579322 groups=["era_1983", "prop"] instance=ExtResource("123_stray_dog_")]
 visible = false
 position = Vector2(81, 114)
 
-[node name="1983_neon" parent="YSortRoot" unique_id=786579323 instance=ExtResource("114_neon_sign_") groups=["prop", "era_1983"]]
+[node name="1983_neon" parent="YSortRoot" unique_id=786579323 groups=["era_1983", "prop"] instance=ExtResource("114_neon_sign_")]
 visible = false
 position = Vector2(124, -154)
 
-[node name="1983_hydrant" parent="YSortRoot" unique_id=786579324 instance=ExtResource("108_fire_hydra") groups=["prop", "era_1983"]]
+[node name="1983_hydrant" parent="YSortRoot" unique_id=786579324 groups=["era_1983", "prop"] instance=ExtResource("108_fire_hydra")]
 visible = false
 position = Vector2(-245, 29)
 
-[node name="1983_birdcage" parent="YSortRoot" unique_id=786579325 instance=ExtResource("104_birdcage_b") groups=["prop", "era_1983"]]
+[node name="1983_birdcage" parent="YSortRoot" unique_id=786579325 groups=["era_1983", "prop"] instance=ExtResource("104_birdcage_b")]
 visible = false
 position = Vector2(14, -70)
 
-[node name="1983_steamer" parent="YSortRoot" unique_id=786579326 instance=ExtResource("100_bamboo_ste") groups=["prop", "era_1983"]]
+[node name="1983_steamer" parent="YSortRoot" unique_id=786579326 groups=["era_1983", "prop"] instance=ExtResource("100_bamboo_ste")]
 visible = false
 position = Vector2(-100, -108)
 
-[node name="mod_shutter" parent="YSortRoot" unique_id=786579327 instance=ExtResource("120_shutter_cl") groups=["prop", "era_modern"]]
+[node name="mod_shutter" parent="YSortRoot" unique_id=786579327 groups=["era_modern", "prop"] instance=ExtResource("120_shutter_cl")]
 position = Vector2(38, -88)
 
-[node name="mod_shutter2" parent="YSortRoot" unique_id=786579328 instance=ExtResource("120_shutter_cl") groups=["prop", "era_modern"]]
+[node name="mod_shutter2" parent="YSortRoot" unique_id=786579328 groups=["era_modern", "prop"] instance=ExtResource("120_shutter_cl")]
 position = Vector2(132, -117)
 
-[node name="mod_faded_sign" parent="YSortRoot" unique_id=786579329 instance=ExtResource("121_sign_faded") groups=["prop", "era_modern"]]
+[node name="mod_faded_sign" parent="YSortRoot" unique_id=786579329 groups=["era_modern", "prop"] instance=ExtResource("121_sign_faded")]
 position = Vector2(-80, -102)
 
-[node name="mod_torn_boxes" parent="YSortRoot" unique_id=786579330 instance=ExtResource("106_cardboard_") groups=["prop", "era_modern"]]
+[node name="mod_torn_boxes" parent="YSortRoot" unique_id=786579330 groups=["era_modern", "prop"] instance=ExtResource("106_cardboard_")]
 position = Vector2(-233, 29)
 
-[node name="mod_rusted_bike" parent="YSortRoot" unique_id=786579331 instance=ExtResource("103_bicycle_ru") groups=["prop", "era_modern"]]
+[node name="mod_rusted_bike" parent="YSortRoot" unique_id=786579331 groups=["era_modern", "prop"] instance=ExtResource("103_bicycle_ru")]
 position = Vector2(205, 108)
 
-[node name="mod_notice" parent="YSortRoot" unique_id=786579332 instance=ExtResource("116_notice_boa") groups=["prop", "era_modern"]]
+[node name="mod_notice" parent="YSortRoot" unique_id=786579332 groups=["era_modern", "prop"] instance=ExtResource("116_notice_boa")]
 position = Vector2(-273, 29)
 
-[node name="mod_scooter" parent="YSortRoot" unique_id=786579333 instance=ExtResource("119_scooter_mo") groups=["prop", "era_modern"]]
+[node name="mod_scooter" parent="YSortRoot" unique_id=786579333 groups=["era_modern", "prop"] instance=ExtResource("119_scooter_mo")]
 position = Vector2(150, 109)
 
-[node name="mod_vending" parent="YSortRoot" unique_id=786579334 instance=ExtResource("128_vending_ma") groups=["prop", "era_modern"]]
+[node name="mod_vending" parent="YSortRoot" unique_id=786579334 groups=["era_modern", "prop"] instance=ExtResource("128_vending_ma")]
 position = Vector2(143, 26)
 
-[node name="mod_cctv" parent="YSortRoot" unique_id=786579335 instance=ExtResource("107_cctv_camer") groups=["prop", "era_modern"]]
+[node name="mod_cctv" parent="YSortRoot" unique_id=786579335 groups=["era_modern", "prop"] instance=ExtResource("107_cctv_camer")]
 position = Vector2(234, -81)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=699273048]
@@ -470,23 +470,23 @@ tween_on_load = false
 
 [node name="Transitions" type="Node2D" parent="." unique_id=2041903877]
 
-[node name="ToPharmacy_1983" parent="Transitions" unique_id=2141758035 instance=ExtResource("9_zone_transition_area") groups=["transition", "era_1983"]]
+[node name="ToPharmacy_1983" parent="Transitions" unique_id=2141758035 groups=["era_1983", "transition"] instance=ExtResource("9_zone_transition_area")]
 visible = false
 position = Vector2(174, -192)
 target_zone = "zone_pharmacy"
 entry_point = "from_market"
 
-[node name="ToApartment_modern" parent="Transitions" unique_id=1347050136 instance=ExtResource("9_zone_transition_area") groups=["transition", "era_modern"]]
+[node name="ToApartment_modern" parent="Transitions" unique_id=1347050136 groups=["era_modern", "transition"] instance=ExtResource("9_zone_transition_area")]
 position = Vector2(251, 15)
 target_zone = "zone_apartment_muzha"
 entry_point = "from_market"
 
-[node name="ToPharmacy_modern" parent="Transitions" unique_id=79500643 instance=ExtResource("9_zone_transition_area") groups=["transition", "era_modern"]]
+[node name="ToPharmacy_modern" parent="Transitions" unique_id=79500643 groups=["era_modern", "transition"] instance=ExtResource("9_zone_transition_area")]
 position = Vector2(-82, -32)
 target_zone = "zone_pharmacy"
 entry_point = "from_market"
 
-[node name="ToLawOffice_modern" parent="Transitions" unique_id=1633439970 instance=ExtResource("9_zone_transition_area") groups=["transition", "era_modern"]]
+[node name="ToLawOffice_modern" parent="Transitions" unique_id=1633439970 groups=["era_modern", "transition"] instance=ExtResource("9_zone_transition_area")]
 position = Vector2(-394, 57)
 target_zone = "zone_law_office"
 entry_point = "from_market"

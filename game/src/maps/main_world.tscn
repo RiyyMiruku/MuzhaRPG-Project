@@ -1,44 +1,44 @@
-[gd_scene load_steps=10 format=3 uid="uid://muzha_main_world"]
+[gd_scene format=3 uid="uid://d0wm8hngsp2uh"]
 
-[ext_resource type="PackedScene" path="res://src/maps/zones/zone_apartment_muzha.tscn" id="1_starting_zone"]
+[ext_resource type="PackedScene" uid="uid://dxialefu7qudp" path="res://src/maps/zones/zone_apartment_muzha.tscn" id="1_starting_zone"]
 [ext_resource type="PackedScene" path="res://src/ui/dialogue/DialogueUI.tscn" id="2_dialogue_ui"]
-[ext_resource type="Script" path="res://src/core/classes/ZoneManager.gd" id="3_zone_manager"]
-[ext_resource type="Script" path="res://src/core/cutscene/CutsceneDirector.gd" id="11_cutscene"]
+[ext_resource type="Script" uid="uid://1mvnvep3run1" path="res://src/core/classes/ZoneManager.gd" id="3_zone_manager"]
 [ext_resource type="PackedScene" path="res://src/ui/ScreenTransition.tscn" id="4_screen_transition"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/PauseMenu.tscn" id="5_pause_menu"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/HUD.tscn" id="6_hud"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/MainMenu.tscn" id="7_main_menu"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/QuestJournal.tscn" id="9_quest_journal"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/KeybindSettings.tscn" id="10_keybind"]
+[ext_resource type="Script" uid="uid://bdclmpx5a28un" path="res://src/core/cutscene/CutsceneDirector.gd" id="11_cutscene"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/AudioSettingsPanel.tscn" id="12_audio_panel"]
 
-[node name="MainWorld" type="Node2D"]
+[node name="MainWorld" type="Node2D" unique_id=878483367]
 
-[node name="ZoneContainer" type="Node2D" parent="."]
+[node name="ZoneContainer" type="Node2D" parent="." unique_id=1314374314]
 
-[node name="ZoneApartmentMuzha" parent="ZoneContainer" instance=ExtResource("1_starting_zone")]
+[node name="ZoneApartmentMuzha" parent="ZoneContainer" unique_id=2070079471 instance=ExtResource("1_starting_zone")]
 
-[node name="ZoneManager" type="Node" parent="."]
+[node name="ZoneManager" type="Node" parent="." unique_id=1716411165]
 script = ExtResource("3_zone_manager")
 
-[node name="CutsceneDirector" type="Node" parent="."]
+[node name="CutsceneDirector" type="Node" parent="." unique_id=1302159907]
 script = ExtResource("11_cutscene")
 
-[node name="UILayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=56205384]
 layer = 20
 
-[node name="HUD" parent="UILayer" instance=ExtResource("6_hud")]
+[node name="HUD" parent="UILayer" unique_id=612417266 instance=ExtResource("6_hud")]
 
-[node name="DialogueUI" parent="UILayer" instance=ExtResource("2_dialogue_ui")]
+[node name="DialogueUI" parent="UILayer" unique_id=866830441 instance=ExtResource("2_dialogue_ui")]
 
-[node name="QuestJournal" parent="UILayer" instance=ExtResource("9_quest_journal")]
+[node name="QuestJournal" parent="UILayer" unique_id=464695461 instance=ExtResource("9_quest_journal")]
 
-[node name="PauseMenu" parent="UILayer" instance=ExtResource("5_pause_menu")]
+[node name="PauseMenu" parent="UILayer" unique_id=471413147 instance=ExtResource("5_pause_menu")]
 
-[node name="KeybindSettings" parent="UILayer" instance=ExtResource("10_keybind")]
+[node name="KeybindSettings" parent="UILayer" unique_id=1272604809 instance=ExtResource("10_keybind")]
 
-[node name="AudioSettingsPanel" parent="UILayer" instance=ExtResource("12_audio_panel")]
+[node name="AudioSettingsPanel" parent="UILayer" unique_id=1318830571 instance=ExtResource("12_audio_panel")]
 
-[node name="MainMenu" parent="UILayer" instance=ExtResource("7_main_menu")]
+[node name="MainMenu" parent="UILayer" unique_id=1214907102 instance=ExtResource("7_main_menu")]
 
-[node name="ScreenTransition" parent="." instance=ExtResource("4_screen_transition")]
+[node name="ScreenTransition" parent="." unique_id=1336899297 instance=ExtResource("4_screen_transition")]

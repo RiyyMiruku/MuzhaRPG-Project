@@ -1,7 +1,7 @@
 {
   "status": "base_ready",
   "created_at": "2026-05-12T16:56:40",
-  "updated_at": "2026-05-16T23:30:19",
+  "updated_at": "2026-05-23T01:43:29",
   "tags": [
     "category:shopkeeper",
     "chapter:1",
@@ -47,17 +47,25 @@
     },
     "animate_walk": {
       "status": "completed",
-      "queued_at": "2026-05-14T02:39:58",
-      "started_at": "2026-05-14T02:39:58",
-      "completed_at": "2026-05-14T02:53:32",
+      "queued_at": "2026-05-23T01:43:29",
+      "started_at": "2026-05-23T01:43:29",
+      "completed_at": "2026-05-23T01:43:29",
       "result": {
         "directions": [
-          "south",
           "east",
           "north",
+          "north-east",
+          "north-west",
+          "south",
+          "south-east",
+          "south-west",
           "west"
         ],
         "frames_per_direction": [
+          6,
+          6,
+          6,
+          6,
           6,
           6,
           6,
@@ -65,7 +73,7 @@
         ],
         "sheet_png": "art_source/characters/lin_rongchang/spritesheet/lin_rongchang.png",
         "sheet_json": "art_source/characters/lin_rongchang/spritesheet/lin_rongchang.json",
-        "partial": false
+        "source": "pixellab_sync"
       },
       "error": null
     },
@@ -82,19 +90,25 @@
     },
     "animate_idle": {
       "status": "completed",
-      "queued_at": "2026-05-16T23:05:37",
-      "started_at": "2026-05-16T23:05:37",
-      "completed_at": "2026-05-16T23:30:19",
+      "queued_at": "2026-05-23T01:43:29",
+      "started_at": "2026-05-23T01:43:29",
+      "completed_at": "2026-05-23T01:43:29",
       "result": {
         "directions": [
-          "south"
+          "east",
+          "north",
+          "south",
+          "west"
         ],
         "frames_per_direction": [
+          4,
+          4,
+          4,
           4
         ],
-        "sheet_png": "art_source\\characters\\lin_rongchang\\spritesheet\\lin_rongchang.png",
-        "sheet_json": "art_source\\characters\\lin_rongchang\\spritesheet\\lin_rongchang.json",
-        "partial": true
+        "sheet_png": "art_source/characters/lin_rongchang/spritesheet/lin_rongchang.png",
+        "sheet_json": "art_source/characters/lin_rongchang/spritesheet/lin_rongchang.json",
+        "source": "pixellab_sync"
       },
       "error": null
     }
