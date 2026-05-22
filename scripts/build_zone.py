@@ -286,6 +286,20 @@ def emit_tscn(layouts: list[dict[str, Any]], out_path: Path) -> None:
                 file=sys.stderr,
             )
 
+    # Audio config (optional). Forward-compatible block; today only carries
+    # `footstep_step_distance` (overrides FootstepPlayer.DEFAULT_STEP_DISTANCE
+    # for this zone). Read from primary; warn if other eras disagree.
+    audio_cfg: dict[str, Any] = primary.get("audio") or {}
+    step_dist = audio_cfg.get("footstep_step_distance")
+    for l in layouts[1:]:
+        l_step = (l.get("audio") or {}).get("footstep_step_distance")
+        if l_step is not None and l_step != step_dist:
+            print(
+                f"warning: era={l.get('era')!r} audio.footstep_step_distance "
+                f"mismatch ({l_step} vs {step_dist}). Using primary's value.",
+                file=sys.stderr,
+            )
+
     # Resolve every era's props/npcs/transitions
     all_props: list[dict[str, Any]] = []
     all_npcs: list[dict[str, Any]] = []
@@ -438,13 +452,16 @@ def emit_tscn(layouts: list[dict[str, Any]], out_path: Path) -> None:
 
     nodes: list[str] = []
     yaml_paths_literal = ", ".join(f'"{p}"' for p in primary.get("_yaml_paths", []))
-    nodes.append(
-        f'[node name="{_pascal(zone_name)}" type="Node2D"]\n'
-        f'script = ExtResource("{baker_id}")\n'
-        f"terrain_cells = Array[Vector2i]([{cells_literal}])\n"
-        f"terrain_id = {terrain_id}\n"
-        f"yaml_paths = Array[String]([{yaml_paths_literal}])"
-    )
+    root_lines: list[str] = [
+        f'[node name="{_pascal(zone_name)}" type="Node2D"]',
+        f'script = ExtResource("{baker_id}")',
+        f'terrain_cells = Array[Vector2i]([{cells_literal}])',
+        f'terrain_id = {terrain_id}',
+        f'yaml_paths = Array[String]([{yaml_paths_literal}])',
+    ]
+    if step_dist is not None:
+        root_lines.append(f'metadata/footstep_step_distance = {float(step_dist)}')
+    nodes.append("\n".join(root_lines))
     nodes.append('[node name="ZoneLabel" type="Label" parent="."]\n'
                  'modulate = Color(1, 1, 1, 0.5)\n'
                  'offset_left = -120.0\n'

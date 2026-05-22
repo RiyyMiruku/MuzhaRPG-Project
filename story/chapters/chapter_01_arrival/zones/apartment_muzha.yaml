@@ -8,6 +8,10 @@ tilemap:
   terrain: 1
   fill: rect
 
+audio:
+  # 公寓室內慢一點(走路節奏較沉)。預設是 40。
+  footstep_step_distance: 50
+
 props:
   # 父親遺物 — 翻找出來擺在地上 / 桌面示意
   - id: id_card_old
