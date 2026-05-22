@@ -1,4 +1,4 @@
-﻿[gd_scene format=4 uid="uid://di6oyaa20lu3e"]
+[gd_scene format=4 uid="uid://di6oyaa20lu3e"]
 
 [ext_resource type="Script" uid="uid://bn5kbb0wyxbmb" path="res://tools/zone_baker.gd" id="1_baker"]
 [ext_resource type="Script" uid="uid://d3hai2d47t4ra" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
