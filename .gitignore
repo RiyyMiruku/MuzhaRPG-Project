@@ -85,3 +85,8 @@ art_source/**/asset.json.tmp.*
 
 # Git worktrees (isolated dev workspaces)
 .worktrees/
+
+# Asset intake staging — drop new files here; do not commit raw imports.
+# The folder itself is tracked via .gitkeep so it always exists.
+temp_import/*
+!temp_import/.gitkeep
