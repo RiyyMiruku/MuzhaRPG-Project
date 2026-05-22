@@ -12,6 +12,8 @@ signal interaction_requested(interactable: Node)
 
 # ── State ────────────────────────────────────────────────────────────────────
 var _nearby_interactable: Node = null
+var _step_accum: float = 0.0
+var _last_pos: Vector2 = Vector2.ZERO
 
 const PLAYER_ID: String = "lin_siqian"
 
@@ -28,10 +30,40 @@ func _ready() -> void:
 	_interact_area.body_entered.connect(_on_body_entered)
 	_interact_area.body_exited.connect(_on_body_exited)
 	GameManager.game_state_changed.connect(_on_state_changed)
+	_last_pos = global_position
 
 func _physics_process(_delta: float) -> void:
 	var input_vec: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	move_with_input(input_vec)
+	_update_footsteps()
+
+func _update_footsteps() -> void:
+	var moved: float = global_position.distance_to(_last_pos)
+	_last_pos = global_position
+	if not is_moving or velocity.length() < 1.0:
+		return
+	_step_accum += moved
+	if _step_accum < FootstepPlayer.STEP_DISTANCE:
+		return
+	_step_accum = 0.0
+	var surface_id: String = _surface_under_player()
+	FootstepPlayer.play(surface_id)
+
+func _surface_under_player() -> String:
+	## 找站位下方最上層的 ground TileMapLayer，回它 TileSet 對應的 surface_id。
+	## Ground layer 須加進 "ground_layer" group，並用 z_index 表達疊放順序。
+	var best_layer: TileMapLayer = null
+	for node in get_tree().get_nodes_in_group("ground_layer"):
+		if node is TileMapLayer:
+			if best_layer == null or node.z_index > best_layer.z_index:
+				best_layer = node
+	if best_layer == null or best_layer.tile_set == null:
+		return ""
+	var ts_path: String = best_layer.tile_set.resource_path
+	if ts_path == "":
+		return ""
+	var tileset_name: String = ts_path.get_file().get_basename()
+	return SurfaceRegistry.surface_for_tileset(tileset_name)
 
 func _on_state_changed(new_state: GameManager.GameState) -> void:
 	var can_move: bool = new_state == GameManager.GameState.EXPLORING
