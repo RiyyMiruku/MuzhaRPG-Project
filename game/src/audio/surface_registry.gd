@@ -18,7 +18,6 @@ func _load() -> void:
 	var parsed: Variant = JSON.parse_string(text)
 	if parsed is Dictionary:
 		_tileset_to_surface = parsed
-		print("[SurfaceRegistry] loaded %d entries: %s" % [_tileset_to_surface.size(), _tileset_to_surface])
 	else:
 		push_warning("[SurfaceRegistry] %s is not a JSON object" % _MAP_PATH)
 

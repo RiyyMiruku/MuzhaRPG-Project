@@ -47,47 +47,31 @@ func _update_footsteps() -> void:
 	if _step_accum < FootstepPlayer.get_step_distance():
 		return
 	_step_accum = 0.0
-	var surface_id: String = _surface_under_player()
-	print("[Footstep] step → surface_id='%s'" % surface_id)
-	FootstepPlayer.play(surface_id)
+	FootstepPlayer.play(_surface_under_player())
 
 func _surface_under_player() -> String:
 	## 找站位下方最上層的 ground TileMapLayer，回它 TileSet 對應的 surface_id。
 	## Ground layer 須加進 "ground_layer" group，並用 z_index 表達疊放順序。
-	var nodes: Array = get_tree().get_nodes_in_group("ground_layer")
-	print("[Footstep]   ground_layer count=%d" % nodes.size())
+	## Tileset 名稱以 atlas source 的 texture PNG basename 為準(SubResource
+	## 的 resource_path 是 <scene>::<SubResId> 形式不可用)。
 	var best_layer: TileMapLayer = null
-	for node in nodes:
+	for node in get_tree().get_nodes_in_group("ground_layer"):
 		if node is TileMapLayer:
 			if best_layer == null or node.z_index > best_layer.z_index:
 				best_layer = node
-	if best_layer == null:
-		print("[Footstep]   no TileMapLayer node in group")
+	if best_layer == null or best_layer.tile_set == null:
 		return ""
-	print("[Footstep]   picked layer=%s z=%d tile_set=%s" % [best_layer.name, best_layer.z_index, best_layer.tile_set])
-	if best_layer.tile_set == null:
-		print("[Footstep]   layer.tile_set is null")
-		return ""
-	# Use the atlas source's texture PNG path — this is the canonical anchor
-	# for the tileset name (matches game/assets/textures/tilesets/<name>.png).
-	# tile_set.resource_path is unreliable: SubResource form gives
-	# "<scene>::<SubResId>", not the tileset name we want.
 	var ts: TileSet = best_layer.tile_set
-	var tex_path: String = ""
-	if ts.get_source_count() > 0:
-		var src: TileSetSource = ts.get_source(ts.get_source_id(0))
-		if src is TileSetAtlasSource:
-			var tex: Texture2D = (src as TileSetAtlasSource).texture
-			if tex != null:
-				tex_path = tex.resource_path
-	print("[Footstep]   texture path='%s'" % tex_path)
-	if tex_path == "":
+	if ts.get_source_count() == 0:
 		return ""
-	var tileset_name: String = tex_path.get_file().get_basename()
-	print("[Footstep]   tileset_name='%s'" % tileset_name)
-	var result: String = SurfaceRegistry.surface_for_tileset(tileset_name)
-	print("[Footstep]   registry → '%s'" % result)
-	return result
+	var src: TileSetSource = ts.get_source(ts.get_source_id(0))
+	if not (src is TileSetAtlasSource):
+		return ""
+	var tex: Texture2D = (src as TileSetAtlasSource).texture
+	if tex == null or tex.resource_path == "":
+		return ""
+	var tileset_name: String = tex.resource_path.get_file().get_basename()
+	return SurfaceRegistry.surface_for_tileset(tileset_name)
 
 func _on_state_changed(new_state: GameManager.GameState) -> void:
 	var can_move: bool = new_state == GameManager.GameState.EXPLORING
