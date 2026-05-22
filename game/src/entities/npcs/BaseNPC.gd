@@ -15,6 +15,18 @@ extends BaseCharacter
 var _dialogue_ui: DialogueUI = null
 var _conversation_active: bool = false
 
+# ── Wander state ─────────────────────────────────────────────────────────────
+## 設定請見 NPCConfig 的 wander_* 欄位。
+## radius=0 → 完全跳過 wander 邏輯，行為跟以前靜止 NPC 相同。
+enum _WanderState { DISABLED, IDLE, WALKING }
+const _ARRIVE_THRESHOLD: float = 4.0   # 距離 target 小於此就算到達
+const _DEFAULT_WANDER_SPEED: float = 40.0
+var _wander_state: int = _WanderState.DISABLED
+var _wander_origin: Vector2 = Vector2.ZERO  # spawn 位置 = wander 中心
+var _wander_target: Vector2 = Vector2.ZERO
+var _wander_pause_left: float = 0.0
+var _wander_paused_by_player: bool = false
+
 func _ready() -> void:
 	sprite = _sprite
 	move_speed = 0.0   # NPC 預設靜止
@@ -41,6 +53,55 @@ func _ready() -> void:
 
 	# 快取 DialogueUI 參照，避免每次互動都遍歷場景樹
 	_dialogue_ui = _find_dialogue_ui()
+
+	# 初始化 wander 行為（若 config 有設）
+	_init_wander()
+
+# ── Wander logic ─────────────────────────────────────────────────────────────
+func _init_wander() -> void:
+	if npc_config == null or npc_config.wander_radius <= 0.0:
+		return
+	_wander_state = _WanderState.IDLE
+	_wander_origin = global_position
+	_wander_pause_left = randf_range(
+		npc_config.wander_pause_min, npc_config.wander_pause_max
+	)
+	move_speed = npc_config.wander_speed if npc_config.wander_speed > 0.0 else _DEFAULT_WANDER_SPEED
+
+func _physics_process(delta: float) -> void:
+	if _wander_state == _WanderState.DISABLED:
+		return
+	if _wander_paused_by_player or _conversation_active:
+		move_with_input(Vector2.ZERO)
+		return
+	match _wander_state:
+		_WanderState.IDLE:
+			_wander_pause_left -= delta
+			if _wander_pause_left <= 0.0:
+				_pick_new_wander_target()
+				_wander_state = _WanderState.WALKING
+			else:
+				move_with_input(Vector2.ZERO)
+		_WanderState.WALKING:
+			var to_target: Vector2 = _wander_target - global_position
+			if to_target.length() < _ARRIVE_THRESHOLD:
+				_enter_idle()
+			else:
+				move_with_input(to_target.normalized())
+
+func _pick_new_wander_target() -> void:
+	# 在 origin 周圍半徑內隨機選一點
+	var r: float = npc_config.wander_radius
+	var angle: float = randf() * TAU
+	var dist: float = randf_range(r * 0.3, r)   # 偏外圈，避免老在原地踏
+	_wander_target = _wander_origin + Vector2(cos(angle), sin(angle)) * dist
+
+func _enter_idle() -> void:
+	_wander_state = _WanderState.IDLE
+	_wander_pause_left = randf_range(
+		npc_config.wander_pause_min, npc_config.wander_pause_max
+	)
+	move_with_input(Vector2.ZERO)
 
 ## 外部呼叫（通常由 Player 觸發）— 開啟對話
 func interact(_player: Node) -> void:
@@ -92,10 +153,12 @@ func _on_dialogue_closed() -> void:
 func _on_player_entered(body: Node) -> void:
 	if body is Player:
 		_prompt_label.show()
+		_wander_paused_by_player = true
 
 func _on_player_exited(body: Node) -> void:
 	if body is Player:
 		_prompt_label.hide()
+		_wander_paused_by_player = false
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 func _find_dialogue_ui() -> DialogueUI:

@@ -35,6 +35,16 @@ extends Resource
 ## 初始好感度（-100 到 100）。0 = 陌生人。
 @export_range(-100, 100, 5) var initial_relationship: int = 0
 
+# ── 走動行為（可選）────────────────────────────────────────────────────────
+## NPC 自動走動的半徑(像素)。0 = 完全靜止(預設,向下相容)。
+## NPC 會在以 spawn 位置為中心、半徑 wander_radius 的圓內隨機亂走。
+@export_range(0.0, 256.0, 8.0) var wander_radius: float = 0.0
+## 走動速度(像素/秒)。0 + radius>0 → fallback 40(慢晃)。
+@export_range(0.0, 80.0, 5.0) var wander_speed: float = 0.0
+## 兩段走動之間的停頓時間範圍(秒)。每次到點後隨機取 [min, max] 秒停下。
+@export var wander_pause_min: float = 1.5
+@export var wander_pause_max: float = 3.5
+
 
 # ── 自動推導路徑（不用手填）────────────────────────────────────────────────
 ## 載入對話立繪。檔案位於 res://assets/textures/portraits/<npc_id>.png
