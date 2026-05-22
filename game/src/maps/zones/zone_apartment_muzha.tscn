@@ -1,17 +1,17 @@
 [gd_scene format=4 uid="uid://dxialefu7qudp"]
 
-[ext_resource type="Script" uid="uid://bn5kbb0wyxbmb" path="res://tools/zone_baker.gd" id="1_baker"]
-[ext_resource type="Script" uid="uid://d3hai2d47t4ra" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
+[ext_resource type="Script" uid="uid://dmaeqfb1v35v0" path="res://tools/zone_baker.gd" id="1_baker"]
+[ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="3_ghost_mat"]
 [ext_resource type="PackedScene" path="res://src/entities/player/Player.tscn" id="4_player"]
-[ext_resource type="Script" uid="uid://cta2qegm3nku1" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
-[ext_resource type="Script" uid="uid://d3pa6x3pkf81c" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_pcam_host_script"]
-[ext_resource type="Texture2D" uid="uid://b2ccd6twaxt0" path="res://assets/textures/tilesets/market_tile_concrete.png" id="7_atlas_market_concret"]
-[ext_resource type="PackedScene" path="res://src/core/components/ZoneTransitionArea.tscn" id="8_zone_transition_area"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_pcam_host_script"]
+[ext_resource type="Texture2D" uid="uid://chiheg4h6wpxj" path="res://assets/textures/tilesets/market_tile_concrete.png" id="7_atlas_market_concret"]
+[ext_resource type="PackedScene" uid="uid://cu5f7uuu238si" path="res://src/core/components/ZoneTransitionArea.tscn" id="8_zone_transition_area"]
 [ext_resource type="PackedScene" uid="uid://p4mhgfjj60i4" path="res://src/maps/props/id_card_old.tscn" id="9_prop_id_card_old"]
 [ext_resource type="PackedScene" uid="uid://dianiw54rlpk8" path="res://src/maps/props/photograph_old.tscn" id="10_prop_photograph_old"]
 [ext_resource type="PackedScene" uid="uid://b3bjje8647nw3" path="res://src/maps/props/notebook_leather.tscn" id="11_prop_notebook_leathe"]
-[ext_resource type="Script" uid="uid://k3da00wfirxt" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="12_8mlw8"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="12_8mlw8"]
 [ext_resource type="PackedScene" uid="uid://ciibwp217agk7" path="res://src/maps/props/fountain_pen_old.tscn" id="12_prop_fountain_pen_ol"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8mlw8"]
@@ -173,15 +173,15 @@ y_sort_enabled = true
 [node name="Player" parent="YSortRoot" unique_id=792381551 instance=ExtResource("4_player")]
 position = Vector2(-96, 48)
 
-[node name="id_card_old" parent="YSortRoot" unique_id=1834990063 instance=ExtResource("9_prop_id_card_old")]
+[node name="id_card_old" parent="YSortRoot" unique_id=1834990063 instance=ExtResource("9_prop_id_card_old") groups=["prop"]]
 
-[node name="photograph_old" parent="YSortRoot" unique_id=324690568 instance=ExtResource("10_prop_photograph_old")]
+[node name="photograph_old" parent="YSortRoot" unique_id=324690568 instance=ExtResource("10_prop_photograph_old") groups=["prop"]]
 position = Vector2(16, 8)
 
-[node name="notebook_leather" parent="YSortRoot" unique_id=1011501703 instance=ExtResource("11_prop_notebook_leathe")]
+[node name="notebook_leather" parent="YSortRoot" unique_id=1011501703 instance=ExtResource("11_prop_notebook_leathe") groups=["prop"]]
 position = Vector2(-16, -8)
 
-[node name="fountain_pen_old" parent="YSortRoot" unique_id=515900245 instance=ExtResource("12_prop_fountain_pen_ol")]
+[node name="fountain_pen_old" parent="YSortRoot" unique_id=515900245 instance=ExtResource("12_prop_fountain_pen_ol") groups=["prop"]]
 position = Vector2(-16, 8)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=439103828]
@@ -207,7 +207,7 @@ tween_on_load = false
 
 [node name="Transitions" type="Node2D" parent="." unique_id=1145967704]
 
-[node name="ToMarket" parent="Transitions" unique_id=1467371586 instance=ExtResource("8_zone_transition_area")]
+[node name="ToMarket" parent="Transitions" unique_id=1467371586 instance=ExtResource("8_zone_transition_area") groups=["transition"]]
 position = Vector2(-128, 64)
 target_zone = "zone_market"
 entry_point = "from_apartment"

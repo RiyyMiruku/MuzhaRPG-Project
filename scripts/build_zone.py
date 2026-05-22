@@ -510,7 +510,7 @@ def emit_tscn(layouts: list[dict[str, Any]], out_path: Path) -> None:
 
     # Props
     for p in all_props:
-        groups_attr = _era_groups_attr(p["era"])
+        groups_attr = _node_groups_attr("prop", p["era"])
         visible_line = _initial_visible_line(p["era"], is_hybrid)
         nodes.append(
             f'[node name="{p["node_name"]}" parent="YSortRoot" '
@@ -523,7 +523,7 @@ def emit_tscn(layouts: list[dict[str, Any]], out_path: Path) -> None:
     if all_transitions:
         nodes.append('[node name="Transitions" type="Node2D" parent="."]')
         for t in all_transitions:
-            groups_attr = _era_groups_attr(t["era"])
+            groups_attr = _node_groups_attr("transition", t["era"])
             visible_line = _initial_visible_line(t["era"], is_hybrid)
             label_lines = ""
             if t["label"]:
@@ -540,7 +540,7 @@ def emit_tscn(layouts: list[dict[str, Any]], out_path: Path) -> None:
 
     # NPCs
     for n in all_npcs:
-        groups_attr = _era_groups_attr(n["era"])
+        groups_attr = _node_groups_attr("npc", n["era"])
         visible_line = _initial_visible_line(n["era"], is_hybrid)
         if n["kind"] == "npc_config":
             nodes.append(
@@ -572,9 +572,25 @@ def emit_tscn(layouts: list[dict[str, Any]], out_path: Path) -> None:
 
 
 def _era_groups_attr(era: str | None) -> str:
-    if era is None:
+    """[Deprecated alias — kept for safety; use _node_groups_attr instead.]"""
+    return _node_groups_attr(None, era)
+
+
+def _node_groups_attr(role: str | None, era: str | None) -> str:
+    """Compose `groups=[...]` attr from role + era. Returns '' if both empty.
+
+    role is one of 'prop' | 'npc' | 'transition' | None (no role tag).
+    era is the era slug (e.g. '1983', 'modern') or None.
+    """
+    groups: list[str] = []
+    if role is not None:
+        groups.append(role)
+    if era is not None:
+        groups.append(f"era_{era}")
+    if not groups:
         return ""
-    return f' groups=["era_{era}"]'
+    quoted = ", ".join(f'"{g}"' for g in groups)
+    return f" groups=[{quoted}]"
 
 
 def _initial_visible_line(era: str | None, is_hybrid: bool) -> str:

@@ -174,15 +174,15 @@ y_sort_enabled = true
 [node name="Player" parent="YSortRoot" unique_id=599072748 instance=ExtResource("4_player")]
 position = Vector2(-96, 48)
 
-[node name="law_office_muzha" parent="YSortRoot" unique_id=225183697 instance=ExtResource("10_prop_law_office_muzh")]
+[node name="law_office_muzha" parent="YSortRoot" unique_id=225183697 instance=ExtResource("10_prop_law_office_muzh") groups=["prop"]]
 position = Vector2(96, -48)
 
-[node name="shop_counter_wood" parent="YSortRoot" unique_id=114281984 instance=ExtResource("11_prop_shop_counter_wo")]
+[node name="shop_counter_wood" parent="YSortRoot" unique_id=114281984 instance=ExtResource("11_prop_shop_counter_wo") groups=["prop"]]
 
-[node name="notebook_leather" parent="YSortRoot" unique_id=545646217 instance=ExtResource("12_prop_notebook_leathe")]
+[node name="notebook_leather" parent="YSortRoot" unique_id=545646217 instance=ExtResource("12_prop_notebook_leathe") groups=["prop"]]
 position = Vector2(16, -8)
 
-[node name="LawyerMuzha" parent="YSortRoot" unique_id=1374193425 instance=ExtResource("8_base_npc")]
+[node name="LawyerMuzha" parent="YSortRoot" unique_id=1374193425 instance=ExtResource("8_base_npc") groups=["npc"]]
 position = Vector2(32, -16)
 npc_config = ExtResource("13_npccfg_lawyer_muzha")
 
@@ -209,7 +209,7 @@ tween_on_load = false
 
 [node name="Transitions" type="Node2D" parent="." unique_id=364630184]
 
-[node name="ToMarket" parent="Transitions" unique_id=547090674 instance=ExtResource("9_zone_transition_area")]
+[node name="ToMarket" parent="Transitions" unique_id=547090674 instance=ExtResource("9_zone_transition_area") groups=["transition"]]
 position = Vector2(-128, 64)
 target_zone = "zone_market"
 entry_point = "from_law_office"
