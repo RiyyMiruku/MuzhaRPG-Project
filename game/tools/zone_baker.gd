@@ -10,6 +10,10 @@ extends Node2D
 ## Hybrid zone 會有多個(e.g. pharmacy/1983.yaml + pharmacy/modern.yaml)。
 @export var yaml_paths: Array[String] = []
 
+## 腳步聲節奏(像素為單位,每走 N px 觸發一聲)。0 = 用全域預設(40)。
+## 在 Inspector 改完存場景,runtime 自動套用,不需要 rebuild。
+@export var footstep_step_distance: float = 0.0
+
 @export_tool_button("Bake terrain") var _bake_action: Callable = _bake_terrain
 @export_tool_button("Clear terrain") var _clear_action: Callable = _clear_terrain
 @export_tool_button("Lock YAML (frozen: true)") var _lock_action: Callable = _lock_yaml
