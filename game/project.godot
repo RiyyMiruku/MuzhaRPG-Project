@@ -28,6 +28,7 @@ UIManager="*res://src/autoload/UIManager.gd"
 ChapterManager="*res://src/autoload/ChapterManager.gd"
 EraManager="*res://src/autoload/EraManager.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+SurfaceRegistry="*res://src/audio/surface_registry.gd"
 
 [debug]
 
