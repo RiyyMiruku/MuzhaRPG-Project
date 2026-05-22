@@ -90,6 +90,8 @@ func _swap_visibility(target_era: String) -> void:
 				(n as CanvasItem).visible = active
 			# 停用/啟用碰撞體，避免隱藏物件擋路
 			_set_physics_enabled(n, active)
+			# 停用 _process / _physics_process，避免隱藏 NPC 仍跑 AI 浪費 CPU
+			n.process_mode = Node.PROCESS_MODE_INHERIT if active else Node.PROCESS_MODE_DISABLED
 
 
 func _set_physics_enabled(node: Node, enabled: bool) -> void:
