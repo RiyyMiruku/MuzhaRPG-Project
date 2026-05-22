@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T23:01:46",
+  "updated_at": "2026-05-21T23:04:42",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "97164811-1bdf-4f1d-956f-e78f3b50bfff",
+  "kind": "iso_prop",
+  "description": "small glass fish tank with goldfish, shop counter decoration",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T23:04:42",
+      "paths": [
+        "art_source\\objects\\fish_tank_small\\fish_tank_small.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T23:04:42",
+      "paths": [
+        "art_source\\objects\\fish_tank_small\\fish_tank_small.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T23:04:42",
+      "paths": [
+        "game\\assets\\textures\\props\\fish_tank_small.png",
+        "game\\src\\maps\\props\\fish_tank_small.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\fish_tank_small\\fish_tank_small.png",
+  "imported_at": "2026-05-21T23:04:42",
+  "game_png_path": "game\\assets\\textures\\props\\fish_tank_small.png",
+  "game_tscn_path": "game\\src\\maps\\props\\fish_tank_small.tscn",
+  "collision": "none"
+}

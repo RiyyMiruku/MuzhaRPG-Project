@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:44:44",
+  "updated_at": "2026-05-21T22:02:47",
+  "tags": [
+    "zone:zone_apartment_muzha",
+    "zone:zone_law_office",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "699bdfbf-58e6-4805-a6dd-b08330d537e4",
+  "kind": "iso_prop",
+  "description": "white coffee mug with steam, on desk",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:45:15",
+      "paths": [
+        "art_source\\objects\\coffee_mug\\coffee_mug.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:45:15",
+      "paths": [
+        "art_source\\objects\\coffee_mug\\coffee_mug.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:45:15",
+      "paths": [
+        "game\\assets\\textures\\props\\coffee_mug.png",
+        "game\\src\\maps\\props\\coffee_mug.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\coffee_mug\\coffee_mug.png",
+  "imported_at": "2026-05-21T21:45:15",
+  "game_png_path": "game\\assets\\textures\\props\\coffee_mug.png",
+  "game_tscn_path": "game\\src\\maps\\props\\coffee_mug.tscn",
+  "collision": "bottom_16x16"
+}

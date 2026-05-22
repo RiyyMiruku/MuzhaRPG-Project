@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:13:29",
+  "updated_at": "2026-05-21T22:14:13",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "9b5e6247-7d10-48dc-9734-9fa38fb37d35",
+  "kind": "iso_prop",
+  "description": "bunch of red-white striped plastic bags hanging on hook, market essential",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:14:13",
+      "paths": [
+        "art_source\\objects\\plastic_bag_hanging\\plastic_bag_hanging.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:14:13",
+      "paths": [
+        "art_source\\objects\\plastic_bag_hanging\\plastic_bag_hanging.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:14:13",
+      "paths": [
+        "game\\assets\\textures\\props\\plastic_bag_hanging.png",
+        "game\\src\\maps\\props\\plastic_bag_hanging.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\plastic_bag_hanging\\plastic_bag_hanging.png",
+  "imported_at": "2026-05-21T22:14:13",
+  "game_png_path": "game\\assets\\textures\\props\\plastic_bag_hanging.png",
+  "game_tscn_path": "game\\src\\maps\\props\\plastic_bag_hanging.tscn",
+  "collision": "bottom_16x16"
+}

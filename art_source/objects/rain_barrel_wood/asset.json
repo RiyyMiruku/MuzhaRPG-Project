@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:05:07",
+  "updated_at": "2026-05-21T22:06:10",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "8ed50ba1-ede9-4498-9a83-30359f7aad9d",
+  "kind": "iso_prop",
+  "description": "wooden rain barrel for collecting rainwater, backyard utility",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:06:10",
+      "paths": [
+        "art_source\\objects\\rain_barrel_wood\\rain_barrel_wood.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:06:10",
+      "paths": [
+        "art_source\\objects\\rain_barrel_wood\\rain_barrel_wood.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:06:10",
+      "paths": [
+        "game\\assets\\textures\\props\\rain_barrel_wood.png",
+        "game\\src\\maps\\props\\rain_barrel_wood.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\rain_barrel_wood\\rain_barrel_wood.png",
+  "imported_at": "2026-05-21T22:06:10",
+  "game_png_path": "game\\assets\\textures\\props\\rain_barrel_wood.png",
+  "game_tscn_path": "game\\src\\maps\\props\\rain_barrel_wood.tscn",
+  "collision": "bottom_16x16"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:45:16",
+  "updated_at": "2026-05-21T22:02:47",
+  "tags": [
+    "zone:zone_apartment_muzha",
+    "zone:zone_law_office",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "fa39f94a-56c0-41e5-aec4-85afb4f8c6c4",
+  "kind": "iso_prop",
+  "description": "sealed cardboard moving box with packing tape, freshly moved",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:45:47",
+      "paths": [
+        "art_source\\objects\\moving_box_taped\\moving_box_taped.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:45:47",
+      "paths": [
+        "art_source\\objects\\moving_box_taped\\moving_box_taped.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:45:47",
+      "paths": [
+        "game\\assets\\textures\\props\\moving_box_taped.png",
+        "game\\src\\maps\\props\\moving_box_taped.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\moving_box_taped\\moving_box_taped.png",
+  "imported_at": "2026-05-21T21:45:47",
+  "game_png_path": "game\\assets\\textures\\props\\moving_box_taped.png",
+  "game_tscn_path": "game\\src\\maps\\props\\moving_box_taped.tscn",
+  "collision": "bottom_16x16"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:04:17",
+  "updated_at": "2026-05-21T22:05:07",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "d363f919-4059-4ee4-929e-84b226ec2f00",
+  "kind": "iso_prop",
+  "description": "small wooden chicken coop with wire mesh and a few chickens, backyard",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:05:07",
+      "paths": [
+        "art_source\\objects\\chicken_coop_small\\chicken_coop_small.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:05:07",
+      "paths": [
+        "art_source\\objects\\chicken_coop_small\\chicken_coop_small.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:05:07",
+      "paths": [
+        "game\\assets\\textures\\props\\chicken_coop_small.png",
+        "game\\src\\maps\\props\\chicken_coop_small.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\chicken_coop_small\\chicken_coop_small.png",
+  "imported_at": "2026-05-21T22:05:07",
+  "game_png_path": "game\\assets\\textures\\props\\chicken_coop_small.png",
+  "game_tscn_path": "game\\src\\maps\\props\\chicken_coop_small.tscn",
+  "collision": "bottom_16x16"
+}

@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T23:05:13",
+  "updated_at": "2026-05-21T23:07:55",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "f17c7e96-47a6-4d46-9c60-7f9939fa411a",
+  "kind": "iso_prop",
+  "description": "small wooden shoe rack with various shoes and slippers, entrance",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T23:07:55",
+      "paths": [
+        "art_source\\objects\\shoe_rack_wood\\shoe_rack_wood.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T23:07:55",
+      "paths": [
+        "art_source\\objects\\shoe_rack_wood\\shoe_rack_wood.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T23:07:55",
+      "paths": [
+        "game\\assets\\textures\\props\\shoe_rack_wood.png",
+        "game\\src\\maps\\props\\shoe_rack_wood.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\shoe_rack_wood\\shoe_rack_wood.png",
+  "imported_at": "2026-05-21T23:07:55",
+  "game_png_path": "game\\assets\\textures\\props\\shoe_rack_wood.png",
+  "game_tscn_path": "game\\src\\maps\\props\\shoe_rack_wood.tscn",
+  "collision": "none"
+}

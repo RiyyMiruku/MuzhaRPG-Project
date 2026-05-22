@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T23:13:14",
+  "updated_at": "2026-05-21T23:14:53",
+  "tags": [
+    "zone:zone_law_office",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "27e868b4-a76d-4a12-b06a-312619e2c063",
+  "kind": "iso_prop",
+  "description": "stacked paper filing trays, in/out office desk organizer",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T23:14:53",
+      "paths": [
+        "art_source\\objects\\filing_tray_stack\\filing_tray_stack.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T23:14:53",
+      "paths": [
+        "art_source\\objects\\filing_tray_stack\\filing_tray_stack.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T23:14:53",
+      "paths": [
+        "game\\assets\\textures\\props\\filing_tray_stack.png",
+        "game\\src\\maps\\props\\filing_tray_stack.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\filing_tray_stack\\filing_tray_stack.png",
+  "imported_at": "2026-05-21T23:14:53",
+  "game_png_path": "game\\assets\\textures\\props\\filing_tray_stack.png",
+  "game_tscn_path": "game\\src\\maps\\props\\filing_tray_stack.tscn",
+  "collision": "bottom_16x16"
+}

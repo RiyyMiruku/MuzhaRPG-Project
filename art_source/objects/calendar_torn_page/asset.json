@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:13:12",
+  "updated_at": "2026-05-21T22:14:14",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "7bc32fd4-84fb-440c-8eca-8bee7497d13d",
+  "kind": "iso_prop",
+  "description": "wall calendar with some pages torn off, stopped on a specific date",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:14:14",
+      "paths": [
+        "art_source\\objects\\calendar_torn_page\\calendar_torn_page.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:14:14",
+      "paths": [
+        "art_source\\objects\\calendar_torn_page\\calendar_torn_page.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:14:14",
+      "paths": [
+        "game\\assets\\textures\\props\\calendar_torn_page.png",
+        "game\\src\\maps\\props\\calendar_torn_page.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\calendar_torn_page\\calendar_torn_page.png",
+  "imported_at": "2026-05-21T22:14:14",
+  "game_png_path": "game\\assets\\textures\\props\\calendar_torn_page.png",
+  "game_tscn_path": "game\\src\\maps\\props\\calendar_torn_page.tscn",
+  "collision": "none"
+}

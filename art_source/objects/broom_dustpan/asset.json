@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:45:13",
+  "updated_at": "2026-05-21T22:02:47",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "85298fe4-4ec6-4884-b229-dd8e591bd7bb",
+  "kind": "iso_prop",
+  "description": "bamboo broom and metal dustpan leaning against wall",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:45:39",
+      "paths": [
+        "art_source\\objects\\broom_dustpan\\broom_dustpan.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:45:39",
+      "paths": [
+        "art_source\\objects\\broom_dustpan\\broom_dustpan.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:45:39",
+      "paths": [
+        "game\\assets\\textures\\props\\broom_dustpan.png",
+        "game\\src\\maps\\props\\broom_dustpan.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\broom_dustpan\\broom_dustpan.png",
+  "imported_at": "2026-05-21T21:45:39",
+  "game_png_path": "game\\assets\\textures\\props\\broom_dustpan.png",
+  "game_tscn_path": "game\\src\\maps\\props\\broom_dustpan.tscn",
+  "collision": "bottom_16x16"
+}

@@ -900,6 +900,9 @@ def submit_map_object(
     Pixellab v2 端點 async:POST 回 202 + background_job_id + object_id。
     本函式 poll + decode 完一次回傳。
     """
+    # 統一光源方向：右上往左下射
+    if "light" not in description.lower():
+        description += ", lit from upper right with shadow casting to lower left"
     payload: dict[str, Any] = {
         "description": description,
         "image_size": {"width": width, "height": height},
@@ -965,6 +968,9 @@ def submit_iso_tile(
     Pixellab v2 端點是 async:POST 回 202 + background_job_id + tile_id。
     本函式內部完成 poll_background_job + image decode,caller 拿到已 decode 的圖。
     """
+    # 統一光源方向：右上往左下射
+    if "light" not in description.lower():
+        description += ", lit from upper right with shadow casting to lower left"
     payload: dict[str, Any] = {
         "description": description,
         "image_size": {"width": size, "height": size},

@@ -17,6 +17,17 @@
 [ext_resource type="PackedScene" uid="uid://dianiw54rlpk8" path="res://src/maps/props/photograph_old.tscn" id="15_prop_photograph_old"]
 [ext_resource type="Script" uid="uid://k3da00wfirxt" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="16_c6hsq"]
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/lin_ama.tres" id="16_npccfg_lin_ama"]
+[ext_resource type="PackedScene" path="res://src/maps/props/bed_single_old.tscn" id="100_bed_single"]
+[ext_resource type="PackedScene" path="res://src/maps/props/broom_dustpan.tscn" id="101_broom_dust"]
+[ext_resource type="PackedScene" path="res://src/maps/props/clothesline_bamboo.tscn" id="102_clotheslin"]
+[ext_resource type="PackedScene" path="res://src/maps/props/desk_wooden_old.tscn" id="103_desk_woode"]
+[ext_resource type="PackedScene" path="res://src/maps/props/door_wooden_locked.tscn" id="104_door_woode"]
+[ext_resource type="PackedScene" path="res://src/maps/props/herb_garden_patch.tscn" id="105_herb_garde"]
+[ext_resource type="PackedScene" path="res://src/maps/props/newspaper_clipping_wall.tscn" id="106_newspaper_"]
+[ext_resource type="PackedScene" path="res://src/maps/props/potted_plant_clay.tscn" id="107_potted_pla"]
+[ext_resource type="PackedScene" path="res://src/maps/props/stone_bench_garden.tscn" id="108_stone_benc"]
+[ext_resource type="PackedScene" path="res://src/maps/props/washing_board_wood.tscn" id="109_washing_bo"]
+[ext_resource type="PackedScene" path="res://src/maps/props/well_stone_old.tscn" id="110_well_stone"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_courtyard_grass_dirt"]
 texture = ExtResource("7_atlas_courtyard_dirt")
@@ -175,32 +186,88 @@ godot_4_3_compatibility = false
 y_sort_enabled = true
 
 [node name="Player" parent="YSortRoot" unique_id=1009445678 instance=ExtResource("4_player")]
-position = Vector2(-160, -80)
+position = Vector2(0, 0)
 
-[node name="incense_burner_brass" parent="YSortRoot" unique_id=1133691475 instance=ExtResource("10_prop_incense_burner_") groups=["prop", "era_1983"]]
+[node name="incense_burner_brass" parent="YSortRoot" unique_id=1133691475 instance=ExtResource("10_prop_incense_burner_") groups=["prop", "prop", "era_1983"]]
 position = Vector2(-48, -24)
 
-[node name="lantern_paper_red" parent="YSortRoot" unique_id=1473569705 instance=ExtResource("11_prop_lantern_paper_r") groups=["prop", "era_1983"]]
+[node name="lantern_paper_red" parent="YSortRoot" unique_id=1473569705 instance=ExtResource("11_prop_lantern_paper_r") groups=["prop", "prop", "era_1983"]]
 position = Vector2(32, -96)
 
-[node name="lantern_paper_red_2" parent="YSortRoot" unique_id=663992841 instance=ExtResource("11_prop_lantern_paper_r") groups=["prop", "era_1983"]]
+[node name="lantern_paper_red_2" parent="YSortRoot" unique_id=663992841 instance=ExtResource("11_prop_lantern_paper_r") groups=["prop", "prop", "era_1983"]]
 position = Vector2(192, -16)
 
-[node name="iron_gate_rusted" parent="YSortRoot" unique_id=2057549111 instance=ExtResource("12_prop_iron_gate_ruste") groups=["prop", "era_1983"]]
+[node name="iron_gate_rusted" parent="YSortRoot" unique_id=2057549111 instance=ExtResource("12_prop_iron_gate_ruste") groups=["prop", "prop", "era_1983"]]
 position = Vector2(128, 64)
 
-[node name="notebook_leather" parent="YSortRoot" unique_id=1219695962 instance=ExtResource("13_prop_notebook_leathe") groups=["prop", "era_1983"]]
+[node name="notebook_leather" parent="YSortRoot" unique_id=1219695962 instance=ExtResource("13_prop_notebook_leathe") groups=["prop", "prop", "era_1983"]]
 position = Vector2(160, 64)
 
-[node name="fountain_pen_old" parent="YSortRoot" unique_id=909829730 instance=ExtResource("14_prop_fountain_pen_ol") groups=["prop", "era_1983"]]
+[node name="fountain_pen_old" parent="YSortRoot" unique_id=909829730 instance=ExtResource("14_prop_fountain_pen_ol") groups=["prop", "prop", "era_1983"]]
 position = Vector2(144, 72)
 
-[node name="photograph_old" parent="YSortRoot" unique_id=1276937087 instance=ExtResource("15_prop_photograph_old") groups=["prop", "era_1983"]]
+[node name="photograph_old" parent="YSortRoot" unique_id=1276937087 instance=ExtResource("15_prop_photograph_old") groups=["prop", "prop", "era_1983"]]
 position = Vector2(128, 80)
 
-[node name="LinAma" parent="YSortRoot" unique_id=348446973 instance=ExtResource("8_base_npc") groups=["npc", "era_1983"]]
+[node name="LinAma" parent="YSortRoot" unique_id=348446973 instance=ExtResource("8_base_npc") groups=["npc", "npc", "era_1983"]]
 position = Vector2(-64, -32)
 npc_config = ExtResource("16_npccfg_lin_ama")
+
+[node name="1983_well" parent="YSortRoot" unique_id=248532577 instance=ExtResource("110_well_stone") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(76, -5)
+
+[node name="1983_clothesline" parent="YSortRoot" unique_id=248532578 instance=ExtResource("102_clotheslin") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(-75, -39)
+
+[node name="1983_plant" parent="YSortRoot" unique_id=248532579 instance=ExtResource("107_potted_pla") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(-27, 14)
+
+[node name="1983_plant2" parent="YSortRoot" unique_id=248532580 instance=ExtResource("107_potted_pla") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(40, -5)
+
+[node name="1983_plant3" parent="YSortRoot" unique_id=248532581 instance=ExtResource("107_potted_pla") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(3, -11)
+
+[node name="1983_broom" parent="YSortRoot" unique_id=248532582 instance=ExtResource("101_broom_dust") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(42, 32)
+
+[node name="1983_door" parent="YSortRoot" unique_id=248532583 instance=ExtResource("104_door_woode") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(92, 9)
+
+[node name="1983_desk" parent="YSortRoot" unique_id=248532584 instance=ExtResource("103_desk_woode") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(114, -4)
+
+[node name="1983_bed" parent="YSortRoot" unique_id=248532585 instance=ExtResource("100_bed_single") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(118, 27)
+
+[node name="1983_clipping" parent="YSortRoot" unique_id=248532586 instance=ExtResource("106_newspaper_") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(90, -20)
+
+[node name="1983_clipping2" parent="YSortRoot" unique_id=248532587 instance=ExtResource("106_newspaper_") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(96, -15)
+
+[node name="1983_bench" parent="YSortRoot" unique_id=248532588 instance=ExtResource("108_stone_benc") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(-33, 8)
+
+[node name="1983_herb_garden" parent="YSortRoot" unique_id=248532589 instance=ExtResource("105_herb_garde") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(1, 23)
+
+[node name="1983_washing" parent="YSortRoot" unique_id=248532590 instance=ExtResource("109_washing_bo") groups=["prop", "era_1983"]]
+visible = false
+position = Vector2(-51, 33)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=71721811]
 physics_interpolation_mode = 1
@@ -225,7 +292,7 @@ tween_on_load = false
 
 [node name="Transitions" type="Node2D" parent="." unique_id=1273246661]
 
-[node name="ToPharmacy" parent="Transitions" unique_id=1084779134 instance=ExtResource("9_zone_transition_area") groups=["transition"]]
+[node name="ToPharmacy" parent="Transitions" unique_id=1084779134 instance=ExtResource("9_zone_transition_area") groups=["transition", "transition"]]
 position = Vector2(-176, -88)
 target_zone = "zone_pharmacy"
 entry_point = "from_backyard"

@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:51:39",
+  "updated_at": "2026-05-21T22:55:22",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "696f63e2-7a00-405d-9c94-e624965f9ce1",
+  "kind": "iso_prop",
+  "description": "faded graffiti on concrete wall, modern urban decay",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:55:22",
+      "paths": [
+        "art_source\\objects\\graffiti_wall\\graffiti_wall.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:55:22",
+      "paths": [
+        "art_source\\objects\\graffiti_wall\\graffiti_wall.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:55:22",
+      "paths": [
+        "game\\assets\\textures\\props\\graffiti_wall.png",
+        "game\\src\\maps\\props\\graffiti_wall.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\graffiti_wall\\graffiti_wall.png",
+  "imported_at": "2026-05-21T22:55:22",
+  "game_png_path": "game\\assets\\textures\\props\\graffiti_wall.png",
+  "game_tscn_path": "game\\src\\maps\\props\\graffiti_wall.tscn",
+  "collision": "bottom_16x16"
+}

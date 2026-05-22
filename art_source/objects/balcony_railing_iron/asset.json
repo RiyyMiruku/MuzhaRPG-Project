@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:47:18",
+  "updated_at": "2026-05-21T22:51:04",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "b1ff6495-c122-443e-b707-4888260721a3",
+  "kind": "iso_prop",
+  "description": "iron balcony railing with laundry hanging, apartment building detail",
+  "size": {
+    "width": 48,
+    "height": 48
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:51:04",
+      "paths": [
+        "art_source\\objects\\balcony_railing_iron\\balcony_railing_iron.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:51:04",
+      "paths": [
+        "art_source\\objects\\balcony_railing_iron\\balcony_railing_iron.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:51:04",
+      "paths": [
+        "game\\assets\\textures\\props\\balcony_railing_iron.png",
+        "game\\src\\maps\\props\\balcony_railing_iron.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\balcony_railing_iron\\balcony_railing_iron.png",
+  "imported_at": "2026-05-21T22:51:04",
+  "game_png_path": "game\\assets\\textures\\props\\balcony_railing_iron.png",
+  "game_tscn_path": "game\\src\\maps\\props\\balcony_railing_iron.tscn",
+  "collision": "bottom_16x16"
+}

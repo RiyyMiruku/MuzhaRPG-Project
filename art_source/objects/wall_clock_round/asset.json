@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:39:17",
+  "updated_at": "2026-05-21T22:02:47",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "1c55c1a0-6403-4ef7-a4b6-fedc0958f238",
+  "kind": "iso_prop",
+  "description": "round wall clock with white face and black numbers",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:39:55",
+      "paths": [
+        "art_source\\objects\\wall_clock_round\\wall_clock_round.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:39:55",
+      "paths": [
+        "art_source\\objects\\wall_clock_round\\wall_clock_round.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:39:55",
+      "paths": [
+        "game\\assets\\textures\\props\\wall_clock_round.png",
+        "game\\src\\maps\\props\\wall_clock_round.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\wall_clock_round\\wall_clock_round.png",
+  "imported_at": "2026-05-21T21:39:55",
+  "game_png_path": "game\\assets\\textures\\props\\wall_clock_round.png",
+  "game_tscn_path": "game\\src\\maps\\props\\wall_clock_round.tscn",
+  "collision": "none"
+}

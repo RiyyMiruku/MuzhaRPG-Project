@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:47:22",
+  "updated_at": "2026-05-21T22:02:48",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "9a960cc7-e6e8-40c9-bed4-fb9b93bfaf58",
+  "kind": "iso_prop",
+  "description": "single bed with folded blanket, neat but unused for years",
+  "size": {
+    "width": 48,
+    "height": 48
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:47:48",
+      "paths": [
+        "art_source\\objects\\bed_single_old\\bed_single_old.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:47:48",
+      "paths": [
+        "art_source\\objects\\bed_single_old\\bed_single_old.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:47:48",
+      "paths": [
+        "game\\assets\\textures\\props\\bed_single_old.png",
+        "game\\src\\maps\\props\\bed_single_old.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\bed_single_old\\bed_single_old.png",
+  "imported_at": "2026-05-21T21:47:48",
+  "game_png_path": "game\\assets\\textures\\props\\bed_single_old.png",
+  "game_tscn_path": "game\\src\\maps\\props\\bed_single_old.tscn",
+  "collision": "bottom_16x16"
+}

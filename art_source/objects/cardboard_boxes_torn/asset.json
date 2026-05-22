@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:39:43",
+  "updated_at": "2026-05-21T22:02:45",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "6209dc6c-7c7c-4fc9-8407-bb3971557f75",
+  "kind": "iso_prop",
+  "description": "torn wet cardboard boxes abandoned on ground, urban decay",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:40:36",
+      "paths": [
+        "art_source\\objects\\cardboard_boxes_torn\\cardboard_boxes_torn.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:40:36",
+      "paths": [
+        "art_source\\objects\\cardboard_boxes_torn\\cardboard_boxes_torn.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:40:36",
+      "paths": [
+        "game\\assets\\textures\\props\\cardboard_boxes_torn.png",
+        "game\\src\\maps\\props\\cardboard_boxes_torn.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\cardboard_boxes_torn\\cardboard_boxes_torn.png",
+  "imported_at": "2026-05-21T21:40:36",
+  "game_png_path": "game\\assets\\textures\\props\\cardboard_boxes_torn.png",
+  "game_tscn_path": "game\\src\\maps\\props\\cardboard_boxes_torn.tscn",
+  "collision": "bottom_16x16"
+}

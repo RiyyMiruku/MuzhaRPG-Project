@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:11:08",
+  "updated_at": "2026-05-21T22:11:40",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "8566bc84-27bd-44e6-b850-5b9011a954a1",
+  "kind": "iso_prop",
+  "description": "half-open drawer with envelope corner peeking out, secret document hint",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:11:40",
+      "paths": [
+        "art_source\\objects\\letter_hidden_drawer\\letter_hidden_drawer.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:11:40",
+      "paths": [
+        "art_source\\objects\\letter_hidden_drawer\\letter_hidden_drawer.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:11:40",
+      "paths": [
+        "game\\assets\\textures\\props\\letter_hidden_drawer.png",
+        "game\\src\\maps\\props\\letter_hidden_drawer.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\letter_hidden_drawer\\letter_hidden_drawer.png",
+  "imported_at": "2026-05-21T22:11:40",
+  "game_png_path": "game\\assets\\textures\\props\\letter_hidden_drawer.png",
+  "game_tscn_path": "game\\src\\maps\\props\\letter_hidden_drawer.tscn",
+  "collision": "none"
+}

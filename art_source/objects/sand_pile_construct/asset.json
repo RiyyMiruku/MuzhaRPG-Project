@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T23:02:32",
+  "updated_at": "2026-05-21T23:03:00",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "bb0560ae-cb23-4a89-a648-406c10faee2d",
+  "kind": "iso_prop",
+  "description": "small pile of construction sand with shovel stuck in",
+  "size": {
+    "width": 24,
+    "height": 24
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T23:03:00",
+      "paths": [
+        "art_source\\objects\\sand_pile_construct\\sand_pile_construct.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T23:03:00",
+      "paths": [
+        "art_source\\objects\\sand_pile_construct\\sand_pile_construct.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T23:03:00",
+      "paths": [
+        "game\\assets\\textures\\props\\sand_pile_construct.png",
+        "game\\src\\maps\\props\\sand_pile_construct.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\sand_pile_construct\\sand_pile_construct.png",
+  "imported_at": "2026-05-21T23:03:00",
+  "game_png_path": "game\\assets\\textures\\props\\sand_pile_construct.png",
+  "game_tscn_path": "game\\src\\maps\\props\\sand_pile_construct.tscn",
+  "collision": "bottom_16x16"
+}

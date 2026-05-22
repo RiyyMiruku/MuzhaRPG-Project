@@ -13,6 +13,18 @@
 [ext_resource type="PackedScene" uid="uid://b3bjje8647nw3" path="res://src/maps/props/notebook_leather.tscn" id="11_prop_notebook_leathe"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="12_8mlw8"]
 [ext_resource type="PackedScene" uid="uid://ciibwp217agk7" path="res://src/maps/props/fountain_pen_old.tscn" id="12_prop_fountain_pen_ol"]
+[ext_resource type="PackedScene" path="res://src/maps/props/backpack_travel.tscn" id="100_backpack_t"]
+[ext_resource type="PackedScene" path="res://src/maps/props/coffee_mug.tscn" id="101_coffee_mug"]
+[ext_resource type="PackedScene" path="res://src/maps/props/folding_table.tscn" id="102_folding_ta"]
+[ext_resource type="PackedScene" path="res://src/maps/props/laptop_modern.tscn" id="103_laptop_mod"]
+[ext_resource type="PackedScene" path="res://src/maps/props/letter_envelope.tscn" id="104_letter_env"]
+[ext_resource type="PackedScene" path="res://src/maps/props/mattress_floor.tscn" id="105_mattress_f"]
+[ext_resource type="PackedScene" path="res://src/maps/props/moving_box_taped.tscn" id="106_moving_box"]
+[ext_resource type="PackedScene" path="res://src/maps/props/old_apartment_muzha.tscn" id="107_old_apartm"]
+[ext_resource type="PackedScene" path="res://src/maps/props/photo_frame_family.tscn" id="108_photo_fram"]
+[ext_resource type="PackedScene" path="res://src/maps/props/sticky_notes_wall.tscn" id="109_sticky_not"]
+[ext_resource type="PackedScene" path="res://src/maps/props/suitcase_travel.tscn" id="110_suitcase_t"]
+[ext_resource type="PackedScene" path="res://src/maps/props/water_bottle_plastic.tscn" id="111_water_bott"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8mlw8"]
 texture = ExtResource("7_atlas_market_concret")
@@ -171,18 +183,57 @@ godot_4_3_compatibility = false
 y_sort_enabled = true
 
 [node name="Player" parent="YSortRoot" unique_id=792381551 instance=ExtResource("4_player")]
-position = Vector2(-96, 48)
+position = Vector2(0, 0)
 
-[node name="id_card_old" parent="YSortRoot" unique_id=1834990063 instance=ExtResource("9_prop_id_card_old") groups=["prop"]]
+[node name="id_card_old" parent="YSortRoot" unique_id=1834990063 instance=ExtResource("9_prop_id_card_old") groups=["prop", "prop"]]
 
-[node name="photograph_old" parent="YSortRoot" unique_id=324690568 instance=ExtResource("10_prop_photograph_old") groups=["prop"]]
+[node name="photograph_old" parent="YSortRoot" unique_id=324690568 instance=ExtResource("10_prop_photograph_old") groups=["prop", "prop"]]
 position = Vector2(16, 8)
 
-[node name="notebook_leather" parent="YSortRoot" unique_id=1011501703 instance=ExtResource("11_prop_notebook_leathe") groups=["prop"]]
+[node name="notebook_leather" parent="YSortRoot" unique_id=1011501703 instance=ExtResource("11_prop_notebook_leathe") groups=["prop", "prop"]]
 position = Vector2(-16, -8)
 
-[node name="fountain_pen_old" parent="YSortRoot" unique_id=515900245 instance=ExtResource("12_prop_fountain_pen_ol") groups=["prop"]]
+[node name="fountain_pen_old" parent="YSortRoot" unique_id=515900245 instance=ExtResource("12_prop_fountain_pen_ol") groups=["prop", "prop"]]
 position = Vector2(-16, 8)
+
+[node name="mod_apartment" parent="YSortRoot" unique_id=269820594 instance=ExtResource("107_old_apartm") groups=["prop", "era_modern"]]
+position = Vector2(14, -80)
+
+[node name="mod_suitcase" parent="YSortRoot" unique_id=269820595 instance=ExtResource("110_suitcase_t") groups=["prop", "era_modern"]]
+position = Vector2(-22, 26)
+
+[node name="mod_laptop" parent="YSortRoot" unique_id=269820596 instance=ExtResource("103_laptop_mod") groups=["prop", "era_modern"]]
+position = Vector2(5, 6)
+
+[node name="mod_coffee" parent="YSortRoot" unique_id=269820597 instance=ExtResource("101_coffee_mug") groups=["prop", "era_modern"]]
+position = Vector2(16, 5)
+
+[node name="mod_box" parent="YSortRoot" unique_id=269820598 instance=ExtResource("106_moving_box") groups=["prop", "era_modern"]]
+position = Vector2(-41, 40)
+
+[node name="mod_box2" parent="YSortRoot" unique_id=269820599 instance=ExtResource("106_moving_box") groups=["prop", "era_modern"]]
+position = Vector2(-24, 49)
+
+[node name="mod_table" parent="YSortRoot" unique_id=269820600 instance=ExtResource("102_folding_ta") groups=["prop", "era_modern"]]
+position = Vector2(-4, 4)
+
+[node name="mod_letter" parent="YSortRoot" unique_id=269820601 instance=ExtResource("104_letter_env") groups=["prop", "era_modern"]]
+position = Vector2(10, -3)
+
+[node name="mod_backpack" parent="YSortRoot" unique_id=269820602 instance=ExtResource("100_backpack_t") groups=["prop", "era_modern"]]
+position = Vector2(37, 36)
+
+[node name="mod_sticky" parent="YSortRoot" unique_id=269820603 instance=ExtResource("109_sticky_not") groups=["prop", "era_modern"]]
+position = Vector2(-20, -21)
+
+[node name="mod_mattress" parent="YSortRoot" unique_id=269820604 instance=ExtResource("105_mattress_f") groups=["prop", "era_modern"]]
+position = Vector2(40, 25)
+
+[node name="mod_water" parent="YSortRoot" unique_id=269820605 instance=ExtResource("111_water_bott") groups=["prop", "era_modern"]]
+position = Vector2(25, 26)
+
+[node name="mod_photo" parent="YSortRoot" unique_id=269820606 instance=ExtResource("108_photo_fram") groups=["prop", "era_modern"]]
+position = Vector2(0, -11)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=439103828]
 physics_interpolation_mode = 1
@@ -207,7 +258,7 @@ tween_on_load = false
 
 [node name="Transitions" type="Node2D" parent="." unique_id=1145967704]
 
-[node name="ToMarket" parent="Transitions" unique_id=1467371586 instance=ExtResource("8_zone_transition_area") groups=["transition"]]
+[node name="ToMarket" parent="Transitions" unique_id=1467371586 instance=ExtResource("8_zone_transition_area") groups=["transition", "transition"]]
 position = Vector2(-128, 64)
 target_zone = "zone_market"
 entry_point = "from_apartment"

@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:57:25",
+  "updated_at": "2026-05-21T22:59:51",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "c6c46695-395e-4d6c-979a-679c65c67609",
+  "kind": "iso_prop",
+  "description": "retractable fabric awning over shop front, striped red white",
+  "size": {
+    "width": 48,
+    "height": 48
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:59:51",
+      "paths": [
+        "art_source\\objects\\awning_retractable\\awning_retractable.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:59:51",
+      "paths": [
+        "art_source\\objects\\awning_retractable\\awning_retractable.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:59:51",
+      "paths": [
+        "game\\assets\\textures\\props\\awning_retractable.png",
+        "game\\src\\maps\\props\\awning_retractable.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\awning_retractable\\awning_retractable.png",
+  "imported_at": "2026-05-21T22:59:51",
+  "game_png_path": "game\\assets\\textures\\props\\awning_retractable.png",
+  "game_tscn_path": "game\\src\\maps\\props\\awning_retractable.tscn",
+  "collision": "bottom_16x16"
+}

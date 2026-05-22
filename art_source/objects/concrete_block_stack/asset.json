@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:59:52",
+  "updated_at": "2026-05-21T23:02:32",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "398bdc4d-5154-4e5a-b63c-f578801789ec",
+  "kind": "iso_prop",
+  "description": "stacked grey concrete blocks, construction material left on street",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T23:02:32",
+      "paths": [
+        "art_source\\objects\\concrete_block_stack\\concrete_block_stack.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T23:02:32",
+      "paths": [
+        "art_source\\objects\\concrete_block_stack\\concrete_block_stack.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T23:02:32",
+      "paths": [
+        "game\\assets\\textures\\props\\concrete_block_stack.png",
+        "game\\src\\maps\\props\\concrete_block_stack.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\concrete_block_stack\\concrete_block_stack.png",
+  "imported_at": "2026-05-21T23:02:32",
+  "game_png_path": "game\\assets\\textures\\props\\concrete_block_stack.png",
+  "game_tscn_path": "game\\src\\maps\\props\\concrete_block_stack.tscn",
+  "collision": "bottom_16x16"
+}

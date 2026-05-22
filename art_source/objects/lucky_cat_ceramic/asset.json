@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T22:08:14",
+  "updated_at": "2026-05-21T22:09:10",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "cfc8ff79-7a0d-4fbd-89d6-37ba9056f2db",
+  "kind": "iso_prop",
+  "description": "ceramic maneki-neko lucky cat with raised paw, shop counter decoration",
+  "size": {
+    "width": 16,
+    "height": 16
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T22:09:10",
+      "paths": [
+        "art_source\\objects\\lucky_cat_ceramic\\lucky_cat_ceramic.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T22:09:10",
+      "paths": [
+        "art_source\\objects\\lucky_cat_ceramic\\lucky_cat_ceramic.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T22:09:10",
+      "paths": [
+        "game\\assets\\textures\\props\\lucky_cat_ceramic.png",
+        "game\\src\\maps\\props\\lucky_cat_ceramic.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\lucky_cat_ceramic\\lucky_cat_ceramic.png",
+  "imported_at": "2026-05-21T22:09:10",
+  "game_png_path": "game\\assets\\textures\\props\\lucky_cat_ceramic.png",
+  "game_tscn_path": "game\\src\\maps\\props\\lucky_cat_ceramic.tscn",
+  "collision": "none"
+}

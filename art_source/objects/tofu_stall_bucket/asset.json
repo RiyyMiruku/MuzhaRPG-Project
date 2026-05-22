@@ -1,0 +1,43 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-21T21:38:46",
+  "updated_at": "2026-05-21T22:02:43",
+  "tags": [
+    "zone:zone_market",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "99cf319e-aaba-4b5b-986c-d3ef8adb8f68",
+  "kind": "iso_prop",
+  "description": "plastic bucket with soft tofu and wooden cutting board, simple taiwanese market stall",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-21T21:39:13",
+      "paths": [
+        "art_source\\objects\\tofu_stall_bucket\\tofu_stall_bucket.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-21T21:39:13",
+      "paths": [
+        "art_source\\objects\\tofu_stall_bucket\\tofu_stall_bucket.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-21T21:39:13",
+      "paths": [
+        "game\\assets\\textures\\props\\tofu_stall_bucket.png",
+        "game\\src\\maps\\props\\tofu_stall_bucket.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\tofu_stall_bucket\\tofu_stall_bucket.png",
+  "imported_at": "2026-05-21T21:39:13",
+  "game_png_path": "game\\assets\\textures\\props\\tofu_stall_bucket.png",
+  "game_tscn_path": "game\\src\\maps\\props\\tofu_stall_bucket.tscn",
+  "collision": "bottom_16x16"
+}

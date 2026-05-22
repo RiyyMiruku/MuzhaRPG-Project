@@ -427,16 +427,16 @@ text = "投影 autotile: water+concrete"
 y_sort_enabled = true
 position = Vector2(0, -83)
 
-[node name="Shophouse" type="Sprite2D" parent="YSortRoot" unique_id=218958363 groups=["npc"]]
+[node name="Shophouse" type="Sprite2D" parent="YSortRoot" unique_id=218958363 groups=["npc", "npc"]]
 position = Vector2(-108, 59)
 scale = Vector2(1.1640625, 1.15625)
 texture = ExtResource("5_shophouse")
 
-[node name="Temple" type="Sprite2D" parent="YSortRoot" unique_id=1596696037 groups=["npc"]]
+[node name="Temple" type="Sprite2D" parent="YSortRoot" unique_id=1596696037 groups=["npc", "npc"]]
 position = Vector2(133, 66)
 texture = ExtResource("6_temple")
 
-[node name="MarketStall" type="Sprite2D" parent="YSortRoot" unique_id=909987783 groups=["npc"]]
+[node name="MarketStall" type="Sprite2D" parent="YSortRoot" unique_id=909987783 groups=["npc", "npc"]]
 position = Vector2(0, 100)
 texture = ExtResource("7_stall")
 
