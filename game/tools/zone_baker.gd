@@ -23,6 +23,9 @@ extends Node2D
 @export_tool_button("Era: Show Modern") var _show_modern_action: Callable = func() -> void: _show_era("modern")
 @export_tool_button("Era: Show Both") var _show_both_action: Callable = _show_both_eras
 
+@export_tool_button("Refresh Showcase from tags") var _refresh_showcase_action: Callable = _refresh_showcase
+@export_tool_button("Clear Showcase") var _clear_showcase_action: Callable = _clear_showcase
+
 
 func _bake_terrain() -> void:
 	var tmd: TileMapLayer = _get_dual()
@@ -151,3 +154,120 @@ func _apply_visible_recursive(node: Node, group_name: String, visible_flag: bool
 			(node as CanvasItem).visible = visible_flag
 	for child in node.get_children():
 		_apply_visible_recursive(child, group_name, visible_flag)
+
+
+# ── Showcase (asset visibility tool) ────────────────────────────────────────
+## Refresh `Showcase` child node with every prop in art_source/objects/<id>/
+## tagged `zone:<this_zone_slug>`. Useful to see what art is available for
+## this scene without drag-dropping each one. Visible toggle in Inspector.
+##
+## Showcase is created on first refresh; its content is destroyed and rebuilt
+## each refresh. Live scene content (YSortRoot, etc.) is untouched.
+
+const _SHOWCASE_COLS: int = 6
+const _SHOWCASE_SPACING_X: float = 96.0
+const _SHOWCASE_SPACING_Y: float = 80.0
+## Offset relative to zone root; placed to upper-right out of typical play area.
+const _SHOWCASE_ORIGIN: Vector2 = Vector2(400.0, -400.0)
+
+
+func _refresh_showcase() -> void:
+	var slug: String = _zone_slug_from_name()
+	if slug == "":
+		push_error("[showcase] could not derive zone slug from node name '%s'" % self.name)
+		return
+	var prop_ids: PackedStringArray = _find_props_tagged_with_zone(slug)
+	var sc: Node2D = _ensure_showcase()
+	# Clear existing content
+	for child in sc.get_children():
+		child.queue_free()
+	# Place each prop in grid
+	var col: int = 0
+	var row: int = 0
+	var added: int = 0
+	for id in prop_ids:
+		var tscn_path: String = "res://src/maps/props/%s.tscn" % id
+		if not ResourceLoader.exists(tscn_path):
+			push_warning("[showcase] no prop tscn for %s" % id)
+			continue
+		var ps: PackedScene = load(tscn_path)
+		if ps == null:
+			continue
+		var inst: Node = ps.instantiate()
+		sc.add_child(inst)
+		inst.owner = self  # required so child saves into scene file
+		if inst is Node2D:
+			(inst as Node2D).position = Vector2(col * _SHOWCASE_SPACING_X, row * _SHOWCASE_SPACING_Y)
+		col += 1
+		if col >= _SHOWCASE_COLS:
+			col = 0
+			row += 1
+		added += 1
+	print("[showcase] populated %d / %d props for zone '%s'. Save (Ctrl+S) to persist." % [added, prop_ids.size(), slug])
+
+
+func _clear_showcase() -> void:
+	var sc: Node2D = get_node_or_null("Showcase") as Node2D
+	if sc == null:
+		print("[showcase] no Showcase node to clear.")
+		return
+	for child in sc.get_children():
+		child.queue_free()
+	print("[showcase] cleared. Save (Ctrl+S) to persist.")
+
+
+func _ensure_showcase() -> Node2D:
+	var sc: Node2D = get_node_or_null("Showcase") as Node2D
+	if sc != null:
+		return sc
+	sc = Node2D.new()
+	sc.name = "Showcase"
+	sc.position = _SHOWCASE_ORIGIN
+	sc.visible = false  # default hidden so editor view stays clean
+	add_child(sc)
+	sc.owner = self
+	return sc
+
+
+## "ZoneApartmentMuzha" → "zone_apartment_muzha"
+func _zone_slug_from_name() -> String:
+	var s: String = self.name
+	var out: String = ""
+	for i in s.length():
+		var ch: String = s[i]
+		var is_upper: bool = ch >= "A" and ch <= "Z"
+		if is_upper and i > 0:
+			out += "_"
+		out += ch.to_lower()
+	return out
+
+
+func _find_props_tagged_with_zone(slug: String) -> PackedStringArray:
+	var repo_root: String = ProjectSettings.globalize_path("res://").path_join("..")
+	var objects_dir_path: String = repo_root.path_join("art_source/objects")
+	var ids: Array[String] = []
+	var dir: DirAccess = DirAccess.open(objects_dir_path)
+	if dir == null:
+		push_warning("[showcase] cannot open %s" % objects_dir_path)
+		return PackedStringArray()
+	dir.list_dir_begin()
+	var name_entry: String = dir.get_next()
+	var target_tag: String = "zone:" + slug
+	while name_entry != "":
+		if dir.current_is_dir() and not name_entry.begins_with("."):
+			var asset_json_path: String = objects_dir_path.path_join(name_entry).path_join("asset.json")
+			if FileAccess.file_exists(asset_json_path):
+				var af: FileAccess = FileAccess.open(asset_json_path, FileAccess.READ)
+				if af != null:
+					var parsed: Variant = JSON.parse_string(af.get_as_text())
+					if parsed is Dictionary:
+						var tags: Variant = parsed.get("tags", [])
+						if tags is Array:
+							for t in tags:
+								if t == target_tag:
+									ids.append(name_entry)
+									break
+		name_entry = dir.get_next()
+	dir.list_dir_end()
+	ids.sort()
+	return PackedStringArray(ids)
