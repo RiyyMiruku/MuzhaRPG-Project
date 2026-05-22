@@ -119,7 +119,7 @@
 
 ### 4.2 Zone(目前的 7 個 chapter 1 zone + 舊 zone + 測試)
 
-由 `scripts/build_zone.py` 從 YAML 產出。詳見 [docs/chapter-01-scene-automation-plan.md](chapter-01-scene-automation-plan.md)。
+由 `scripts/build_zone.py` 從 YAML 產出。各章節擺位計畫見 `story/chapters/<slug>/scene-automation-plan.md`(範例:[chapter_01_arrival](../story/chapters/chapter_01_arrival/scene-automation-plan.md))。
 
 | Zone | 檔案 | 來源 YAML | 狀態 |
 |---|---|---|---|
@@ -199,7 +199,7 @@
 | 文檔 | 連結 |
 |---|---|
 | 對話系統設計 | [docs/dialogue-architecture.md](dialogue-architecture.md) |
-| 章節 1 場景自動化 | [docs/chapter-01-scene-automation-plan.md](chapter-01-scene-automation-plan.md) |
+| 章節擺位計畫(per chapter) | `story/chapters/<slug>/scene-automation-plan.md`(範例:[chapter_01_arrival](../story/chapters/chapter_01_arrival/scene-automation-plan.md)) |
 | Tile autotile 設定 | [docs/tilemapdual-guide.md](tilemapdual-guide.md) |
 | 場景設計工作流 | [docs/scene-design-workflow.md](scene-design-workflow.md) |
 | 章節開發指南 | [docs/chapter-development.md](chapter-development.md) |

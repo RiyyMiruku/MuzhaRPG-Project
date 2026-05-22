@@ -35,7 +35,7 @@
 3. `import_to_godot` stage 自動把 PNG + `.tscn` 放進 Godot 正確位置
 4. Godot `Ctrl+Shift+R` 重掃後，從檔案系統拖 `.tscn` 到 zone 的 `YSortRoot`
 
-> 物件清單見 [zone-object-checklist.md](zone-object-checklist.md)。
+> 物件清單見各章節資料夾內的 `zone-object-checklist.md`(如 [chapter_01_arrival/zone-object-checklist.md](../story/chapters/chapter_01_arrival/zone-object-checklist.md))。
 
 ### B. 加新 autotile（地形）
 

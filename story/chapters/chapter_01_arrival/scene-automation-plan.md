@@ -1,4 +1,4 @@
-# 第一章場景自動化計畫
+﻿# 第一章場景自動化計畫
 
 > **對象**：專案負責人 / 程式 / 場景設計。**用途**：第一章 7 個 zone 的場景搭建策略——以最小人工達成可用品質。
 > **狀態**：規劃中（2026-05-14）。實作前需先跑最小驗證實驗（見 §7）。
@@ -15,7 +15,7 @@
 
 ## 2. 第一章 zone 清單
 
-按 [story/chapters/chapter_01_arrival/draft.md](../story/chapters/chapter_01_arrival/draft.md) 推演，第一章至少需要 **7 個 zone**：
+按 [story/chapters/chapter_01_arrival/draft.md](draft.md) 推演，第一章至少需要 **7 個 zone**：
 
 | Zone ID | 場景 | 時期 | 主要劇情用途 |
 |---|---|---|---|
@@ -35,14 +35,14 @@
 
 | 項目 | 狀態 |
 |---|---|
-| 故事劇本 | ✅ [draft.md](../story/chapters/chapter_01_arrival/draft.md) 完整 71 行 |
-| 結構化資產清單 | ✅ [assets.json](../story/chapters/chapter_01_arrival/assets.json) |
+| 故事劇本 | ✅ [draft.md](draft.md) 完整 71 行 |
+| 結構化資產清單 | ✅ [assets.json](assets.json) |
 | NPC 角色（13 個） | ✅ 主角 `lin_siqian`（原 `player` folder，已改名以對齊 lore）+ 11 個 NPC 已生成；❌ 缺 `a_tao_yi` moving 變體 |
-| Props（25 個 .tscn） | ✅ 全數備齊於 [game/src/maps/props/](../game/src/maps/props/) |
-| Tileset autotile PNG | ✅ 3 張 in [game/assets/textures/tilesets/](../game/assets/textures/tilesets/)；❌ 尚未掛進 TileMapDual |
+| Props（25 個 .tscn） | ✅ 全數備齊於 [game/src/maps/props/](../../../game/src/maps/props/) |
+| Tileset autotile PNG | ✅ 3 張 in [game/assets/textures/tilesets/](../../../game/assets/textures/tilesets/)；❌ 尚未掛進 TileMapDual |
 | 建築（6 棟）PNG | ✅ 已生成且 import；⚠️ **視角不對**（見 §4） |
-| Zone .tscn | ⚠️ 僅 [zone_market.tscn](../game/src/maps/zones/zone_market.tscn) 骨架，ColorRect 背景 |
-| Iso 測試場 | ✅ [zone_iso_test.tscn](../game/src/maps/zones/zone_iso_test.tscn) 含 TileMapDual + 3 套 iso autotile |
+| Zone .tscn | ⚠️ 僅 [zone_market.tscn](../../../game/src/maps/zones/zone_market.tscn) 骨架，ColorRect 背景 |
+| Iso 測試場 | ✅ [zone_iso_test.tscn](../../../game/src/maps/zones/zone_iso_test.tscn) 含 TileMapDual + 3 套 iso autotile |
 
 ---
 
@@ -101,7 +101,7 @@ npcs:
 ```
 
 - 腳本：`scripts/build_zone.py`
-- 輸入：上述 YAML + [art_source/manifest.json](../art_source/manifest.json)（資產 footprint / collision 元資料）
+- 輸入：上述 YAML + [art_source/manifest.json](../../../art_source/manifest.json)（資產 footprint / collision 元資料）
 - 輸出：`game/src/maps/zones/zone_<name>.tscn`
 - 解析 `anchor` 語法 → 算 iso 座標 → emit `[node ... instance=ExtResource(...)]`
 
@@ -109,7 +109,7 @@ npcs:
 
 ### Level 2：LLM 從劇本推演 layout（半自動）
 
-我（Claude）讀 [draft.md](../story/chapters/chapter_01_arrival/draft.md) + [assets.json](../story/chapters/chapter_01_arrival/assets.json) **直接寫 Level 1 的 YAML**。例如：
+我（Claude）讀 [draft.md](draft.md) + [assets.json](assets.json) **直接寫 Level 1 的 YAML**。例如：
 
 劇本「藥櫃還在、櫃台還在、牆上的全家福還在」→ 推演：
 - 藥櫃靠後牆 ×3（中藥行典型佈局）
@@ -133,7 +133,7 @@ npcs:
 
 ## 6. TileMapDual 整合策略
 
-[TileMapDual](https://github.com/GilaPixel/TileMapDual) addon（[docs/tilemapdual-guide.md](tilemapdual-guide.md)）的地形塗法跟一般 TileMap 不同。**自動化的關鍵卡點是 `tile_map_data = PackedByteArray("...")` 二進位編碼**。
+[TileMapDual](https://github.com/GilaPixel/TileMapDual) addon（[docs/tilemapdual-guide.md](../../../docs/tilemapdual-guide.md)）的地形塗法跟一般 TileMap 不同。**自動化的關鍵卡點是 `tile_map_data = PackedByteArray("...")` 二進位編碼**。
 
 ### 可靠度排序
 
@@ -174,7 +174,7 @@ npcs:
 
 選 `zone_pharmacy_1983`（劇情核心 zone）試做：
 
-1. Claude 寫 [pharmacy_1983.yaml](../story/chapters/chapter_01_arrival/zones/) 初稿（從 draft.md 推演）
+1. Claude 寫 [pharmacy_1983.yaml](zones/) 初稿（從 draft.md 推演）
 2. 寫 `scripts/build_zone.py` 解析器（讀 YAML，產 .tscn 含 props + npcs，TileMapDual 部分先空著）
 3. 寫 `tools/zone_baker.gd`（`@tool`，讀 YAML tilemap 段，程式塗 TileMapDual）
 4. 寫 `tools/snapshot.gd`（headless 開 zone，截圖存 PNG）
@@ -224,7 +224,7 @@ npcs:
 | LLM 推演的 layout 美感不足 | 高 | 低 | Vision loop 自動迭代 + 設計人最後 10% 微調 |
 | Iso Y-sort 深度錯亂 | 中 | 中 | 截圖人工檢查；必要時 layout 加 `z_priority` 欄位 |
 | 視覺風格不統一（重生 iso 建築跟舊 props 風格差異） | 低 | 中 | Pixellab 參數固定 + 跑一致性檢查 |
-| 第一章資產清單[assets.json](../story/chapters/chapter_01_arrival/assets.json) 跟 manifest 不同步 | 低 | 中 | builder 啟動時跑 cross-check，缺資產立即報錯 |
+| 第一章資產清單[assets.json](assets.json) 跟 manifest 不同步 | 低 | 中 | builder 啟動時跑 cross-check，缺資產立即報錯 |
 | Autotile PNG 16-cell 順序錯亂（Pixellab 隨機性）→ terrain 邊界拼接破洞 | 低 | 中 | 短期人工檢查；之後可在 `verify_in_godot` 階段加 PIL validator 檢查 (2,1) alpha~100% / (0,3) alpha~0%。zone_iso_test 三張 PNG 已實證 Pixellab 對 `/create-isometric-tile` 端點是穩定的 |
 
 ---
@@ -233,7 +233,7 @@ npcs:
 
 完成本計畫後，剩下的第一章工作項目：
 
-1. 對話 beat 編寫（~8–10 段，[dialogue-architecture.md](dialogue-architecture.md)）
+1. 對話 beat 編寫（~8–10 段，[dialogue-architecture.md](../../../docs/dialogue-architecture.md)）
 2. 信任值系統實作（autoload + NPC `trust_thresholds`）
 3. 雙時空切換機制（古地圖 prop 觸發 zone transition）
 4. 身份揭露邏輯（events.gd 條件分支）
@@ -247,9 +247,9 @@ npcs:
 
 | 文檔 | 連結 |
 |---|---|
-| 第一章劇本草稿 | [story/chapters/chapter_01_arrival/draft.md](../story/chapters/chapter_01_arrival/draft.md) |
-| 第一章資產清單 | [story/chapters/chapter_01_arrival/assets.json](../story/chapters/chapter_01_arrival/assets.json) |
-| TileMapDual 設定 | [docs/tilemapdual-guide.md](tilemapdual-guide.md) |
-| 場景設計工作流（手動） | [docs/scene-design-workflow.md](scene-design-workflow.md) |
-| Pipeline 架構 | [pipeline/README.md](../pipeline/README.md) |
-| 章節開發指南 | [docs/chapter-development.md](chapter-development.md) |
+| 第一章劇本草稿 | [story/chapters/chapter_01_arrival/draft.md](draft.md) |
+| 第一章資產清單 | [story/chapters/chapter_01_arrival/assets.json](assets.json) |
+| TileMapDual 設定 | [docs/tilemapdual-guide.md](../../../docs/tilemapdual-guide.md) |
+| 場景設計工作流（手動） | [docs/scene-design-workflow.md](../../../docs/scene-design-workflow.md) |
+| Pipeline 架構 | [pipeline/README.md](../../../pipeline/README.md) |
+| 章節開發指南 | [docs/chapter-development.md](../../../docs/chapter-development-manual.md) |

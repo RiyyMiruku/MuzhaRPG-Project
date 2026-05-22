@@ -9,7 +9,7 @@
 | 角色 | 必讀(2–3 份) | 選讀 |
 |---|---|---|
 | **試玩專案** | [README.md](../README.md) | — |
-| **章節作者** | [chapter-development-manual.md](chapter-development-manual.md) + [dialogue-architecture.md](dialogue-architecture.md) | [chapter-01-scene-automation-plan.md](chapter-01-scene-automation-plan.md) |
+| **章節作者** | [chapter-development-manual.md](chapter-development-manual.md) + [dialogue-architecture.md](dialogue-architecture.md) | 各章自己的 `story/chapters/<slug>/scene-automation-plan.md`(範本:[chapter_01_arrival](../story/chapters/chapter_01_arrival/)) |
 | **場景設計人** | [scene-design-workflow.md](scene-design-workflow.md) | [tilemapdual-guide.md](tilemapdual-guide.md) |
 | **美術 / 生圖** | [pipeline/README.md](../pipeline/README.md) + [asset-naming-convention.md](asset-naming-convention.md) | [art-pipeline skill](../.claude/skills/art-pipeline/SKILL.md) |
 | **程式 / 系統** | [architecture.md](architecture.md) + [godot-modules.md](godot-modules.md) | [dialogue-architecture.md](dialogue-architecture.md) |
@@ -41,7 +41,8 @@
 |---|---|---|
 | [chapter-development-manual.md](chapter-development-manual.md) | 章節作者 | **操作手冊** — 11 階段流程、人工介入點、修改 cheat sheet、API 速查 |
 | [dialogue-architecture.md](dialogue-architecture.md) | 章節作者 | 對話系統實作細節(寫 beat / NPCProfile / cutscene 時的依據) |
-| [chapter-01-scene-automation-plan.md](chapter-01-scene-automation-plan.md) | 章節作者 | chapter 1 場景擺位策略(範例,可作模板) |
+
+> 各章自己的擺位計畫 / zone 物件清單放在 `story/chapters/<slug>/`(範本見 [chapter_01_arrival](../story/chapters/chapter_01_arrival/)),不放在專案級 docs/。
 
 ### 場景與美術
 
