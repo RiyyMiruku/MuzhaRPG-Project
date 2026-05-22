@@ -19,6 +19,7 @@ const PLAYER_ID: String = "lin_siqian"
 
 func _ready() -> void:
 	sprite = _sprite
+	_sprite.speed_scale = 1.5
 	add_to_group("player")
 	if _sprite.sprite_frames == null:
 		_sprite.sprite_frames = SpriteSheetLoader.load_character(PLAYER_ID)
