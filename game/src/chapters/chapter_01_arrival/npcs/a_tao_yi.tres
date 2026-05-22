@@ -44,4 +44,3 @@ known_facts = Array[String]([
 "今年是 1983 年"
 ])
 personality_voice = "台味重、聲音大、句子長、常用「呃」「按怎」「啊就」起頭。被問林家事會突然語速放慢、聲音壓低,或乾脆轉話題說『先買菜啦』。"
-has_walk_animation = true

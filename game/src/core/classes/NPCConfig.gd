@@ -36,13 +36,12 @@ extends Resource
 @export_range(-100, 100, 5) var initial_relationship: int = 0
 
 # ── 走動行為（可選）────────────────────────────────────────────────────────
-## 該 NPC 的 spritesheet 是否含 walk_<dir> 動畫(art-pipeline 的 "moving" 類別)。
-## False = 美術只生了 idle frame,啟用 wander 會看到圖滑行。下面 wander_* 欄位
-## 只在此值為 true 時於 Inspector 顯示。
-@export var has_walk_animation: bool = false
-
 ## NPC 自動走動的半徑(像素)。0 = 完全靜止(預設,向下相容)。
 ## NPC 會在以 spawn 位置為中心、半徑 wander_radius 的圓內隨機亂走。
+##
+## 下列 wander_* 欄位只在 npc_id 的 spritesheet (res://assets/textures/characters/
+## <npc_id>.json) 含 walk_* 動畫時於 Inspector 顯示。SSOT 是 spritesheet metadata,
+## 也就是 art-pipeline 跑 npc_moving vs npc_static 的結果。
 @export_range(0.0, 256.0, 8.0) var wander_radius: float = 0.0
 ## 走動速度(像素/秒)。0 + radius>0 → fallback 40(慢晃)。
 @export_range(0.0, 80.0, 5.0) var wander_speed: float = 0.0
@@ -51,13 +50,37 @@ extends Resource
 @export var wander_pause_max: float = 3.5
 
 
-## Hide wander_* fields in Inspector unless the NPC actually has walk frames.
+## Hide wander_* fields when this NPC's spritesheet lacks walk_* animations.
 func _validate_property(property: Dictionary) -> void:
 	const _WANDER_FIELDS: Array[String] = [
 		"wander_radius", "wander_speed", "wander_pause_min", "wander_pause_max",
 	]
-	if property.name in _WANDER_FIELDS and not has_walk_animation:
+	if property.name in _WANDER_FIELDS and not _spritesheet_has_walk():
 		property.usage &= ~PROPERTY_USAGE_EDITOR
+
+
+## Edit-time check: does the npc_id's spritesheet .json declare any walk_* anim?
+## Returns false if npc_id empty, file missing, or no walk_* key. Runtime side
+## (BaseNPC._init_wander) does its own SpriteFrames.has_animation() check.
+func _spritesheet_has_walk() -> bool:
+	if npc_id.is_empty():
+		return false
+	var json_path: String = "res://assets/textures/characters/%s.json" % npc_id
+	if not FileAccess.file_exists(json_path):
+		return false
+	var f: FileAccess = FileAccess.open(json_path, FileAccess.READ)
+	if f == null:
+		return false
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
+	if not (parsed is Dictionary):
+		return false
+	var anims: Variant = (parsed as Dictionary).get("animations", {})
+	if not (anims is Dictionary):
+		return false
+	for key in (anims as Dictionary).keys():
+		if String(key).begins_with("walk_"):
+			return true
+	return false
 
 
 # ── 自動推導路徑（不用手填）────────────────────────────────────────────────

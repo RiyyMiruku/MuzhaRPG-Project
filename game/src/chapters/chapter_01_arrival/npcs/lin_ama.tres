@@ -45,4 +45,3 @@ known_facts = Array[String]([
 "我不喜歡外人問家裡的事"
 ])
 personality_voice = "短句、權威、語氣冷。常用台語詞「按呢」「無啦」「免講」。被戳痛處會直接沉默或走開,不會解釋。"
-has_walk_animation = true

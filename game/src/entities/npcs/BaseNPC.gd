@@ -61,11 +61,9 @@ func _ready() -> void:
 func _init_wander() -> void:
 	if npc_config == null or npc_config.wander_radius <= 0.0:
 		return
-	if not npc_config.has_walk_animation:
-		# 不擋 — config 已在 Inspector 隱欄位。runtime 純防呆。
-		return
+	# SSOT 是 spritesheet。沒 walk frame 就跳過(Inspector 端也用同邏輯藏欄位)。
 	if _sprite.sprite_frames == null or not _sprite.sprite_frames.has_animation("walk_down"):
-		push_warning("BaseNPC: '%s' has_walk_animation=true 但 SpriteFrames 沒 walk_down" % npc_config.npc_id)
+		push_warning("BaseNPC: '%s' has wander_radius>0 but no walk_down anim — skip" % npc_config.npc_id)
 		return
 	_wander_state = _WanderState.IDLE
 	_wander_origin = global_position
