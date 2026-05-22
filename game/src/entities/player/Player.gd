@@ -44,7 +44,7 @@ func _update_footsteps() -> void:
 	if not is_moving or velocity.length() < 1.0:
 		return
 	_step_accum += moved
-	if _step_accum < FootstepPlayer.STEP_DISTANCE:
+	if _step_accum < FootstepPlayer.get_step_distance():
 		return
 	_step_accum = 0.0
 	var surface_id: String = _surface_under_player()
