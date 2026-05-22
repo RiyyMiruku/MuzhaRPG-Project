@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://muzha_audio_settings"]
+
+[ext_resource type="Script" path="res://src/ui/menus/AudioSettingsPanel.gd" id="1_audio"]
+
+[node name="AudioSettingsPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+process_mode = 3
+script = ExtResource("1_audio")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 1
+offset_left = 12.0
+offset_top = 8.0
+offset_right = 300.0
+offset_bottom = 28.0
+text = "Audio"
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.9, 0.85, 0.5, 1)
+
+[node name="CloseButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = 28.0
+grow_horizontal = 0
+text = "Close"
+theme_override_font_sizes/font_size = 11
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 40.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="VolumeRow" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="VolumeLabel" type="Label" parent="Panel/VBox/VolumeRow"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Master Volume"
+theme_override_font_sizes/font_size = 12
+
+[node name="VolumeSlider" type="HSlider" parent="Panel/VBox/VolumeRow"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.0
+max_value = 100.0
+value = 100.0
+step = 1.0
+
+[node name="VolumeValue" type="Label" parent="Panel/VBox/VolumeRow"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "100%"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 12
+
+[node name="MuteCheck" type="CheckButton" parent="Panel/VBox"]
+layout_mode = 2
+text = "Mute All Audio"
+theme_override_font_sizes/font_size = 12

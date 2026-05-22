@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://muzha_main_world"]
+[gd_scene load_steps=10 format=3 uid="uid://muzha_main_world"]
 
 [ext_resource type="PackedScene" path="res://src/maps/zones/zone_apartment_muzha.tscn" id="1_starting_zone"]
 [ext_resource type="PackedScene" path="res://src/ui/dialogue/DialogueUI.tscn" id="2_dialogue_ui"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://src/ui/menus/MainMenu.tscn" id="7_main_menu"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/QuestJournal.tscn" id="9_quest_journal"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/KeybindSettings.tscn" id="10_keybind"]
+[ext_resource type="PackedScene" path="res://src/ui/menus/AudioSettingsPanel.tscn" id="12_audio_panel"]
 
 [node name="MainWorld" type="Node2D"]
 
@@ -35,6 +36,8 @@ layer = 20
 [node name="PauseMenu" parent="UILayer" instance=ExtResource("5_pause_menu")]
 
 [node name="KeybindSettings" parent="UILayer" instance=ExtResource("10_keybind")]
+
+[node name="AudioSettingsPanel" parent="UILayer" instance=ExtResource("12_audio_panel")]
 
 [node name="MainMenu" parent="UILayer" instance=ExtResource("7_main_menu")]
 

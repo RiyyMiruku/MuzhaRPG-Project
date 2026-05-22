@@ -81,6 +81,11 @@ layout_mode = 2
 text = "Settings"
 theme_override_font_sizes/font_size = 14
 
+[node name="AudioButton" type="Button" parent="Panel/VBox"]
+layout_mode = 2
+text = "Audio"
+theme_override_font_sizes/font_size = 14
+
 [node name="MainMenuButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
 text = "Main Menu"
