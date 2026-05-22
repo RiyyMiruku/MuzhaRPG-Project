@@ -1,10 +1,10 @@
 @tool
 extends Node2D
 
-## Cells to paint into the TileMapDual child. Populated by
-## `scripts/build_zone.py` when emitting this zone .tscn — do not edit by hand.
+## [Deprecated] Cells were used by the removed Bake terrain button.
+## Kept as inert @export to load old scenes without warnings; safe to ignore.
 @export var terrain_cells: Array[Vector2i] = []
-## Which terrain index inside the TileMapDual's TileSet to paint with.
+## [Deprecated] Companion to terrain_cells; see above.
 @export var terrain_id: int = 1
 ## YAML 來源路徑(repo-relative)。builder 寫入,Lock/Unlock 按鈕用。
 ## Hybrid zone 會有多個(e.g. pharmacy/1983.yaml + pharmacy/modern.yaml)。
@@ -14,8 +14,6 @@ extends Node2D
 ## 在 Inspector 改完存場景,runtime 自動套用,不需要 rebuild。
 @export var footstep_step_distance: float = 0.0
 
-@export_tool_button("Bake terrain") var _bake_action: Callable = _bake_terrain
-@export_tool_button("Clear terrain") var _clear_action: Callable = _clear_terrain
 @export_tool_button("Lock YAML (frozen: true)") var _lock_action: Callable = _lock_yaml
 @export_tool_button("Unlock YAML") var _unlock_action: Callable = _unlock_yaml
 
@@ -25,27 +23,6 @@ extends Node2D
 
 @export_tool_button("Refresh Showcase from tags") var _refresh_showcase_action: Callable = _refresh_showcase
 @export_tool_button("Clear Showcase") var _clear_showcase_action: Callable = _clear_showcase
-
-
-func _bake_terrain() -> void:
-	var tmd: TileMapLayer = _get_dual()
-	if tmd == null:
-		push_error("[zone_baker] TileMapDual node not found at $TileMapLayer/TileMapDual")
-		return
-	if tmd.tile_set == null:
-		push_error("[zone_baker] TileMapDual.tile_set is null. Assign a TileSet first.")
-		return
-	for cell in terrain_cells:
-		tmd.call("draw_cell", cell, terrain_id)
-	print("[zone_baker] Baked %d cells. Save scene (Ctrl+S) to persist." % terrain_cells.size())
-
-
-func _clear_terrain() -> void:
-	var tmd: TileMapLayer = _get_dual()
-	if tmd == null:
-		return
-	tmd.clear()
-	print("[zone_baker] Cleared.")
 
 
 func _lock_yaml() -> void:
@@ -114,13 +91,6 @@ func _toggle_frozen_line(text: String, target: bool) -> String:
 	else:
 		# Unlock — 移除整行
 		return re.sub(text, "", false).replace("\n\n\n", "\n\n")
-
-
-func _get_dual() -> TileMapLayer:
-	var node: Node = get_node_or_null("TileMapLayer/TileMapDual")
-	if node is TileMapLayer:
-		return node
-	return null
 
 
 # ── Era editor toggles ──────────────────────────────────────────────────────
