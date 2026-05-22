@@ -73,11 +73,11 @@
 
 ## Tilesets (3)
 
-| name | lower | upper | transition |
+| name | upper | lower | transition |
 |---|---|---|---|
-| market_concrete_tile | 灰水泥地磨損 | 紅方磁磚（傳統市場走道） | 水泥破口接磁磚縫 |
-| courtyard_dirt_grass | 後院壓實泥地 | 雜草小野花 | 鬆土混稀疏草叢 |
-| street_asphalt_sidewalk | 深灰柏油白線褪色 | 淺灰水泥人行道板 | 抬升的水泥緣石 |
+| market_tile_concrete | 紅方磁磚（傳統市場走道） | 灰水泥地磨損 | 水泥破口接磁磚縫 |
+| courtyard_grass_dirt | 雜草小野花 | 後院壓實泥地 | 鬆土混稀疏草叢 |
+| street_sidewalk_asphalt | 淺灰水泥人行道板 | 深灰柏油白線褪色 | 抬升的水泥緣石 |
 
 ---
 

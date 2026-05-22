@@ -145,7 +145,7 @@ Moving NPC（8-dir + walk template）成本是 static NPC（4-dir + idle templat
 | 路人 / 群眾（無具名） | **static NPC** | `npc_static.py --directions 4` | 一個泛用 NPC 多次擺放 |
 | 單一場景物件（燈籠、攤車、桌、信箱） | **iso prop** | `prop.py --kind=iso_prop --size 32` | 視大小調 size |
 | 建築（店、廟、宿舍） | **iso building** | `prop.py --kind=iso_building` | isometric 視角，與街景一致 |
-| 地形（草、磚、水、沙） | **autotile** | `autotile.py` | Wang 4×4，要 lower + upper 兩種地形 |
+| 地形（草、磚、水、沙） | **autotile** | `autotile.py` | Wang 4×4，要 upper + lower 兩種地形 |
 
 **Edge case 判斷**：
 - 「會跟玩家對話一次後消失」→ static NPC 即可（省 credit）
@@ -302,7 +302,7 @@ story/chapters/<chapter_slug>/
   ],
   "tilesets": [
     {
-      "name": "market_concrete_tile",
+      "name": "market_tile_concrete",
       "lower": "...",
       "upper": "...",
       "zones": ["zone_market_1983", "zone_market_modern"],

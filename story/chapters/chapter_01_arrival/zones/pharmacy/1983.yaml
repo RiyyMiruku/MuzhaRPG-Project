@@ -8,7 +8,7 @@ label: "榮昌中藥行"
 size: [26, 19]
 
 tilemap:
-  atlas: market_concrete_tile   # 對應 game/assets/textures/tilesets/<atlas>.png
+  atlas: market_tile_concrete   # 對應 game/assets/textures/tilesets/<atlas>.png
   terrain: 1                    # TileSet 中的 terrain index(0 = empty, 1 = FG)
   fill: rect                    # 目前只支援 rect:整個 size 填滿
 

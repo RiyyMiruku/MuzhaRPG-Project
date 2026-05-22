@@ -31,8 +31,8 @@ Invalid examples: `Chen_ayi`, `_leading`, `trailing_`, `double__under`, `ab`,
 
 ### Tilesets
 
-- `<zone>_<lower>_<upper>`
-  - `market_grass_asphalt`, `riverside_water_sand`
+- `<zone>_<upper>_<lower>`
+  - `market_asphalt_grass`, `riverside_sand_water`
 
 ### Buildings (`prop.py --kind=iso_building` 或 `--kind=building`)
 

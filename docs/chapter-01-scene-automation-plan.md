@@ -82,7 +82,7 @@
 zone: zone_pharmacy_1983
 size: [20, 15]              # 格數
 tilemap:
-  base: market_concrete_tile
+  base: market_tile_concrete
 props:
   - id: medicine_cabinet_new
     anchor: north_wall

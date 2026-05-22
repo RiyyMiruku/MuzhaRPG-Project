@@ -10,38 +10,38 @@
     "zone:zone_law_office"
   ],
   "tileset_id": "7b11f87f-59e7-4271-9542-9fcdde74ea48",
-  "lower": "worn dark grey asphalt road surface with faded white line markings",
   "upper": "light grey concrete sidewalk slab with expansion joint lines",
+  "lower": "worn dark grey asphalt road surface with faded white line markings",
   "tile_size": 16,
   "surface_id": "asphalt",
-  "topdown_path": "art_source\\tilesets\\street_asphalt_sidewalk\\street_asphalt_sidewalk_topdown.png",
+  "topdown_path": "art_source\\tilesets\\street_sidewalk_asphalt\\street_sidewalk_asphalt_topdown.png",
   "stages": {
     "generate_atlas": {
       "completed_at": "2026-05-16T21:48:16",
       "paths": [
-        "art_source\\tilesets\\street_asphalt_sidewalk\\street_asphalt_sidewalk_topdown.png"
+        "art_source\\tilesets\\street_sidewalk_asphalt\\street_sidewalk_asphalt_topdown.png"
       ]
     },
     "iso_project": {
       "completed_at": "2026-05-16T21:48:16",
       "paths": [
-        "art_source\\tilesets\\street_asphalt_sidewalk\\street_asphalt_sidewalk_iso.png"
+        "art_source\\tilesets\\street_sidewalk_asphalt\\street_sidewalk_asphalt_iso.png"
       ]
     },
     "verify_in_godot": {
       "completed_at": "2026-05-16T21:48:16",
       "paths": [
-        "art_source\\tilesets\\street_asphalt_sidewalk\\street_asphalt_sidewalk_iso.png"
+        "art_source\\tilesets\\street_sidewalk_asphalt\\street_sidewalk_asphalt_iso.png"
       ]
     },
     "import_to_godot": {
       "completed_at": "2026-05-16T21:48:16",
       "paths": [
-        "game\\assets\\textures\\tilesets\\street_asphalt_sidewalk.png"
+        "game\\assets\\textures\\tilesets\\street_sidewalk_asphalt.png"
       ]
     }
   },
-  "iso_path": "art_source\\tilesets\\street_asphalt_sidewalk\\street_asphalt_sidewalk_iso.png",
+  "iso_path": "art_source\\tilesets\\street_sidewalk_asphalt\\street_sidewalk_asphalt_iso.png",
   "imported_at": "2026-05-16T21:48:16",
-  "game_png_path": "game\\assets\\textures\\tilesets\\street_asphalt_sidewalk.png"
+  "game_png_path": "game\\assets\\textures\\tilesets\\street_sidewalk_asphalt.png"
 }

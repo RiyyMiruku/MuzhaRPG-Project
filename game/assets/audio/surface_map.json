@@ -1,6 +1,6 @@
 {
-  "courtyard_dirt_grass": "grass",
-  "market_concrete_tile": "concrete",
-  "street_asphalt_sidewalk": "asphalt",
+  "courtyard_grass_dirt": "grass",
+  "market_tile_concrete": "concrete",
+  "street_sidewalk_asphalt": "asphalt",
   "test_autotiles": "grass"
 }

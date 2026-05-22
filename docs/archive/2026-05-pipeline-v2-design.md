@@ -95,10 +95,10 @@ art_source/
 │       ├── asset.json
 │       └── family_photo_blacked.png
 └── tilesets/
-    └── courtyard_dirt_grass/
+    └── courtyard_grass_dirt/
         ├── asset.json
-        ├── courtyard_dirt_grass_topdown.png
-        └── courtyard_dirt_grass_iso.png
+        ├── courtyard_grass_dirt_topdown.png
+        └── courtyard_grass_dirt_iso.png
 ```
 
 Each `asset.json` is independent, atomic-renamed on write, no fcntl needed. Concurrent writes to different assets cannot collide. Per-asset diff in git PRs is one file per asset that changed.

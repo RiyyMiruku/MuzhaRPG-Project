@@ -5,7 +5,7 @@ label: "木柵市場"
 size: [34, 23]
 
 tilemap:
-  atlas: street_asphalt_sidewalk
+  atlas: street_sidewalk_asphalt
   terrain: 1
   fill: rect
 

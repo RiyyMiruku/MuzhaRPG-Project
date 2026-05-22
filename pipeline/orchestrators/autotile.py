@@ -8,8 +8,8 @@ Stages:
 CLI:
   uv run python pipeline/orchestrators/autotile.py \\
       --name market_grass_asphalt \\
-      --lower "green grass texture" \\
       --upper "dark asphalt road" \\
+      --lower "green grass texture" \\
       [--transition-size 0.25] [--transition-description "grey concrete curb"] \\
       [--tile-size 16] [--review-mode stage]
 """
@@ -38,8 +38,8 @@ STAGES: list[str] = ["generate_atlas", "iso_project", "verify_in_godot", "import
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", required=True)
-    parser.add_argument("--lower", help="下層地形描述(首次必填)")
     parser.add_argument("--upper", help="上層地形描述(首次必填)")
+    parser.add_argument("--lower", help="下層地形描述(首次必填)")
     parser.add_argument("--transition-size", type=float, default=0.0)
     parser.add_argument("--transition-description", default=None)
     parser.add_argument("--tile-size", type=int, default=16)
@@ -71,7 +71,7 @@ def generate_atlas(ctx: StageContext) -> list[str]:
     args = ctx.args
     assert args is not None
     if not args.lower or not args.upper:
-        raise SystemExit("首次跑 generate_atlas 須提供 --lower 與 --upper")
+        raise SystemExit("首次跑 generate_atlas 須提供 --upper 與 --lower")
 
     token = plab.load_token()
     tileset_id, atlas_img = plab.submit_topdown_tileset(

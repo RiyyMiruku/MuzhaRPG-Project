@@ -4,7 +4,7 @@ era: "modern"
 size: [26, 19]
 
 tilemap:
-  atlas: market_concrete_tile
+  atlas: market_tile_concrete
   terrain: 1
   fill: rect
 

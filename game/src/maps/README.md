@@ -49,7 +49,7 @@ game/
 
 地形使用 [TileMapDual addon](../../../docs/tilemapdual-guide.md)，**單一節點即可**（不用 sibling 邏輯層 + 視覺層配對）。
 
-1. PNG 放 `assets/textures/environment/tilesets/<zone>/autotile_<lower>_<upper>.png`
+1. PNG 放 `assets/textures/environment/tilesets/<zone>/autotile_<upper>_<lower>.png`
 2. 開該 zone 的 `.tscn`，找到 `TileMapDual` 節點
 3. 加新 PNG 到 inline TileSet sub_resource 的 atlas sources（手動或請 AI 加），peering bits 照 zhinan 範本
 4. TileMap 面板 → 地形分頁 → 選 `FG -<png名>` 直接刷

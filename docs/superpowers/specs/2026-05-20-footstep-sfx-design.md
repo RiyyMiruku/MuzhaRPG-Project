@@ -112,9 +112,9 @@ Player movement script (步距驅動)                    │
 
 ```json
 {
-  "courtyard_dirt_grass": "grass",
-  "market_concrete_tile": "concrete",
-  "street_asphalt_sidewalk": "asphalt"
+  "courtyard_grass_dirt": "grass",
+  "market_tile_concrete": "concrete",
+  "street_sidewalk_asphalt": "asphalt"
 }
 ```
 
@@ -256,13 +256,13 @@ Skill 動作：
 Skill 動作：
 
 1. 找出所有 `surface_id` 是 null / 缺欄位的 tileset entry
-2. 對每個 tileset 讀 `asset.json` 的 `lower` + `upper` description（這些是 Pixellab prompt，本身就描述材質）
+2. 對每個 tileset 讀 `asset.json` 的 `upper` + `lower` description（這些是 Pixellab prompt，本身就描述材質）
 3. LLM 對照 `surfaces.json` 判讀 → 提議 surface_id + 信心度（high / medium / low）
 4. 列表給使用者確認：
    ```
-   courtyard_dirt_grass    upper="patchy green grass..."         → grass    (high)
-   market_concrete_tile    lower="grey concrete slabs..."        → concrete (high)
-   street_asphalt_sidewalk lower="dark asphalt road..."          → asphalt  (high)
+   courtyard_grass_dirt    upper="patchy green grass..."         → grass    (high)
+   market_tile_concrete    lower="grey concrete slabs..."        → concrete (high)
+   street_sidewalk_asphalt lower="dark asphalt road..."          → asphalt  (high)
    ```
    high 全自動套；medium / low 逐一問
 5. 套用：呼叫 dashboard remake API（或直接寫 manifest + 重 export_surface_map），等效於使用者在 dashboard 手動下拉選的結果

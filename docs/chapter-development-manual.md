@@ -125,7 +125,7 @@ label: "木柵老公寓"
 size: [22, 17]                        # iso 格,中心 (0,0)
 
 tilemap:
-  atlas: market_concrete_tile         # game/assets/textures/tilesets/<atlas>.png
+  atlas: market_tile_concrete         # game/assets/textures/tilesets/<atlas>.png
   terrain: 1                          # 1 = FG(全填)
   fill: rect
 

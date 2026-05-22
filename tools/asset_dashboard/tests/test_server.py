@@ -301,7 +301,7 @@ def test_create_tileset(client, stub_jobs):
     assert r.status_code == 200, r.text
 
 
-def test_create_tileset_missing_lower_upper(client):
+def test_create_tileset_missing_upper_lower(client):
     r = client.post(
         "/api/asset/create",
         json={

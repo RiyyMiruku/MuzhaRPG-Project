@@ -500,7 +500,7 @@
   ],
   "tilesets": [
     {
-      "name": "market_concrete_tile",
+      "name": "market_tile_concrete",
       "lower": "weathered grey concrete pavement with cracks and stains from years of market use",
       "upper": "small red square ceramic floor tiles laid in grid pattern, traditional taiwanese market walkway",
       "transition_size": 0.25,
@@ -509,7 +509,7 @@
       "category": "terrain"
     },
     {
-      "name": "courtyard_dirt_grass",
+      "name": "courtyard_grass_dirt",
       "lower": "compacted brown earth ground with small pebbles, traditional taiwanese back courtyard",
       "upper": "patchy green grass with small wildflowers and weeds",
       "transition_size": 0.25,
@@ -518,7 +518,7 @@
       "category": "terrain"
     },
     {
-      "name": "street_asphalt_sidewalk",
+      "name": "street_sidewalk_asphalt",
       "lower": "worn dark grey asphalt road surface with faded white line markings",
       "upper": "light grey concrete sidewalk slab with expansion joint lines",
       "transition_size": 0.25,

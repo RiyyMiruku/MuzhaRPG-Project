@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" path="res://src/entities/player/Player.tscn" id="4_player"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_pcam_host_script"]
-[ext_resource type="Texture2D" uid="uid://b2ccd6twaxt0" path="res://assets/textures/tilesets/market_concrete_tile.png" id="7_atlas_market_concret"]
+[ext_resource type="Texture2D" uid="uid://b2ccd6twaxt0" path="res://assets/textures/tilesets/market_tile_concrete.png" id="7_atlas_market_concret"]
 [ext_resource type="PackedScene" path="res://src/entities/npcs/BaseNPC.tscn" id="8_base_npc"]
 [ext_resource type="PackedScene" uid="uid://cu5f7uuu238si" path="res://src/core/components/ZoneTransitionArea.tscn" id="9_zone_transition_area"]
 [ext_resource type="PackedScene" uid="uid://mpxuvx03qfeb" path="res://src/maps/props/shop_counter_wood.tscn" id="10_prop_shop_counter_wo"]
@@ -151,7 +151,7 @@ tile_size = Vector2i(32, 16)
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "<any>"
 terrain_set_0/terrain_0/color = Color(0.93333334, 0.50980395, 0.93333334, 1)
-terrain_set_0/terrain_1/name = "FG -market_concrete_tile.png"
+terrain_set_0/terrain_1/name = "FG -market_tile_concrete.png"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_ya1b0")
 
@@ -277,7 +277,7 @@ tile_size = Vector2i(32, 16)
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "<any>"
 terrain_set_0/terrain_0/color = Color(0.93333334, 0.50980395, 0.93333334, 1)
-terrain_set_0/terrain_1/name = "FG -market_concrete_tile.png"
+terrain_set_0/terrain_1/name = "FG -market_tile_concrete.png"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_kg2am")
 

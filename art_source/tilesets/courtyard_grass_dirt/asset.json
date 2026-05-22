@@ -8,38 +8,38 @@
     "zone:zone_pharmacy_backyard"
   ],
   "tileset_id": "9e933cd8-0978-41b0-b2e9-75cce2bf3096",
-  "lower": "compacted brown earth ground with small pebbles, traditional taiwanese back courtyard",
   "upper": "patchy green grass with small wildflowers and weeds",
+  "lower": "compacted brown earth ground with small pebbles, traditional taiwanese back courtyard",
   "tile_size": 16,
   "surface_id": "grass",
-  "topdown_path": "art_source\\tilesets\\courtyard_dirt_grass\\courtyard_dirt_grass_topdown.png",
+  "topdown_path": "art_source\\tilesets\\courtyard_grass_dirt\\courtyard_grass_dirt_topdown.png",
   "stages": {
     "generate_atlas": {
       "completed_at": "2026-05-16T21:46:38",
       "paths": [
-        "art_source\\tilesets\\courtyard_dirt_grass\\courtyard_dirt_grass_topdown.png"
+        "art_source\\tilesets\\courtyard_grass_dirt\\courtyard_grass_dirt_topdown.png"
       ]
     },
     "iso_project": {
       "completed_at": "2026-05-16T22:10:41",
       "paths": [
-        "art_source\\tilesets\\courtyard_dirt_grass\\courtyard_dirt_grass_iso.png"
+        "art_source\\tilesets\\courtyard_grass_dirt\\courtyard_grass_dirt_iso.png"
       ]
     },
     "verify_in_godot": {
       "completed_at": "2026-05-16T21:46:38",
       "paths": [
-        "art_source\\tilesets\\courtyard_dirt_grass\\courtyard_dirt_grass_iso.png"
+        "art_source\\tilesets\\courtyard_grass_dirt\\courtyard_grass_dirt_iso.png"
       ]
     },
     "import_to_godot": {
       "completed_at": "2026-05-16T22:10:41",
       "paths": [
-        "game\\assets\\textures\\tilesets\\courtyard_dirt_grass.png"
+        "game\\assets\\textures\\tilesets\\courtyard_grass_dirt.png"
       ]
     }
   },
-  "iso_path": "art_source\\tilesets\\courtyard_dirt_grass\\courtyard_dirt_grass_iso.png",
+  "iso_path": "art_source\\tilesets\\courtyard_grass_dirt\\courtyard_grass_dirt_iso.png",
   "imported_at": "2026-05-16T22:10:41",
-  "game_png_path": "game\\assets\\textures\\tilesets\\courtyard_dirt_grass.png"
+  "game_png_path": "game\\assets\\textures\\tilesets\\courtyard_grass_dirt.png"
 }

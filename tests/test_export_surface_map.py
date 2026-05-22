@@ -29,8 +29,8 @@ def _write_tileset(root: Path, name: str, fields: dict) -> None:
 
 
 def test_export_includes_tilesets_with_surface_id(tmp_project):
-    _write_tileset(tmp_project, "courtyard_dirt_grass", {"surface_id": "grass"})
-    _write_tileset(tmp_project, "market_concrete_tile", {"surface_id": "concrete"})
+    _write_tileset(tmp_project, "courtyard_grass_dirt", {"surface_id": "grass"})
+    _write_tileset(tmp_project, "market_tile_concrete", {"surface_id": "concrete"})
 
     out = manifest.export_surface_map()
 
@@ -38,8 +38,8 @@ def test_export_includes_tilesets_with_surface_id(tmp_project):
     assert out == expected
     data = json.loads(expected.read_text(encoding="utf-8"))
     assert data == {
-        "courtyard_dirt_grass": "grass",
-        "market_concrete_tile": "concrete",
+        "courtyard_grass_dirt": "grass",
+        "market_tile_concrete": "concrete",
     }
 
 

@@ -726,9 +726,9 @@ def create_asset(body: CreateAssetRequest) -> dict:
 
     elif body.asset_type == "tileset":
         script = "pipeline/orchestrators/autotile.py"
-        if not body.lower or not body.upper:
-            raise HTTPException(400, "tileset requires lower and upper")
-        cli_args += ["--lower", body.lower, "--upper", body.upper]
+        if not body.upper or not body.lower:
+            raise HTTPException(400, "tileset requires upper and lower")
+        cli_args += ["--upper", body.upper, "--lower", body.lower]
         if body.transition_size is not None:
             cli_args += ["--transition-size", str(body.transition_size)]
         if body.transition_description:

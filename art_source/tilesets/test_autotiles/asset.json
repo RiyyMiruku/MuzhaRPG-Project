@@ -8,8 +8,8 @@
     "chapter:test"
   ],
   "tileset_id": "987cad1e-eb38-474f-9383-f7524798ca2a",
-  "lower": "cobble stone",
   "upper": "green grass",
+  "lower": "cobble stone",
   "tile_size": 16,
   "surface_id": "grass",
   "topdown_path": "art_source\\tilesets\\test_autotiles\\test_autotiles_topdown.png",

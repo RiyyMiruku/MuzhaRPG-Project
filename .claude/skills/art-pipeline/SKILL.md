@@ -76,7 +76,7 @@ Zone slug 是「素材出現在哪個遊戲場景」的具體標籤，**單一�
 - `--only-directions south,east` —— **partial regen**，限定方向（僅 animation stage 生效）
 
 ### Tileset / Prop 專屬 flag
-- `--lower "..."` + `--upper "..."` —— autotile 必填
+- `--upper "..."` + `--lower "..."` —— autotile 必填
 - `--transition-size {0,0.25,0.5,1.0}` + `--transition-description "..."` —— autotile 可選
 - `--kind {building|iso_building|iso_prop}` —— `prop.py` 必填
 - `--width N --height N`（building / iso_building；iso_building 上限 400×400）/ `--size N`（iso_prop，上限 64）
@@ -94,7 +94,7 @@ Zone slug 是「素材出現在哪個遊戲場景」的具體標籤，**單一�
      - Dashboard backend 沒跑：先請使用者啟動，或退而求其次走 CLI for-loop
    → 否（單一 asset + 互動模式）：直接 Bash 調用 orchestrator
 3. 首次 / Resume?
-   → 首次：--description（autotile 是 --lower/--upper）必填
+   → 首次：--description（autotile 是 --upper/--lower）必填
    → Resume：--resume-from <next_stage>，description 可省略（從 manifest 讀）
 4. CLI 模式才需要選：--review-mode none（批次 / 腳本）vs --review-mode stage（跑完一階段停）
    API 模式恆為 --review-mode none（backend 寫死）
@@ -161,7 +161,7 @@ Zone slug 是「素材出現在哪個遊戲場景」的具體標籤，**單一�
 `description` 是唯一送進 Pixellab 的 prompt（用於 rotation 生成）。動畫一律走 template 模式，沒有 prompt 客製化的欄位。
 
 **Tileset / object** 用同一個 endpoint，換不同欄位：
-- tileset：`asset_type=tileset`、`lower`、`upper`、`transition_size`、`transition_description`
+- tileset：`asset_type=tileset`、`upper`、`lower`、`transition_size`、`transition_description`
 - object：`asset_type=object`、`kind`（`iso_prop` | `building` | `iso_building`）、`description`、`size` | `width`/`height`、`collision`
 
 ### 批次範例 —— 從 `assets.json` 一次 queue
@@ -297,7 +297,7 @@ idle 僅 4 cardinal（south/east/north/west）；walk 全 8。orchestrator 自�
 # Autotile
 uv run python pipeline/orchestrators/autotile.py \
   --name market_grass_asphalt \
-  --lower "green grass texture" --upper "dark asphalt road" \
+  --upper "dark asphalt road" --lower "green grass texture" \
   --zones zone_market_1983 --category terrain --chapter 1 \
   --transition-size 0.25 --transition-description "grey concrete curb" \
   --review-mode none
@@ -332,7 +332,7 @@ uv run python pipeline/orchestrators/prop.py \
 - **`/map-objects` 端點(kind=building)沒有 iso 參數**,出的是立面 / 30° 立繪。若要 iso 投影建築,改用 `kind=iso_building`（走 `/create-image-pixflux` + `isometric:true`）。
 - **iso_building 的 isometric 是 weakly-guiding** —— 一定要在 description 同時帶 "isometric view / 30-degree angle / visible roof and two side walls" 之類字眼,否則仍可能出立面。
 - **生成是 async 且不可預測**。標稱 ETA 180s 但實測可能 10–30 分鐘。`--review-mode stage` 跑完一個 stage 就 `sys.exit(0)`，不會 hang。
-- **首次跑必須給 `--description`**（autotile 是 `--lower` / `--upper`）。Resume 時可省略，會從 manifest 讀。
+- **首次跑必須給 `--description`**（autotile 是 `--upper` / `--lower`）。Resume 時可省略，會從 manifest 讀。
 - **不要直接呼叫底層 `pixellab_client` 函式**來重複實作 pipeline 邏輯。orchestrator 已封裝好；只需 Bash 調用，或透過 Dashboard job API。
 - **動畫 frame 不再存單張 PNG**。Pixellab 回傳的 frame 直接 paste 進 `spritesheet/<name>.png`（refactor 後行為）。本地不會有 `animations/<action>/<direction>/frame_*.png`。
 

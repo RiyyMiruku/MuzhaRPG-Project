@@ -4,7 +4,7 @@ label: "木柵老公寓 (現代)"
 size: [22, 17]
 
 tilemap:
-  atlas: market_concrete_tile
+  atlas: market_tile_concrete
   terrain: 1
   fill: rect
 
