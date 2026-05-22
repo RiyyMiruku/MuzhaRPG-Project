@@ -67,21 +67,22 @@ func _surface_under_player() -> String:
 	if best_layer.tile_set == null:
 		print("[Footstep]   layer.tile_set is null")
 		return ""
-	var ts_path: String = best_layer.tile_set.resource_path
-	print("[Footstep]   tile_set.resource_path='%s'" % ts_path)
-	if ts_path == "":
-		# Fallback: try first atlas source's texture path
-		var ts: TileSet = best_layer.tile_set
-		if ts.get_source_count() > 0:
-			var src: TileSetSource = ts.get_source(ts.get_source_id(0))
-			if src is TileSetAtlasSource:
-				var tex: Texture2D = (src as TileSetAtlasSource).texture
-				if tex != null:
-					ts_path = tex.resource_path
-					print("[Footstep]   fallback texture path='%s'" % ts_path)
-		if ts_path == "":
-			return ""
-	var tileset_name: String = ts_path.get_file().get_basename()
+	# Use the atlas source's texture PNG path — this is the canonical anchor
+	# for the tileset name (matches game/assets/textures/tilesets/<name>.png).
+	# tile_set.resource_path is unreliable: SubResource form gives
+	# "<scene>::<SubResId>", not the tileset name we want.
+	var ts: TileSet = best_layer.tile_set
+	var tex_path: String = ""
+	if ts.get_source_count() > 0:
+		var src: TileSetSource = ts.get_source(ts.get_source_id(0))
+		if src is TileSetAtlasSource:
+			var tex: Texture2D = (src as TileSetAtlasSource).texture
+			if tex != null:
+				tex_path = tex.resource_path
+	print("[Footstep]   texture path='%s'" % tex_path)
+	if tex_path == "":
+		return ""
+	var tileset_name: String = tex_path.get_file().get_basename()
 	print("[Footstep]   tileset_name='%s'" % tileset_name)
 	var result: String = SurfaceRegistry.surface_for_tileset(tileset_name)
 	print("[Footstep]   registry → '%s'" % result)
