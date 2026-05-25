@@ -75,6 +75,11 @@ func _init_wander() -> void:
 func _physics_process(delta: float) -> void:
 	if _wander_state == _WanderState.DISABLED:
 		return
+	# Zone 傳送中 NPC 凍住 — 避免 spawn 時撞到玩家;
+	# 對話/暫停不擋,讓背景 NPC 繼續活動維持氛圍。
+	if GameManager.current_state == GameManager.GameState.LOADING:
+		move_with_input(Vector2.ZERO)
+		return
 	if _wander_paused_by_player or _conversation_active:
 		move_with_input(Vector2.ZERO)
 		return

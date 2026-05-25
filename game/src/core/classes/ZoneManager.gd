@@ -72,6 +72,10 @@ func transition_to_zone(zone_id: String, entry_point: String = "default") -> voi
 		_current_zone_node.queue_free()
 		_current_zone_node = null
 
+	# 2.5 清空 NPC 對話歷史 — 離開場景後 NPC「忘記」剛才的逐字對話;
+	#     長期狀態(關係值、flags、completed_events)不受影響。
+	StoryManager.clear_conversation_histories()
+
 	# 3. 非同步載入新區域
 	var scene_path: String = Zones.scene_path(zone_id)
 	ResourceLoader.load_threaded_request(scene_path)
@@ -102,9 +106,15 @@ func transition_to_zone(zone_id: String, entry_point: String = "default") -> voi
 	StoryManager.record_event("visited_" + zone_id.replace("zone_", ""))
 
 	# 5. 定位玩家到入口點
+	#    優先用 zone scene 內的 Marker2D(節點名 == entry_point);
+	#    找不到再 fallback 到 Zones.entry_position 中央表。
 	_player = _find_player()
 	if _player:
-		_player.global_position = Zones.entry_position(zone_id, entry_point)
+		var marker: Marker2D = _find_entry_marker(_current_zone_node, entry_point)
+		if marker:
+			_player.global_position = marker.global_position
+		else:
+			_player.global_position = Zones.entry_position(zone_id, entry_point)
 
 	# 5.5 套用當前 era 的可見性 + tint(hybrid zone 才有效果)
 	EraManager.apply_to_current_zone()
@@ -128,6 +138,16 @@ func _find_player() -> Player:
 	var result: Node = _zone_container.find_child("Player", true, false)
 	if result is Player:
 		return result as Player
+	return null
+
+## 在 zone scene 內找名為 entry_point 的 Marker2D(例:"from_market")。
+## 找不到回 null,由呼叫端 fallback。
+func _find_entry_marker(zone_node: Node, entry_point: String) -> Marker2D:
+	if zone_node == null or entry_point.is_empty():
+		return null
+	var found: Node = zone_node.find_child(entry_point, true, false)
+	if found is Marker2D:
+		return found as Marker2D
 	return null
 
 func _get_zone_id_from_node(node: Node) -> String:

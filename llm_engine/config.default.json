@@ -2,7 +2,7 @@
   "server": {
     "host": "127.0.0.1",
     "port": 8000,
-    "context_size": 2048,
+    "context_size": 8192,
     "gpu_layers": 0,
     "chat_template": "chatml",
     "startup_timeout_sec": 30,

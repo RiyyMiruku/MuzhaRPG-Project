@@ -31,8 +31,10 @@ const TINT_PRESETS: Dictionary = {
 	"modern": Color(0.78, 0.82, 0.88),
 }
 const ERA_GROUP_PREFIX: String = "era_"
-## 閃光持續時間(配合劇本「燈泡閃了一下」)
-const FLASH_DURATION: float = 0.5
+## 全暗顏色 — CanvasModulate × 黑 = 0,真正把畫面遮黑遮住 era swap
+const BLACKOUT_COLOR: Color = Color.BLACK
+## 燈泡 flicker 短暫亮起的微白色(不用純白 — 偏暖一點比較像舊燈泡)
+const FLICKER_PEAK_COLOR: Color = Color(0.95, 0.92, 0.85)
 
 # ── Public API ──────────────────────────────────────────────────────────────
 func travel_to(target_era: String) -> void:
@@ -68,15 +70,46 @@ func apply_to_current_zone() -> void:
 
 # ── Internal ────────────────────────────────────────────────────────────────
 func _flash_and_swap(tint: CanvasModulate, target_era: String) -> void:
+	# 預先算好幾個色階,避免 tween 中重複計算。alpha 一律設 1 避免 CanvasModulate 透明度跑掉。
+	var start_color: Color = tint.color
+	var dim: Color = Color(start_color.r * 0.25, start_color.g * 0.25, start_color.b * 0.25, 1.0)
+	var gasp: Color = Color(start_color.r * 0.55, start_color.g * 0.55, start_color.b * 0.55, 1.0)
+	var weak: Color = Color(FLICKER_PEAK_COLOR.r * 0.4, FLICKER_PEAK_COLOR.g * 0.4, FLICKER_PEAK_COLOR.b * 0.4, 1.0)
+	var mid: Color = Color(FLICKER_PEAK_COLOR.r * 0.7, FLICKER_PEAK_COLOR.g * 0.7, FLICKER_PEAK_COLOR.b * 0.7, 1.0)
+
 	var tween: Tween = create_tween()
-	# Phase A:tint → 白色(閃光峰值)
-	tween.tween_property(tint, "color", Color.WHITE, FLASH_DURATION * 0.25)
-	# Phase B:在閃光峰值時切換 visibility(玩家看不見差異)
+	tween.set_trans(Tween.TRANS_LINEAR)  # flicker 階段用線性 — 硬切才有電流感
+
+	# ── Phase 1:跳電前 stutter(~0.36s) — 燈光快速忽明忽暗、最後嘆息一下熄滅 ──
+	tween.tween_property(tint, "color", dim, 0.05)
+	tween.tween_property(tint, "color", start_color, 0.03)
+	tween.tween_property(tint, "color", dim, 0.04)
+	tween.tween_property(tint, "color", start_color, 0.06)
+	tween.tween_property(tint, "color", dim, 0.03)
+	tween.tween_property(tint, "color", BLACKOUT_COLOR, 0.04)
+	tween.tween_property(tint, "color", gasp, 0.05)        # 一聲嘆息(回光返照)
+	tween.tween_property(tint, "color", BLACKOUT_COLOR, 0.06)
+
+	# ── Phase 2:黑屏 hold + swap(~0.25s)── 玩家看不到內容跳變
+	tween.tween_interval(0.10)
 	tween.tween_callback(_swap_visibility.bind(target_era))
-	# Phase C:白色 → 目標 era 的 tint
-	tween.tween_property(
-		tint, "color", TINT_PRESETS[target_era], FLASH_DURATION * 0.75
-	)
+	tween.tween_interval(0.15)
+
+	# ── Phase 3:重啟混亂 flicker(~0.36s) — 多段亮度試圖恢復 ──
+	tween.tween_property(tint, "color", weak, 0.04)
+	tween.tween_property(tint, "color", BLACKOUT_COLOR, 0.05)
+	tween.tween_property(tint, "color", FLICKER_PEAK_COLOR, 0.03)
+	tween.tween_property(tint, "color", BLACKOUT_COLOR, 0.07)
+	tween.tween_property(tint, "color", mid, 0.04)
+	tween.tween_property(tint, "color", FLICKER_PEAK_COLOR, 0.05)
+	tween.tween_property(tint, "color", mid, 0.04)
+	tween.tween_property(tint, "color", FLICKER_PEAK_COLOR, 0.04)
+
+	# ── Phase 4:穩定 settle(0.6s) — 光線穩下來溶到目標 era tint ──
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(tint, "color", TINT_PRESETS[target_era], 0.60)
+
 	await tween.finished
 
 func _swap_visibility(target_era: String) -> void:

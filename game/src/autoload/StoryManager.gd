@@ -102,6 +102,11 @@ func add_conversation_turn(npc_id: String, role: String, content: String) -> voi
 	if conversation_histories[npc_id].size() > MAX_HISTORY_PER_NPC:
 		conversation_histories[npc_id] = conversation_histories[npc_id].slice(-MAX_HISTORY_PER_NPC)
 
+## 清空所有 NPC 的對話歷史。zone 切換時呼叫,讓 NPC「忘掉」上個場景的對話。
+## 長期記憶仍保留在 completed_events / player_flags / npc_relationships。
+func clear_conversation_histories() -> void:
+	conversation_histories.clear()
+
 # ── Persistence ────────────────────────────────────────────────────────────
 func serialize() -> Dictionary:
 	return {

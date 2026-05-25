@@ -296,3 +296,6 @@ tween_on_load = false
 position = Vector2(-176, -88)
 target_zone = "zone_pharmacy"
 entry_point = "from_backyard"
+
+[node name="from_pharmacy" type="Marker2D" parent="Transitions/ToPharmacy"]
+position = Vector2(32, 0)

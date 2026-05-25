@@ -474,7 +474,10 @@ tween_on_load = false
 visible = false
 position = Vector2(174, -192)
 target_zone = "zone_pharmacy"
-entry_point = "from_market"
+entry_point = "from_market_1983"
+
+[node name="from_pharmacy_1983" type="Marker2D" parent="Transitions/ToPharmacy_1983"]
+position = Vector2(0, 32)
 
 [node name="ToApartment_modern" parent="Transitions" unique_id=1347050136 groups=["era_modern", "transition"] instance=ExtResource("9_zone_transition_area")]
 position = Vector2(251, 15)
@@ -484,9 +487,18 @@ entry_point = "from_market"
 [node name="ToPharmacy_modern" parent="Transitions" unique_id=79500643 groups=["era_modern", "transition"] instance=ExtResource("9_zone_transition_area")]
 position = Vector2(-82, -32)
 target_zone = "zone_pharmacy"
-entry_point = "from_market"
+entry_point = "from_market_modern"
 
 [node name="ToLawOffice_modern" parent="Transitions" unique_id=1633439970 groups=["era_modern", "transition"] instance=ExtResource("9_zone_transition_area")]
 position = Vector2(-394, 57)
 target_zone = "zone_law_office"
 entry_point = "from_market"
+
+[node name="from_apartment" type="Marker2D" parent="Transitions/ToApartment_modern"]
+position = Vector2(-31, 0)
+
+[node name="from_law_office" type="Marker2D" parent="Transitions/ToLawOffice_modern"]
+position = Vector2(34, 0)
+
+[node name="from_pharmacy_modern" type="Marker2D" parent="Transitions/ToPharmacy_modern"]
+position = Vector2(0, 32)

@@ -11,6 +11,9 @@ var is_server_online: bool = false
 var default_temperature: float = 0.7
 var default_max_tokens: int = 200
 var request_timeout_sec: float = 30.0
+## llama-server 的 context 視窗大小;同步自 config.json 的 server.context_size。
+## 用於 client 端 pre-flight 預算檢查 — 估算 prompt 超量時自動裁掉最舊的 history。
+var context_size: int = 8192
 
 # ── Internal ────────────────────────────────────────────────────────────────
 var _http: HTTPRequest          # 用於 AI query
@@ -40,9 +43,11 @@ func _sync_server_url() -> void:
 	var config: Dictionary = GameManager._ai_config
 	if config.is_empty():
 		return
-	var host: String = config.get("server", {}).get("host", "localhost")
-	var port: int = config.get("server", {}).get("port", 8000)
+	var server_cfg: Dictionary = config.get("server", {})
+	var host: String = server_cfg.get("host", "localhost")
+	var port: int = server_cfg.get("port", 8000)
 	server_url = "http://%s:%d" % [host, port]
+	context_size = int(server_cfg.get("context_size", 8192))
 
 # ── Health Check ────────────────────────────────────────────────────────────
 func check_server_health() -> void:
@@ -149,6 +154,18 @@ func _on_query_completed(result: int, response_code: int, _headers: PackedString
 	_current_flags = {}
 	response_complete.emit(content, npc_id)
 
+## Token 估算 — 1 CJK 字 ≈ 1 token,英文略低估但保守無妨;
+## 每則訊息額外 +4 token 作為 role/格式 wrapper 的 overhead。
+const _TOKEN_PER_MSG_OVERHEAD: int = 4
+## 安全餘量:扣完 max_tokens 之後再留這麼多 token 給 chat_template 包裝、stop tokens 等。
+const _CONTEXT_SAFETY_MARGIN: int = 128
+
+func _estimate_tokens(text: String) -> int:
+	return text.length()
+
+func _estimate_message_tokens(msg: Dictionary) -> int:
+	return _estimate_tokens(str(msg.get("content", ""))) + _TOKEN_PER_MSG_OVERHEAD
+
 # ── Payload Builder ─────────────────────────────────────────────────────────
 func _build_chat_payload(npc_config: Resource, user_input: String, context: Dictionary) -> Dictionary:
 	# 用 TrustGate 組裝核心 system prompt（人格 + 章節 overlay + 信任值門檻）
@@ -161,26 +178,53 @@ func _build_chat_payload(npc_config: Resource, user_input: String, context: Dict
 	# 追加 per-call 動態情境（time / zone / recent events）— 不適合進 TrustGate
 	system_content += "\n\n" + _build_context_string(context)
 
-	var messages: Array[Dictionary] = [{"role": "system", "content": system_content}]
+	var max_response: int = npc_config.max_response_tokens if "max_response_tokens" in npc_config else default_max_tokens
+	var system_msg: Dictionary = {"role": "system", "content": system_content}
+	var user_msg: Dictionary = {"role": "user", "content": user_input}
+	var prefill_msg: Dictionary = {"role": "assistant", "content": "<think>\n</think>\n", "prefix": true}
 
-	# Inject conversation history (capped to memory_turns)
+	# 先取 conversation_memory_turns 的硬上限,再做 token 預算檢查
 	var history: Array = context.get("conversation_history", [])
 	var max_turns: int = npc_config.conversation_memory_turns if "conversation_memory_turns" in npc_config else 6
 	var start: int = max(0, history.size() - max_turns * 2)
-	for i in range(start, history.size()):
-		messages.append(history[i])
+	var history_slice: Array = history.slice(start, history.size())
 
-	# Add current user message and save to history
-	messages.append({"role": "user", "content": user_input})
+	# Token 預算:input 部分(system + history + user + prefill) 不能超過
+	# context_size - max_response - safety_margin
+	var input_budget: int = context_size - max_response - _CONTEXT_SAFETY_MARGIN
+	var fixed_tokens: int = (
+		_estimate_message_tokens(system_msg)
+		+ _estimate_message_tokens(user_msg)
+		+ _estimate_message_tokens(prefill_msg)
+	)
+	var history_tokens: int = 0
+	for m: Dictionary in history_slice:
+		history_tokens += _estimate_message_tokens(m)
+
+	# 超量 → 從最舊端 pop 直到塞得下;成對 pop(user+assistant)避免破壞對話結構
+	var dropped: int = 0
+	while history_slice.size() > 0 and fixed_tokens + history_tokens > input_budget:
+		var removed: Dictionary = history_slice.pop_front()
+		history_tokens -= _estimate_message_tokens(removed)
+		dropped += 1
+	if dropped > 0:
+		push_warning(
+			"AIClient: prompt token budget exceeded → dropped %d oldest history messages (npc=%s, budget=%d, fixed=%d, history=%d)"
+			% [dropped, npc_config.npc_id, input_budget, fixed_tokens, history_tokens]
+		)
+
+	# 組裝最終 messages
+	var messages: Array[Dictionary] = [system_msg]
+	for m: Dictionary in history_slice:
+		messages.append(m)
+	messages.append(user_msg)
 	StoryManager.add_conversation_turn(npc_config.npc_id, "user", user_input)
-
-	# 預填空思考區塊，阻止模型進入 thinking 模式
-	messages.append({"role": "assistant", "content": "<think>\n</think>\n", "prefix": true})
+	messages.append(prefill_msg)
 
 	return {
 		"model": "default",
 		"messages": messages,
-		"max_tokens": npc_config.max_response_tokens if "max_response_tokens" in npc_config else default_max_tokens,
+		"max_tokens": max_response,
 		"temperature": npc_config.base_temperature if "base_temperature" in npc_config else default_temperature,
 		"stream": false,
 	}

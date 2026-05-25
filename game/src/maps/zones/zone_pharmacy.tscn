@@ -412,7 +412,10 @@ tween_on_load = false
 [node name="ToMarket_1983" parent="Transitions" unique_id=277693011 groups=["era_1983", "transition"] instance=ExtResource("9_zone_transition_area")]
 position = Vector2(-144, 72)
 target_zone = "zone_market"
-entry_point = "from_pharmacy"
+entry_point = "from_pharmacy_1983"
+
+[node name="from_market_1983" type="Marker2D" parent="Transitions/ToMarket_1983"]
+position = Vector2(0, -32)
 
 [node name="ToBackyard_1983" parent="Transitions" unique_id=118154623 groups=["era_1983", "transition"] instance=ExtResource("9_zone_transition_area")]
 position = Vector2(192, 96)
@@ -423,7 +426,13 @@ entry_point = "from_pharmacy"
 visible = false
 position = Vector2(-147, 88)
 target_zone = "zone_market"
-entry_point = "from_pharmacy"
+entry_point = "from_pharmacy_modern"
+
+[node name="from_market_modern" type="Marker2D" parent="Transitions/ToMarket_modern"]
+position = Vector2(0, -32)
+
+[node name="from_backyard" type="Marker2D" parent="Transitions/ToBackyard_1983"]
+position = Vector2(-32, 0)
 
 [node name="shop_counter_wood" parent="." unique_id=88305014 instance=ExtResource("10_prop_shop_counter_wo")]
 position = Vector2(-314, 0)

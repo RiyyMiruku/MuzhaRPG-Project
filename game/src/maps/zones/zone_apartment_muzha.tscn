@@ -260,5 +260,8 @@ position = Vector2(-128, 64)
 target_zone = "zone_market"
 entry_point = "from_apartment"
 
+[node name="from_market" type="Marker2D" parent="Transitions/ToMarket"]
+position = Vector2(28, 0)
+
 [node name="Showcase" type="Node2D" parent="." unique_id=1718767280]
 position = Vector2(400, -400)

@@ -1,7 +1,7 @@
 {
   "status": "base_ready",
   "created_at": "2026-05-12T17:20:50",
-  "updated_at": "2026-05-23T01:50:30",
+  "updated_at": "2026-05-25T18:05:07",
   "tags": [
     "category:teen_family",
     "chapter:1",
@@ -78,17 +78,6 @@
       },
       "error": null
     },
-    "import_to_godot": {
-      "status": "completed",
-      "queued_at": "2026-05-14T01:39:49",
-      "started_at": "2026-05-14T01:39:49",
-      "completed_at": "2026-05-14T01:39:49",
-      "result": {
-        "game_png": "game/assets/textures/characters/lin_xiaowei.png",
-        "game_json": "game/assets/textures/characters/lin_xiaowei.json"
-      },
-      "error": null
-    },
     "animate_idle": {
       "status": "completed",
       "queued_at": "2026-05-23T01:48:35",
@@ -104,6 +93,17 @@
         "sheet_png": "art_source\\characters\\lin_xiaowei\\spritesheet\\lin_xiaowei.png",
         "sheet_json": "art_source\\characters\\lin_xiaowei\\spritesheet\\lin_xiaowei.json",
         "partial": true
+      },
+      "error": null
+    },
+    "import_to_godot": {
+      "status": "completed",
+      "queued_at": "2026-05-25T18:05:07",
+      "started_at": "2026-05-25T18:05:07",
+      "completed_at": "2026-05-25T18:05:07",
+      "result": {
+        "game_png": "game\\assets\\textures\\characters\\lin_xiaowei.png",
+        "game_json": "game\\assets\\textures\\characters\\lin_xiaowei.json"
       },
       "error": null
     }
@@ -126,9 +126,9 @@
       "south-west"
     ]
   },
-  "imported_at": "2026-05-14T01:39:49",
-  "game_png_path": "game/assets/textures/characters/lin_xiaowei.png",
-  "game_json_path": "game/assets/textures/characters/lin_xiaowei.json",
+  "imported_at": "2026-05-25T18:05:07",
+  "game_png_path": "game\\assets\\textures\\characters\\lin_xiaowei.png",
+  "game_json_path": "game\\assets\\textures\\characters\\lin_xiaowei.json",
   "asset_type": "character",
   "pipeline_version": 2,
   "params": {
