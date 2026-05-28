@@ -30,6 +30,11 @@ extends NPCConfig
 ## 此 NPC 知道的事實清單（讓 LLM 不胡謅）
 @export var known_facts: Array[String] = []
 
+## 各劇情階段的態度片段：{ stage_id: "2-4 句中文，描述此階段你對阿謙的態度與分寸" }
+## 未填的 stage 由 TrustGate.resolve_stage_attitude() 依 stage_rules 順序往前繼承最近一格。
+## 路人 NPC 留空 = 完全不注入，向下相容。
+@export var stage_attitudes: Dictionary = {}
+
 ## 講話風格簡述（注入 prompt）
 ## 範例：「台語混國語、短句為主、很少表達情緒」
 @export_multiline var personality_voice: String = ""
