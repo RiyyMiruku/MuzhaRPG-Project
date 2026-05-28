@@ -19,7 +19,8 @@ static func build_system_prompt(
 	profile: NPCConfig,
 	trust: int,
 	flags: Dictionary,
-	chapter_overlay: String = ""
+	chapter_overlay: String = "",
+	stage_attitude: String = ""
 ) -> String:
 	var parts: Array[String] = []
 
@@ -37,6 +38,10 @@ static func build_system_prompt(
 		# 3. 講話風格
 		if not p.personality_voice.is_empty():
 			parts.append("[語氣] " + p.personality_voice)
+
+		# 3.5 現階段劇情態度
+		if not stage_attitude.is_empty():
+			parts.append("[現階段態度] " + stage_attitude)
 
 		# 4. 信任值決定的 allowed topics
 		var allowed: Array = []
@@ -88,3 +93,27 @@ static func filter_forbidden(
 			push_warning("TrustGate: LLM 提及未解鎖禁忌詞 '%s'，已過濾" % topic)
 			result = result.replace(topic, "那個人")
 	return result
+
+## 解析 NPC 在指定 stage 的態度片段，含「往前繼承」：
+## 若 current_stage 沒填，沿 stage_order 往前找最近一個有填的 stage。
+## stage_order 為 stage_id 由前到後的陣列（即 ChapterConfig.stage_rules 的 stage_id 序）。
+## 找不到任何片段回空字串。
+static func resolve_stage_attitude(
+	profile: NPCConfig,
+	current_stage: String,
+	stage_order: Array
+) -> String:
+	if not (profile is NPCProfile):
+		return ""
+	var p: NPCProfile = profile as NPCProfile
+	if p.stage_attitudes.is_empty() or current_stage.is_empty():
+		return ""
+	var idx: int = stage_order.find(current_stage)
+	if idx == -1:
+		# stage 不在 order 中，直接查當格
+		return str(p.stage_attitudes.get(current_stage, ""))
+	for i in range(idx, -1, -1):
+		var sid: String = str(stage_order[i])
+		if p.stage_attitudes.has(sid):
+			return str(p.stage_attitudes[sid])
+	return ""
