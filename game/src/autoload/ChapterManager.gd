@@ -69,6 +69,21 @@ func get_npc_overlay(npc_id: String) -> String:
 		return ""
 	return _current.get_npc_overlay(npc_id)
 
+## 當前章節的 stage_rules（給 StoryManager 推導 current_stage）。無章節回空陣列。
+func get_current_stage_rules() -> Array:
+	if _current == null:
+		return []
+	return _current.stage_rules
+
+## 當前章節的 stage_id 順序（給 TrustGate 做繼承解析）。
+func get_current_stage_order() -> Array:
+	var order: Array = []
+	if _current == null:
+		return order
+	for rule: Dictionary in _current.stage_rules:
+		order.append(rule.get("stage_id", ""))
+	return order
+
 ## 該 NPC 在當前章節是否應出場
 func is_npc_active(npc_id: String) -> bool:
 	if _current == null:
