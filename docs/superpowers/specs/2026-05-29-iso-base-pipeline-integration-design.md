@@ -18,6 +18,18 @@ commit `9048ee5` 新增了兩支一次性工具:
 1. 新 prop 經 pipeline 匯入時,`.tscn` 自動帶正確的 `iso_sort_offset` 與菱形碰撞。
 2. `analyze()` 收斂成單一 SSOT,消除複製。
 3. iso 相關工具跟其他 pipeline 模組一樣模組化、可 CLI 直接調用。
+4. 修復既有 201 個 prop 的「編輯器預覽 vs runtime」Sprite 峰置不一致(見下「已知 bug」)。
+
+## 已知 bug:編輯器/runtime Sprite 峰置不一致
+
+commit `9048ee5` 的 `iso_prop_patch.py` 把 `iso_sort_offset` 寫上 root node,卻沒同步更新 `.tscn` 烘進的 `Sprite2D.offset`(仍是 `-h/2`)。`Prop.gd` 不是 `@tool`,`_ready()` 在編輯器不跑,於是:
+
+- **編輯器預覽**:`Sprite2D.offset.y = -h/2`(`.tscn` 烘進的舊值)
+- **Runtime**:`Prop.gd._ready()` 算 `-h/2 + iso_sort_offset`
+
+兩者差 `iso_sort_offset` px(例:`altar_table_wood` 差 11px),runtime 時圖往下掉。
+
+**根因**:`.tscn` 烘進的 Sprite offset 必須等於 `_ready()` 算出來的值。SSOT 是 `_ready()` 的 `-h/2 + iso_sort_offset`;`.tscn` 的 bake 只是給編輯器顯示用的鏡像,patch 當時漏了同步。本 spec 的 pipeline 端(§4)與 patch 端(§2)都改成烘 `-h/2 + iso_sort_offset`,並重跑修復既有 prop(§6)。
 
 ## 決策(已與使用者確認)
 
@@ -46,8 +58,9 @@ commit `9048ee5` 新增了兩支一次性工具:
 
 批次 patch 既有 `.tscn` 的 CLI(手動 re-patch 用途保留)。
 
-- `parse_blocks` / `blocks_to_str` / `patch_tscn` / `process_tscn` / `main` 邏輯與既有 `tools/iso_prop_patch.py` 相同。
-- 移除自帶的 `analyze` 副本,改 `from iso_base import analyze`。
+- `parse_blocks` / `blocks_to_str` / `patch_tscn` / `process_tscn` / `main` 邏輯沿用既有 `tools/iso_prop_patch.py`。
+- 移除自帶的 `analyze` 副本,改 `from iso_base import analyze`(消費合併後 analyze 回傳的 `tex_size`,取 `h`)。
+- **新增 Sprite offset 重烘(修 §「已知 bug」)**:`patch_tscn` 多處理 `[node name="Sprite2D"]` 區塊,把 `offset` 重寫成 `Vector2(0, -h/2 + iso_sort_offset)`。原本只改 root + 碰撞,漏了 Sprite,正是峰置 bug 來源。
 - `uv run python pipeline/iso_prop_patch.py [--dry-run] <tscn> [<tscn> ...]`。
 - `_GAME_ROOT` 路徑改算法:`Path(__file__).parent.parent / "game"`(`pipeline/` → repo root → `game/`)。
 
@@ -73,7 +86,14 @@ commit `9048ee5` 新增了兩支一次性工具:
 - `analyze` 回 `None`(全透明 PNG):`iso_sort_offset = 0`,StaticBody 碰撞 fallback 回現有矩形 preset 路徑(行為不破)。
 - `--no-collision`:一樣不發 StaticBody,但**仍寫** `iso_sort_offset`(Y-sort 排序仍需要)。
 - `--collision` 參數:保留(向下相容),但其矩形尺寸不再影響 StaticBody;實際只剩 on/off 意義(經 `--no-collision`)。先不刪、日後再考慮 deprecate。
-- **不重跑既有 201 個 prop**(已被一次性 patch 過);其差異(sprite offset 烘 `-h/2`、runtime 才補 offset)不影響 runtime,不在本次範圍。
+
+### 6. 重跑修復既有 201 個 prop
+
+改好 §2 的 patch 後,以更新後的 `pipeline/iso_prop_patch.py` 重跑 `game/src/maps/props/*.tscn`,修復既有 prop 的 Sprite offset bake(現在全是 stale 的 `-h/2`)。
+
+- 先 `--dry-run` 抽查幾個(如 `altar_table_wood`:預期 Sprite offset 從 `-24` 改成 `-13`)。
+- 確認後正式重跑全部。
+- 這是 §「已知 bug」對既有 prop 的根因修復;新 prop 由 §4 pipeline 端覆蓋,不會再犯。
 
 ## 資料流
 
@@ -97,13 +117,15 @@ prop orchestrator: generate_object → chroma_key → import_to_godot
   - 合成一張已知尺寸的底座菱形 PNG(用 PIL 畫),驗 `analyze` 回的 `iso_sort_offset` 與四點符合幾何預期。
   - 全透明 PNG → `None`。
 - **擴 `tests/test_godot_import.py`**
-  - `import_prop`(有碰撞)產出的 `.tscn` 含 `ConvexPolygonShape2D`、含 `iso_sort_offset = ` 行、Sprite offset 含 iso 偏移、StaticBody 的 `CollisionShape2D` 無 `position`。
+  - `import_prop`(有碰撞)產出的 `.tscn` 含 `ConvexPolygonShape2D`、含 `iso_sort_offset = ` 行、Sprite offset = `-h/2 + iso_sort_offset`、StaticBody 的 `CollisionShape2D` 無 `position`。
   - `--no-collision`(`has_collision=False`):無 StaticBody 碰撞,但仍有 `iso_sort_offset` 行。
-  - 全透明 PNG:fallback 回矩形 preset、`iso_sort_offset = 0.0`。
+  - 全透明 PNG:fallback 回矩形 preset、`iso_sort_offset = 0.0`、Sprite offset = `-h/2`。
+- **新 `tests/test_iso_prop_patch.py`**(峰置 bug 回歸測試)
+  - 合成一個 root iso_sort_offset 缺失/錯誤、Sprite offset 烘 `-h/2` 的 `.tscn`,跑 `patch_tscn`,驗證輸出的 Sprite offset = `-h/2 + iso_sort_offset`(對既有 bug 的回歸防護)。
 
 ## 非目標(YAGNI)
 
-- 不重新 patch 既有 201 prop。
 - 不改 InteractArea 碰撞形狀。
 - 不刪 `--collision` 參數(僅標記未來可 deprecate)。
 - 不動 autotile / character / npc 等其他 orchestrator。
+- 既有 201 prop 的 PNG 不重生;重跑雖會 re-analyze,但 analyze 為決定性、PNG 未變,菱形/iso_sort_offset 值預期不變,實質 diff 僅 Sprite offset 補烘。
