@@ -13,6 +13,9 @@ extends Node2D
 ## 自動將 Sprite2D 的軸心對齊到圖片底部中央（Y-sort 用）。
 ## 美術依規格：圖片底部中央 = 腳底位置 → Prop.position 即代表角色站立的點。
 @export var foot_anchor: bool = true
+## 等角視角的 YSort 偏移（px）。從圖片底部往上多少作為排序基準點。
+## 俯視 = 0，1×1 等角道具 = 8，大型建築依底座菱形中心決定。
+@export var iso_sort_offset: float = 0.0
 
 @onready var sprite: Sprite2D = $Sprite2D if has_node("Sprite2D") else null
 @onready var collision_body: StaticBody2D = $StaticBody2D if has_node("StaticBody2D") else null
@@ -21,7 +24,7 @@ extends Node2D
 func _ready() -> void:
 	if foot_anchor and sprite != null and sprite.texture != null:
 		var tex_size: Vector2 = sprite.texture.get_size()
-		sprite.offset = Vector2(0, -tex_size.y / 2.0)
+		sprite.offset = Vector2(0, -tex_size.y / 2.0 + iso_sort_offset)
 	if collision_body != null:
 		collision_body.visible = has_collision
 		collision_body.process_mode = Node.PROCESS_MODE_INHERIT if has_collision else Node.PROCESS_MODE_DISABLED
