@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>木境傳說 · HOW 遊玩方法架構圖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#c5a877;        /* kraft 主底 */
+    --paper-dk:#b3955f;     /* 暗一階 */
+    --ink:#2f2415;          /* 主文字深咖 */
+    --ink-soft:#4a3a24;     /* 次級文字 */
+    --line:#4a3a24;         /* 框線 */
+    --accent:#6f5491;       /* 紫(呼應照片邊框) */
+    --accent-dk:#4f3a6b;
+    --brick:#7a3b2e;        /* 深磚紅點綴 */
+    --hi:#d8c199;           /* 高光紙色 */
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html,body{
+    background:var(--paper);
+    font-family:'Noto Serif TC',serif;
+    color:var(--ink);
+  }
+
+  /* ====== 海報下方空白區的橫式長條 ====== */
+  .band{
+    width:1240px;
+    margin:0 auto;
+    padding:34px 44px 40px;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(255,250,235,.18), transparent 55%),
+      radial-gradient(ellipse at 85% 100%, rgba(60,40,20,.10), transparent 55%),
+      repeating-linear-gradient(92deg, rgba(90,60,30,.030) 0 2px, transparent 2px 6px),
+      var(--paper);
+    position:relative;
+  }
+
+  /* 區段抬頭：呼應海報 HOW 標題 */
+  .head{
+    display:flex;align-items:baseline;gap:18px;
+    border-bottom:3px double var(--line);
+    padding-bottom:10px;margin-bottom:6px;
+  }
+  .head .en{
+    font-family:'Cinzel',serif;font-weight:700;
+    font-size:34px;letter-spacing:3px;color:var(--ink);
+  }
+  .head .zh{font-size:22px;font-weight:700;letter-spacing:4px;}
+  .head .sub{
+    margin-left:auto;font-size:13px;color:var(--ink-soft);
+    font-weight:600;letter-spacing:1px;
+    border:1.5px solid var(--accent-dk);border-radius:2px;
+    padding:4px 10px;background:rgba(111,84,145,.10);
+    color:var(--accent-dk);
+  }
+  .tagline{
+    font-size:13.5px;color:var(--ink-soft);letter-spacing:1.5px;
+    margin:10px 0 22px;font-weight:600;
+  }
+  .tagline b{color:var(--brick);}
+
+  /* ====== 流程列 ====== */
+  .flow{
+    display:flex;align-items:stretch;gap:0;
+  }
+
+  /* 單一步驟卡 */
+  .step{
+    flex:1 1 0;
+    background:
+      linear-gradient(180deg, rgba(255,250,235,.22), rgba(120,85,40,.05));
+    border:2.2px solid var(--line);
+    border-radius:3px;
+    padding:14px 13px 13px;
+    position:relative;
+    display:flex;flex-direction:column;
+    box-shadow:3px 3px 0 rgba(47,36,21,.30);
+    min-height:188px;
+  }
+  .step .num{
+    position:absolute;top:-15px;left:12px;
+    width:30px;height:30px;border-radius:50%;
+    background:var(--ink);color:var(--paper);
+    font-family:'Cinzel',serif;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+    font-size:16px;border:2px solid var(--paper);
+    box-shadow:0 0 0 2px var(--ink);
+  }
+  .step h3{
+    font-size:15.5px;font-weight:900;letter-spacing:1px;
+    margin:6px 0 8px;line-height:1.35;
+  }
+  .step p{
+    font-size:12.5px;line-height:1.7;color:var(--ink-soft);font-weight:500;
+  }
+  .step .chip{
+    display:inline-block;margin-top:auto;padding-top:8px;
+    font-size:11px;font-weight:700;letter-spacing:.5px;
+    color:var(--accent-dk);
+  }
+
+  /* 箭頭 */
+  .arrow{
+    flex:0 0 30px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--brick);font-size:26px;font-weight:700;
+  }
+
+  /* ③ 三層路由 強調卡 */
+  .step.core{
+    flex:1.55 1 0;
+    background:linear-gradient(180deg, rgba(111,84,145,.16), rgba(79,58,107,.07));
+    border-color:var(--accent-dk);
+    box-shadow:3px 3px 0 rgba(79,58,107,.45);
+  }
+  .step.core .num{background:var(--accent-dk);box-shadow:0 0 0 2px var(--accent-dk);}
+  .step.core h3{color:var(--accent-dk);}
+  .layers{display:flex;flex-direction:column;gap:6px;margin-top:2px;}
+  .layer{
+    border:1.6px solid var(--accent-dk);border-radius:2px;
+    padding:6px 9px;background:rgba(255,250,235,.32);
+  }
+  .layer .lt{font-size:12.5px;font-weight:800;color:var(--ink);}
+  .layer .ld{font-size:10.8px;color:var(--ink-soft);line-height:1.4;font-weight:500;}
+  .layer .ic{margin-right:5px;}
+
+  /* ④ 本地 LLM 強調 */
+  .step.llm{background:linear-gradient(180deg, rgba(122,59,46,.14), rgba(122,59,46,.05));border-color:var(--brick);}
+  .step.llm .num{background:var(--brick);box-shadow:0 0 0 2px var(--brick);}
+  .step.llm h3{color:var(--brick);}
+  .specs{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px;}
+  .specs span{
+    font-size:10.5px;font-weight:700;border:1.4px solid var(--brick);
+    color:var(--brick);border-radius:2px;padding:2px 6px;background:rgba(122,59,46,.06);
+  }
+
+  /* 迴圈說明條 */
+  .loopbar{
+    margin-top:22px;display:flex;align-items:center;gap:14px;
+    border-top:2px solid var(--line);border-bottom:2px solid var(--line);
+    padding:11px 4px;
+  }
+  .loopbar .cyc{
+    font-family:'Cinzel',serif;font-weight:700;color:var(--accent-dk);
+    font-size:15px;letter-spacing:1px;white-space:nowrap;
+  }
+  .loopbar .txt{font-size:13px;color:var(--ink-soft);font-weight:600;letter-spacing:.5px;}
+  .loopbar .txt b{color:var(--ink);}
+
+  /* 底座 badges */
+  .base{
+    margin-top:18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    justify-content:center;
+  }
+  .base .lbl{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--ink);}
+  .badge{
+    font-size:11.5px;font-weight:700;letter-spacing:.5px;
+    border:1.6px solid var(--ink);border-radius:2px;
+    padding:4px 11px;color:var(--ink);background:rgba(255,250,235,.2);
+  }
+  .badge.p{border-color:var(--accent-dk);color:var(--accent-dk);}
+</style>
+</head>
+<body>
+  <div class="band">
+
+    <div class="head">
+      <span class="en">HOW</span>
+      <span class="zh">木境傳說怎麼玩</span>
+      <span class="sub">一場對話的幕後 · How a Conversation Works</span>
+    </div>
+    <div class="tagline">
+      走近任何一位 NPC，按下 <b>E</b> 攀談 —— 他們的回應由你電腦裡的 AI <b>即時生成</b>，依時間、地點、任務與信任值而變。<b>全程 100% 離線</b>。
+    </div>
+
+    <div class="flow">
+
+      <!-- ① -->
+      <div class="step">
+        <div class="num">1</div>
+        <h3>走近 NPC，按 E 攀談</h3>
+        <p>在木柵的巷弄、市場、河濱與指南宮間自由探索，遇見有各自生活軌跡的角色。</p>
+        <span class="chip">玩家輸入</span>
+      </div>
+
+      <div class="arrow">&#10142;</div>
+
+      <!-- ② -->
+      <div class="step">
+        <div class="num">2</div>
+        <h3>遊戲讀取當下情境</h3>
+        <p>系統收集此刻的脈絡，交給對話引擎判讀。</p>
+        <span class="chip">時間 · 地點 · 任務進度 · 與你的信任值</span>
+      </div>
+
+      <div class="arrow">&#10142;</div>
+
+      <!-- ③ 核心：三層路由 -->
+      <div class="step core">
+        <div class="num">3</div>
+        <h3>對話智慧路由 · 三層架構</h3>
+        <div class="layers">
+          <div class="layer">
+            <div class="lt"><span class="ic">🎬</span>預寫劇情 Beat</div>
+            <div class="ld">關鍵橋段照劇本走，確保故事不跑偏。</div>
+          </div>
+          <div class="layer">
+            <div class="lt"><span class="ic">🔒</span>約束式 AI</div>
+            <div class="ld">人格設定＋信任解鎖＋禁忌守則，AI 即興但不出戲。</div>
+          </div>
+          <div class="layer">
+            <div class="lt"><span class="ic">💬</span>自由 AI 閒聊</div>
+            <div class="ld">日常對話完全即興生成。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arrow">&#10142;</div>
+
+      <!-- ④ 本地 LLM -->
+      <div class="step llm">
+        <div class="num">4</div>
+        <h3>本地語言模型生成</h3>
+        <p>輕量 SLM 在你自己的電腦上即時推論，不上傳、不連網。</p>
+        <div class="specs">
+          <span>Qwen-3.5-0.8B</span>
+          <span>531 MB</span>
+          <span>llama.cpp</span>
+          <span>離線推論</span>
+        </div>
+      </div>
+
+      <div class="arrow">&#10142;</div>
+
+      <!-- ⑤ -->
+      <div class="step">
+        <div class="num">5</div>
+        <h3>逐字浮現 ＋ 你的選擇</h3>
+        <p>對話以打字機效果呈現，玩家的回應與抉擇將悄悄改變這個區域的日常。</p>
+        <span class="chip">改變世界狀態</span>
+      </div>
+
+    </div>
+
+    <div class="loopbar">
+      <span class="cyc">&#8635; LOOP</span>
+      <span class="txt">你的選擇寫回世界 —— <b>下次再見面，NPC 記得你做過什麼</b>。關係值、任務、時間持續推進，每段對話都是獨一無二的在地故事。</span>
+    </div>
+
+    <div class="base">
+      <span class="lbl">技術底座</span>
+      <span class="badge">Godot 4.6</span>
+      <span class="badge">GDScript</span>
+      <span class="badge p">llama.cpp Sidecar</span>
+      <span class="badge p">本地 SLM · 100% 離線</span>
+      <span class="badge">4 區域開放世界</span>
+      <span class="badge">JSON 存檔</span>
+    </div>
+
+  </div>
+</body>
+</html>
