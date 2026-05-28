@@ -168,12 +168,19 @@ func _estimate_message_tokens(msg: Dictionary) -> int:
 
 # ── Payload Builder ─────────────────────────────────────────────────────────
 func _build_chat_payload(npc_config: Resource, user_input: String, context: Dictionary) -> Dictionary:
-	# 用 TrustGate 組裝核心 system prompt（人格 + 章節 overlay + 信任值門檻）
+	# 解析此 NPC 在當前劇情階段的態度片段（含往前繼承）
+	var stage_attitude: String = TrustGate.resolve_stage_attitude(
+		npc_config as NPCConfig,
+		str(context.get("story_stage", "")),
+		context.get("stage_order", [])
+	)
+	# 用 TrustGate 組裝核心 system prompt（人格 + 章節 overlay + 階段態度 + 信任值門檻）
 	var system_content: String = TrustGate.build_system_prompt(
 		npc_config as NPCConfig,
 		int(context.get("relationship", 0)),
 		context.get("player_flags", {}),
-		context.get("chapter_overlay", "")
+		context.get("chapter_overlay", ""),
+		stage_attitude
 	)
 	# 追加 per-call 動態情境（time / zone / recent events）— 不適合進 TrustGate
 	system_content += "\n\n" + _build_context_string(context)
