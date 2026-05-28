@@ -41,6 +41,13 @@ extends Resource
 ## 必須觸發的 StoryManager flag 名稱集。全部觸發後章節判定完成。
 @export var completion_flags: Array[String] = []
 
+# ── 劇情階段 ──────────────────────────────────────────────────────────────
+## 劇情階段規則，依序由前往後檢查；命中（require_any 任一 flag 為真）的最後一筆即當前階段。
+## 第一筆視為 fallback（require_any 建議留空 []）。
+## 格式：[{ "stage_id": "s1_newcomer", "require_any": [] },
+##        { "stage_id": "s2_working", "require_any": ["started_pharmacy_work"] }, ...]
+@export var stage_rules: Array = []
+
 # ── 元資料（可選） ────────────────────────────────────────────────────────
 ## 章節摘要（給開發者看的文字提示）
 @export_multiline var synopsis: String = ""
@@ -58,3 +65,17 @@ func includes_npc(npc_id: String) -> bool:
 ## 該 zone 是否在本章節範圍內
 func includes_zone(zone_id: String) -> bool:
 	return zones_used.is_empty() or zone_id in zones_used
+
+## 依 player_flags 推導當前 stage_id。無 stage_rules 時回空字串。
+func resolve_stage(player_flags: Dictionary) -> String:
+	var result: String = ""
+	for rule: Dictionary in stage_rules:
+		var sid: String = rule.get("stage_id", "")
+		if result.is_empty():
+			result = sid   # 第一筆 = fallback
+		var req: Array = rule.get("require_any", [])
+		for flag: String in req:
+			if player_flags.get(flag, false):
+				result = sid
+				break
+	return result
