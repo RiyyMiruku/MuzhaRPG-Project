@@ -15,4 +15,17 @@ npc_overlays = {}
 events_script = ExtResource("2_events")
 quests = []
 completion_flags = ["chapter_completed_ch01_arrival"]
+stage_rules = [{
+"stage_id": "s1_newcomer",
+"require_any": []
+}, {
+"stage_id": "s2_working",
+"require_any": ["started_pharmacy_work"]
+}, {
+"stage_id": "s3_secret",
+"require_any": ["clue_locked_room", "saw_ama_incense"]
+}, {
+"stage_id": "s4_finale",
+"require_any": ["found_ronghua_relic", "ending_finale_active"]
+}]
 synopsis = "阿謙繼承木柵市場深處一間關了 40 年的中藥行,整理時觸發了一張舊地圖,把他穿越回 1983 年,與從未謀面的親祖父林榮昌相遇。"
