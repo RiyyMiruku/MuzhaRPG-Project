@@ -58,6 +58,6 @@ choices = [{
 "text": "(想再追問一句,但忍住了)",
 "set_flags": { "lin_rongchang_accepted_fake_identity": true, "almost_revealed_identity": true }
 }]
-on_complete_flags = { "ch1_beat_meet_lin_rongchang_done": true }
+on_complete_flags = { "ch1_beat_meet_lin_rongchang_done": true, "started_pharmacy_work": true }
 on_complete_event = "ch1_started_living_in_pharmacy"
 blocks_input = true
