@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuk8x89q2mt3fc"]
+[gd_scene format=3 uid="uid://dkata1ji7etqi"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cybme09ts38dsk" path="res://assets/textures/props/fish_tank_small.png" id="3_tex"]

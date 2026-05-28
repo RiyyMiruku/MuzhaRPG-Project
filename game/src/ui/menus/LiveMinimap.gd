@@ -37,6 +37,10 @@ func _ready() -> void:
 	_hud_offset_top = offset_top
 	_hud_offset_right = offset_right
 	_hud_offset_bottom = offset_bottom
+	# 預先註冊 expanded 狀態的 panel(只跑一次);register() 內部會 hide(),
+	# 所以馬上 show 回來,維持 HUD 小地圖可見。
+	UIManager.register("MapExpanded", self)
+	show()
 
 func _process(_delta: float) -> void:
 	if visible:
@@ -87,8 +91,7 @@ func _expand() -> void:
 	offset_top = -EXPANDED_SIZE.y / 2
 	offset_right = EXPANDED_SIZE.x / 2
 	offset_bottom = EXPANDED_SIZE.y / 2
-	# 通知 UIManager 暫停遊戲 + 攔截輸入
-	UIManager.register("MapExpanded", self)
+	# 通知 UIManager 暫停遊戲 + 攔截輸入(已在 _ready register 過)
 	UIManager.push("MapExpanded")
 
 func _collapse() -> void:
@@ -102,8 +105,10 @@ func _collapse() -> void:
 	offset_top = _hud_offset_top
 	offset_right = _hud_offset_right
 	offset_bottom = _hud_offset_bottom
-	# 恢復遊戲（不讓 UIManager hide 我們，因為 HUD 小地圖要繼續顯示）
+	# 恢復遊戲;UIManager.pop_all() 會對堆疊中的 panel 呼叫 hide(),
+	# 但 HUD 小地圖要繼續可見,所以結尾再 show() 自己。
 	UIManager.pop_all()
+	show()
 
 func _handle_click(global_click: Vector2) -> void:
 	var local: Vector2 = global_click - global_position
@@ -233,6 +238,8 @@ func _draw_entities(center: Vector2, half: float, sf: float, player_pos: Vector2
 		var ta: ZoneTransitionArea = t as ZoneTransitionArea
 		if ta == null:
 			continue
+		if not _is_active_in_current_era(ta):
+			continue
 		var dp: Vector2 = center + (ta.global_position - player_pos) * sf
 		if not _in_bounds(dp, half, center):
 			continue
@@ -249,6 +256,8 @@ func _draw_entities(center: Vector2, half: float, sf: float, player_pos: Vector2
 		var npc: BaseNPC = n as BaseNPC
 		if npc == null or npc.npc_config == null:
 			continue
+		if not _is_active_in_current_era(npc):
+			continue
 		var dp: Vector2 = center + (npc.global_position - player_pos) * sf
 		if not _in_bounds(dp, half, center):
 			continue
@@ -257,6 +266,15 @@ func _draw_entities(center: Vector2, half: float, sf: float, player_pos: Vector2
 			draw_string(font, dp + Vector2(8, 4), npc.npc_config.display_name, HORIZONTAL_ALIGNMENT_LEFT, -1, 10, COLOR_NPC)
 		else:
 			draw_string(font, dp + Vector2(-3, -5), npc.npc_config.display_name.substr(0, 1), HORIZONTAL_ALIGNMENT_LEFT, -1, 7, COLOR_NPC)
+
+## 依 EraManager 規則判斷節點是否屬於當前 era。
+## 規則:節點若帶 era_<X> group 但 X 不是 current_era → 不畫;
+##      未帶任何 era 群組 → 視為「兩 era 共通」(單時空 zone 或共用實體)一律畫。
+func _is_active_in_current_era(node: Node) -> bool:
+	for era_key: String in EraManager.TINT_PRESETS:
+		if node.is_in_group("era_" + era_key):
+			return era_key == EraManager.current_era
+	return true
 
 func _draw_player_icon(center: Vector2, player: Player) -> void:
 	draw_circle(center, 4.0, COLOR_PLAYER)

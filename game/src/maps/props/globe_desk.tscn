@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwrp8tdvn9yhfa"]
+[gd_scene format=3 uid="uid://bvc782qvbccyo"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cpeu7vbele2yrh" path="res://assets/textures/props/globe_desk.png" id="3_tex"]

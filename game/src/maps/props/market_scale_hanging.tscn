@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciq4ms0dv3cmra"]
+[gd_scene format=3 uid="uid://dcd3lwv4dh0dq"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cu2qd6dy21ryrk" path="res://assets/textures/props/market_scale_hanging.png" id="3_tex"]

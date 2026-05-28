@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccegkxkc3uizki"]
+[gd_scene format=3 uid="uid://s3wcjskou8wq"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cea399fxje95uj" path="res://assets/textures/props/rice_sack_stack.png" id="3_tex"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://caqkvn8rd8vkmd"]
+[gd_scene format=3 uid="uid://c1m3na43ngoqd"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cwz1kv2rou11go" path="res://assets/textures/props/fish_stall_icebox.png" id="3_tex"]

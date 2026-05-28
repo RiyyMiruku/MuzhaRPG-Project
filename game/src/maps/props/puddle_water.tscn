@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c9k6uuh3egyxzo"]
+[gd_scene format=3 uid="uid://b3k8i06trp7bs"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cmcuw2a6vtag9l" path="res://assets/textures/props/puddle_water.png" id="3_tex"]

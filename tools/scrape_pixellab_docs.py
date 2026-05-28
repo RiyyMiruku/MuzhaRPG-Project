@@ -4,7 +4,7 @@ import asyncio
 from pathlib import Path
 from playwright.async_api import async_playwright
 
-OUT_DIR = Path("docs/reference/pixellab-api")
+OUT_DIR = Path("pipeline/reference/pixellab-api")
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 PAGES = [

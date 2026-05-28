@@ -451,6 +451,5 @@ position = Vector2(-226, -216)
 target_zone = "zone_pharmacy"
 entry_point = "from_backyard"
 
-[node name="Showcase" type="Node2D" parent="." unique_id=1036352180]
-visible = false
-position = Vector2(400, -400)
+[node name="from_pharmacy" type="Marker2D" parent="Transitions/ToPharmacy"]
+position = Vector2(32, 0)

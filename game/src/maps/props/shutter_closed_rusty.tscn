@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8mtm53c6d5vyo"]
+[gd_scene format=3 uid="uid://470tmgmov5as"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cy9vxzeffjoy9g" path="res://assets/textures/props/shutter_closed_rusty.png" id="3_tex"]

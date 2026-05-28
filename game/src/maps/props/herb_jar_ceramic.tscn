@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl39hf2zschgde"]
+[gd_scene format=3 uid="uid://cs32mxmq1fw63"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://c550yy9vxxn8kb" path="res://assets/textures/props/herb_jar_ceramic.png" id="3_tex"]

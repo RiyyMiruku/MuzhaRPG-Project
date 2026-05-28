@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0bcbog49vi4ep"]
+[gd_scene format=3 uid="uid://jjfi328cn37d"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://czq0mvwujj0qyp" path="res://assets/textures/props/mailbox_green.png" id="3_tex"]

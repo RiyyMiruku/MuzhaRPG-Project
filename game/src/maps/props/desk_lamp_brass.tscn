@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4pzvux6qivt9p"]
+[gd_scene format=3 uid="uid://3s44j7getycl"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cnaxnctibz8rmd" path="res://assets/textures/props/desk_lamp_brass.png" id="3_tex"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c9dxe76x82yjrl"]
+[gd_scene format=3 uid="uid://bvcrvp2pepr2p"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://ch6w6p5ogxaa8p" path="res://assets/textures/props/vending_machine.png" id="3_tex"]

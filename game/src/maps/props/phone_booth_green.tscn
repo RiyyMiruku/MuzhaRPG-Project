@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqt9tqqv2gchlf"]
+[gd_scene format=3 uid="uid://dopkdklrk23od"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://c8dkupl9v3wrak" path="res://assets/textures/props/phone_booth_green.png" id="3_tex"]

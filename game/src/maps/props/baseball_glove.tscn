@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cja3w3atl8zs4h"]
+[gd_scene format=3 uid="uid://dudeu7dti56px"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cutz0q9bn1jx0m" path="res://assets/textures/props/baseball_glove.png" id="3_tex"]

@@ -46,3 +46,7 @@ known_facts = Array[String]([
 "我不會主動跟外人講家裡的事"
 ])
 personality_voice = "短句為主,語氣穩重平靜。偶爾國台語混雜。沒有反應的時候沉默,不會搪塞。被問到敏感話題會岔開或回「沒什麼」。"
+wander_radius = 48.0
+wander_speed = 25.0
+wander_pause_min = 3.0
+wander_pause_max = 6.0

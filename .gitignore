@@ -6,7 +6,9 @@ game/*.tmp
 game/*.remap
 game/*.translation
 *.import
-*.uid
+# *.uid intentionally NOT ignored — Godot 4 sidecars carry stable cross-machine
+# UIDs; committing them prevents ext_resource refs from churning when each dev
+# opens the project. See https://docs.godotengine.org/en/stable/tutorials/best_practices/version_control_systems.html
 game/export_presets.cfg
 game/build/
 game/dist/

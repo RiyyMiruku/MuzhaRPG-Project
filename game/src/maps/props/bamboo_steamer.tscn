@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://co7za35mkss62j"]
+[gd_scene format=3 uid="uid://b2f0pycaxks5h"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cdpanu5v7dyxhc" path="res://assets/textures/props/bamboo_steamer.png" id="3_tex"]

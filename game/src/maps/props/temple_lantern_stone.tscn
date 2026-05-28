@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbk8co44u2id5m"]
+[gd_scene format=3 uid="uid://dvbjn6ilg2iam"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cqmgeuo7tk82jf" path="res://assets/textures/props/temple_lantern_stone.png" id="3_tex"]

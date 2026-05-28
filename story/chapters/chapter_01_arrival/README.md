@@ -20,6 +20,8 @@
 | `assets.json` | story-asset-extraction skill 產出的結構化資產清單（machine-readable，給 art-pipeline 餵） |
 | `assets.md` | 同上的人類版鏡像（給作者審稿打勾用） |
 | `notes.md`（選填） | 角色 bio、worldbuilding 補充、未來伏筆 |
+| [scene-automation-plan.md](scene-automation-plan.md) | 本章 zone 擺位 / builder 策略（可作其他章節範本） |
+| [zone-object-checklist.md](zone-object-checklist.md) | 各 zone 物件清單（場景設計人對照擺放） |
 
 ## 流程提示
 

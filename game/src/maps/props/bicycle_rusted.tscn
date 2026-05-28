@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckw6edmvubepvc"]
+[gd_scene format=3 uid="uid://bm0ykiis0c7p1"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cj2at60hfa28hn" path="res://assets/textures/props/bicycle_rusted.png" id="3_tex"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceeop1hj9xjhwh"]
+[gd_scene format=3 uid="uid://ctc2fg0qrvqap"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://c3ava14e0xt1qd" path="res://assets/textures/props/bookshelf_law.png" id="3_tex"]

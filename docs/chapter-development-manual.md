@@ -2,7 +2,7 @@
 
 > 文檔導覽:[INDEX](INDEX.md) — **對象**:章節作者 / 程式 / 場景設計人。**用途**:從劇本草稿到可玩章節的完整人工介入點清單與順序。
 >
-> **配套架構文檔**:[dialogue-architecture.md](dialogue-architecture.md) / [chapter-01-scene-automation-plan.md](chapter-01-scene-automation-plan.md) / [godot-modules.md](godot-modules.md)
+> **配套架構文檔**:[dialogue-architecture.md](dialogue-architecture.md) / [godot-modules.md](godot-modules.md);各章節自己的擺位計畫放在 `story/chapters/<slug>/`(如 [chapter_01_arrival/scene-automation-plan.md](../story/chapters/chapter_01_arrival/scene-automation-plan.md))
 
 ---
 
@@ -508,7 +508,7 @@ EventBus.zone_transition_requested.emit("zone_market", "from_apartment")
 ## 相關文件
 
 - [docs/dialogue-architecture.md](dialogue-architecture.md) — 對話系統內部設計(TrustGate / BeatRunner / 三層架構的完整 schema)
-- [docs/chapter-01-scene-automation-plan.md](chapter-01-scene-automation-plan.md) — chapter 1 場景擺位策略
+- [story/chapters/chapter_01_arrival/scene-automation-plan.md](../story/chapters/chapter_01_arrival/scene-automation-plan.md) — chapter 1 場景擺位策略(範本)
 - [docs/godot-modules.md](godot-modules.md) — Godot 端模組追蹤表
 - [art-pipeline skill](../.claude/skills/art-pipeline/SKILL.md) — 美術 pipeline 細節
 - [chapter_template/](../game/src/chapters/chapter_template/) — 新章節範本
