@@ -32,6 +32,13 @@ func _process(delta: float) -> void:
 			game_time_hours -= 24.0
 
 # ── Context Builder (核心方法) ────────────────────────────────────────────
+## 依當前章節 stage_rules + player_flags 推導劇情階段 id。無章節/無規則回空字串。
+func get_current_stage() -> String:
+	var current: ChapterConfig = ChapterManager.current()
+	if current == null:
+		return ""
+	return current.resolve_stage(player_flags)
+
 ## 給 AI 用的完整對話 context。包含章節 overlay，以解除 AIClient 對 ChapterManager 的直接依賴。
 func build_ai_context(npc_id: String) -> Dictionary:
 	return {
@@ -44,6 +51,8 @@ func build_ai_context(npc_id: String) -> Dictionary:
 		"player_visited_zones": unlocked_zones.duplicate(),
 		"conversation_history": conversation_histories.get(npc_id, []).duplicate(),
 		"chapter_overlay": ChapterManager.get_npc_overlay(npc_id),
+		"story_stage": get_current_stage(),
+		"stage_order": ChapterManager.get_current_stage_order(),
 		"player_flags": player_flags.duplicate(),
 	}
 
