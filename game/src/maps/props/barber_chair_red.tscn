@@ -3,13 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cjnjoavwlv1xlb" path="res://assets/textures/props/barber_chair_red.png" id="3_tex"]
 
-[sub_resource type="RectangleShape2D" id="1_rect"]
-size = Vector2(16.0, 16.0)
+[sub_resource type="ConvexPolygonShape2D" id="1_rect"]
+points = PackedVector2Array(-0.5, 8.0, 15.0, 0.0, -0.5, -8.0, -16.0, 0.0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
 size = Vector2(32.0, 16.0)
 
 [node name="barber_chair_red" instance=ExtResource("4_tmpl")]
+iso_sort_offset = 8.0
 has_collision = true
 
 [node name="Sprite2D" parent="." index="0"]
@@ -17,7 +18,6 @@ texture = ExtResource("3_tex")
 offset = Vector2(0, -16.0)
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2(0.0, -8.0)
 shape = SubResource("1_rect")
 
 [node name="CollisionShape2D" parent="InteractArea" index="0"]

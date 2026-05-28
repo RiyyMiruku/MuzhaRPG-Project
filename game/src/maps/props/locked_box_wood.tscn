@@ -7,6 +7,7 @@
 size = Vector2(24.0, 16.0)
 
 [node name="locked_box_wood" instance=ExtResource("4_tmpl")]
+iso_sort_offset = 5.0
 has_collision = false
 
 [node name="Sprite2D" parent="." index="0"]

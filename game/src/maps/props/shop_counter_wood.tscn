@@ -4,13 +4,14 @@
 [ext_resource type="PackedScene" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_cpvq3"]
-points = PackedVector2Array(0, 21, 24, 9, 24, -15, 1, -29, -24, -15, -24, 9)
+points = PackedVector2Array(-0.5, 11.0, 23.0, 0.0, -0.5, -11.0, -24.0, 0.0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
 size = Vector2(56, 55)
 
 [node name="shop_counter_wood" unique_id=1126002244 instance=ExtResource("4_tmpl")]
 
+iso_sort_offset = 11.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
 offset = Vector2(0, -12)
@@ -19,7 +20,6 @@ offset = Vector2(0, -12)
 visible = false
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2(0, -8)
 shape = SubResource("ConvexPolygonShape2D_cpvq3")
 
 [node name="InteractArea" parent="." index="2"]
