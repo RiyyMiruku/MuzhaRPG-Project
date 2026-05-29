@@ -90,6 +90,8 @@ def _write_prop_tscn(
     interact_pos = (0.0, -interact_size[1] / 2.0)
 
     # Body 碰撞:analyze 成功用自動菱形;全透明則 fallback 回矩形 preset。
+    # 注意:對不透明 prop,analyze 的菱形會取代呼叫端傳入的 collision= preset;
+    # collision= 只在 analyze 回 None(全透明)時當 fallback 用。
     use_diamond = has_collision and analysis is not None
     rect_coll = (
         _collision_rect(w, h, collision)

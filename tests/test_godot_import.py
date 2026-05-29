@@ -167,7 +167,7 @@ def test_write_prop_tscn_no_flip(tmp_path):
     png_dir = tmp_path / "game" / "assets" / "textures" / "props"
     png_dir.mkdir(parents=True)
     png = png_dir / "x.png"
-    Image.new("RGBA", (32, 32), (255, 0, 0, 255)).save(png)
+    _make_diamond_png(png, 32, 32)
     tscn = tmp_path / "x.tscn"
     _write_prop_tscn(
         tscn, png, "x",
@@ -183,7 +183,7 @@ def test_write_prop_tscn_with_flip(tmp_path):
     png_dir = tmp_path / "game" / "assets" / "textures" / "props"
     png_dir.mkdir(parents=True)
     png = png_dir / "y.png"
-    Image.new("RGBA", (32, 32), (255, 0, 0, 255)).save(png)
+    _make_diamond_png(png, 32, 32)
     tscn = tmp_path / "y.tscn"
     _write_prop_tscn(
         tscn, png, "y",
