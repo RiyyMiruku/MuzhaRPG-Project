@@ -49,6 +49,10 @@
 [ext_resource type="PackedScene" uid="uid://bydjb3sb7y5jh" path="res://src/maps/props/thermos_flask.tscn" id="120_thermos_fl"]
 [ext_resource type="PackedScene" uid="uid://cvy6i1nx6jirc" path="res://src/maps/props/umbrella_stand.tscn" id="121_umbrella_s"]
 [ext_resource type="PackedScene" uid="uid://cmc5iso46itls" path="res://src/maps/props/wall_clock_round.tscn" id="122_wall_clock"]
+[ext_resource type="Texture2D" uid="uid://dsxiktwm6de3m" path="res://assets/textures/props/lantern_paper_red.png" id="25_wckmo"]
+[ext_resource type="PackedScene" uid="uid://cs2ft3rrpnlpe" path="res://src/maps/props/wooden_box.tscn" id="26_k6xyd"]
+[ext_resource type="Texture2D" uid="uid://xk51dds44iqp" path="res://assets/textures/props/woodsign.png" id="48_nskln"]
+[ext_resource type="PackedScene" uid="uid://c0hwimshk31zph" path="res://src/maps/props/id_card_old.tscn" id="48_wrudv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kg2am"]
 texture = ExtResource("7_atlas_market_concret")
