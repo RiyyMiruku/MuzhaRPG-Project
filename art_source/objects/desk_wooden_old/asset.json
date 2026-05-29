@@ -1,34 +1,36 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:46:17",
-  "updated_at": "2026-05-21T22:02:47",
+  "updated_at": "2026-05-29T21:24:38",
   "tags": [
     "zone:zone_pharmacy_backyard",
     "category:decoration",
-    "chapter:1"
+    "chapter:1",
+    "zone:zone_law_office",
+    "category:furniture"
   ],
-  "object_id": "b5bc6f32-671c-401f-8a09-b28885656426",
+  "object_id": "eb1f3c70-ac08-4ca7-a80d-3c1b470cb272",
   "kind": "iso_prop",
-  "description": "old wooden writing desk with drawer, simple and worn",
+  "description": "isometric pixel art, 1980s Taiwan wooden office desk, flat rectangular desktop surface with four legs visible, warm brown wood grain, papers on top, no cube shape, low profile furniture",
   "size": {
     "width": 48,
     "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T21:47:22",
+      "completed_at": "2026-05-29T21:18:03",
       "paths": [
         "art_source\\objects\\desk_wooden_old\\desk_wooden_old.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T21:47:22",
+      "completed_at": "2026-05-29T21:24:38",
       "paths": [
         "art_source\\objects\\desk_wooden_old\\desk_wooden_old.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T21:47:22",
+      "completed_at": "2026-05-29T21:24:38",
       "paths": [
         "game\\assets\\textures\\props\\desk_wooden_old.png",
         "game\\src\\maps\\props\\desk_wooden_old.tscn"
@@ -36,7 +38,7 @@
     }
   },
   "local_path": "art_source\\objects\\desk_wooden_old\\desk_wooden_old.png",
-  "imported_at": "2026-05-21T21:47:22",
+  "imported_at": "2026-05-29T21:24:38",
   "game_png_path": "game\\assets\\textures\\props\\desk_wooden_old.png",
   "game_tscn_path": "game\\src\\maps\\props\\desk_wooden_old.tscn",
   "collision": "bottom_16x16"

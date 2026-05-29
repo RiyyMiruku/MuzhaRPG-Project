@@ -1,34 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:39:17",
-  "updated_at": "2026-05-21T22:02:47",
+  "updated_at": "2026-05-29T21:24:40",
   "tags": [
     "zone:zone_pharmacy",
     "category:decoration",
-    "chapter:1"
+    "chapter:1",
+    "zone:zone_law_office"
   ],
-  "object_id": "1c55c1a0-6403-4ef7-a4b6-fedc0958f238",
+  "object_id": "ccab1881-3b83-4aee-a13a-f41603e3cba9",
   "kind": "iso_prop",
-  "description": "round wall clock with white face and black numbers",
+  "description": "isometric pixel art, round wall clock, circular white clock face with black hour and minute hands, thin wooden circular frame, 1980s Taiwan style, flat circular shape mounted on wall, not a cube",
   "size": {
     "width": 24,
     "height": 24
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T21:39:55",
+      "completed_at": "2026-05-29T21:21:51",
       "paths": [
         "art_source\\objects\\wall_clock_round\\wall_clock_round.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T21:39:55",
+      "completed_at": "2026-05-29T21:24:40",
       "paths": [
         "art_source\\objects\\wall_clock_round\\wall_clock_round.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T21:39:55",
+      "completed_at": "2026-05-29T21:24:40",
       "paths": [
         "game\\assets\\textures\\props\\wall_clock_round.png",
         "game\\src\\maps\\props\\wall_clock_round.tscn"
@@ -36,8 +37,8 @@
     }
   },
   "local_path": "art_source\\objects\\wall_clock_round\\wall_clock_round.png",
-  "imported_at": "2026-05-21T21:39:55",
+  "imported_at": "2026-05-29T21:24:40",
   "game_png_path": "game\\assets\\textures\\props\\wall_clock_round.png",
   "game_tscn_path": "game\\src\\maps\\props\\wall_clock_round.tscn",
-  "collision": "none"
+  "collision": "bottom_16x16"
 }
