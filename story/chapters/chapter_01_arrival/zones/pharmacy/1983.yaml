@@ -1,5 +1,6 @@
 # 榮昌中藥行 1983 內部 — 主要劇情舞台
 # build with: python scripts/build_zone.py pharmacy (merge 同資料夾全部 era)
+frozen: true
 zone: zone_pharmacy
 era: "1983"
 label: "榮昌中藥行"

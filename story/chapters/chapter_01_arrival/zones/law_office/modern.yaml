@@ -1,0 +1,89 @@
+# 律師事務所 (現代) — 繼承文件 / 揭露「祖父林榮昌」名字
+zone: zone_law_office
+era: "modern"
+label: "律師事務所 (現代)"
+size: [22, 17]
+
+tilemap:
+  atlas: market_tile_concrete
+  terrain: 1
+  fill: rect
+
+props:
+  - id: law_office_muzha
+    anchor: north_wall
+    offset: [0, 2]
+
+  - id: shop_counter_wood
+    anchor: center
+    offset: [0, 0]
+
+  - id: notebook_leather
+    anchor: relative_to(shop_counter_wood)
+    offset: [0, -1]
+
+  - id: bookshelf_law
+    anchor: west_wall
+    offset: [2, -1]
+
+  - id: bookshelf_law
+    anchor: east_wall
+    offset: [-2, -2]
+    rename: mod_bookshelf2
+
+  - id: filing_cabinet_metal
+    anchor: west_wall
+    offset: [2, 0]
+
+  - id: desk_lamp_brass
+    anchor: center
+    offset: [0, -1]
+
+  - id: wall_clock_round
+    anchor: north_wall
+    offset: [0, 0]
+
+  - id: potted_plant_office
+    anchor: east_wall
+    offset: [-2, 1]
+
+  - id: certificate_frame
+    anchor: north_wall
+    offset: [-3, 0]
+
+  - id: certificate_frame
+    anchor: north_wall
+    offset: [3, 0]
+    rename: mod_cert2
+
+  - id: typewriter_old
+    anchor: center
+    offset: [1, -1]
+
+  - id: rotary_phone
+    anchor: center
+    offset: [-1, 0]
+
+  - id: rubber_stamp_set
+    anchor: center
+    offset: [0, 1]
+
+  - id: filing_tray_stack
+    anchor: center
+    offset: [1, 0]
+
+npcs:
+  - id: lawyer_muzha
+    anchor: relative_to(shop_counter_wood)
+    offset: [0, -2]
+
+transitions:
+  - target_zone: zone_market
+    entry_point: from_law_office
+    anchor: south_wall
+    offset: [0, 1]
+    rename: ToMarket
+
+player_spawn:
+  anchor: south_wall
+  offset: [0, -1]

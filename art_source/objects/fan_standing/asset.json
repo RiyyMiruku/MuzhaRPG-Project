@@ -1,34 +1,36 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:12:23",
-  "updated_at": "2026-05-21T22:13:01",
+  "updated_at": "2026-05-29T21:24:39",
   "tags": [
     "zone:zone_pharmacy",
     "category:decoration",
-    "chapter:1"
+    "chapter:1",
+    "zone:zone_law_office",
+    "category:furniture"
   ],
-  "object_id": "ddeb4342-3b43-4ce4-b73c-7f8ef399625b",
+  "object_id": "6dfc6ff3-9820-4c70-bbf4-42bd9d6128e9",
   "kind": "iso_prop",
-  "description": "standing oscillating fan with iron mesh guard, no AC era",
+  "description": "isometric pixel art, 1980s Taiwan standing electric fan, circular fan blade and protective wire cage on top, tall thin metal pole, round base, not a cube, vintage style",
   "size": {
     "width": 32,
     "height": 32
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:13:01",
+      "completed_at": "2026-05-29T21:24:15",
       "paths": [
         "art_source\\objects\\fan_standing\\fan_standing.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:13:01",
+      "completed_at": "2026-05-29T21:24:39",
       "paths": [
         "art_source\\objects\\fan_standing\\fan_standing.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:13:01",
+      "completed_at": "2026-05-29T21:24:39",
       "paths": [
         "game\\assets\\textures\\props\\fan_standing.png",
         "game\\src\\maps\\props\\fan_standing.tscn"
@@ -36,8 +38,8 @@
     }
   },
   "local_path": "art_source\\objects\\fan_standing\\fan_standing.png",
-  "imported_at": "2026-05-21T22:13:01",
+  "imported_at": "2026-05-29T21:24:39",
   "game_png_path": "game\\assets\\textures\\props\\fan_standing.png",
   "game_tscn_path": "game\\src\\maps\\props\\fan_standing.tscn",
-  "collision": "none"
+  "collision": "bottom_16x16"
 }

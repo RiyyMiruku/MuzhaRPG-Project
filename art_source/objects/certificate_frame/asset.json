@@ -1,35 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:51:58",
-  "updated_at": "2026-05-21T22:02:49",
+  "updated_at": "2026-05-29T21:28:27",
   "tags": [
     "zone:zone_apartment_muzha",
     "zone:zone_law_office",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "8c170d01-061a-479b-aa6c-3419ed4d624f",
+  "object_id": "abc3af6b-501e-46e3-b1e8-5889d052dc66",
   "kind": "iso_prop",
-  "description": "framed certificate or license on wall, gold border",
+  "description": "isometric pixel art, framed certificate on wall, thin rectangular picture frame with official document inside, dark wood frame with glass, 1980s Taiwan law office style, flat wall-mounted object, very thin depth, not a cube",
   "size": {
     "width": 24,
     "height": 24
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T21:52:23",
+      "completed_at": "2026-05-29T21:28:27",
       "paths": [
         "art_source\\objects\\certificate_frame\\certificate_frame.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T21:52:23",
+      "completed_at": "2026-05-29T21:28:27",
       "paths": [
         "art_source\\objects\\certificate_frame\\certificate_frame.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T21:52:23",
+      "completed_at": "2026-05-29T21:28:27",
       "paths": [
         "game\\assets\\textures\\props\\certificate_frame.png",
         "game\\src\\maps\\props\\certificate_frame.tscn"
@@ -37,7 +37,7 @@
     }
   },
   "local_path": "art_source\\objects\\certificate_frame\\certificate_frame.png",
-  "imported_at": "2026-05-21T21:52:23",
+  "imported_at": "2026-05-29T21:28:27",
   "game_png_path": "game\\assets\\textures\\props\\certificate_frame.png",
   "game_tscn_path": "game\\src\\maps\\props\\certificate_frame.tscn",
   "collision": "bottom_16x16"

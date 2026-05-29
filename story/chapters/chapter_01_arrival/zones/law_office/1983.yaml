@@ -1,0 +1,106 @@
+# 律師事務所 (1983) — 林榮昌時代的法律事務所
+zone: zone_law_office
+era: "1983"
+label: "律師事務所 (1983)"
+size: [22, 17]
+
+tilemap:
+  atlas: market_tile_concrete
+  terrain: 1
+  fill: rect
+
+props:
+  - id: law_office_muzha
+    anchor: north_wall
+    offset: [0, 2]
+
+  - id: desk_wooden_old
+    anchor: center
+    offset: [0, 0]
+
+  - id: abacus_wood
+    anchor: center
+    offset: [1, -1]
+
+  - id: tea_set_ceramic
+    anchor: center
+    offset: [-1, 0]
+
+  - id: paper_weight_jade
+    anchor: center
+    offset: [0, -1]
+
+  - id: globe_desk
+    anchor: east_wall
+    offset: [-2, 0]
+
+  - id: fan_standing
+    anchor: west_wall
+    offset: [2, 1]
+
+  - id: bookshelf_law
+    anchor: west_wall
+    offset: [2, -1]
+
+  - id: bookshelf_law
+    anchor: east_wall
+    offset: [-2, -2]
+    rename: 1983_bookshelf2
+
+  - id: certificate_frame
+    anchor: north_wall
+    offset: [-3, 0]
+
+  - id: certificate_frame
+    anchor: north_wall
+    offset: [3, 0]
+    rename: 1983_cert2
+
+  - id: fountain_pen_old
+    anchor: center
+    offset: [0, 1]
+
+  - id: rotary_phone
+    anchor: center
+    offset: [-1, 1]
+
+  - id: wooden_stool_old
+    anchor: center
+    offset: [-2, 1]
+
+  - id: wooden_stool_old
+    anchor: center
+    offset: [2, 1]
+    rename: 1983_stool2
+
+  - id: wall_clock_round
+    anchor: north_wall
+    offset: [0, 0]
+
+  - id: light_bulb_hanging
+    anchor: center
+    offset: [0, -2]
+
+  - id: radio_old_brown
+    anchor: east_wall
+    offset: [-2, 1]
+
+  - id: cobweb_corner
+    anchor: west_wall
+    offset: [0, -3]
+
+npcs:
+  - id: lawyer_muzha
+    anchor: relative_to(desk_wooden_old)
+    offset: [0, -2]
+
+transitions:
+  - target_zone: zone_market
+    entry_point: from_law_office
+    anchor: south_wall
+    offset: [0, 1]
+    rename: ToMarket
+
+player_spawn:
+  anchor: south_wall
+  offset: [0, -1]

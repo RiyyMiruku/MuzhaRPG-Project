@@ -1,0 +1,100 @@
+# 榮昌中藥行後院 (現代) — 荒廢的後院
+# 藥行歇業後雜草叢生、門鎖生鏽
+zone: zone_pharmacy_backyard
+era: "modern"
+label: "榮昌中藥行後院 (現代)"
+size: [22, 17]
+
+tilemap:
+  atlas: courtyard_grass_dirt
+  terrain: 1
+  fill: rect
+
+props:
+  # 荒廢的後院 — 和 1983 共用場地但更顯荒涼
+  - id: iron_gate_rusted
+    anchor: east_wall
+    offset: [-2, 0]
+
+  - id: weed_crack_ground
+    anchor: center
+    offset: [0, 1]
+
+  - id: weed_crack_ground
+    anchor: center
+    offset: [-2, 2]
+    rename: modern_weed2
+
+  - id: weed_crack_ground
+    anchor: center
+    offset: [3, 0]
+    rename: modern_weed3
+
+  - id: moss_patch_wall
+    anchor: west_wall
+    offset: [0, -1]
+
+  - id: moss_patch_wall
+    anchor: east_wall
+    offset: [0, -1]
+    rename: modern_moss2
+
+  - id: vine_wall_climbing
+    anchor: west_wall
+    offset: [0, -2]
+
+  - id: vine_wall_climbing
+    anchor: east_wall
+    offset: [0, -2]
+    rename: modern_vine2
+
+  - id: cobweb_corner
+    anchor: east_wall
+    offset: [0, -3]
+
+  - id: cobweb_corner
+    anchor: west_wall
+    offset: [0, -2]
+    rename: modern_cobweb2
+
+  - id: puddle_water
+    anchor: center
+    offset: [-1, 2]
+
+  - id: rusty_pipe_exposed
+    anchor: west_wall
+    offset: [0, 0]
+
+  - id: trash_bag_pile
+    anchor: center
+    offset: [2, 1]
+
+  - id: cardboard_boxes_torn
+    anchor: east_wall
+    offset: [-1, 1]
+
+  - id: door_wooden_locked
+    anchor: east_wall
+    offset: [0, 0]
+
+  - id: well_stone_old
+    anchor: center
+    offset: [3, 0]
+    rename: modern_well
+
+  - id: stray_cat_sleeping
+    anchor: center
+    offset: [0, -1]
+
+npcs: []
+
+transitions:
+  - target_zone: zone_pharmacy
+    entry_point: from_backyard
+    anchor: west_wall
+    offset: [0, 0]
+    rename: ToPharmacy
+
+player_spawn:
+  anchor: west_wall
+  offset: [1, 0]

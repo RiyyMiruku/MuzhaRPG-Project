@@ -4,27 +4,23 @@
 [ext_resource type="PackedScene" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ykobd"]
-points = PackedVector2Array(0.5, 32.0, 60.0, 0.0, 0.5, -32.0, -59.0, 0.0)
+points = PackedVector2Array(0.5, 32, 60, 0, 0.5, -32, -59, 0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
 size = Vector2(50, 53)
 
 [node name="pharmacy_rongchang_modern" unique_id=695023410 instance=ExtResource("4_tmpl")]
-
 iso_sort_offset = 39.0
+
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
 offset = Vector2(0, -25.0)
 
-[node name="StaticBody2D" parent="." index="1"]
-visible = false
-
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+visible = false
 shape = SubResource("ConvexPolygonShape2D_ykobd")
 
-[node name="InteractArea" parent="." index="2"]
-visible = false
-
 [node name="CollisionShape2D" parent="InteractArea" index="0"]
+visible = false
 position = Vector2(25, -42.5)
 shape = SubResource("2_irect")

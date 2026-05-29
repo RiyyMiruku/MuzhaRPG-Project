@@ -109,10 +109,27 @@ func _toggle_frozen_line(text: String, target: bool) -> String:
 ## Runtime EraManager 會在 _ready() 重設可見性，此操作只影響 editor view。
 ## 存場景後 visible 旗標會進 .tscn，可接受(runtime 會 override)。
 func _show_era(which: String) -> void:
+	var target_group: String = "era_" + which
+	# 先把所有 era 節點收集,判斷是否屬於目標 group
+	var decisions: Dictionary = {}  # node instance id → bool
+	var all_nodes: Array[Node] = []
 	var eras: Array[String] = ["1983", "modern"]
 	for e in eras:
-		var should_show: bool = (e == which)
-		_set_era_visible(e, should_show)
+		var group_name: String = "era_" + e
+		var nodes: Array[Node] = []
+		_collect_in_group(self, group_name, nodes)
+		for n in nodes:
+			var id: int = n.get_instance_id()
+			if e == which:
+				decisions[id] = true
+			elif not decisions.has(id):
+				decisions[id] = false
+			if not all_nodes.has(n):
+				all_nodes.append(n)
+	for n in all_nodes:
+		var active: bool = decisions.get(n.get_instance_id(), false)
+		if n is CanvasItem:
+			(n as CanvasItem).visible = active
 	print("[zone_baker] Era view: %s only. Save (Ctrl+S) to persist." % which)
 
 
@@ -135,6 +152,13 @@ func _apply_visible_recursive(node: Node, group_name: String, visible_flag: bool
 			(node as CanvasItem).visible = visible_flag
 	for child in node.get_children():
 		_apply_visible_recursive(child, group_name, visible_flag)
+
+
+func _collect_in_group(node: Node, group_name: String, result: Array[Node]) -> void:
+	if node.is_in_group(group_name):
+		result.append(node)
+	for child in node.get_children():
+		_collect_in_group(child, group_name, result)
 
 
 # ── Showcase (asset visibility tool) ────────────────────────────────────────

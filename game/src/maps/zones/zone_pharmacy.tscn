@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://du7thkkelvxs4"]
 
-[ext_resource type="Script" uid="uid://dmaeqfb1v35v0" path="res://tools/zone_baker.gd" id="1_baker"]
-[ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
+[ext_resource type="Script" uid="uid://bn5kbb0wyxbmb" path="res://tools/zone_baker.gd" id="1_baker"]
+[ext_resource type="Script" uid="uid://d3hai2d47t4ra" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="3_ghost_mat"]
 [ext_resource type="PackedScene" path="res://src/entities/player/Player.tscn" id="4_player"]
 [ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
@@ -22,10 +22,8 @@
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/lin_rongchang.tres" id="20_npccfg_lin_rongchang"]
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/chen_xiuqin.tres" id="21_npccfg_chen_xiuqin"]
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/lin_ama.tres" id="22_npccfg_lin_ama"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="23_kg2am"]
+[ext_resource type="Script" uid="uid://k3da00wfirxt" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="23_kg2am"]
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/lin_xiaowei.tres" id="23_npccfg_lin_xiaowei"]
-[ext_resource type="Texture2D" uid="uid://dsxiktwm6de3m" path="res://assets/textures/props/lantern_paper_red.png" id="25_wckmo"]
-[ext_resource type="PackedScene" uid="uid://cs2ft3rrpnlpe" path="res://src/maps/props/hanging_wood_sign.tscn" id="26_k6xyd"]
 [ext_resource type="PackedScene" uid="uid://b3bjje8647nw3" path="res://src/maps/props/notebook_leather.tscn" id="27_xi1pe"]
 [ext_resource type="Texture2D" uid="uid://d0e611gsqi8q1" path="res://assets/textures/props/id_card_old.png" id="28_drsgr"]
 [ext_resource type="PackedScene" uid="uid://ll4hx5jqp324" path="res://src/maps/props/altar_table_wood.tscn" id="100_altar_tabl"]
@@ -210,6 +208,9 @@ godot_4_3_compatibility = false
 
 [node name="YSortRoot" type="Node2D" parent="." unique_id=889085865]
 y_sort_enabled = true
+
+[node name="1983_drying_tray2" parent="YSortRoot" unique_id=2004306820 groups=["era_1983", "prop"] instance=ExtResource("107_herb_dryin")]
+position = Vector2(-141, -123)
 
 [node name="Player" parent="YSortRoot" unique_id=2115685882 instance=ExtResource("4_player")]
 
@@ -434,17 +435,19 @@ position = Vector2(0, -32)
 [node name="from_backyard" type="Marker2D" parent="Transitions/ToBackyard_1983"]
 position = Vector2(-32, 0)
 
-[node name="shop_counter_wood" parent="." unique_id=88305014 instance=ExtResource("10_prop_shop_counter_wo")]
-position = Vector2(-314, 0)
+[node name="HangingWoodSign" type="Sprite2D" parent="Transitions" unique_id=1416495543]
+position = Vector2(120, 200)
+texture = ExtResource("48_nskln")
 
-[node name="shop_counter_wood2" parent="." unique_id=649338451 instance=ExtResource("10_prop_shop_counter_wo")]
-position = Vector2(-285, 15)
+[node name="HangingWoodSign2" type="Sprite2D" parent="Transitions" unique_id=946811982]
+position = Vector2(335, -10)
+texture = ExtResource("48_nskln")
 
-[node name="shop_counter_wood3" parent="." unique_id=1413798937 instance=ExtResource("10_prop_shop_counter_wo")]
-position = Vector2(-255, 29)
+[node name="Showcase" type="Node2D" parent="." unique_id=973586792]
+position = Vector2(400, -400)
 
-[node name="shop_counter_wood4" parent="." unique_id=431297358 instance=ExtResource("10_prop_shop_counter_wo")]
-position = Vector2(-226, 45)
+[node name="id_card_old" parent="." unique_id=182639885 instance=ExtResource("48_wrudv")]
+position = Vector2(86, -168)
 
 [node name="medicine_cabinet_new" parent="." unique_id=1293162047 instance=ExtResource("11_prop_medicine_cabine")]
 position = Vector2(-116, -93)

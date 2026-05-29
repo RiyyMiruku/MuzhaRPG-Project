@@ -1,34 +1,36 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:04:11",
-  "updated_at": "2026-05-21T22:05:43",
+  "updated_at": "2026-05-29T21:24:38",
   "tags": [
     "zone:zone_pharmacy",
     "category:decoration",
-    "chapter:1"
+    "chapter:1",
+    "zone:zone_law_office",
+    "category:furniture"
   ],
-  "object_id": "9221dc61-b8b6-4f15-be1b-88cbd3ca7d4c",
+  "object_id": "2d7051f5-a724-4c0c-a207-4a49c111b8f7",
   "kind": "iso_prop",
-  "description": "wooden chinese abacus with black beads on desk, traditional calculation tool",
+  "description": "isometric pixel art, wooden abacus, flat rectangular frame with horizontal rods and beads, 1980s Taiwan style, warm brown wood, thin and wide shape, not a cube",
   "size": {
     "width": 16,
     "height": 16
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:05:43",
+      "completed_at": "2026-05-29T21:17:51",
       "paths": [
         "art_source\\objects\\abacus_wood\\abacus_wood.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:05:43",
+      "completed_at": "2026-05-29T21:24:38",
       "paths": [
         "art_source\\objects\\abacus_wood\\abacus_wood.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:05:43",
+      "completed_at": "2026-05-29T21:24:38",
       "paths": [
         "game\\assets\\textures\\props\\abacus_wood.png",
         "game\\src\\maps\\props\\abacus_wood.tscn"
@@ -36,8 +38,8 @@
     }
   },
   "local_path": "art_source\\objects\\abacus_wood\\abacus_wood.png",
-  "imported_at": "2026-05-21T22:05:43",
+  "imported_at": "2026-05-29T21:24:38",
   "game_png_path": "game\\assets\\textures\\props\\abacus_wood.png",
   "game_tscn_path": "game\\src\\maps\\props\\abacus_wood.tscn",
-  "collision": "none"
+  "collision": "bottom_16x16"
 }

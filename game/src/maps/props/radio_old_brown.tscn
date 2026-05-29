@@ -1,18 +1,24 @@
-[gd_scene format=3 uid="uid://c0tqhgf5l1tt5"]
+[gd_scene load_steps=5 format=3 uid="uid://cmby5aks6v3czg"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
-[ext_resource type="Texture2D" uid="uid://cvppuxlnlhjm2n" path="res://assets/textures/props/radio_old_brown.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://bxt0s564wyapb" path="res://assets/textures/props/radio_old_brown.png" id="3_tex"]
+
+[sub_resource type="ConvexPolygonShape2D" id="1_rect"]
+points = PackedVector2Array(-0.5, 6.0, 11.0, 0.0, -0.5, -6.0, -12.0, 0.0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
 size = Vector2(24.0, 16.0)
 
 [node name="radio_old_brown" instance=ExtResource("4_tmpl")]
-iso_sort_offset = 5.0
-has_collision = false
+iso_sort_offset = 6.0
+has_collision = true
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
 offset = Vector2(0, -7.0)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("1_rect")
 
 [node name="CollisionShape2D" parent="InteractArea" index="0"]
 position = Vector2(0.0, -8.0)

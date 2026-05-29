@@ -1,42 +1,44 @@
 {
   "status": "completed",
   "created_at": "2026-05-12T17:36:03",
-  "updated_at": "2026-05-17T14:24:17",
+  "updated_at": "2026-05-29T21:33:12",
   "tags": [
     "category:key_item",
     "chapter:1",
-    "zone:*"
+    "zone:*",
+    "zone:zone_law_office",
+    "category:decoration"
   ],
-  "object_id": "181c452c-0338-4204-b23d-9d3d929e72f7",
+  "object_id": "afb7508c-20a4-4b98-b50c-50c565165d26",
   "kind": "iso_prop",
-  "description": "old black resin fountain pen with tarnished silver clip, slightly scratched, cap on, classic late-1970s taiwanese style",
+  "description": "isometric pixel art, single old fountain pen lying flat, long thin cylindrical barrel with tapered gold nib at tip, dark navy blue body with gold trim and clip, pen lying diagonally on surface, extremely thin elongated shape, absolutely no cube or box, 1980s Taiwan style",
   "size": {
     "width": 16,
     "height": 16
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-12T17:36:53",
+      "completed_at": "2026-05-29T21:33:12",
       "paths": [
-        "art_source/objects/fountain_pen_old/fountain_pen_old.png"
+        "art_source\\objects\\fountain_pen_old\\fountain_pen_old.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-12T17:36:53",
+      "completed_at": "2026-05-29T21:33:12",
       "paths": [
-        "art_source/objects/fountain_pen_old/fountain_pen_old.png"
+        "art_source\\objects\\fountain_pen_old\\fountain_pen_old.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-17T14:24:17",
+      "completed_at": "2026-05-29T21:33:12",
       "paths": [
         "game\\assets\\textures\\props\\fountain_pen_old.png",
         "game\\src\\maps\\props\\fountain_pen_old.tscn"
       ]
     }
   },
-  "local_path": "art_source/objects/fountain_pen_old/fountain_pen_old.png",
-  "imported_at": "2026-05-17T14:24:17",
+  "local_path": "art_source\\objects\\fountain_pen_old\\fountain_pen_old.png",
+  "imported_at": "2026-05-29T21:33:12",
   "game_png_path": "game\\assets\\textures\\props\\fountain_pen_old.png",
   "game_tscn_path": "game\\src\\maps\\props\\fountain_pen_old.tscn",
   "collision": "bottom_16x16"
