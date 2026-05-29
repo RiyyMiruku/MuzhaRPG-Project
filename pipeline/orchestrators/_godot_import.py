@@ -9,6 +9,7 @@ import hashlib
 import shutil
 from pathlib import Path
 from PIL import Image
+import iso_base
 
 UID_ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789"
 
@@ -82,12 +83,23 @@ def _write_prop_tscn(
     with Image.open(png_path) as im:
         w, h = im.size
 
-    coll = _collision_rect(w, h, collision)
-    has_coll = "true" if (has_collision and coll is not None) else "false"
+    analysis = iso_base.analyze(png_path)
+    iso_sort_offset = analysis["iso_sort_offset"] if analysis else 0.0
+
     interact_size = (float(w), min(float(h), 16.0))
     interact_pos = (0.0, -interact_size[1] / 2.0)
 
-    # 從現有 .png.import 讀真正 UID;沒有就先生個 deterministic 的(Godot 之後會覆寫)
+    # Body 碰撞:analyze 成功用自動菱形;全透明則 fallback 回矩形 preset。
+    use_diamond = has_collision and analysis is not None
+    rect_coll = (
+        _collision_rect(w, h, collision)
+        if (has_collision and analysis is None)
+        else None
+    )
+    body_has_coll = use_diamond or (rect_coll is not None)
+    has_coll = "true" if body_has_coll else "false"
+
+    # 從現有 .png.import 讀真正 UID;沒有就生 deterministic 的(Godot 之後會覆寫)
     import_file = png_path.with_suffix(png_path.suffix + ".import")
     tex_uid: str | None = None
     if import_file.exists():
@@ -104,39 +116,58 @@ def _write_prop_tscn(
     rel_template = "res://src/maps/props/PropTemplate.tscn"
 
     parts: list[str] = []
-    load_steps = 4 if coll is None else 5
+    load_steps = 4 if not body_has_coll else 5
     parts.append(f'[gd_scene load_steps={load_steps} format=3 uid="{scene_uid}"]\n')
     parts.append(f'[ext_resource type="PackedScene" uid="{template_uid}" path="{rel_template}" id="4_tmpl"]')
     parts.append(f'[ext_resource type="Texture2D" uid="{tex_uid}" path="{rel_png}" id="3_tex"]\n')
 
-    if coll is not None:
-        size, _ = coll
-        parts.append(f'[sub_resource type="RectangleShape2D" id="1_rect"]\nsize = Vector2({size[0]}, {size[1]})\n')
+    if use_diamond:
+        pts = ", ".join(f"{x:.1f}, {y:.1f}" for x, y in analysis["collision_points"])
+        parts.append(
+            f'[sub_resource type="ConvexPolygonShape2D" id="1_shape"]\n'
+            f'points = PackedVector2Array({pts})\n'
+        )
+    elif rect_coll is not None:
+        size, _ = rect_coll
+        parts.append(
+            f'[sub_resource type="RectangleShape2D" id="1_shape"]\n'
+            f'size = Vector2({size[0]}, {size[1]})\n'
+        )
     parts.append(
         f'[sub_resource type="RectangleShape2D" id="2_irect"]\n'
         f'size = Vector2({interact_size[0]}, {interact_size[1]})\n'
     )
 
-    parts.append(f'[node name="{name}" instance=ExtResource("4_tmpl")]\nhas_collision = {has_coll}\n')
-    # Bake foot-anchor offset into the .tscn so editor view matches runtime.
-    # Prop.gd's _ready() will re-apply the same value when foot_anchor is on;
-    # we just need this here so the editor sees the correct layout without
-    # requiring the script to be @tool-mode.
+    parts.append(
+        f'[node name="{name}" instance=ExtResource("4_tmpl")]\n'
+        f'has_collision = {has_coll}\n'
+        f'iso_sort_offset = {iso_sort_offset}\n'
+    )
+    # 烘 foot-anchor + iso 偏移進 .tscn,讓編輯器顯示對齊 runtime;
+    # Prop.gd._ready() 在 foot_anchor 開時會套同一值。
     sprite_lines = [
         '[node name="Sprite2D" parent="." index="0"]',
         'texture = ExtResource("3_tex")',
-        f'offset = Vector2(0, {-h / 2.0})',
+        f'offset = Vector2(0, {-h / 2.0 + iso_sort_offset})',
     ]
     if flip_h:
-        sprite_lines.append('flip_h = true')
+        sprite_lines.append("flip_h = true")
     parts.append("\n".join(sprite_lines) + "\n")
-    if coll is not None:
-        size, pos = coll
-        parts.append(
-            f'[node name="CollisionShape2D" parent="StaticBody2D" index="0"]\n'
-            f'position = Vector2({pos[0]}, {pos[1]})\n'
-            f'shape = SubResource("1_rect")\n'
-        )
+
+    if body_has_coll:
+        if use_diamond:
+            parts.append(
+                f'[node name="CollisionShape2D" parent="StaticBody2D" index="0"]\n'
+                f'shape = SubResource("1_shape")\n'
+            )
+        else:
+            _, pos = rect_coll
+            parts.append(
+                f'[node name="CollisionShape2D" parent="StaticBody2D" index="0"]\n'
+                f'position = Vector2({pos[0]}, {pos[1]})\n'
+                f'shape = SubResource("1_shape")\n'
+            )
+
     parts.append(
         f'[node name="CollisionShape2D" parent="InteractArea" index="0"]\n'
         f'position = Vector2({interact_pos[0]}, {interact_pos[1]})\n'

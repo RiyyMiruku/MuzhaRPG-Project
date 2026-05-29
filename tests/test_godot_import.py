@@ -42,6 +42,7 @@ def test_collision_rect_bottom():
 
 
 from PIL import Image as _Image
+import numpy as np
 
 from orchestrators._godot_import import (
     import_prop,
@@ -55,10 +56,21 @@ def _make_test_png(path: Path, size: tuple[int, int] = (32, 32)) -> None:
     img.save(path)
 
 
+def _make_diamond_png(path: Path, w: int = 32, h: int = 32) -> None:
+    arr = np.zeros((h, w, 4), dtype=np.uint8)
+    cx, eq, max_hw = w // 2, h // 2, h // 4
+    for y in range(h):
+        hw = max_hw - abs(y - eq)
+        if hw < 0:
+            continue
+        arr[y, cx - hw : cx + hw + 1, :] = (255, 0, 0, 255)
+    _Image.fromarray(arr, "RGBA").save(path)
+
+
 def test_import_prop_with_collision(tmp_path):
     src = tmp_path / "src" / "world_tree.png"
     src.parent.mkdir()
-    _make_test_png(src, (64, 64))
+    _make_diamond_png(src, 32, 32)
 
     png_dest, tscn_dest = import_prop(
         src_png=src, name="world_tree",
@@ -67,14 +79,20 @@ def test_import_prop_with_collision(tmp_path):
     )
     assert png_dest == tmp_path / "game/assets/textures/props/world_tree.png"
     assert tscn_dest == tmp_path / "game/src/maps/props/world_tree.tscn"
-    assert png_dest.exists()
-    assert tscn_dest.exists()
     body = tscn_dest.read_text(encoding="utf-8")
     assert "load_steps=5" in body
     assert 'instance=ExtResource("4_tmpl")' in body
-    assert 'has_collision = true' in body
-    assert 'RectangleShape2D' in body
-    # texture ext_resource has both uid and path
+    assert "has_collision = true" in body
+    # 菱形取代矩形當 StaticBody 碰撞
+    assert "ConvexPolygonShape2D" in body
+    # 赤道 image y=16 → iso_sort_offset 15.0
+    assert "iso_sort_offset = 15.0" in body
+    # sprite offset 烘 = -h/2 + iso = -16 + 15 = -1.0(編輯器/runtime 對齊)
+    assert "offset = Vector2(0, -1.0)" in body
+    # StaticBody CollisionShape2D 無手動 position
+    start = body.index('[node name="CollisionShape2D" parent="StaticBody2D"')
+    end = body.index("[node", start + 1)
+    assert "position" not in body[start:end]
     assert 'type="Texture2D" uid="uid://c' in body
     assert 'path="res://assets/textures/props/world_tree.png"' in body
 
@@ -82,7 +100,7 @@ def test_import_prop_with_collision(tmp_path):
 def test_import_prop_no_collision(tmp_path):
     src = tmp_path / "src" / "lantern_red.png"
     src.parent.mkdir()
-    _make_test_png(src, (32, 32))
+    _make_diamond_png(src, 32, 32)
 
     png_dest, tscn_dest = import_prop(
         src_png=src, name="lantern_red",
@@ -91,7 +109,29 @@ def test_import_prop_no_collision(tmp_path):
     )
     body = tscn_dest.read_text(encoding="utf-8")
     assert "load_steps=4" in body
-    assert 'has_collision = false' in body
+    assert "has_collision = false" in body
+    # 無碰撞仍寫 iso_sort_offset(Y-sort 需要)
+    assert "iso_sort_offset = 15.0" in body
+    assert "ConvexPolygonShape2D" not in body
+
+
+def test_import_prop_transparent_fallback(tmp_path):
+    src = tmp_path / "src" / "ghost.png"
+    src.parent.mkdir()
+    _Image.new("RGBA", (32, 32), (0, 0, 0, 0)).save(src)  # 全透明
+
+    _, tscn_dest = import_prop(
+        src_png=src, name="ghost",
+        collision="bottom_16x16", has_collision=True,
+        root=tmp_path,
+    )
+    body = tscn_dest.read_text(encoding="utf-8")
+    # analyze 回 None → fallback 回矩形 preset
+    assert "ConvexPolygonShape2D" not in body
+    assert "RectangleShape2D" in body
+    assert "iso_sort_offset = 0.0" in body
+    # sprite offset = -h/2 + 0 = -16.0
+    assert "offset = Vector2(0, -16.0)" in body
 
 
 def test_import_tileset(tmp_path):
