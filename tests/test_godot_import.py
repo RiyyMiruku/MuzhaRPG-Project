@@ -159,7 +159,6 @@ def test_import_character_spritesheet(tmp_path):
     assert json_dest.exists()
 
 
-from PIL import Image
 from orchestrators._godot_import import _write_prop_tscn
 
 

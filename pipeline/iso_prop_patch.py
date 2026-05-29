@@ -84,7 +84,7 @@ def patch_tscn(
             insert_pos = 0
             while insert_pos < len(new_body) and new_body[insert_pos].strip() == "":
                 insert_pos += 1
-            new_body.insert(insert_pos, f"iso_sort_offset = {iso_sort_offset}\n")
+            new_body.insert(insert_pos, f"iso_sort_offset = {float(iso_sort_offset)}\n")
             new_blocks.append((header, new_body))
             continue
 
