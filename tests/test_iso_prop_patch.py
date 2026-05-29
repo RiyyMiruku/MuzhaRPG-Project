@@ -48,3 +48,9 @@ def test_patch_rebakes_sprite_offset_and_diamond():
     assert "position" not in sb
     # InteractArea 仍是矩形且保留 position
     assert 'id="2_irect"' in out
+    # InteractArea CollisionShape2D 的 position 不被動到
+    ia_start = out.index('parent="InteractArea"')
+    ia_rest = out[ia_start + 1 :]
+    ia_end = ia_start + 1 + ia_rest.index("[node") if "[node" in ia_rest else len(out)
+    ia_block = out[ia_start:ia_end]
+    assert "position = Vector2(0, -8)" in ia_block

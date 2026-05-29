@@ -104,7 +104,7 @@ def patch_tscn(
             continue
 
         # 碰撞形狀 sub_resource → ConvexPolygonShape2D
-        id_match = re.search(r'id="([^"]+)"', header)
+        id_match = re.search(r'\bid="([^"]+)"', header)
         if id_match and id_match.group(1) == collision_shape_id:
             new_header = re.sub(r'type="[^"]+"', 'type="ConvexPolygonShape2D"', header)
             new_body = [f"points = PackedVector2Array({pts_str})\n", "\n"]
