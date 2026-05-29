@@ -15,7 +15,7 @@ has_collision = true
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
-offset = Vector2(0, -32.0)
+offset = Vector2(0, -18.0)
 flip_h = true
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]

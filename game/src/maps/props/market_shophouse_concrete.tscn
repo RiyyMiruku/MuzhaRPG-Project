@@ -14,7 +14,7 @@ size = Vector2(40, 85)
 iso_sort_offset = 30.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
-offset = Vector2(0, -64)
+offset = Vector2(0, -34.0)
 
 [node name="StaticBody2D" parent="." index="1"]
 visible = false

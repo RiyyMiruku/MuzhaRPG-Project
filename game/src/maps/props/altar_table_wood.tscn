@@ -14,7 +14,7 @@ size = Vector2(48, 16)
 iso_sort_offset = 11.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
-offset = Vector2(0, -24)
+offset = Vector2(0, -13.0)
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource("1_rect")

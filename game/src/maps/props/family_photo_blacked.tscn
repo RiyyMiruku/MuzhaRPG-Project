@@ -17,6 +17,7 @@ has_collision = true
 texture = ExtResource("3_tex")
 
 
+offset = Vector2(0, -7.0)
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource("1_rect")
 
