@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvfxcgok8f3et"]
 
-[ext_resource type="PackedScene" uid="uid://dxialefu7qudp" path="res://src/maps/zones/zone_apartment_muzha.tscn" id="1_starting_zone"]
+[ext_resource type="PackedScene" uid="uid://bjibl64fmnidv" path="res://src/maps/zones/zone_market.tscn" id="1_starting_zone"]
 [ext_resource type="PackedScene" path="res://src/ui/dialogue/DialogueUI.tscn" id="2_dialogue_ui"]
 [ext_resource type="Script" uid="uid://bdnh4tthqcw83" path="res://src/core/classes/ZoneManager.gd" id="3_zone_manager"]
 [ext_resource type="PackedScene" path="res://src/ui/ScreenTransition.tscn" id="4_screen_transition"]
@@ -16,8 +16,8 @@
 
 [node name="ZoneContainer" type="Node2D" parent="." unique_id=1314374314]
 
-[node name="ZoneApartmentMuzha" parent="ZoneContainer" unique_id=2070079471 instance=ExtResource("1_starting_zone")]
-position = Vector2(-112, 74)
+[node name="ZoneMarket" parent="ZoneContainer" unique_id=2070079471 instance=ExtResource("1_starting_zone")]
+position = Vector2(0, 0)
 
 [node name="ZoneManager" type="Node" parent="." unique_id=1716411165]
 script = ExtResource("3_zone_manager")
