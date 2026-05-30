@@ -1,42 +1,44 @@
 {
   "status": "completed",
   "created_at": "2026-05-12T14:55:01",
-  "updated_at": "2026-05-17T14:24:17",
+  "updated_at": "2026-05-30T20:13:14",
   "tags": [
     "category:key_item",
     "chapter:1",
-    "zone:zone_pharmacy_modern"
+    "zone:zone_pharmacy_modern",
+    "zone:zone_pharmacy",
+    "category:decoration"
   ],
-  "object_id": "16316cb0-ad1a-4985-ba8e-4797a3a32aed",
+  "object_id": "44cf361b-f469-4a0e-82a0-fb933c2066d0",
   "kind": "iso_prop",
-  "description": "framed sepia-toned taiwanese family photograph from the 1970s, wooden frame slightly weathered, six figures arranged in two rows, one face on the back row completely blacked out with dark ink, glass slightly dusty",
+  "description": "isometric pixel art, framed family photo with one face scribbled out in black ink, thin rectangular picture frame on surface, black and white photo paper, 1980s Taiwan family portrait, flat thin object, not a cube",
   "size": {
     "width": 24,
     "height": 24
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-12T14:55:44",
+      "completed_at": "2026-05-30T20:13:13",
       "paths": [
-        "art_source/objects/family_photo_blacked/family_photo_blacked.png"
+        "art_source\\objects\\family_photo_blacked\\family_photo_blacked.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-12T14:55:44",
+      "completed_at": "2026-05-30T20:13:13",
       "paths": [
-        "art_source/objects/family_photo_blacked/family_photo_blacked.png"
+        "art_source\\objects\\family_photo_blacked\\family_photo_blacked.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-17T14:24:17",
+      "completed_at": "2026-05-30T20:13:14",
       "paths": [
         "game\\assets\\textures\\props\\family_photo_blacked.png",
         "game\\src\\maps\\props\\family_photo_blacked.tscn"
       ]
     }
   },
-  "local_path": "art_source/objects/family_photo_blacked/family_photo_blacked.png",
-  "imported_at": "2026-05-17T14:24:17",
+  "local_path": "art_source\\objects\\family_photo_blacked\\family_photo_blacked.png",
+  "imported_at": "2026-05-30T20:13:14",
   "game_png_path": "game\\assets\\textures\\props\\family_photo_blacked.png",
   "game_tscn_path": "game\\src\\maps\\props\\family_photo_blacked.tscn",
   "collision": "bottom_16x16"

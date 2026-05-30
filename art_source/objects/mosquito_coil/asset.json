@@ -1,34 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:49:06",
-  "updated_at": "2026-05-21T22:53:14",
+  "updated_at": "2026-05-30T20:43:58",
   "tags": [
     "zone:zone_market",
     "category:decoration",
-    "chapter:1"
+    "chapter:1",
+    "zone:zone_pharmacy"
   ],
-  "object_id": "e8353b2d-f46b-47ae-a021-d47f2bde65ba",
+  "object_id": "a38153bd-a06d-407d-af04-7e8091faf15b",
   "kind": "iso_prop",
-  "description": "green mosquito coil burning in metal holder, spiral smoke, summer essential",
+  "description": "isometric pixel art, green mosquito repellent coil, flat spiral disc shape glowing with small ember, sitting on a small metal stand, flat circular spiral, not a cube",
   "size": {
-    "width": 16,
-    "height": 16
+    "width": 24,
+    "height": 24
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:53:14",
+      "completed_at": "2026-05-30T20:43:58",
       "paths": [
         "art_source\\objects\\mosquito_coil\\mosquito_coil.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:53:14",
+      "completed_at": "2026-05-30T20:43:58",
       "paths": [
         "art_source\\objects\\mosquito_coil\\mosquito_coil.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:53:14",
+      "completed_at": "2026-05-30T20:43:58",
       "paths": [
         "game\\assets\\textures\\props\\mosquito_coil.png",
         "game\\src\\maps\\props\\mosquito_coil.tscn"
@@ -36,8 +37,8 @@
     }
   },
   "local_path": "art_source\\objects\\mosquito_coil\\mosquito_coil.png",
-  "imported_at": "2026-05-21T22:53:14",
+  "imported_at": "2026-05-30T20:43:58",
   "game_png_path": "game\\assets\\textures\\props\\mosquito_coil.png",
   "game_tscn_path": "game\\src\\maps\\props\\mosquito_coil.tscn",
-  "collision": "none"
+  "collision": "bottom_16x16"
 }

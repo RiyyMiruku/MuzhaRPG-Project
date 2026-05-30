@@ -1,35 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:39:17",
-  "updated_at": "2026-05-29T21:24:40",
+  "updated_at": "2026-05-30T18:31:40",
   "tags": [
     "zone:zone_pharmacy",
     "category:decoration",
     "chapter:1",
     "zone:zone_law_office"
   ],
-  "object_id": "ccab1881-3b83-4aee-a13a-f41603e3cba9",
-  "kind": "iso_prop",
-  "description": "isometric pixel art, round wall clock, circular white clock face with black hour and minute hands, thin wooden circular frame, 1980s Taiwan style, flat circular shape mounted on wall, not a cube",
+  "object_id": "pixflux:wall_clock_round",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, round wall clock, circular white clock face with black hands, thin wooden circular frame, mounted on wall",
   "size": {
-    "width": 24,
-    "height": 24
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-29T21:21:51",
+      "completed_at": "2026-05-30T18:31:40",
       "paths": [
         "art_source\\objects\\wall_clock_round\\wall_clock_round.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-29T21:24:40",
+      "completed_at": "2026-05-30T18:31:40",
       "paths": [
         "art_source\\objects\\wall_clock_round\\wall_clock_round.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-29T21:24:40",
+      "completed_at": "2026-05-30T18:31:40",
       "paths": [
         "game\\assets\\textures\\props\\wall_clock_round.png",
         "game\\src\\maps\\props\\wall_clock_round.tscn"
@@ -37,8 +37,9 @@
     }
   },
   "local_path": "art_source\\objects\\wall_clock_round\\wall_clock_round.png",
-  "imported_at": "2026-05-29T21:24:40",
+  "imported_at": "2026-05-30T18:31:40",
   "game_png_path": "game\\assets\\textures\\props\\wall_clock_round.png",
   "game_tscn_path": "game\\src\\maps\\props\\wall_clock_round.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

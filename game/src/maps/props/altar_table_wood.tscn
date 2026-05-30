@@ -1,24 +1,25 @@
-[gd_scene format=3 uid="uid://ll4hx5jqp324"]
+[gd_scene load_steps=5 format=3 uid="uid://c0de0nb7lbk4ah"]
 
+[ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 [ext_resource type="Texture2D" uid="uid://cgux35o4pr1ov" path="res://assets/textures/props/altar_table_wood.png" id="3_tex"]
-[ext_resource type="PackedScene" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 
-[sub_resource type="ConvexPolygonShape2D" id="1_rect"]
+[sub_resource type="ConvexPolygonShape2D" id="1_shape"]
 points = PackedVector2Array(-0.5, 11.0, 23.0, 0.0, -0.5, -11.0, -24.0, 0.0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
-size = Vector2(48, 16)
+size = Vector2(48.0, 16.0)
 
-[node name="altar_table_wood" unique_id=1088575849 instance=ExtResource("4_tmpl")]
-
+[node name="altar_table_wood" instance=ExtResource("4_tmpl")]
+has_collision = true
 iso_sort_offset = 11.0
+
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
 offset = Vector2(0, -13.0)
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-shape = SubResource("1_rect")
+shape = SubResource("1_shape")
 
 [node name="CollisionShape2D" parent="InteractArea" index="0"]
-position = Vector2(0, -8)
+position = Vector2(0.0, -8.0)
 shape = SubResource("2_irect")

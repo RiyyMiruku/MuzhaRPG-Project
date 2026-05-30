@@ -1,7 +1,7 @@
 {
   "status": "completed",
   "created_at": "2026-05-12T17:35:34",
-  "updated_at": "2026-05-29T21:24:40",
+  "updated_at": "2026-05-30T18:28:17",
   "tags": [
     "category:furniture",
     "chapter:1",
@@ -9,28 +9,28 @@
     "zone:zone_market_1983",
     "zone:zone_law_office"
   ],
-  "object_id": "df23f59d-fb5a-4725-98e0-37f883550c26",
-  "kind": "iso_prop",
-  "description": "isometric pixel art, old wooden stool, round seat with four thin legs visible from isometric angle, warm brown aged wood, simple traditional design, not a solid cube",
+  "object_id": "pixflux:wooden_stool_old",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, old wooden stool, round seat with four thin legs, warm brown aged wood",
   "size": {
-    "width": 16,
-    "height": 16
+    "width": 32,
+    "height": 32
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-29T21:21:01",
+      "completed_at": "2026-05-30T18:28:17",
       "paths": [
         "art_source\\objects\\wooden_stool_old\\wooden_stool_old.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-29T21:24:40",
+      "completed_at": "2026-05-30T18:28:17",
       "paths": [
         "art_source\\objects\\wooden_stool_old\\wooden_stool_old.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-29T21:24:40",
+      "completed_at": "2026-05-30T18:28:17",
       "paths": [
         "game\\assets\\textures\\props\\wooden_stool_old.png",
         "game\\src\\maps\\props\\wooden_stool_old.tscn"
@@ -38,8 +38,9 @@
     }
   },
   "local_path": "art_source\\objects\\wooden_stool_old\\wooden_stool_old.png",
-  "imported_at": "2026-05-29T21:24:40",
+  "imported_at": "2026-05-30T18:28:17",
   "game_png_path": "game\\assets\\textures\\props\\wooden_stool_old.png",
   "game_tscn_path": "game\\src\\maps\\props\\wooden_stool_old.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

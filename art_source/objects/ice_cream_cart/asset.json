@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:04:34",
-  "updated_at": "2026-05-21T22:05:12",
+  "updated_at": "2026-05-30T18:33:34",
   "tags": [
     "zone:zone_market",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "18f9e6fa-082d-4f2c-a705-46eab99210eb",
-  "kind": "iso_prop",
-  "description": "taiwanese ba-bu ice cream push cart with colorful umbrella on top, 1980s street food",
+  "object_id": "pixflux:ice_cream_cart",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, taiwanese ba-bu ice cream push cart with colorful umbrella on top, two wheels, street vendor",
   "size": {
-    "width": 48,
-    "height": 48
+    "width": 64,
+    "height": 64
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:05:12",
+      "completed_at": "2026-05-30T18:33:33",
       "paths": [
         "art_source\\objects\\ice_cream_cart\\ice_cream_cart.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:05:12",
+      "completed_at": "2026-05-30T18:33:34",
       "paths": [
         "art_source\\objects\\ice_cream_cart\\ice_cream_cart.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:05:12",
+      "completed_at": "2026-05-30T18:33:34",
       "paths": [
         "game\\assets\\textures\\props\\ice_cream_cart.png",
         "game\\src\\maps\\props\\ice_cream_cart.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\ice_cream_cart\\ice_cream_cart.png",
-  "imported_at": "2026-05-21T22:05:12",
+  "imported_at": "2026-05-30T18:33:34",
   "game_png_path": "game\\assets\\textures\\props\\ice_cream_cart.png",
   "game_tscn_path": "game\\src\\maps\\props\\ice_cream_cart.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

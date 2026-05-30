@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-30T18:52:26",
+  "updated_at": "2026-05-30T18:53:10",
+  "tags": [
+    "zone:zone_market",
+    "category:building",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:shophouse_teahouse",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, full building with visible roof and two side walls, transparent background — 1980s taiwanese traditional teahouse two-story shophouse, bamboo roll blinds on upper floor, dark wooden facade with carved decorative panels, elegant wooden hanging sign with gold chinese characters for tea, clay teapot display in window, potted plants at entrance, warm aged wood tones",
+  "view": "high_top_down",
+  "size": {
+    "width": 128,
+    "height": 128
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-30T18:53:10",
+      "paths": [
+        "art_source\\objects\\shophouse_teahouse\\shophouse_teahouse.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-30T18:53:10",
+      "paths": [
+        "art_source\\objects\\shophouse_teahouse\\shophouse_teahouse.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-30T18:53:10",
+      "paths": [
+        "game\\assets\\textures\\props\\shophouse_teahouse.png",
+        "game\\src\\maps\\props\\shophouse_teahouse.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\shophouse_teahouse\\shophouse_teahouse.png",
+  "imported_at": "2026-05-30T18:53:10",
+  "game_png_path": "game\\assets\\textures\\props\\shophouse_teahouse.png",
+  "game_tscn_path": "game\\src\\maps\\props\\shophouse_teahouse.tscn",
+  "collision": "bottom_16x16"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-30T19:29:15",
+  "updated_at": "2026-05-30T19:30:04",
+  "tags": [
+    "zone:zone_market",
+    "category:building",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:building_parking_lot",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, full building with visible roof and two side walls, transparent background — open air urban parking lot, low concrete perimeter wall with yellow painted curb, painted white parking space lines on dark asphalt ground, entrance gate with metal bar, small booth kiosk at entrance, urban taiwan modern",
+  "view": "high_top_down",
+  "size": {
+    "width": 128,
+    "height": 96
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-30T19:30:04",
+      "paths": [
+        "art_source\\objects\\building_parking_lot\\building_parking_lot.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-30T19:30:04",
+      "paths": [
+        "art_source\\objects\\building_parking_lot\\building_parking_lot.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-30T19:30:04",
+      "paths": [
+        "game\\assets\\textures\\props\\building_parking_lot.png",
+        "game\\src\\maps\\props\\building_parking_lot.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\building_parking_lot\\building_parking_lot.png",
+  "imported_at": "2026-05-30T19:30:04",
+  "game_png_path": "game\\assets\\textures\\props\\building_parking_lot.png",
+  "game_tscn_path": "game\\src\\maps\\props\\building_parking_lot.tscn",
+  "collision": "bottom_16x16"
+}

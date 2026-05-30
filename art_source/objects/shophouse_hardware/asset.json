@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-30T18:51:32",
+  "updated_at": "2026-05-30T18:52:03",
+  "tags": [
+    "zone:zone_market",
+    "category:building",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:shophouse_hardware",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, full building with visible roof and two side walls, transparent background — 1980s taiwanese two-story hardware store shophouse, corrugated metal roof overhang, tools and pipes hanging outside on wall racks, metal shelving visible inside, cluttered merchandise, faded blue paint on facade, handwritten price signs, galvanized iron goods stacked by entrance",
+  "view": "high_top_down",
+  "size": {
+    "width": 128,
+    "height": 128
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-30T18:52:03",
+      "paths": [
+        "art_source\\objects\\shophouse_hardware\\shophouse_hardware.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-30T18:52:03",
+      "paths": [
+        "art_source\\objects\\shophouse_hardware\\shophouse_hardware.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-30T18:52:03",
+      "paths": [
+        "game\\assets\\textures\\props\\shophouse_hardware.png",
+        "game\\src\\maps\\props\\shophouse_hardware.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\shophouse_hardware\\shophouse_hardware.png",
+  "imported_at": "2026-05-30T18:52:03",
+  "game_png_path": "game\\assets\\textures\\props\\shophouse_hardware.png",
+  "game_tscn_path": "game\\src\\maps\\props\\shophouse_hardware.tscn",
+  "collision": "bottom_16x16"
+}

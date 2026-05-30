@@ -1,34 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:46:00",
-  "updated_at": "2026-05-21T22:52:43",
+  "updated_at": "2026-05-30T20:43:32",
   "tags": [
     "zone:zone_market",
     "category:decoration",
-    "chapter:1"
+    "chapter:1",
+    "zone:zone_pharmacy"
   ],
-  "object_id": "8a26aff6-c083-4d65-bf9f-1915bd110b1b",
+  "object_id": "000140a9-506b-41ad-986f-f4d3b4c74f9a",
   "kind": "iso_prop",
-  "description": "round bamboo birdcage with small bird inside, hung from pole, market tradition",
+  "description": "isometric pixel art, traditional taiwanese bamboo birdcage, round cylindrical cage made of thin bamboo strips, domed top, open weave pattern, circular cage shape not a cube",
   "size": {
-    "width": 32,
-    "height": 32
+    "width": 24,
+    "height": 24
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:52:43",
+      "completed_at": "2026-05-30T20:43:32",
       "paths": [
         "art_source\\objects\\birdcage_bamboo\\birdcage_bamboo.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:52:43",
+      "completed_at": "2026-05-30T20:43:32",
       "paths": [
         "art_source\\objects\\birdcage_bamboo\\birdcage_bamboo.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:52:43",
+      "completed_at": "2026-05-30T20:43:32",
       "paths": [
         "game\\assets\\textures\\props\\birdcage_bamboo.png",
         "game\\src\\maps\\props\\birdcage_bamboo.tscn"
@@ -36,8 +37,9 @@
     }
   },
   "local_path": "art_source\\objects\\birdcage_bamboo\\birdcage_bamboo.png",
-  "imported_at": "2026-05-21T22:52:43",
+  "imported_at": "2026-05-30T20:43:32",
   "game_png_path": "game\\assets\\textures\\props\\birdcage_bamboo.png",
   "game_tscn_path": "game\\src\\maps\\props\\birdcage_bamboo.tscn",
-  "collision": "none"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

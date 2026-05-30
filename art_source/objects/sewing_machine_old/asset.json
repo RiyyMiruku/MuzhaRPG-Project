@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:45:32",
-  "updated_at": "2026-05-21T22:50:19",
+  "updated_at": "2026-05-30T18:37:22",
   "tags": [
     "zone:zone_law_office",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "ae2d3ea5-8d06-4e18-9f9a-44d4a9a8de4f",
-  "kind": "iso_prop",
-  "description": "old black singer sewing machine on table, foot pedal, tailor shop",
+  "object_id": "pixflux:sewing_machine_old",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, old black singer sewing machine on table, foot pedal, tailor shop, vintage industrial design",
   "size": {
-    "width": 48,
-    "height": 48
+    "width": 64,
+    "height": 64
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:50:19",
+      "completed_at": "2026-05-30T18:37:22",
       "paths": [
         "art_source\\objects\\sewing_machine_old\\sewing_machine_old.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:50:19",
+      "completed_at": "2026-05-30T18:37:22",
       "paths": [
         "art_source\\objects\\sewing_machine_old\\sewing_machine_old.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:50:19",
+      "completed_at": "2026-05-30T18:37:22",
       "paths": [
         "game\\assets\\textures\\props\\sewing_machine_old.png",
         "game\\src\\maps\\props\\sewing_machine_old.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\sewing_machine_old\\sewing_machine_old.png",
-  "imported_at": "2026-05-21T22:50:19",
+  "imported_at": "2026-05-30T18:37:22",
   "game_png_path": "game\\assets\\textures\\props\\sewing_machine_old.png",
   "game_tscn_path": "game\\src\\maps\\props\\sewing_machine_old.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

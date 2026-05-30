@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:40:36",
-  "updated_at": "2026-05-21T22:02:45",
+  "updated_at": "2026-05-30T18:14:12",
   "tags": [
     "zone:zone_market",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "fe404b0b-7d28-41d2-8f79-a5d19c026057",
-  "kind": "iso_prop",
-  "description": "rusted old bicycle fallen on its side against wall",
+  "object_id": "pixflux:bicycle_rusted",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, rusted old bicycle parked, visible two wheels frame handlebars rust texture, transparent background",
   "size": {
-    "width": 48,
-    "height": 48
+    "width": 64,
+    "height": 64
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T21:41:21",
+      "completed_at": "2026-05-30T18:14:12",
       "paths": [
         "art_source\\objects\\bicycle_rusted\\bicycle_rusted.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T21:41:21",
+      "completed_at": "2026-05-30T18:14:12",
       "paths": [
         "art_source\\objects\\bicycle_rusted\\bicycle_rusted.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T21:41:21",
+      "completed_at": "2026-05-30T18:14:12",
       "paths": [
         "game\\assets\\textures\\props\\bicycle_rusted.png",
         "game\\src\\maps\\props\\bicycle_rusted.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\bicycle_rusted\\bicycle_rusted.png",
-  "imported_at": "2026-05-21T21:41:21",
+  "imported_at": "2026-05-30T18:14:12",
   "game_png_path": "game\\assets\\textures\\props\\bicycle_rusted.png",
   "game_tscn_path": "game\\src\\maps\\props\\bicycle_rusted.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

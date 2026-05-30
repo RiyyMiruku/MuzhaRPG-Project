@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:06:10",
-  "updated_at": "2026-05-21T22:06:57",
+  "updated_at": "2026-05-30T20:16:34",
   "tags": [
     "zone:zone_pharmacy_backyard",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "928d24b4-8740-495c-abe6-9ee16791c151",
-  "kind": "iso_prop",
-  "description": "stone garden bench, simple, courtyard seating",
+  "object_id": "pixflux:stone_bench_garden",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — simple stone garden bench, grey stone rectangular slab on two short stone legs, courtyard seating, weathered",
   "size": {
-    "width": 32,
-    "height": 32
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:06:57",
+      "completed_at": "2026-05-30T20:16:34",
       "paths": [
         "art_source\\objects\\stone_bench_garden\\stone_bench_garden.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:06:57",
+      "completed_at": "2026-05-30T20:16:34",
       "paths": [
         "art_source\\objects\\stone_bench_garden\\stone_bench_garden.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:06:57",
+      "completed_at": "2026-05-30T20:16:34",
       "paths": [
         "game\\assets\\textures\\props\\stone_bench_garden.png",
         "game\\src\\maps\\props\\stone_bench_garden.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\stone_bench_garden\\stone_bench_garden.png",
-  "imported_at": "2026-05-21T22:06:57",
+  "imported_at": "2026-05-30T20:16:34",
   "game_png_path": "game\\assets\\textures\\props\\stone_bench_garden.png",
   "game_tscn_path": "game\\src\\maps\\props\\stone_bench_garden.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

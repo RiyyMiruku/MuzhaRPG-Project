@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:41:24",
-  "updated_at": "2026-05-21T22:02:48",
+  "updated_at": "2026-05-30T20:43:06",
   "tags": [
     "zone:zone_pharmacy",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "b59bee6e-0230-4f8b-85b4-858751eeacdc",
+  "object_id": "20b89f9a-8cab-4a17-ac78-1c16ad7e942e",
   "kind": "iso_prop",
-  "description": "broken ceramic medicine jar pieces scattered on floor",
+  "description": "isometric pixel art, broken ceramic medicine jar, shattered pieces of white and blue porcelain on ground, cracked fragments spread out flat, no cube shape",
   "size": {
     "width": 24,
     "height": 24
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T21:41:55",
+      "completed_at": "2026-05-30T20:43:06",
       "paths": [
         "art_source\\objects\\herb_jar_broken\\herb_jar_broken.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T21:41:55",
+      "completed_at": "2026-05-30T20:43:06",
       "paths": [
         "art_source\\objects\\herb_jar_broken\\herb_jar_broken.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T21:41:55",
+      "completed_at": "2026-05-30T20:43:06",
       "paths": [
         "game\\assets\\textures\\props\\herb_jar_broken.png",
         "game\\src\\maps\\props\\herb_jar_broken.tscn"
@@ -36,8 +36,8 @@
     }
   },
   "local_path": "art_source\\objects\\herb_jar_broken\\herb_jar_broken.png",
-  "imported_at": "2026-05-21T21:41:55",
+  "imported_at": "2026-05-30T20:43:06",
   "game_png_path": "game\\assets\\textures\\props\\herb_jar_broken.png",
   "game_tscn_path": "game\\src\\maps\\props\\herb_jar_broken.tscn",
-  "collision": "none"
+  "collision": "bottom_16x16"
 }

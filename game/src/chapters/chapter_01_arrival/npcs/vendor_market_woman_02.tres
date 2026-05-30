@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCProfile" format=3 uid="uid://c86501f2c0af"]
+
+[ext_resource type="Script" uid="uid://isby2be8icbw" path="res://src/core/classes/NPCProfile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+era = "1983"
+personality_voice = "1983年木柵市場的中年女性攤販，背景路人。"
+npc_id = "vendor_market_woman_02"
+display_name = "女攤販"
+display_name_en = "Female Vendor"
+location_zone = "zone_market"
+system_prompt = "1983年木柵市場的中年女性攤販，背景路人。"
+personality_tags = Array[String](["背景路人"])
+max_response_tokens = 80
+conversation_memory_turns = 2
+wander_radius = 48.0
+wander_speed = 20.0
+wander_pause_min = 2.0
+wander_pause_max = 4.0

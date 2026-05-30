@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-30T19:28:11",
+  "updated_at": "2026-05-30T19:28:33",
+  "tags": [
+    "zone:zone_market",
+    "category:building",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:building_convenience_store",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, full building with visible roof and two side walls, transparent background — modern taiwanese convenience store, 7-eleven style, bright white and green facade, large illuminated sign with logo, glass sliding door entrance, fluorescent lit interior visible, promotional posters on windows, modern clean design, urban taiwan street",
+  "view": "high_top_down",
+  "size": {
+    "width": 128,
+    "height": 128
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-30T19:28:32",
+      "paths": [
+        "art_source\\objects\\building_convenience_store\\building_convenience_store.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-30T19:28:32",
+      "paths": [
+        "art_source\\objects\\building_convenience_store\\building_convenience_store.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-30T19:28:33",
+      "paths": [
+        "game\\assets\\textures\\props\\building_convenience_store.png",
+        "game\\src\\maps\\props\\building_convenience_store.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\building_convenience_store\\building_convenience_store.png",
+  "imported_at": "2026-05-30T19:28:33",
+  "game_png_path": "game\\assets\\textures\\props\\building_convenience_store.png",
+  "game_tscn_path": "game\\src\\maps\\props\\building_convenience_store.tscn",
+  "collision": "bottom_16x16"
+}

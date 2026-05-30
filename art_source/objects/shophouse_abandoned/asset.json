@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-30T18:52:04",
+  "updated_at": "2026-05-30T18:52:25",
+  "tags": [
+    "zone:zone_market",
+    "category:building",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:shophouse_abandoned",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, full building with visible roof and two side walls, transparent background — abandoned derelict two-story taiwanese shophouse, rusted broken metal roll-up shutter, crumbling plaster facade with exposed brick, overgrown weeds at base, boarded up upper windows, peeling paint, faded illegible signboard, dark and empty interior, urban decay",
+  "view": "high_top_down",
+  "size": {
+    "width": 128,
+    "height": 128
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-30T18:52:25",
+      "paths": [
+        "art_source\\objects\\shophouse_abandoned\\shophouse_abandoned.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-30T18:52:25",
+      "paths": [
+        "art_source\\objects\\shophouse_abandoned\\shophouse_abandoned.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-30T18:52:25",
+      "paths": [
+        "game\\assets\\textures\\props\\shophouse_abandoned.png",
+        "game\\src\\maps\\props\\shophouse_abandoned.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\shophouse_abandoned\\shophouse_abandoned.png",
+  "imported_at": "2026-05-30T18:52:25",
+  "game_png_path": "game\\assets\\textures\\props\\shophouse_abandoned.png",
+  "game_tscn_path": "game\\src\\maps\\props\\shophouse_abandoned.tscn",
+  "collision": "bottom_16x16"
+}

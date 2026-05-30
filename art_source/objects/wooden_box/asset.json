@@ -1,44 +1,45 @@
 {
   "status": "completed",
   "created_at": "2026-05-17T01:03:07",
-  "updated_at": "2026-05-29T21:39:20",
+  "updated_at": "2026-05-30T18:35:17",
   "tags": [
     "zone:zone_market",
     "category:decoration",
     "chapter:1",
     "zone:zone_law_office"
   ],
-  "object_id": "9f5755a1-ac5a-469e-92dc-afc7c0835503",
-  "kind": "iso_prop",
-  "description": "isometric pixel art, small wooden hanging sign, flat rectangular wooden plaque suspended by two ropes from above, carved or painted chinese text, warm brown aged wood, thin flat sign swaying, not a cube, traditional taiwanese shop or doorway marker",
+  "object_id": "pixflux:wooden_box",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, small wooden hanging sign, flat rectangular wooden plaque suspended by two ropes, chinese text, warm brown aged wood",
   "size": {
-    "width": 32,
-    "height": 32
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-29T21:39:20",
+      "completed_at": "2026-05-30T18:35:16",
       "paths": [
-        "art_source\\objects\\hanging_wood_sign\\hanging_wood_sign.png"
+        "art_source\\objects\\wooden_box\\wooden_box.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-29T21:39:20",
+      "completed_at": "2026-05-30T18:35:17",
       "paths": [
-        "art_source\\objects\\hanging_wood_sign\\hanging_wood_sign.png"
+        "art_source\\objects\\wooden_box\\wooden_box.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-29T21:39:20",
+      "completed_at": "2026-05-30T18:35:17",
       "paths": [
-        "game\\assets\\textures\\props\\hanging_wood_sign.png",
-        "game\\src\\maps\\props\\hanging_wood_sign.tscn"
+        "game\\assets\\textures\\props\\wooden_box.png",
+        "game\\src\\maps\\props\\wooden_box.tscn"
       ]
     }
   },
-  "local_path": "art_source\\objects\\hanging_wood_sign\\hanging_wood_sign.png",
-  "imported_at": "2026-05-29T21:39:20",
-  "game_png_path": "game\\assets\\textures\\props\\hanging_wood_sign.png",
-  "game_tscn_path": "game\\src\\maps\\props\\hanging_wood_sign.tscn",
-  "collision": "bottom_16x16"
+  "local_path": "art_source\\objects\\wooden_box\\wooden_box.png",
+  "imported_at": "2026-05-30T18:35:17",
+  "game_png_path": "game\\assets\\textures\\props\\wooden_box.png",
+  "game_tscn_path": "game\\src\\maps\\props\\wooden_box.tscn",
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

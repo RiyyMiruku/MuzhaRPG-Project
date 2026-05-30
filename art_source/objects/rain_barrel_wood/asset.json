@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:05:07",
-  "updated_at": "2026-05-21T22:06:10",
+  "updated_at": "2026-05-30T20:16:01",
   "tags": [
     "zone:zone_pharmacy_backyard",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "8ed50ba1-ede9-4498-9a83-30359f7aad9d",
-  "kind": "iso_prop",
-  "description": "wooden rain barrel for collecting rainwater, backyard utility",
+  "object_id": "pixflux:rain_barrel_wood",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — wooden rain barrel for collecting rainwater, backyard utility, dark brown aged wood with metal bands, 1980s taiwan",
   "size": {
-    "width": 24,
-    "height": 24
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:06:10",
+      "completed_at": "2026-05-30T20:16:01",
       "paths": [
         "art_source\\objects\\rain_barrel_wood\\rain_barrel_wood.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:06:10",
+      "completed_at": "2026-05-30T20:16:01",
       "paths": [
         "art_source\\objects\\rain_barrel_wood\\rain_barrel_wood.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:06:10",
+      "completed_at": "2026-05-30T20:16:01",
       "paths": [
         "game\\assets\\textures\\props\\rain_barrel_wood.png",
         "game\\src\\maps\\props\\rain_barrel_wood.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\rain_barrel_wood\\rain_barrel_wood.png",
-  "imported_at": "2026-05-21T22:06:10",
+  "imported_at": "2026-05-30T20:16:01",
   "game_png_path": "game\\assets\\textures\\props\\rain_barrel_wood.png",
   "game_tscn_path": "game\\src\\maps\\props\\rain_barrel_wood.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

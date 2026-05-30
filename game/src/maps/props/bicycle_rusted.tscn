@@ -1,25 +1,24 @@
 [gd_scene format=3 uid="uid://bm0ykiis0c7p1"]
 
-[ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
-[ext_resource type="Texture2D" uid="uid://cj2at60hfa28hn" path="res://assets/textures/props/bicycle_rusted.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://dkimvcx5gff7t" path="res://assets/textures/props/bicycle_rusted.png" id="3_tex"]
+[ext_resource type="PackedScene" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 
-[sub_resource type="ConvexPolygonShape2D" id="1_rect"]
-points = PackedVector2Array(-0.5, 11.0, 23.0, 0.0, -0.5, -11.0, -24.0, 0.0)
+[sub_resource type="ConvexPolygonShape2D" id="1_shape"]
+points = PackedVector2Array(-14.5, 6, -7, 0, -14.5, -6, -22, 0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
-size = Vector2(48.0, 16.0)
+size = Vector2(64, 16)
 
-[node name="bicycle_rusted" instance=ExtResource("4_tmpl")]
-iso_sort_offset = 11.0
-has_collision = true
+[node name="bicycle_rusted" unique_id=81516155 instance=ExtResource("4_tmpl")]
+iso_sort_offset = 16.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
-offset = Vector2(0, -13.0)
+offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-shape = SubResource("1_rect")
+shape = SubResource("1_shape")
 
 [node name="CollisionShape2D" parent="InteractArea" index="0"]
-position = Vector2(0.0, -8.0)
+position = Vector2(0, -8)
 shape = SubResource("2_irect")

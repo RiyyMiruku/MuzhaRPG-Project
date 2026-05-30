@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:56:31",
-  "updated_at": "2026-05-21T23:00:59",
+  "updated_at": "2026-05-30T18:34:50",
   "tags": [
     "zone:zone_law_office",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "eb4d3372-c1a1-4b15-acf4-47f512380d89",
-  "kind": "iso_prop",
-  "description": "old manual typewriter, metal body, on desk, law office detail",
+  "object_id": "pixflux:typewriter_old",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, old manual typewriter, metal body with round keys, paper roll visible, on desk",
   "size": {
-    "width": 32,
-    "height": 32
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T23:00:59",
+      "completed_at": "2026-05-30T18:34:49",
       "paths": [
         "art_source\\objects\\typewriter_old\\typewriter_old.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T23:00:59",
+      "completed_at": "2026-05-30T18:34:49",
       "paths": [
         "art_source\\objects\\typewriter_old\\typewriter_old.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T23:00:59",
+      "completed_at": "2026-05-30T18:34:50",
       "paths": [
         "game\\assets\\textures\\props\\typewriter_old.png",
         "game\\src\\maps\\props\\typewriter_old.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\typewriter_old\\typewriter_old.png",
-  "imported_at": "2026-05-21T23:00:59",
+  "imported_at": "2026-05-30T18:34:50",
   "game_png_path": "game\\assets\\textures\\props\\typewriter_old.png",
   "game_tscn_path": "game\\src\\maps\\props\\typewriter_old.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }
