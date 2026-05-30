@@ -4,17 +4,17 @@
 [ext_resource type="PackedScene" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 
 [sub_resource type="ConvexPolygonShape2D" id="1_shape"]
-points = PackedVector2Array(-14.5, 6, -7, 0, -14.5, -6, -22, 0)
+points = PackedVector2Array(-14.5, 6.0, -7.0, 0.0, -14.5, -6.0, -22.0, 0.0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
 size = Vector2(64, 16)
 
 [node name="bicycle_rusted" unique_id=81516155 instance=ExtResource("4_tmpl")]
-iso_sort_offset = 16.0
 
+iso_sort_offset = 16.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
-offset = Vector2(0, -16)
+offset = Vector2(0, -16.0)
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource("1_shape")

@@ -10,8 +10,8 @@ points = PackedVector2Array(0.0, 25.0, 53.0, 0.0, 0.0, -25.0, -53.0, 0.0)
 size = Vector2(128.0, 16.0)
 
 [node name="shophouse_teahouse" instance=ExtResource("4_tmpl")]
-has_collision = true
 iso_sort_offset = 30.0
+has_collision = true
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")

@@ -4,14 +4,14 @@
 [ext_resource type="PackedScene" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
 
 [sub_resource type="ConvexPolygonShape2D" id="1_rect"]
-points = PackedVector2Array(-0.5, 5, 11, 0, -0.5, -5, -12, 0)
+points = PackedVector2Array(-0.5, 5.0, 11.0, 0.0, -0.5, -5.0, -12.0, 0.0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
 size = Vector2(16, 12)
 
 [node name="notebook_leather" unique_id=534242687 instance=ExtResource("4_tmpl")]
-iso_sort_offset = 5.0
 
+iso_sort_offset = 5.0
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
 offset = Vector2(0, -7.0)

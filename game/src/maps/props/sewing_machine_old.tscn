@@ -10,8 +10,8 @@ points = PackedVector2Array(-5.0, 1.0, -4.0, 0.0, -5.0, -1.0, -6.0, 0.0)
 size = Vector2(64.0, 16.0)
 
 [node name="sewing_machine_old" instance=ExtResource("4_tmpl")]
-has_collision = true
 iso_sort_offset = 3.0
+has_collision = true
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")

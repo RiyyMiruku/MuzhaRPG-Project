@@ -10,8 +10,8 @@ points = PackedVector2Array(-12.5, 1.0, -11.0, 0.0, -12.5, -1.0, -14.0, 0.0)
 size = Vector2(48.0, 16.0)
 
 [node name="sign_faded_old" instance=ExtResource("4_tmpl")]
-has_collision = true
 iso_sort_offset = 4.0
+has_collision = true
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
