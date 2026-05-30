@@ -1,11 +1,11 @@
 ---
-name: iso-collision-patch
-description: Use when the user wants to (re)apply iso anchoring + diamond collision to existing prop .tscn files in this MuzhaRPG project. Triggers on requests like "重跑 iso 碰撞", "把碰撞重新拉一下", "重烘 prop offset", "美術重生後 prop 對齊跑掉幫我修", "對所有 prop 套 iso", "為新加的 prop 套碰撞菱形". Skips for creating NEW assets (use parent art-pipeline skill), debugging the algorithm itself, or pipeline runtime work on `_godot_import.py`.
+name: art-pipeline-iso-collision-patch
+description: Use when the user wants to (re)apply iso anchoring + diamond collision to existing prop .tscn files in this MuzhaRPG project. Triggers on requests like "重跑 iso 碰撞", "把碰撞重新拉一下", "重烘 prop offset", "美術重生後 prop 對齊跑掉幫我修", "對所有 prop 套 iso", "為新加的 prop 套碰撞菱形". Skips for creating NEW assets (use the art-pipeline skill), debugging the algorithm itself, or pipeline runtime work on `_godot_import.py`.
 ---
 
 # Iso Collision Patch — 對既有 prop .tscn 重套 iso 對齊與菱形碰撞
 
-把 `pipeline/iso_prop_patch.py` 包成 Claude Code 可調用流程。**新生成的 prop 由 `prop.py` orchestrator 在 `import_to_godot` 自動套**(見 [parent SKILL](../SKILL.md));這個 skill 處理「既有 .tscn 要重跑」的場景。
+把 `pipeline/iso_prop_patch.py` 包成 Claude Code 可調用流程。**新生成的 prop 由 `prop.py` orchestrator 在 `import_to_godot` 自動套**(見 sibling skill [art-pipeline](../art-pipeline/SKILL.md));這個 skill 處理「既有 .tscn 要重跑」的場景。
 
 ## 什麼時候用 / 不用
 
