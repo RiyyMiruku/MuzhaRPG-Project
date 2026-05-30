@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:47:18",
-  "updated_at": "2026-05-21T22:51:04",
+  "updated_at": "2026-05-30T18:30:43",
   "tags": [
     "zone:zone_market",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "b1ff6495-c122-443e-b707-4888260721a3",
-  "kind": "iso_prop",
-  "description": "iron balcony railing with laundry hanging, apartment building detail",
+  "object_id": "pixflux:balcony_railing_iron",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, iron balcony railing with laundry hanging, 1980s Taiwan apartment building",
   "size": {
-    "width": 48,
-    "height": 48
+    "width": 64,
+    "height": 64
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:51:04",
+      "completed_at": "2026-05-30T18:30:43",
       "paths": [
         "art_source\\objects\\balcony_railing_iron\\balcony_railing_iron.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:51:04",
+      "completed_at": "2026-05-30T18:30:43",
       "paths": [
         "art_source\\objects\\balcony_railing_iron\\balcony_railing_iron.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:51:04",
+      "completed_at": "2026-05-30T18:30:43",
       "paths": [
         "game\\assets\\textures\\props\\balcony_railing_iron.png",
         "game\\src\\maps\\props\\balcony_railing_iron.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\balcony_railing_iron\\balcony_railing_iron.png",
-  "imported_at": "2026-05-21T22:51:04",
+  "imported_at": "2026-05-30T18:30:43",
   "game_png_path": "game\\assets\\textures\\props\\balcony_railing_iron.png",
   "game_tscn_path": "game\\src\\maps\\props\\balcony_railing_iron.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:40:52",
-  "updated_at": "2026-05-21T22:02:44",
+  "updated_at": "2026-05-30T18:36:26",
   "tags": [
     "zone:zone_market",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "e4b58921-b0c6-4424-a501-b0d90f2f70c5",
-  "kind": "iso_prop",
-  "description": "green public phone booth, 1980s taiwan municipal style",
+  "object_id": "pixflux:phone_booth_green",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, green public phone booth, 1980s Taiwan municipal style, enclosed box with telephone inside",
   "size": {
-    "width": 48,
-    "height": 48
+    "width": 64,
+    "height": 64
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T21:41:54",
+      "completed_at": "2026-05-30T18:36:26",
       "paths": [
         "art_source\\objects\\phone_booth_green\\phone_booth_green.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T21:41:54",
+      "completed_at": "2026-05-30T18:36:26",
       "paths": [
         "art_source\\objects\\phone_booth_green\\phone_booth_green.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T21:41:54",
+      "completed_at": "2026-05-30T18:36:26",
       "paths": [
         "game\\assets\\textures\\props\\phone_booth_green.png",
         "game\\src\\maps\\props\\phone_booth_green.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\phone_booth_green\\phone_booth_green.png",
-  "imported_at": "2026-05-21T21:41:54",
+  "imported_at": "2026-05-30T18:36:26",
   "game_png_path": "game\\assets\\textures\\props\\phone_booth_green.png",
   "game_tscn_path": "game\\src\\maps\\props\\phone_booth_green.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

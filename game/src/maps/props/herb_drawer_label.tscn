@@ -1,18 +1,24 @@
-[gd_scene format=3 uid="uid://ddugxci7j0w5"]
+[gd_scene load_steps=5 format=3 uid="uid://cfr4en0sbxenco"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
-[ext_resource type="Texture2D" uid="uid://c4rpbems4uyhcn" path="res://assets/textures/props/herb_drawer_label.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://5236ywh6wlq7" path="res://assets/textures/props/herb_drawer_label.png" id="3_tex"]
+
+[sub_resource type="ConvexPolygonShape2D" id="1_shape"]
+points = PackedVector2Array(-0.5, 4.0, 11.0, 0.0, -0.5, -4.0, -12.0, 0.0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
 size = Vector2(24.0, 16.0)
 
 [node name="herb_drawer_label" instance=ExtResource("4_tmpl")]
+has_collision = true
 iso_sort_offset = 4.0
-has_collision = false
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
 offset = Vector2(0, -8.0)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("1_shape")
 
 [node name="CollisionShape2D" parent="InteractArea" index="0"]
 position = Vector2(0.0, -8.0)

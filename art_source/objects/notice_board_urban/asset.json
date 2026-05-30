@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:41:22",
-  "updated_at": "2026-05-21T22:02:46",
+  "updated_at": "2026-05-30T18:14:39",
   "tags": [
     "zone:zone_market",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "51b249df-5ca9-4ca8-8d34-fc5160bd96a3",
-  "kind": "iso_prop",
-  "description": "government urban renewal notice board on metal stand",
+  "object_id": "pixflux:notice_board_urban",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, government notice board on metal stand, rectangular signboard with text visible, transparent background",
   "size": {
-    "width": 32,
-    "height": 32
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T21:41:53",
+      "completed_at": "2026-05-30T18:14:39",
       "paths": [
         "art_source\\objects\\notice_board_urban\\notice_board_urban.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T21:41:53",
+      "completed_at": "2026-05-30T18:14:39",
       "paths": [
         "art_source\\objects\\notice_board_urban\\notice_board_urban.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T21:41:53",
+      "completed_at": "2026-05-30T18:14:39",
       "paths": [
         "game\\assets\\textures\\props\\notice_board_urban.png",
         "game\\src\\maps\\props\\notice_board_urban.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\notice_board_urban\\notice_board_urban.png",
-  "imported_at": "2026-05-21T21:41:53",
+  "imported_at": "2026-05-30T18:14:39",
   "game_png_path": "game\\assets\\textures\\props\\notice_board_urban.png",
   "game_tscn_path": "game\\src\\maps\\props\\notice_board_urban.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

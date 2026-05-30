@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCProfile" format=3 uid="uid://c4d87213afaa"]
+
+[ext_resource type="Script" uid="uid://isby2be8icbw" path="res://src/core/classes/NPCProfile.gd" id="1_profile"]
+
+[resource]
+script = ExtResource("1_profile")
+era = "1983"
+personality_voice = "1983年榮昌藥行的女性顧客，背景路人。"
+npc_id = "customer_pharmacy_woman"
+display_name = "藥行女客"
+display_name_en = "Pharmacy Customer"
+location_zone = "zone_market"
+system_prompt = "1983年榮昌藥行的女性顧客，背景路人。"
+personality_tags = Array[String](["背景路人"])
+max_response_tokens = 80
+conversation_memory_turns = 2
+wander_radius = 48.0
+wander_speed = 20.0
+wander_pause_min = 2.0
+wander_pause_max = 4.0

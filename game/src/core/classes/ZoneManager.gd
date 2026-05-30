@@ -42,6 +42,7 @@ func _ready() -> void:
 		current_zone_id = _get_zone_id_from_node(_current_zone_node)
 		_player = _find_player()
 		StoryManager.current_zone = current_zone_id
+		EraManager.apply_to_current_zone()
 
 func _on_zone_transition_requested(zone_id: String, entry_point: String) -> void:
 	transition_to_zone(zone_id, entry_point)

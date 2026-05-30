@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-30T18:51:00",
+  "updated_at": "2026-05-30T18:51:32",
+  "tags": [
+    "zone:zone_market",
+    "category:building",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:shophouse_noodle_shop",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, full building with visible roof and two side walls, transparent background — taiwanese two-story noodle restaurant shophouse, red cloth banners with chinese characters hanging at entrance, two red paper lanterns flanking door, steamy atmosphere, wooden sign with hand-painted noodle dish, open kitchen visible through doorway, warm amber lighting inside, tiled lower floor",
+  "view": "high_top_down",
+  "size": {
+    "width": 128,
+    "height": 128
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-30T18:51:32",
+      "paths": [
+        "art_source\\objects\\shophouse_noodle_shop\\shophouse_noodle_shop.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-30T18:51:32",
+      "paths": [
+        "art_source\\objects\\shophouse_noodle_shop\\shophouse_noodle_shop.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-30T18:51:32",
+      "paths": [
+        "game\\assets\\textures\\props\\shophouse_noodle_shop.png",
+        "game\\src\\maps\\props\\shophouse_noodle_shop.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\shophouse_noodle_shop\\shophouse_noodle_shop.png",
+  "imported_at": "2026-05-30T18:51:32",
+  "game_png_path": "game\\assets\\textures\\props\\shophouse_noodle_shop.png",
+  "game_tscn_path": "game\\src\\maps\\props\\shophouse_noodle_shop.tscn",
+  "collision": "bottom_16x16"
+}

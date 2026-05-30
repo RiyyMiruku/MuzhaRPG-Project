@@ -1,35 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:51:58",
-  "updated_at": "2026-05-29T21:28:27",
+  "updated_at": "2026-05-30T18:28:35",
   "tags": [
     "zone:zone_apartment_muzha",
     "zone:zone_law_office",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "abc3af6b-501e-46e3-b1e8-5889d052dc66",
-  "kind": "iso_prop",
-  "description": "isometric pixel art, framed certificate on wall, thin rectangular picture frame with official document inside, dark wood frame with glass, 1980s Taiwan law office style, flat wall-mounted object, very thin depth, not a cube",
+  "object_id": "pixflux:certificate_frame",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, framed certificate on wall, thin rectangular picture frame with official document inside, dark wood frame with glass",
   "size": {
-    "width": 24,
-    "height": 24
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-29T21:28:27",
+      "completed_at": "2026-05-30T18:28:35",
       "paths": [
         "art_source\\objects\\certificate_frame\\certificate_frame.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-29T21:28:27",
+      "completed_at": "2026-05-30T18:28:35",
       "paths": [
         "art_source\\objects\\certificate_frame\\certificate_frame.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-29T21:28:27",
+      "completed_at": "2026-05-30T18:28:35",
       "paths": [
         "game\\assets\\textures\\props\\certificate_frame.png",
         "game\\src\\maps\\props\\certificate_frame.tscn"
@@ -37,8 +37,9 @@
     }
   },
   "local_path": "art_source\\objects\\certificate_frame\\certificate_frame.png",
-  "imported_at": "2026-05-29T21:28:27",
+  "imported_at": "2026-05-30T18:28:35",
   "game_png_path": "game\\assets\\textures\\props\\certificate_frame.png",
   "game_tscn_path": "game\\src\\maps\\props\\certificate_frame.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

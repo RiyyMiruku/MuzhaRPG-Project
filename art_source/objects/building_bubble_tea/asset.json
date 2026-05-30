@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-30T19:28:33",
+  "updated_at": "2026-05-30T19:29:14",
+  "tags": [
+    "zone:zone_market",
+    "category:building",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:building_bubble_tea",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, full building with visible roof and two side walls, transparent background — modern taiwanese hand-shaken drink shop, large colorful LED lightbox sign with bubble tea menu photos, bright pastel colored facade pink or mint green, glass front counter visible with cups and syrups, modern shopfront design, young urban style",
+  "view": "high_top_down",
+  "size": {
+    "width": 128,
+    "height": 128
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-30T19:29:14",
+      "paths": [
+        "art_source\\objects\\building_bubble_tea\\building_bubble_tea.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-30T19:29:14",
+      "paths": [
+        "art_source\\objects\\building_bubble_tea\\building_bubble_tea.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-30T19:29:14",
+      "paths": [
+        "game\\assets\\textures\\props\\building_bubble_tea.png",
+        "game\\src\\maps\\props\\building_bubble_tea.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\building_bubble_tea\\building_bubble_tea.png",
+  "imported_at": "2026-05-30T19:29:14",
+  "game_png_path": "game\\assets\\textures\\props\\building_bubble_tea.png",
+  "game_tscn_path": "game\\src\\maps\\props\\building_bubble_tea.tscn",
+  "collision": "bottom_16x16"
+}

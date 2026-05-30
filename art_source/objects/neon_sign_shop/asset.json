@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:07:43",
-  "updated_at": "2026-05-21T22:08:21",
+  "updated_at": "2026-05-30T18:35:28",
   "tags": [
     "zone:zone_market",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "661f0ec4-d578-4727-8660-da91364dd20d",
-  "kind": "iso_prop",
-  "description": "colorful neon tube shop sign, chinese characters glowing, 1980s commercial",
+  "object_id": "pixflux:neon_sign_shop",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, colorful neon tube shop sign, chinese characters glowing, 1980s Taiwan night market style",
   "size": {
-    "width": 32,
-    "height": 32
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:08:21",
+      "completed_at": "2026-05-30T18:35:28",
       "paths": [
         "art_source\\objects\\neon_sign_shop\\neon_sign_shop.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:08:21",
+      "completed_at": "2026-05-30T18:35:28",
       "paths": [
         "art_source\\objects\\neon_sign_shop\\neon_sign_shop.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:08:21",
+      "completed_at": "2026-05-30T18:35:28",
       "paths": [
         "game\\assets\\textures\\props\\neon_sign_shop.png",
         "game\\src\\maps\\props\\neon_sign_shop.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\neon_sign_shop\\neon_sign_shop.png",
-  "imported_at": "2026-05-21T22:08:21",
+  "imported_at": "2026-05-30T18:35:28",
   "game_png_path": "game\\assets\\textures\\props\\neon_sign_shop.png",
   "game_tscn_path": "game\\src\\maps\\props\\neon_sign_shop.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

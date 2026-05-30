@@ -23,7 +23,7 @@ signal era_transition_started(to_era: String)
 signal era_transition_finished(to_era: String)
 
 # ── State ───────────────────────────────────────────────────────────────────
-var current_era: String = "modern"
+var current_era: String = "1983"
 
 # ── Constants ───────────────────────────────────────────────────────────────
 const TINT_PRESETS: Dictionary = {

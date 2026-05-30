@@ -1,35 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:39:55",
-  "updated_at": "2026-05-29T21:31:11",
+  "updated_at": "2026-05-30T18:25:27",
   "tags": [
     "zone:zone_pharmacy",
     "category:decoration",
     "chapter:1",
     "zone:zone_law_office"
   ],
-  "object_id": "0d20f836-0527-40ff-9a9f-386ee14f99bb",
-  "kind": "iso_prop",
-  "description": "isometric pixel art, dusty cobweb in corner, delicate spider web strands stretching across a corner, wispy translucent threads with dust, flat 2D web shape clinging to wall corner, no cube or box shape, atmospheric decay detail",
+  "object_id": "pixflux:cobweb_corner",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, dusty cobweb in corner, delicate spider web strands, translucent threads with dust",
   "size": {
-    "width": 16,
-    "height": 16
+    "width": 32,
+    "height": 32
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-29T21:31:11",
+      "completed_at": "2026-05-30T18:25:27",
       "paths": [
         "art_source\\objects\\cobweb_corner\\cobweb_corner.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-29T21:31:11",
+      "completed_at": "2026-05-30T18:25:27",
       "paths": [
         "art_source\\objects\\cobweb_corner\\cobweb_corner.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-29T21:31:11",
+      "completed_at": "2026-05-30T18:25:27",
       "paths": [
         "game\\assets\\textures\\props\\cobweb_corner.png",
         "game\\src\\maps\\props\\cobweb_corner.tscn"
@@ -37,8 +37,9 @@
     }
   },
   "local_path": "art_source\\objects\\cobweb_corner\\cobweb_corner.png",
-  "imported_at": "2026-05-29T21:31:11",
+  "imported_at": "2026-05-30T18:25:27",
   "game_png_path": "game\\assets\\textures\\props\\cobweb_corner.png",
   "game_tscn_path": "game\\src\\maps\\props\\cobweb_corner.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

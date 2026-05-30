@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://d26qs0yixaeyh" path="res://assets/textures/iso_test/iso_building_shophouse.png" id="5_shophouse"]
 [ext_resource type="Texture2D" uid="uid://dqrs7ljqx7f86" path="res://assets/textures/iso_test/iso_building_temple.png" id="6_temple"]
 [ext_resource type="Texture2D" uid="uid://gy0xh2x20aef" path="res://assets/textures/iso_test/iso_prop_market_stall.png" id="7_stall"]
-[ext_resource type="PackedScene" uid="uid://dyt8ss8h4qgmt" path="res://src/maps/props/test_iso.tscn" id="10_xlgqu"]
-[ext_resource type="PackedScene" uid="uid://byxew331wfdca" path="res://src/maps/props/test_well.tscn" id="11_3avjs"]
+[ext_resource type="PackedScene" uid="uid://cjflr0vpauk21d" path="res://src/maps/props/test_iso.tscn" id="10_xlgqu"]
+[ext_resource type="PackedScene" uid="uid://cla3sp8h27guhk" path="res://src/maps/props/test_well.tscn" id="11_3avjs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlgqu"]
 texture = ExtResource("2_iso_grass")

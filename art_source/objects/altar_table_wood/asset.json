@@ -1,34 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:41:31",
-  "updated_at": "2026-05-21T22:02:46",
+  "updated_at": "2026-05-30T20:12:50",
   "tags": [
     "zone:zone_pharmacy",
     "category:decoration",
-    "chapter:1"
+    "chapter:1",
+    "category:furniture"
   ],
-  "object_id": "31e46320-98eb-45ed-acbf-dd2266358556",
+  "object_id": "3591be93-da24-488f-b9ec-5ba939769a5f",
   "kind": "iso_prop",
-  "description": "small wooden altar table with incense holder and offering plate, taiwanese home",
+  "description": "isometric pixel art, traditional taiwanese wooden altar table, low rectangular table with carved decorative legs, red lacquer wood surface with incense holder, 1980s Taiwan temple or home shrine style, clear table silhouette with visible legs, not a plain cube",
   "size": {
     "width": 48,
     "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T21:42:21",
+      "completed_at": "2026-05-30T20:12:50",
       "paths": [
         "art_source\\objects\\altar_table_wood\\altar_table_wood.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T21:42:21",
+      "completed_at": "2026-05-30T20:12:50",
       "paths": [
         "art_source\\objects\\altar_table_wood\\altar_table_wood.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T21:42:21",
+      "completed_at": "2026-05-30T20:12:50",
       "paths": [
         "game\\assets\\textures\\props\\altar_table_wood.png",
         "game\\src\\maps\\props\\altar_table_wood.tscn"
@@ -36,7 +37,7 @@
     }
   },
   "local_path": "art_source\\objects\\altar_table_wood\\altar_table_wood.png",
-  "imported_at": "2026-05-21T21:42:21",
+  "imported_at": "2026-05-30T20:12:50",
   "game_png_path": "game\\assets\\textures\\props\\altar_table_wood.png",
   "game_tscn_path": "game\\src\\maps\\props\\altar_table_wood.tscn",
   "collision": "bottom_16x16"

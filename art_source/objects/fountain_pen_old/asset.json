@@ -1,7 +1,7 @@
 {
   "status": "completed",
   "created_at": "2026-05-12T17:36:03",
-  "updated_at": "2026-05-29T21:33:12",
+  "updated_at": "2026-05-30T18:26:38",
   "tags": [
     "category:key_item",
     "chapter:1",
@@ -9,28 +9,28 @@
     "zone:zone_law_office",
     "category:decoration"
   ],
-  "object_id": "afb7508c-20a4-4b98-b50c-50c565165d26",
-  "kind": "iso_prop",
-  "description": "isometric pixel art, single old fountain pen lying flat, long thin cylindrical barrel with tapered gold nib at tip, dark navy blue body with gold trim and clip, pen lying diagonally on surface, extremely thin elongated shape, absolutely no cube or box, 1980s Taiwan style",
+  "object_id": "pixflux:fountain_pen_old",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, old fountain pen lying flat, long thin barrel with gold nib, dark navy blue body with gold trim",
   "size": {
-    "width": 16,
-    "height": 16
+    "width": 32,
+    "height": 32
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-29T21:33:12",
+      "completed_at": "2026-05-30T18:26:38",
       "paths": [
         "art_source\\objects\\fountain_pen_old\\fountain_pen_old.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-29T21:33:12",
+      "completed_at": "2026-05-30T18:26:38",
       "paths": [
         "art_source\\objects\\fountain_pen_old\\fountain_pen_old.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-29T21:33:12",
+      "completed_at": "2026-05-30T18:26:38",
       "paths": [
         "game\\assets\\textures\\props\\fountain_pen_old.png",
         "game\\src\\maps\\props\\fountain_pen_old.tscn"
@@ -38,8 +38,9 @@
     }
   },
   "local_path": "art_source\\objects\\fountain_pen_old\\fountain_pen_old.png",
-  "imported_at": "2026-05-29T21:33:12",
+  "imported_at": "2026-05-30T18:26:38",
   "game_png_path": "game\\assets\\textures\\props\\fountain_pen_old.png",
   "game_tscn_path": "game\\src\\maps\\props\\fountain_pen_old.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

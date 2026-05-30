@@ -1,35 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:44:12",
-  "updated_at": "2026-05-21T22:02:46",
+  "updated_at": "2026-05-30T18:33:36",
   "tags": [
     "zone:zone_apartment_muzha",
     "zone:zone_law_office",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "c60eb4c2-1caf-4b17-afde-f5d450aceb01",
-  "kind": "iso_prop",
-  "description": "modern laptop computer on desk, screen glowing, designer workspace",
+  "object_id": "pixflux:laptop_modern",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, modern laptop computer, screen open and glowing, slim design",
   "size": {
-    "width": 32,
-    "height": 32
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T21:44:44",
+      "completed_at": "2026-05-30T18:33:35",
       "paths": [
         "art_source\\objects\\laptop_modern\\laptop_modern.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T21:44:44",
+      "completed_at": "2026-05-30T18:33:35",
       "paths": [
         "art_source\\objects\\laptop_modern\\laptop_modern.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T21:44:44",
+      "completed_at": "2026-05-30T18:33:36",
       "paths": [
         "game\\assets\\textures\\props\\laptop_modern.png",
         "game\\src\\maps\\props\\laptop_modern.tscn"
@@ -37,8 +37,9 @@
     }
   },
   "local_path": "art_source\\objects\\laptop_modern\\laptop_modern.png",
-  "imported_at": "2026-05-21T21:44:44",
+  "imported_at": "2026-05-30T18:33:35",
   "game_png_path": "game\\assets\\textures\\props\\laptop_modern.png",
   "game_tscn_path": "game\\src\\maps\\props\\laptop_modern.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

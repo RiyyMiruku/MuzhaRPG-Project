@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-30T18:45:57",
+  "updated_at": "2026-05-30T18:46:24",
+  "tags": [
+    "zone:zone_market",
+    "category:building",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:temple_puppet_stage",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, traditional taiwanese temple fair puppet theater stage, wooden elevated platform with red and gold decorative roof, two glove puppet figures performing on stage top, colorful fabric backdrop with embroidery, lanterns hanging on sides, festive atmosphere",
+  "view": "high_top_down",
+  "size": {
+    "width": 128,
+    "height": 128
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-30T18:46:23",
+      "paths": [
+        "art_source\\objects\\temple_puppet_stage\\temple_puppet_stage.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-30T18:46:23",
+      "paths": [
+        "art_source\\objects\\temple_puppet_stage\\temple_puppet_stage.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-30T18:46:24",
+      "paths": [
+        "game\\assets\\textures\\props\\temple_puppet_stage.png",
+        "game\\src\\maps\\props\\temple_puppet_stage.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\temple_puppet_stage\\temple_puppet_stage.png",
+  "imported_at": "2026-05-30T18:46:24",
+  "game_png_path": "game\\assets\\textures\\props\\temple_puppet_stage.png",
+  "game_tscn_path": "game\\src\\maps\\props\\temple_puppet_stage.tscn",
+  "collision": "bottom_16x16"
+}

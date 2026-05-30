@@ -1,45 +1,46 @@
 {
   "status": "completed",
   "created_at": "2026-05-12T17:36:43",
-  "updated_at": "2026-05-20T16:22:23",
+  "updated_at": "2026-05-30T18:34:09",
   "tags": [
     "category:structure",
     "chapter:1",
     "zone:zone_pharmacy_modern",
     "zone:zone_market_modern"
   ],
-  "object_id": "ea3d9727-8555-4a5b-86e1-eced85517c18",
-  "kind": "iso_prop",
-  "description": "old vertical roller iron security gate of a taiwanese shopfront, painted dark green with heavy rust streaks, large brass padlock and chain at bottom, faded chinese signboard above partially visible, abandoned for decades",
+  "object_id": "pixflux:iron_gate_rusted",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, old vertical roller iron security gate of a taiwanese shopfront, rusty metal slats, fully closed",
   "size": {
-    "width": 64,
-    "height": 64
+    "width": 96,
+    "height": 96
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-12T17:38:13",
+      "completed_at": "2026-05-30T18:34:08",
       "paths": [
-        "art_source/objects/iron_gate_rusted/iron_gate_rusted.png"
+        "art_source\\objects\\iron_gate_rusted\\iron_gate_rusted.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-12T17:38:13",
+      "completed_at": "2026-05-30T18:34:08",
       "paths": [
-        "art_source/objects/iron_gate_rusted/iron_gate_rusted.png"
+        "art_source\\objects\\iron_gate_rusted\\iron_gate_rusted.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-20T16:22:23",
+      "completed_at": "2026-05-30T18:34:09",
       "paths": [
         "game\\assets\\textures\\props\\iron_gate_rusted.png",
         "game\\src\\maps\\props\\iron_gate_rusted.tscn"
       ]
     }
   },
-  "local_path": "art_source/objects/iron_gate_rusted/iron_gate_rusted.png",
-  "imported_at": "2026-05-20T16:22:23",
+  "local_path": "art_source\\objects\\iron_gate_rusted\\iron_gate_rusted.png",
+  "imported_at": "2026-05-30T18:34:09",
   "game_png_path": "game\\assets\\textures\\props\\iron_gate_rusted.png",
   "game_tscn_path": "game\\src\\maps\\props\\iron_gate_rusted.tscn",
   "collision": "bottom_16x16",
-  "flip_h": true
+  "flip_h": true,
+  "view": "high_top_down"
 }

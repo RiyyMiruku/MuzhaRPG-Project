@@ -1,7 +1,7 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:46:17",
-  "updated_at": "2026-05-29T21:24:38",
+  "updated_at": "2026-05-30T18:36:03",
   "tags": [
     "zone:zone_pharmacy_backyard",
     "category:decoration",
@@ -9,28 +9,28 @@
     "zone:zone_law_office",
     "category:furniture"
   ],
-  "object_id": "eb1f3c70-ac08-4ca7-a80d-3c1b470cb272",
-  "kind": "iso_prop",
-  "description": "isometric pixel art, 1980s Taiwan wooden office desk, flat rectangular desktop surface with four legs visible, warm brown wood grain, papers on top, no cube shape, low profile furniture",
+  "object_id": "pixflux:desk_wooden_old",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, 1980s Taiwan wooden office desk, flat rectangular desktop with four legs, warm brown wood grain, papers on top",
   "size": {
-    "width": 48,
-    "height": 48
+    "width": 64,
+    "height": 64
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-29T21:18:03",
+      "completed_at": "2026-05-30T18:36:03",
       "paths": [
         "art_source\\objects\\desk_wooden_old\\desk_wooden_old.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-29T21:24:38",
+      "completed_at": "2026-05-30T18:36:03",
       "paths": [
         "art_source\\objects\\desk_wooden_old\\desk_wooden_old.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-29T21:24:38",
+      "completed_at": "2026-05-30T18:36:03",
       "paths": [
         "game\\assets\\textures\\props\\desk_wooden_old.png",
         "game\\src\\maps\\props\\desk_wooden_old.tscn"
@@ -38,8 +38,9 @@
     }
   },
   "local_path": "art_source\\objects\\desk_wooden_old\\desk_wooden_old.png",
-  "imported_at": "2026-05-29T21:24:38",
+  "imported_at": "2026-05-30T18:36:03",
   "game_png_path": "game\\assets\\textures\\props\\desk_wooden_old.png",
   "game_tscn_path": "game\\src\\maps\\props\\desk_wooden_old.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

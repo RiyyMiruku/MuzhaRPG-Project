@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://7bnxirtdojmi"]
+
+[ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
+[ext_resource type="Texture2D" uid="uid://c3hkow1e0oyyya" path="res://assets/textures/props/building_bubble_tea.png" id="3_tex"]
+
+[sub_resource type="ConvexPolygonShape2D" id="1_shape"]
+points = PackedVector2Array(0.0, 30.0, 56.0, 0.0, 0.0, -30.0, -56.0, 0.0)
+
+[sub_resource type="RectangleShape2D" id="2_irect"]
+size = Vector2(128.0, 16.0)
+
+[node name="building_bubble_tea" instance=ExtResource("4_tmpl")]
+has_collision = true
+iso_sort_offset = 40.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_tex")
+offset = Vector2(0, -24.0)
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("1_shape")
+
+[node name="CollisionShape2D" parent="InteractArea" index="0"]
+position = Vector2(0.0, -8.0)
+shape = SubResource("2_irect")

@@ -1,35 +1,35 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:37:22",
-  "updated_at": "2026-05-29T21:24:39",
+  "updated_at": "2026-05-30T18:31:12",
   "tags": [
     "zone:zone_pharmacy",
     "category:decoration",
     "chapter:1",
     "zone:zone_law_office"
   ],
-  "object_id": "3366b3ed-21b1-4c6f-a220-d65fad0f56e8",
-  "kind": "iso_prop",
-  "description": "isometric pixel art, 1980s Taiwan ceramic tea set, small teapot with curved spout and handle plus two teacups on a tray, white and blue porcelain, elegant curved forms, not a cube",
+  "object_id": "pixflux:tea_set_ceramic",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, 1980s Taiwan ceramic tea set, small teapot with two teacups on tray, white and blue porcelain",
   "size": {
-    "width": 24,
-    "height": 24
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-29T21:17:51",
+      "completed_at": "2026-05-30T18:31:12",
       "paths": [
         "art_source\\objects\\tea_set_ceramic\\tea_set_ceramic.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-29T21:24:39",
+      "completed_at": "2026-05-30T18:31:12",
       "paths": [
         "art_source\\objects\\tea_set_ceramic\\tea_set_ceramic.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-29T21:24:39",
+      "completed_at": "2026-05-30T18:31:12",
       "paths": [
         "game\\assets\\textures\\props\\tea_set_ceramic.png",
         "game\\src\\maps\\props\\tea_set_ceramic.tscn"
@@ -37,8 +37,9 @@
     }
   },
   "local_path": "art_source\\objects\\tea_set_ceramic\\tea_set_ceramic.png",
-  "imported_at": "2026-05-29T21:24:39",
+  "imported_at": "2026-05-30T18:31:12",
   "game_png_path": "game\\assets\\textures\\props\\tea_set_ceramic.png",
   "game_tscn_path": "game\\src\\maps\\props\\tea_set_ceramic.tscn",
-  "collision": "bottom_16x16"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }
