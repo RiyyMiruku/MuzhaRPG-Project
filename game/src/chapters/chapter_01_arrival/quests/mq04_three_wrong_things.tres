@@ -19,7 +19,7 @@ objectives = Array[Dictionary]([{
 "event": "ch1_saw_ama_incense"
 }, {
 "id": "lawyer",
-"desc": "（選擇）找律師對質「祖父林榮昌」的矛盾",
+"desc": "找律師對質「祖父林榮昌」的矛盾",
 "event": "ch1_lawyer_visited",
 "optional": true
 }])
