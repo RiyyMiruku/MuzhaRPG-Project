@@ -6,7 +6,27 @@
 
 **Architecture:** `StoryManager.flags` / `completed_events` 是唯一真相（SSOT），由 beat、cutscene、探索觸發寫入。stage 系統與 quest 系統是這份真相的兩個獨立投影，彼此不互寫。本次新增：(1) `StoryManager` 加 `flag_changed` 訊號 + 通用「relationship 跨門檻→派生事件」掛鉤；(2) `QuestData` 加 `objectives` 欄位 + 純函式判定；(3) `QuestManager` 改用 objectives 判定、監聽 flag 變動、掃描章節 quests 資料夾；(4) 第一章 6 主線 + 2 支線任務 `.tres`；(5) Journal 顯示 objectives 逐項打勾。
 
-**Tech Stack:** Godot 4 / GDScript（autoload 單例 + Resource `.tres`）。測試採用既有 headless `SceneTree` 腳本模式（見 `game/tools/test_stage_attitude.gd`），以 `godot --headless` 執行。
+**Tech Stack:** Godot 4.6.1 / GDScript（autoload 單例 + Resource `.tres`）。測試採用既有 headless `SceneTree` 腳本模式（見 `game/tools/test_stage_attitude.gd`）。
+
+**Godot 執行檔（不在 PATH）：** `C:\Download Programs\Godot_v4.6.1-stable_win64.exe\Godot_v4.6.1-stable_win64.exe`
+跑測試：`& "C:\Download Programs\Godot_v4.6.1-stable_win64.exe\Godot_v4.6.1-stable_win64.exe" --headless --path game --script res://src/test/test_quest_objectives.gd`
+
+**測試 Harness 慣例（Task 1 實作後確立，覆蓋下方各 task 內 `load(...).new()` 寫法）：**
+StoryManager / QuestManager 是 autoload，**不能**用 `load(...).new()` 獨立實例化（會因相依其他 autoload 而失敗）。測試一律：
+1. `extends SceneTree`，在 `_initialize()` 內 `call_deferred("_run_tests")`（等 autoload 就緒），`_run_tests()` 跑各測試後 `quit(0/1)`。
+2. 取真實 autoload：`var sm: Node = get_root().get_node("StoryManager")`、`var qm: Node = get_root().get_node("QuestManager")`。
+3. 因 autoload 全域共用，**每個測試函式開頭重置狀態**，用 helper：
+```gdscript
+func _reset_story(sm: Node) -> void:
+	sm.completed_events.clear()
+	sm.player_flags.clear()
+	sm.npc_relationships.clear()
+	sm._relationship_triggers.clear()  # Task 2 之後存在
+```
+4. QuestData 是純 Resource，static helper 測試可直接 `load("res://src/core/classes/QuestData.gd")` 後呼叫，**不需** autoload（Task 3 沿用原寫法即可）。
+5. 連訊號後記得在測試末 `disconnect`，避免跨測試殘留。
+
+下方各 task 的測試碼若寫 `load("res://src/autoload/...").new()`，一律改成「取真實 autoload + `_reset_story`」。
 
 **專案硬規則：** `project.godot` 把 `:=` Variant 推斷視為錯誤——所有變數一律顯式型別（含 `for x: T in ...`）。
 
@@ -148,9 +168,16 @@ git commit -m "feat(story): add flag_changed signal to StoryManager"
 
 - [ ] **Step 1: 寫失敗測試**
 
-在 `test_quest_objectives.gd` 的 `_init()` 內，`_test_flag_changed_signal()` 後加一行 `_test_relationship_event_hook()`，並新增方法：
+在 `test_quest_objectives.gd` 的 `_run_tests()` 內，`_test_flag_changed_signal()` 後加一行 `_test_relationship_event_hook()`。並在檔案新增一個共用重置 helper（之後各測試都用它清掉全域 autoload 狀態），以及本測試方法：
 
 ```gdscript
+# ── 共用：重置 StoryManager 全域狀態（autoload 跨測試共用，每個測試開頭呼叫）──
+func _reset_story(sm: Node) -> void:
+	sm.completed_events.clear()
+	sm.player_flags.clear()
+	sm.npc_relationships.clear()
+	sm._relationship_triggers.clear()
+
 var _recorded_events: Array = []
 
 func _on_event_recorded(event_id: String) -> void:
@@ -158,7 +185,8 @@ func _on_event_recorded(event_id: String) -> void:
 
 func _test_relationship_event_hook() -> void:
 	print("[StoryManager relationship→event]")
-	var sm: Node = load("res://src/autoload/StoryManager.gd").new()
+	var sm: Node = get_root().get_node("StoryManager")
+	_reset_story(sm)
 	_recorded_events = []
 	sm.event_recorded.connect(_on_event_recorded)
 	sm.register_relationship_event("lin_rongchang", 60, "ch1_rongchang_trust_ok")
@@ -176,7 +204,7 @@ func _test_relationship_event_hook() -> void:
 	# 重複註冊同一條：不應產生兩條 trigger
 	sm.register_relationship_event("lin_rongchang", 60, "ch1_rongchang_trust_ok")
 	_assert(sm._relationship_triggers.size() == 1, "重複註冊去重")
-	sm.free()
+	sm.event_recorded.disconnect(_on_event_recorded)
 ```
 
 - [ ] **Step 2: 跑測試確認失敗**
@@ -240,7 +268,7 @@ git commit -m "feat(story): relationship-threshold to derived-event hook"
 
 - [ ] **Step 1: 寫失敗測試**
 
-在 `_init()` 加 `_test_objective_eval()`，並新增：
+在 `_run_tests()` 加 `_test_objective_eval()`，並新增：
 
 ```gdscript
 func _test_objective_eval() -> void:
@@ -322,27 +350,32 @@ git commit -m "feat(quest): add objectives field + pure evaluation helpers to Qu
 
 ---
 
-## Task 4: QuestManager — objectives 判定 + 監聽 flag + 章節掃描 + 測試 seam
+## Task 4: QuestManager — objectives 判定 + 監聽 flag + 章節掃描
 
-**Why:** 把完成判定改為 objectives 導向、加 flag 變動重評、掃描章節 `quests/` 資料夾（目前章節任務從未被載入）、提供 journal 逐項狀態。加一個最小的 `story` 注入 seam 讓整合測試可在 headless 下脫離 autoload 確定性執行。
+**Why:** 把完成判定改為 objectives 導向、加 flag 變動重評、掃描章節 `quests/` 資料夾（目前章節任務從未被載入）、提供 journal 逐項狀態。加 `register_quest()` 供測試/程式手動註冊任務，加公開 `reevaluate()` 供章節開場初次評估與測試用。
+
+> **Harness 註：** Task 1 已確立 QuestManager 是 autoload、測試取真實節點 `get_root().get_node("QuestManager")`。因此原計畫的 `story` 注入 seam / `autoscan_on_ready` 不再需要（autoload 啟動時 `_ready` 已連好訊號、載好任務），直接用 `StoryManager` autoload。測試靠 `_reset_story` + 重置 QuestManager 狀態確保確定性。
 
 **Files:**
-- Modify: `game/src/autoload/QuestManager.gd`（多處，見下）
+- Modify: `game/src/autoload/QuestManager.gd`（整檔改寫，見下）
 - Test: `game/src/test/test_quest_objectives.gd`
 
 - [ ] **Step 1: 寫失敗整合測試**
 
-在 `_init()` 加 `_test_questmanager_integration()`，並新增：
+在 `_run_tests()` 加 `_test_questmanager_integration()`，並新增（含重置 QuestManager 狀態的 helper）：
 
 ```gdscript
+# ── 共用：重置 QuestManager 全域狀態 ──
+func _reset_quests(qm: Node) -> void:
+	qm._active_quests.clear()
+	qm._completed_quests.clear()
+
 func _test_questmanager_integration() -> void:
 	print("[QuestManager 整合：objectives + 自動開始/完成]")
-	var sm: Node = load("res://src/autoload/StoryManager.gd").new()
-	get_root().add_child(sm)
-	var qm: Node = load("res://src/autoload/QuestManager.gd").new()
-	qm.story = sm                      # 測試注入 seam：脫離 autoload
-	qm.autoscan_on_ready = false       # 不在 _ready 掃磁碟，改手動塞測試任務
-	get_root().add_child(qm)
+	var sm: Node = get_root().get_node("StoryManager")
+	var qm: Node = get_root().get_node("QuestManager")
+	_reset_story(sm)
+	_reset_quests(qm)
 
 	# 手動建立一個兩步驟任務（required: evt_start；obj: evt_x + flag_y）
 	var QD: GDScript = load("res://src/core/classes/QuestData.gd")
@@ -356,10 +389,10 @@ func _test_questmanager_integration() -> void:
 	]
 	qm.register_quest(q)
 
-	# 前置未達 → 不自動開始
-	qm.reevaluate_for_test()
+	# 前置未達 → 不自動開始（手動觸發一次初評）
+	qm.reevaluate()
 	_assert(not qm.is_quest_active("t_quest"), "前置未達不開始")
-	# 滿足前置 → 自動開始
+	# 滿足前置 → 透過真實訊號自動開始（record_event 會觸發 _reevaluate）
 	sm.record_event("evt_start")
 	_assert(qm.is_quest_active("t_quest"), "前置達成自動開始")
 	# 完成第一個 objective（不應完成整體）
@@ -367,18 +400,15 @@ func _test_questmanager_integration() -> void:
 	_assert(qm.is_quest_active("t_quest"), "只完成一步 → 仍進行中")
 	var status: Array = qm.get_objective_status("t_quest")
 	_assert(status[0]["done"] == true and status[1]["done"] == false, "逐項狀態正確")
-	# 完成第二個 objective（flag）→ 整體完成
+	# 完成第二個 objective（flag）→ set_flag 觸發 flag_changed → 整體完成
 	sm.set_flag("flag_y", true)
 	_assert(qm.is_quest_completed("t_quest"), "兩步全達 → 完成")
-
-	qm.free()
-	sm.free()
 ```
 
 - [ ] **Step 2: 跑測試確認失敗**
 
-Run: `godot --headless --path game --script res://src/test/test_quest_objectives.gd`
-Expected: FAIL — `Invalid set ... 'story'` 或 `Nonexistent function 'register_quest'`。
+Run: `& "C:\Download Programs\Godot_v4.6.1-stable_win64.exe\Godot_v4.6.1-stable_win64.exe" --headless --path game --script res://src/test/test_quest_objectives.gd`
+Expected: FAIL — `Nonexistent function 'register_quest'`（或 `reevaluate` / `get_objective_status` 未定義）。
 
 - [ ] **Step 3: 改寫 QuestManager**
 
@@ -401,17 +431,8 @@ var _all_quests: Dictionary = {}           # quest_id -> QuestData
 var _active_quests: Array[String] = []     # 進行中的任務
 var _completed_quests: Array[String] = []  # 已完成的任務
 
-## 測試注入 seam：預設 null → 用 StoryManager autoload；測試可指定本地實例。
-var story: Node = null
-## 測試用：設 false 可略過 _ready 的磁碟掃描，改以 register_quest 手動塞任務。
-var autoscan_on_ready: bool = true
-
-func _story() -> Node:
-	return story if story != null else StoryManager
-
 func _ready() -> void:
-	if autoscan_on_ready:
-		_load_all_quests()
+	_load_all_quests()
 	# 監聽事件與旗標變動，自動重評任務開始/完成條件
 	StoryManager.event_recorded.connect(_on_story_event)
 	StoryManager.flag_changed.connect(_on_story_flag)
@@ -506,27 +527,23 @@ func get_objective_status(quest_id: String) -> Array[Dictionary]:
 	var quest: QuestData = _all_quests.get(quest_id, null)
 	if quest == null:
 		return result
-	var sm: Node = _story()
 	for obj: Dictionary in quest.objectives:
 		result.append({
 			"desc": obj.get("desc", ""),
 			"optional": obj.get("optional", false),
-			"done": QuestData.is_objective_done(obj, sm.completed_events, sm.player_flags),
+			"done": QuestData.is_objective_done(obj, StoryManager.completed_events, StoryManager.player_flags),
 		})
 	return result
 
 # ── Internal ────────────────────────────────────────────────────────────────
 func _on_story_event(_event_id: String) -> void:
-	_reevaluate()
+	reevaluate()
 
 func _on_story_flag(_key: String, _value: Variant) -> void:
-	_reevaluate()
+	reevaluate()
 
-## 測試用：直接觸發一次重評（不經訊號）。
-func reevaluate_for_test() -> void:
-	_reevaluate()
-
-func _reevaluate() -> void:
+## 重評所有任務的開始/完成條件。訊號自動呼叫；章節開場或測試也可手動呼叫一次初評。
+func reevaluate() -> void:
 	# 先檢查完成
 	for qid: String in _active_quests.duplicate():
 		var quest: QuestData = _all_quests[qid]
@@ -542,28 +559,26 @@ func _reevaluate() -> void:
 
 func _can_start(quest: QuestData) -> bool:
 	for req: String in quest.required_events:
-		if not _story().completed_events.has(req):
+		if not StoryManager.completed_events.has(req):
 			return false
 	return true
 
 func _check_completion(quest: QuestData) -> bool:
-	var sm: Node = _story()
-	if not QuestData.all_required_objectives_done(quest.objectives, sm.completed_events, sm.player_flags):
+	if not QuestData.all_required_objectives_done(quest.objectives, StoryManager.completed_events, StoryManager.player_flags):
 		return false
 	for evt: String in quest.completion_events:
-		if not sm.completed_events.has(evt):
+		if not StoryManager.completed_events.has(evt):
 			return false
 	return true
 
 func _apply_rewards(quest: QuestData) -> void:
-	var sm: Node = _story()
 	for npc_id: String in quest.reward_relationship:
 		var delta: int = quest.reward_relationship[npc_id]
-		sm.update_relationship(npc_id, delta)
+		StoryManager.update_relationship(npc_id, delta)
 	if not quest.reward_unlock_zone.is_empty():
-		sm.unlock_zone(quest.reward_unlock_zone)
+		StoryManager.unlock_zone(quest.reward_unlock_zone)
 	if not quest.reward_event.is_empty():
-		sm.record_event(quest.reward_event)
+		StoryManager.record_event(quest.reward_event)
 
 # ── Persistence ─────────────────────────────────────────────────────────────
 func serialize() -> Dictionary:
@@ -993,10 +1008,9 @@ func _test_chapter1_mainline_flow() -> void:
 	sm.record_event("ch1_relic_shown")
 	sm.record_event("ch1_finale_said_brother_name")
 	_assert(qm.is_quest_completed("ch1_mq06_finale_name"), "MQ06 完成（章節主線走完）")
-
-	qm.free()
-	sm.free()
 ```
+
+並在 `_run_tests()` 的測試呼叫序列尾端加入 `_test_chapter1_mainline_flow()`（在 `quit()` 之前）。
 
 - [ ] **Step 2: 跑全部測試**
 
