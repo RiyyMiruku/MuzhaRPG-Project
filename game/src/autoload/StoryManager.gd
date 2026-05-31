@@ -9,6 +9,8 @@ var unlocked_zones: Array[String] = [Zones.STARTING]
 var completed_events: Array[String] = []
 var player_flags: Dictionary = {}
 var npc_relationships: Dictionary = {}          # npc_id -> int (-100 to 100)
+## relationship 跨門檻時派生的一次性事件設定。每項：{npc_id, threshold, event_id}
+var _relationship_triggers: Array[Dictionary] = []
 var conversation_histories: Dictionary = {}     # npc_id -> Array[Dictionary]
 var current_zone: String = Zones.STARTING
 var game_time_hours: float = 14.0               # 0.0 - 24.0 (in-game clock)
@@ -100,9 +102,20 @@ func unlock_zone(zone_id: String) -> void:
 	if not unlocked_zones.has(zone_id):
 		unlocked_zones.append(zone_id)
 
+## 註冊「某 NPC 信任值 ≥ threshold 時記錄 event_id」。重複註冊（相同三元組）會被忽略。
+func register_relationship_event(npc_id: String, threshold: int, event_id: String) -> void:
+	for trig: Dictionary in _relationship_triggers:
+		if trig["npc_id"] == npc_id and int(trig["threshold"]) == threshold and trig["event_id"] == event_id:
+			return
+	_relationship_triggers.append({"npc_id": npc_id, "threshold": threshold, "event_id": event_id})
+
 func update_relationship(npc_id: String, delta: int) -> void:
 	var current: int = npc_relationships.get(npc_id, 0)
-	npc_relationships[npc_id] = clamp(current + delta, -100, 100)
+	var new_val: int = clamp(current + delta, -100, 100)
+	npc_relationships[npc_id] = new_val
+	for trig: Dictionary in _relationship_triggers:
+		if trig["npc_id"] == npc_id and new_val >= int(trig["threshold"]):
+			record_event(trig["event_id"])  # record_event 內含去重
 
 const MAX_HISTORY_PER_NPC: int = 20
 
