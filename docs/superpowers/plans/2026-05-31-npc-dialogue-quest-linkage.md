@@ -955,24 +955,22 @@ git commit -m "feat(ui): show quest objectives with checkmarks in journal"
 
 - [ ] **Step 1: 寫整合測試**
 
-在 `_init()` 加 `_test_chapter1_mainline_flow()`，並新增：
+在 `_run_tests()` 加 `_test_chapter1_mainline_flow()`（在 `quit()` 之前），並新增：
 
 ```gdscript
 func _test_chapter1_mainline_flow() -> void:
 	print("[第一章主線全鏈]")
-	var sm: Node = load("res://src/autoload/StoryManager.gd").new()
-	get_root().add_child(sm)
+	var sm: Node = get_root().get_node("StoryManager")
+	var qm: Node = get_root().get_node("QuestManager")
+	_reset_story(sm)
+	_reset_quests(qm)
 	# 註冊信任門檻（模擬 events.gd register）
 	sm.register_relationship_event("lin_rongchang", 60, "ch1_rongchang_trust_ok")
-	var qm: Node = load("res://src/autoload/QuestManager.gd").new()
-	qm.story = sm
-	qm.autoscan_on_ready = false
-	get_root().add_child(qm)
-	# 載入第一章任務檔
+	# 確保第一章任務已載入（autoload _ready 已載；保險起見再載一次，idempotent）
 	qm._load_quests_from_dir("res://src/chapters/chapter_01_arrival/quests/")
 
 	# MQ01 開章自動開始（required 空）
-	qm.reevaluate_for_test()
+	qm.reevaluate()
 	_assert(qm.is_quest_active("ch1_mq01_iron_door"), "MQ01 自動開始")
 	# 穿越流程
 	sm.set_flag("saw_blacked_photo", true)
