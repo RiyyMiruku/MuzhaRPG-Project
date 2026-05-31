@@ -1,15 +1,15 @@
 [gd_scene format=4 uid="uid://3q076d7p6115"]
 
-[ext_resource type="Script" uid="uid://bn5kbb0wyxbmb" path="res://tools/zone_baker.gd" id="1_baker"]
+[ext_resource type="Script" uid="uid://dmaeqfb1v35v0" path="res://tools/zone_baker.gd" id="1_baker"]
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="2_tmd_script"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="3_ghost_mat"]
 [ext_resource type="PackedScene" uid="uid://cns52wkajcwa0" path="res://src/entities/player/Player.tscn" id="4_player"]
-[ext_resource type="Script" uid="uid://cta2qegm3nku1" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
-[ext_resource type="Script" uid="uid://d3pa6x3pkf81c" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_pcam_host_script"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_pcam_script"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_pcam_host_script"]
 [ext_resource type="Texture2D" uid="uid://ccpmt447t5jfm" path="res://assets/textures/tilesets/courtyard_grass_dirt.png" id="7_atlas_courtyard_dirt"]
 [ext_resource type="PackedScene" path="res://src/entities/npcs/BaseNPC.tscn" id="8_base_npc"]
 [ext_resource type="PackedScene" uid="uid://cu5f7uuu238si" path="res://src/core/components/ZoneTransitionArea.tscn" id="9_zone_transition_area"]
-[ext_resource type="Script" uid="uid://k3da00wfirxt" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="16_c6hsq"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="16_c6hsq"]
 [ext_resource type="Resource" uid="uid://k0mov4kcq6c6" path="res://src/chapters/chapter_01_arrival/npcs/lin_ama.tres" id="16_npccfg_lin_ama"]
 [ext_resource type="PackedScene" uid="uid://chfepuuhdrgwb" path="res://src/maps/props/broom_dustpan.tscn" id="18_broom_du"]
 [ext_resource type="PackedScene" uid="uid://bq50tvkbucrcn" path="res://src/maps/props/clothesline_bamboo.tscn" id="20_clothesl"]
@@ -33,15 +33,15 @@
 [ext_resource type="PackedScene" uid="uid://bgwbofh0p3qrv" path="res://src/maps/props/rope_coil_hemp.tscn" id="45_rope_coi"]
 [ext_resource type="PackedScene" uid="uid://dw8b2y6k6sptw" path="res://src/maps/props/bucket_metal_wash.tscn" id="46_bucket_m"]
 [ext_resource type="PackedScene" uid="uid://c0tqhgf5l1tt5" path="res://src/maps/props/radio_old_brown.tscn" id="47_radio_ol"]
-[ext_resource type="PackedScene" path="res://src/maps/props/bonsai_tree.tscn" id="50_bonsai_t"]
-[ext_resource type="PackedScene" path="res://src/maps/props/potted_orchid.tscn" id="51_potted_o"]
-[ext_resource type="PackedScene" path="res://src/maps/props/bamboo_cluster.tscn" id="52_bamboo_c"]
-[ext_resource type="PackedScene" path="res://src/maps/props/flower_pot_glazed.tscn" id="53_flower_g"]
-[ext_resource type="PackedScene" path="res://src/maps/props/playground_swing_set.tscn" id="54_swing_se"]
-[ext_resource type="PackedScene" path="res://src/maps/props/playground_slide.tscn" id="55_slide"]
-[ext_resource type="PackedScene" path="res://src/maps/props/playground_seesaw.tscn" id="56_seesaw"]
-[ext_resource type="PackedScene" path="res://src/maps/props/flower_pot_yellow.tscn" id="58_flower_y"]
-[ext_resource type="PackedScene" path="res://src/maps/props/flower_pot_red.tscn" id="59_flower_r"]
+[ext_resource type="PackedScene" uid="uid://c44lbg7gc6g8x" path="res://src/maps/props/bonsai_tree.tscn" id="50_bonsai_t"]
+[ext_resource type="PackedScene" uid="uid://bk2ohixgdpip8" path="res://src/maps/props/potted_orchid.tscn" id="51_potted_o"]
+[ext_resource type="PackedScene" uid="uid://bh5rlybuvgmja" path="res://src/maps/props/bamboo_cluster.tscn" id="52_bamboo_c"]
+[ext_resource type="PackedScene" uid="uid://bxkbh68wr074y" path="res://src/maps/props/flower_pot_glazed.tscn" id="53_flower_g"]
+[ext_resource type="PackedScene" uid="uid://deof12q7pc6p0" path="res://src/maps/props/playground_swing_set.tscn" id="54_swing_se"]
+[ext_resource type="PackedScene" uid="uid://c6ol1y6cqjqxn" path="res://src/maps/props/playground_slide.tscn" id="55_slide"]
+[ext_resource type="PackedScene" uid="uid://bqm6es5wvn181" path="res://src/maps/props/playground_seesaw.tscn" id="56_seesaw"]
+[ext_resource type="PackedScene" uid="uid://bewmrffqtrtdo" path="res://src/maps/props/flower_pot_yellow.tscn" id="58_flower_y"]
+[ext_resource type="PackedScene" uid="uid://b0clgycuvxrk7" path="res://src/maps/props/flower_pot_red.tscn" id="59_flower_r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_courtyard_grass_dirt"]
 texture = ExtResource("7_atlas_courtyard_dirt")
@@ -1472,9 +1472,9 @@ tween_on_load = false
 [node name="Transitions" type="Node2D" parent="." unique_id=1273246661]
 
 [node name="ToPharmacy" parent="Transitions" unique_id=1084779134 groups=["transition"] instance=ExtResource("9_zone_transition_area")]
-position = Vector2(8, 493)
+position = Vector2(10, 473)
 target_zone = "zone_pharmacy"
 entry_point = "from_backyard"
 
 [node name="from_pharmacy" type="Marker2D" parent="Transitions/ToPharmacy" unique_id=1377295580]
-position = Vector2(32, 0)
+position = Vector2(-2, -55)
