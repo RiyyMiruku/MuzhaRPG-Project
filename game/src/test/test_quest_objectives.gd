@@ -20,6 +20,7 @@ func _initialize() -> void:
 func _run_tests() -> void:
 	_test_flag_changed_signal()
 	_test_relationship_event_hook()
+	_test_objective_eval()
 	if _fail == 0:
 		print("ALL PASS")
 		quit(0)
@@ -80,3 +81,25 @@ func _test_relationship_event_hook() -> void:
 	sm.register_relationship_event("lin_rongchang", 60, "ch1_rongchang_trust_ok")
 	_assert(sm._relationship_triggers.size() == 1, "重複註冊去重")
 	sm.event_recorded.disconnect(_on_event_recorded)
+
+func _test_objective_eval() -> void:
+	print("[QuestData objectives 判定]")
+	var QD: GDScript = load("res://src/core/classes/QuestData.gd")
+	var objs: Array = [
+		{"id": "a", "desc": "事件型", "event": "evt_a"},
+		{"id": "b", "desc": "旗標型", "flag": "flag_b"},
+		{"id": "c", "desc": "選配", "event": "evt_c", "optional": true},
+	]
+	var events: Array = ["evt_a"]
+	var flags: Dictionary = {}
+	# event 達成、flag 未達成
+	_assert(QD.is_objective_done(objs[0], events, flags) == true, "event 在 completed → done")
+	_assert(QD.is_objective_done(objs[1], events, flags) == false, "flag 未設 → not done")
+	# 非選配未全達 → 任務未完成
+	_assert(QD.all_required_objectives_done(objs, events, flags) == false, "b 未達 → 整體未完成")
+	# 設 flag_b → 非選配全達（c 是 optional 不影響）
+	flags["flag_b"] = true
+	_assert(QD.is_objective_done(objs[1], events, flags) == true, "flag 設 true → done")
+	_assert(QD.all_required_objectives_done(objs, events, flags) == true, "非選配全達 → 完成（忽略 optional c）")
+	# 空 objectives → 視為已達（保留舊行為，交給 completion_events）
+	_assert(QD.all_required_objectives_done([], events, flags) == true, "空 objectives → true")
