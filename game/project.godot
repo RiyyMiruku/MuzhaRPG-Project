@@ -33,6 +33,7 @@ AudioSettings="*res://src/audio/audio_settings.gd"
 SurfaceRegistry="*res://src/audio/surface_registry.gd"
 FootstepPlayer="*res://src/audio/footstep_player.gd"
 MusicPlayer="*res://src/audio/music_player.gd"
+UISfx="*res://src/audio/ui_sfx.gd"
 
 [debug]
 
