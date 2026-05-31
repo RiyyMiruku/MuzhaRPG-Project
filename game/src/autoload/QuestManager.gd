@@ -1,5 +1,7 @@
 ## QuestManager — 任務追蹤系統
 ## 管理任務的接取、進度追蹤、完成判定。
+## 任務 = 劇情事件真相（StoryManager flags/events）的玩家可見投影：
+## objectives 掛接既有 beat/cutscene 事件與 flag，自動開始/逐項打勾/完成。
 extends Node
 
 # ── Signals ─────────────────────────────────────────────────────────────────
@@ -13,13 +15,18 @@ var _active_quests: Array[String] = []     # 進行中的任務
 var _completed_quests: Array[String] = []  # 已完成的任務
 
 func _ready() -> void:
-	# 載入所有任務資源
 	_load_all_quests()
-	# 監聽事件，自動檢查任務完成條件
-	StoryManager.event_recorded.connect(_on_event_recorded)
+	# 監聽事件與旗標變動，自動重評任務開始/完成條件
+	StoryManager.event_recorded.connect(_on_story_event)
+	StoryManager.flag_changed.connect(_on_story_flag)
 
+# ── Loading ───────────────────────────────────────────────────────────────────
 func _load_all_quests() -> void:
-	var quest_dir: String = "res://src/quests/"
+	_load_quests_from_dir("res://src/quests/")
+	_load_chapter_quests()
+	print("QuestManager: loaded %d quests" % _all_quests.size())
+
+func _load_quests_from_dir(quest_dir: String) -> void:
 	if not DirAccess.dir_exists_absolute(quest_dir):
 		return
 	var dir: DirAccess = DirAccess.open(quest_dir)
@@ -34,7 +41,27 @@ func _load_all_quests() -> void:
 				_all_quests[quest.quest_id] = quest
 		file_name = dir.get_next()
 	dir.list_dir_end()
-	print("QuestManager: loaded %d quests" % _all_quests.size())
+
+## 掃描 res://src/chapters/<id>/quests/ 下所有任務，與全域池合併。
+func _load_chapter_quests() -> void:
+	var base: String = "res://src/chapters/"
+	if not DirAccess.dir_exists_absolute(base):
+		return
+	var dir: DirAccess = DirAccess.open(base)
+	if dir == null:
+		return
+	dir.list_dir_begin()
+	var sub: String = dir.get_next()
+	while sub != "":
+		if dir.current_is_dir() and not sub.begins_with("."):
+			_load_quests_from_dir(base + sub + "/quests/")
+		sub = dir.get_next()
+	dir.list_dir_end()
+
+## 測試/程式用：手動註冊一筆任務資料。
+func register_quest(quest: QuestData) -> void:
+	if quest and not quest.quest_id.is_empty():
+		_all_quests[quest.quest_id] = quest
 
 # ── Public API ──────────────────────────────────────────────────────────────
 func start_quest(quest_id: String) -> bool:
@@ -44,10 +71,8 @@ func start_quest(quest_id: String) -> bool:
 		push_warning("QuestManager: Unknown quest: " + quest_id)
 		return false
 	var quest: QuestData = _all_quests[quest_id]
-	# 檢查前置條件
-	for req: String in quest.required_events:
-		if not StoryManager.completed_events.has(req):
-			return false
+	if not _can_start(quest):
+		return false
 	_active_quests.append(quest_id)
 	quest_started.emit(quest_id)
 	print("QuestManager: quest started - ", quest.title)
@@ -59,7 +84,6 @@ func complete_quest(quest_id: String) -> void:
 	_active_quests.erase(quest_id)
 	_completed_quests.append(quest_id)
 	var quest: QuestData = _all_quests[quest_id]
-	# 發放獎勵
 	_apply_rewards(quest)
 	quest_completed.emit(quest_id)
 	print("QuestManager: quest completed - ", quest.title)
@@ -80,27 +104,51 @@ func get_active_quests() -> Array[QuestData]:
 func get_quest(quest_id: String) -> QuestData:
 	return _all_quests.get(quest_id, null)
 
+## 給 journal：回每個 objective 的 {desc, optional, done}。
+func get_objective_status(quest_id: String) -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	var quest: QuestData = _all_quests.get(quest_id, null)
+	if quest == null:
+		return result
+	for obj: Dictionary in quest.objectives:
+		result.append({
+			"desc": obj.get("desc", ""),
+			"optional": obj.get("optional", false),
+			"done": QuestData.is_objective_done(obj, StoryManager.completed_events, StoryManager.player_flags),
+		})
+	return result
+
 # ── Internal ────────────────────────────────────────────────────────────────
-func _on_event_recorded(event_id: String) -> void:
-	# 檢查是否有任務因此事件完成
+func _on_story_event(_event_id: String) -> void:
+	reevaluate()
+
+func _on_story_flag(_key: String, _value: Variant) -> void:
+	reevaluate()
+
+## 重評所有任務的開始/完成條件。訊號自動呼叫；章節開場或測試也可手動呼叫一次初評。
+func reevaluate() -> void:
+	# 先檢查完成
 	for qid: String in _active_quests.duplicate():
 		var quest: QuestData = _all_quests[qid]
 		if _check_completion(quest):
 			complete_quest(qid)
-	# 檢查是否有新任務可接取
+	# 再檢查可自動接取
 	for qid: String in _all_quests:
 		if _active_quests.has(qid) or _completed_quests.has(qid):
 			continue
 		var quest: QuestData = _all_quests[qid]
-		var can_start: bool = true
-		for req: String in quest.required_events:
-			if not StoryManager.completed_events.has(req):
-				can_start = false
-				break
-		if can_start:
-			start_quest(qid)  # 自動接取符合條件的任務
+		if _can_start(quest):
+			start_quest(qid)
+
+func _can_start(quest: QuestData) -> bool:
+	for req: String in quest.required_events:
+		if not StoryManager.completed_events.has(req):
+			return false
+	return true
 
 func _check_completion(quest: QuestData) -> bool:
+	if not QuestData.all_required_objectives_done(quest.objectives, StoryManager.completed_events, StoryManager.player_flags):
+		return false
 	for evt: String in quest.completion_events:
 		if not StoryManager.completed_events.has(evt):
 			return false
