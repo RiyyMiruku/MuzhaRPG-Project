@@ -37,6 +37,9 @@ var _typewriter_timer: Timer
 var _full_text: String = ""
 var _displayed_chars: int = 0
 var _current_npc_id: String = ""
+## 待呈現的信任箭頭。trust_changed 比 response_complete 早觸發，
+## 暫存於此，由 display_npc_response 併入 _full_text，讓打字機自然帶出。
+var _pending_trust_arrow: String = ""
 const TYPEWRITER_SPEED: float = 0.025   # seconds per character
 
 # ── Lifecycle ──────────────────────────────────────────────────────────────
@@ -162,6 +165,10 @@ func hide_thinking_indicator() -> void:
 func display_npc_response(text: String) -> void:
 	_dialogue_text.text = ""
 	_full_text = text
+	# 併入本輪信任箭頭（若有），讓打字機在句末自然帶出
+	if not _pending_trust_arrow.is_empty():
+		_full_text += _pending_trust_arrow
+		_pending_trust_arrow = ""
 	_displayed_chars = 0
 	_typewriter_timer.start()
 
@@ -214,8 +221,9 @@ func _on_ai_request_failed(error_msg: String) -> void:
 	hide_thinking_indicator()
 	_dialogue_text.text += "\n[系統] 連線失敗：" + error_msg + "\n"
 
-## 信任變動的微妙回饋：在對話框尾端附一個小箭頭（不報數字），保留推理空間。
+## 信任變動的微妙回饋：暫存箭頭，由 display_npc_response 併入回應句末
+## （trust_changed 比 response_complete 早觸發，且打字機會覆寫 text，故不能直接 append）。
 func _on_trust_changed(npc_id: String, direction: int) -> void:
 	if npc_id != _current_npc_id:
 		return
-	_dialogue_text.text += "  ﹙↑﹚" if direction > 0 else "  ﹙↓﹚"
+	_pending_trust_arrow = "  ﹙↑﹚" if direction > 0 else "  ﹙↓﹚"
