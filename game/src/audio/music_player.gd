@@ -33,3 +33,24 @@ func play(stream: AudioStream) -> void:
 
 func stop() -> void:
 	_player.stop()
+
+# ── 淡入 / 淡出 ───────────────────────────────────────────────────────────────
+## 淡出時的最低音量（dB）。-40 已接近聽不到，比 -80 切得乾脆不拖尾。
+const FADE_MIN_DB: float = -40.0
+
+var _fade_tween: Tween = null
+
+## 快速淡出音樂到接近靜音（不 stop，保留播放位置）。劇情穿越轉場用。
+func fade_out(duration: float = 0.25) -> void:
+	_start_fade(FADE_MIN_DB, duration)
+
+## 淡入音樂回正常音量（0 dB）。轉場結束後呼叫。
+func fade_in(duration: float = 0.4) -> void:
+	_start_fade(0.0, duration)
+
+func _start_fade(target_db: float, duration: float) -> void:
+	if _fade_tween != null and _fade_tween.is_valid():
+		_fade_tween.kill()
+	_fade_tween = create_tween()
+	# 綁在 MusicPlayer（PROCESS_MODE_ALWAYS）上，暫停時仍能淡。
+	_fade_tween.tween_property(_player, "volume_db", target_db, max(0.0, duration))
