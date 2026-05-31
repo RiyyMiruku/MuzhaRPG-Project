@@ -1,16 +1,30 @@
-## AudioSettingsPanel — Master 音量 + 一鍵靜音 UI 面板
+## AudioSettingsPanel — Master / Music / SFX 音量 + 一鍵靜音 UI 面板
 class_name AudioSettingsPanel
 extends Control
 
-@onready var _volume_slider: HSlider = $Panel/VBox/VolumeRow/VolumeSlider
-@onready var _volume_value: Label    = $Panel/VBox/VolumeRow/VolumeValue
+@onready var _master_slider: HSlider = $Panel/VBox/MasterRow/Slider
+@onready var _master_value: Label    = $Panel/VBox/MasterRow/Value
+@onready var _music_slider: HSlider  = $Panel/VBox/MusicRow/Slider
+@onready var _music_value: Label     = $Panel/VBox/MusicRow/Value
+@onready var _sfx_slider: HSlider    = $Panel/VBox/SFXRow/Slider
+@onready var _sfx_value: Label        = $Panel/VBox/SFXRow/Value
 @onready var _mute_check: CheckButton = $Panel/VBox/MuteCheck
 @onready var _close_btn: Button       = $Panel/CloseButton
 
+## channel -> {slider: HSlider, value: Label}
+var _rows: Dictionary = {}
+
 func _ready() -> void:
 	UIManager.register("AudioSettingsPanel", self)
+	_rows = {
+		AudioSettings.MASTER: {"slider": _master_slider, "value": _master_value},
+		AudioSettings.MUSIC: {"slider": _music_slider, "value": _music_value},
+		AudioSettings.SFX: {"slider": _sfx_slider, "value": _sfx_value},
+	}
 	_close_btn.pressed.connect(_on_close)
-	_volume_slider.value_changed.connect(_on_volume_changed)
+	_master_slider.value_changed.connect(_on_slider_changed.bind(AudioSettings.MASTER))
+	_music_slider.value_changed.connect(_on_slider_changed.bind(AudioSettings.MUSIC))
+	_sfx_slider.value_changed.connect(_on_slider_changed.bind(AudioSettings.SFX))
 	_mute_check.toggled.connect(_on_mute_toggled)
 	visibility_changed.connect(_on_visibility_changed)
 
@@ -26,14 +40,18 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _sync_from_settings() -> void:
-	_volume_slider.set_value_no_signal(AudioSettings.get_volume() * 100.0)
-	_volume_value.text = "%d%%" % roundi(AudioSettings.get_volume() * 100.0)
+	for channel in _rows:
+		var pct: float = AudioSettings.get_volume(channel) * 100.0
+		var slider: HSlider = _rows[channel]["slider"]
+		var value: Label = _rows[channel]["value"]
+		slider.set_value_no_signal(pct)
+		value.text = "%d%%" % roundi(pct)
 	_mute_check.set_pressed_no_signal(AudioSettings.is_muted())
 
-func _on_volume_changed(value: float) -> void:
-	var linear: float = value / 100.0
-	AudioSettings.set_volume(linear)
-	_volume_value.text = "%d%%" % roundi(value)
+func _on_slider_changed(value: float, channel: String) -> void:
+	AudioSettings.set_volume(channel, value / 100.0)
+	var label: Label = _rows[channel]["value"]
+	label.text = "%d%%" % roundi(value)
 
 func _on_mute_toggled(pressed: bool) -> void:
 	AudioSettings.set_muted(pressed)
