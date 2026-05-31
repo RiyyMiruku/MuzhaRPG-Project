@@ -4,6 +4,8 @@ extends Node
 signal response_complete(full_text: String, npc_id: String)
 signal request_failed(error_msg: String)
 signal server_status_changed(is_online: bool)
+## 信任值因對話變動（direction：+1 升 / -1 降；不帶數字，給 UI 微妙提示用）
+signal trust_changed(npc_id: String, direction: int)
 
 # ── Config ──────────────────────────────────────────────────────────────────
 var server_url: String = "http://127.0.0.1:8000"
@@ -144,6 +146,13 @@ func _on_query_completed(result: int, response_code: int, _headers: PackedString
 	# Post-process: 過濾未解鎖的禁忌詞（防 LLM 違反 prompt 約束）
 	if _current_profile != null:
 		content = TrustGate.filter_forbidden(content, _current_profile, _current_flags)
+
+	# 信任評分：解析隱藏 tag → 更新 relationship → 發 UI 訊號 → 從顯示內容剝除
+	var trust_delta: int = TrustGate.parse_trust_delta(content)
+	content = TrustGate.strip_trust_tag(content)
+	if trust_delta != 0:
+		StoryManager.update_relationship(_current_npc_id, trust_delta)
+		trust_changed.emit(_current_npc_id, signi(trust_delta))
 
 	# Save to conversation history
 	StoryManager.add_conversation_turn(_current_npc_id, "assistant", content)
