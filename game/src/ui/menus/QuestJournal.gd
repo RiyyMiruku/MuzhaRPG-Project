@@ -28,6 +28,11 @@ func _refresh() -> void:
 		for q: QuestData in active:
 			_add_item(_active_list, q.title, Color.WHITE)
 			_add_item(_active_list, "  " + q.description, Color(0.7, 0.7, 0.7), 10)
+			for obj: Dictionary in QuestManager.get_objective_status(q.quest_id):
+				var mark: String = "☑" if obj["done"] else "☐"
+				var suffix: String = "（選擇）" if obj["optional"] else ""
+				var col: Color = Color(0.5, 0.8, 0.5) if obj["done"] else Color(0.85, 0.85, 0.6)
+				_add_item(_active_list, "    %s %s%s" % [mark, obj["desc"], suffix], col, 10)
 
 	var completed: Array[String] = QuestManager._completed_quests
 	if completed.is_empty():
