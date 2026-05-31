@@ -1,13 +1,13 @@
 {
-  "status": "completed",
+  "status": "pending",
   "created_at": "2026-05-21T23:12:43",
-  "updated_at": "2026-05-21T23:15:31",
+  "updated_at": "2026-05-31T20:31:01",
   "tags": [
     "zone:zone_market",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "5340fcb7-263d-49e6-ad45-f3937b15be6c",
+  "object_id": "c1eb667b-3942-4dfe-bd8f-dc866e627b2b",
   "kind": "iso_prop",
   "description": "coiled hemp rope hanging on wall hook, utility storage",
   "size": {
@@ -16,7 +16,7 @@
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T23:15:31",
+      "completed_at": "2026-05-31T20:31:01",
       "paths": [
         "art_source\\objects\\rope_coil_hemp\\rope_coil_hemp.png"
       ]
