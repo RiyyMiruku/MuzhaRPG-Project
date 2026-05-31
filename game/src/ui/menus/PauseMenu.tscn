@@ -41,7 +41,7 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="Panel/VBox"]
 layout_mode = 2
-text = "PAUSED"
+text = "暫停"
 horizontal_alignment = 1
 theme_override_font_sizes/font_size = 20
 
@@ -50,46 +50,38 @@ layout_mode = 2
 
 [node name="ZoneLabel" type="Label" parent="Panel/VBox"]
 layout_mode = 2
-text = "Location: ---"
-theme_override_font_sizes/font_size = 12
+text = "地點：---"
 
 [node name="TimeLabel" type="Label" parent="Panel/VBox"]
 layout_mode = 2
-text = "Time: ---"
-theme_override_font_sizes/font_size = 12
+text = "時間：---"
 
 [node name="Separator2" type="HSeparator" parent="Panel/VBox"]
 layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
-text = "Resume"
-theme_override_font_sizes/font_size = 14
+text = "繼續"
 
 [node name="SaveButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
-text = "Save"
-theme_override_font_sizes/font_size = 14
+text = "儲存"
 
 [node name="LoadButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
-text = "Load"
-theme_override_font_sizes/font_size = 14
+text = "讀取"
 
 [node name="SettingsButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
-text = "Settings"
-theme_override_font_sizes/font_size = 14
+text = "設定"
 
 [node name="AudioButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
-text = "Audio"
-theme_override_font_sizes/font_size = 14
+text = "音效"
 
 [node name="MainMenuButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
-text = "Main Menu"
-theme_override_font_sizes/font_size = 14
+text = "回主選單"
 
 [node name="StatusLabel" type="Label" parent="Panel/VBox"]
 layout_mode = 2
