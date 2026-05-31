@@ -243,6 +243,14 @@ func _build_chat_payload(npc_config: Resource, user_input: String, context: Dict
 		"max_tokens": max_response,
 		"temperature": npc_config.base_temperature if "base_temperature" in npc_config else default_temperature,
 		"stream": false,
+		# 防重複迴圈（鬼打牆）。llama-server 的 OpenAI 端點接受這些額外欄位。
+		"repeat_penalty": repeat_penalty,
+		"repeat_last_n": repeat_last_n,
+		"presence_penalty": presence_penalty,
+		"frequency_penalty": frequency_penalty,
+		"dry_multiplier": dry_multiplier,
+		"dry_base": dry_base,
+		"dry_allowed_length": dry_allowed_length,
 	}
 
 func _build_context_string(context: Dictionary) -> String:
