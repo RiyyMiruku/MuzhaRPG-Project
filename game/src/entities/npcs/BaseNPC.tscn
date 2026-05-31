@@ -23,9 +23,11 @@ position = Vector2(0, 2)
 shape = SubResource("body_shape")
 
 [node name="InteractionPrompt" type="Label" parent="."]
-position = Vector2(-24, -48)
+position = Vector2(-16, -44)
 text = "按 [E] 對話"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.7)
+theme_override_constants/outline_size = 3
 modulate = Color(1, 1, 0.4, 1)
 
 [node name="DetectArea" type="Area2D" parent="."]
