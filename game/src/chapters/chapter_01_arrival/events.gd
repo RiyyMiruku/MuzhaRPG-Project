@@ -23,6 +23,9 @@ const FINALE_REVEAL_CUTSCENE: String = (
 func register(_manager: Node) -> void:
 	EventBus.zone_loaded.connect(_on_zone_loaded)
 	StoryManager.event_recorded.connect(_on_event_recorded)
+	# 信任門檻 → 派生事件（供任務 objective 使用；重複註冊會被去重）
+	StoryManager.register_relationship_event("lin_rongchang", 60, "ch1_rongchang_trust_ok")
+	StoryManager.register_relationship_event("a_tao_yi", 50, "ch1_atao_truth")
 
 func unregister(_manager: Node) -> void:
 	if EventBus.zone_loaded.is_connected(_on_zone_loaded):

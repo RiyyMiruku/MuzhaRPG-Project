@@ -23,7 +23,10 @@ signal era_transition_started(to_era: String)
 signal era_transition_finished(to_era: String)
 
 # ── State ───────────────────────────────────────────────────────────────────
-var current_era: String = "1983"
+## 開場為現代：阿謙在現代繼承藥行、開鐵門、才穿越回 1983。
+## 必須與 deserialize() 的預設一致（都 modern），否則冷啟動會停在 1983：
+## 開鐵門 cutscene（要 current_era==modern）不觸發、且套到 1983 暖黃濾鏡。
+var current_era: String = "modern"
 
 # ── Constants ───────────────────────────────────────────────────────────────
 const TINT_PRESETS: Dictionary = {

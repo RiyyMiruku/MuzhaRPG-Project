@@ -23,7 +23,7 @@ var _streams_by_surface: Dictionary = {}
 
 func _ready() -> void:
 	_player = AudioStreamPlayer.new()
-	_player.bus = "Master"
+	_player.bus = "SFX"
 	add_child(_player)
 
 func play(surface_id: String) -> void:

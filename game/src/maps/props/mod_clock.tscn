@@ -10,8 +10,8 @@ points = PackedVector2Array(-2.5, 1.0, -1.0, 0.0, -2.5, -1.0, -4.0, 0.0)
 size = Vector2(64.0, 16.0)
 
 [node name="mod_clock" instance=ExtResource("4_tmpl")]
-has_collision = true
 iso_sort_offset = 7.0
+has_collision = true
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")

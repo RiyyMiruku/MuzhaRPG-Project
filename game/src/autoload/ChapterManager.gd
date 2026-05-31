@@ -128,6 +128,9 @@ func start_chapter(chapter_id: String) -> bool:
 
 	chapter_changed.emit(prev_id, chapter_id)
 	chapter_started.emit(_current)
+	# 開章後立即評估任務：讓開場引導任務（required_events 空者）自動出現，
+	# 不必等玩家先觸發某個事件。否則進遊戲時 journal 會是空的。
+	QuestManager.reevaluate()
 	print("ChapterManager: started chapter '%s' (%s)" % [
 		chapter_id, _current.display_name
 	])

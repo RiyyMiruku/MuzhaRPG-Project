@@ -10,8 +10,8 @@ points = PackedVector2Array(-0.5, 3.0, 7.0, 0.0, -0.5, -3.0, -8.0, 0.0)
 size = Vector2(16.0, 16.0)
 
 [node name="cathay_calendar_1983" instance=ExtResource("4_tmpl")]
-has_collision = true
 iso_sort_offset = 3.0
+has_collision = true
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")

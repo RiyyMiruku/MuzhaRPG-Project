@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3 uid="uid://muzha_quest_ch1_mq05"]
+
+[ext_resource type="Script" path="res://src/core/classes/QuestData.gd" id="1_quest_data"]
+
+[resource]
+script = ExtResource("1_quest_data")
+quest_id = "ch1_mq05_locked_room"
+title = "後院上鎖的房間"
+description = "那扇門後面是誰的房間？先取得阿嬤的信任，拿到鑰匙。"
+giver_npc_id = "lin_ama"
+target_npc_id = "lin_ama"
+target_zone = "zone_pharmacy_backyard"
+required_events = ["ch1_xiaowei_talked", "ch1_saw_ama_incense"]
+objectives = Array[Dictionary]([{
+"id": "key",
+"desc": "取得林阿嬤的信任，拿到後院鑰匙",
+"event": "ch1_got_key"
+}, {
+"id": "relic",
+"desc": "進入房間，找到林榮華留下的遺物",
+"event": "ch1_found_relic"
+}])

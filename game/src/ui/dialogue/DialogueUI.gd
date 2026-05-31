@@ -37,6 +37,9 @@ var _typewriter_timer: Timer
 var _full_text: String = ""
 var _displayed_chars: int = 0
 var _current_npc_id: String = ""
+## 待呈現的信任箭頭。trust_changed 比 response_complete 早觸發，
+## 暫存於此，由 display_npc_response 併入 _full_text，讓打字機自然帶出。
+var _pending_trust_arrow: String = ""
 const TYPEWRITER_SPEED: float = 0.025   # seconds per character
 
 # ── Lifecycle ──────────────────────────────────────────────────────────────
@@ -61,6 +64,7 @@ func _ready() -> void:
 	# Connect AI signals
 	AIClient.response_complete.connect(_on_ai_response_complete)
 	AIClient.request_failed.connect(_on_ai_request_failed)
+	AIClient.trust_changed.connect(_on_trust_changed)
 
 # ── Public API ─────────────────────────────────────────────────────────────
 ## AI mode：開啟對話讓玩家自由輸入
@@ -68,6 +72,7 @@ func open_dialogue(npc_config: NPCConfig) -> void:
 	UIManager.pop_all()
 	_mode = Mode.AI
 	_current_npc_id = npc_config.npc_id
+	_pending_trust_arrow = ""   # 防禦：避免上一場對話殘留的箭頭外溢
 	_name_label.text = npc_config.display_name
 	_portrait.texture = npc_config.get_portrait()
 	_dialogue_text.text = "（與 %s 對話中，輸入訊息後按 Enter 發送）" % npc_config.display_name
@@ -135,6 +140,7 @@ func _clear_choice_buttons() -> void:
 
 func close_dialogue() -> void:
 	_typewriter_timer.stop()
+	_pending_trust_arrow = ""   # 防禦：箭頭不跨對話場次外溢
 	# 取消任何進行中的 AI 請求，避免關閉後仍消耗資源 / 收到 stale response
 	AIClient.abort_current_request()
 	hide_thinking_indicator()
@@ -161,6 +167,10 @@ func hide_thinking_indicator() -> void:
 func display_npc_response(text: String) -> void:
 	_dialogue_text.text = ""
 	_full_text = text
+	# 併入本輪信任箭頭（若有），讓打字機在句末自然帶出
+	if not _pending_trust_arrow.is_empty():
+		_full_text += _pending_trust_arrow
+		_pending_trust_arrow = ""
 	_displayed_chars = 0
 	_typewriter_timer.start()
 
@@ -212,3 +222,10 @@ func _on_ai_response_complete(text: String, npc_id: String) -> void:
 func _on_ai_request_failed(error_msg: String) -> void:
 	hide_thinking_indicator()
 	_dialogue_text.text += "\n[系統] 連線失敗：" + error_msg + "\n"
+
+## 信任變動的微妙回饋：暫存箭頭，由 display_npc_response 併入回應句末
+## （trust_changed 比 response_complete 早觸發，且打字機會覆寫 text，故不能直接 append）。
+func _on_trust_changed(npc_id: String, direction: int) -> void:
+	if npc_id != _current_npc_id:
+		return
+	_pending_trust_arrow = "  ﹙↑﹚" if direction > 0 else "  ﹙↓﹚"
