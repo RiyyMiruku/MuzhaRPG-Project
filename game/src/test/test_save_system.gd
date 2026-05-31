@@ -18,6 +18,7 @@ func _run_tests() -> void:
 	_test_save_roundtrip()
 	_test_apply_order()
 	_test_load_parse()
+	_test_autosave_gate()
 	if _fail == 0:
 		print("ALL PASS")
 		quit(0)
@@ -79,6 +80,21 @@ func _reset_story(sm: Node) -> void:
 	sm._relationship_triggers.clear()
 	sm.unlocked_zones.assign(["zone_apartment_muzha"])
 	sm.conversation_histories.clear()
+
+func _test_autosave_gate() -> void:
+	print("[autosave 安全閘]")
+	var save: Node = get_root().get_node("SaveManager")
+	var gm: Node = get_root().get_node("GameManager")
+	save.delete_slot("auto")
+	# 非 EXPLORING（PAUSED）→ tick 不應寫檔
+	gm.change_state(gm.GameState.PAUSED)
+	save._on_autosave_tick()
+	_assert(not save.has_slot("auto"), "PAUSED 時不自動存檔")
+	# EXPLORING → tick 應寫檔
+	gm.change_state(gm.GameState.EXPLORING)
+	save._on_autosave_tick()
+	_assert(save.has_slot("auto"), "EXPLORING 時自動存檔")
+	save.delete_slot("auto")
 
 func _test_save_roundtrip() -> void:
 	print("[save round-trip]")
