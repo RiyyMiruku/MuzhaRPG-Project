@@ -2,6 +2,7 @@ extends Node
 
 # ── Signals ────────────────────────────────────────────────────────────────
 signal event_recorded(event_id: String)
+signal flag_changed(key: String, value: Variant)
 
 # ── State ──────────────────────────────────────────────────────────────────
 var unlocked_zones: Array[String] = [Zones.STARTING]
@@ -90,6 +91,7 @@ func record_event(event_id: String) -> void:
 
 func set_flag(key: String, value: Variant) -> void:
 	player_flags[key] = value
+	flag_changed.emit(key, value)
 
 func get_flag(key: String, default: Variant = null) -> Variant:
 	return player_flags.get(key, default)
