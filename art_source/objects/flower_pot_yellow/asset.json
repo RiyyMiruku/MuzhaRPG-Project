@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T20:37:40",
+  "updated_at": "2026-05-31T20:38:04",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:flower_pot_yellow",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — small ceramic pot with blooming yellow chrysanthemum flowers, bright sunny yellow petals, traditional taiwan courtyard decoration, 1983",
+  "view": "high_top_down",
+  "size": {
+    "width": 32,
+    "height": 32
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T20:38:04",
+      "paths": [
+        "art_source\\objects\\flower_pot_yellow\\flower_pot_yellow.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T20:38:04",
+      "paths": [
+        "art_source\\objects\\flower_pot_yellow\\flower_pot_yellow.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T20:38:04",
+      "paths": [
+        "game\\assets\\textures\\props\\flower_pot_yellow.png",
+        "game\\src\\maps\\props\\flower_pot_yellow.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\flower_pot_yellow\\flower_pot_yellow.png",
+  "imported_at": "2026-05-31T20:38:04",
+  "game_png_path": "game\\assets\\textures\\props\\flower_pot_yellow.png",
+  "game_tscn_path": "game\\src\\maps\\props\\flower_pot_yellow.tscn",
+  "collision": "bottom_16x16"
+}

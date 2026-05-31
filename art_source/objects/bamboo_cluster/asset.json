@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T20:15:26",
+  "updated_at": "2026-05-31T20:16:23",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:decoration",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:bamboo_cluster",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — cluster of green bamboo stalks growing from soil patch, tall slender canes with leaves, backyard garden, 1980s taiwan",
+  "view": "high_top_down",
+  "size": {
+    "width": 64,
+    "height": 64
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T20:16:23",
+      "paths": [
+        "art_source\\objects\\bamboo_cluster\\bamboo_cluster.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T20:16:23",
+      "paths": [
+        "art_source\\objects\\bamboo_cluster\\bamboo_cluster.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T20:16:23",
+      "paths": [
+        "game\\assets\\textures\\props\\bamboo_cluster.png",
+        "game\\src\\maps\\props\\bamboo_cluster.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\bamboo_cluster\\bamboo_cluster.png",
+  "imported_at": "2026-05-31T20:16:23",
+  "game_png_path": "game\\assets\\textures\\props\\bamboo_cluster.png",
+  "game_tscn_path": "game\\src\\maps\\props\\bamboo_cluster.tscn",
+  "collision": "bottom_16x16"
+}

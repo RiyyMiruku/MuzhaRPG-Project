@@ -199,7 +199,7 @@ godot_4_3_compatibility = false
 y_sort_enabled = true
 
 [node name="Player" parent="YSortRoot" unique_id=2115685882 instance=ExtResource("4_player")]
-position = Vector2(233, -137)
+position = Vector2(296, -312)
 
 [node name="LinRongchang_1983" parent="YSortRoot" unique_id=1296964216 groups=["era_1983", "npc"] instance=ExtResource("8_base_npc")]
 visible = false
@@ -536,7 +536,7 @@ position = Vector2(259, -267)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1336082689]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(114, 87)
+position = Vector2(177, -88)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=367939677]
@@ -546,7 +546,7 @@ script = ExtResource("6_pcam_host_script")
 
 [node name="DefaultCam" type="Node2D" parent="." unique_id=1433071345 node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(114, 87)
+position = Vector2(177, -88)
 script = ExtResource("5_pcam_script")
 follow_mode = 1
 follow_target = NodePath("../YSortRoot/Player")
@@ -558,7 +558,7 @@ tween_on_load = false
 
 [node name="ToMarket_1983" parent="Transitions" unique_id=277693011 groups=["era_1983", "transition"] instance=ExtResource("9_zone_transition_area")]
 visible = false
-position = Vector2(326, -326)
+position = Vector2(324, -337)
 target_zone = "zone_market"
 entry_point = "from_pharmacy_1983"
 
@@ -567,7 +567,7 @@ position = Vector2(0, -32)
 
 [node name="ToBackyard_1983" parent="Transitions" unique_id=118154623 groups=["era_1983", "transition"] instance=ExtResource("9_zone_transition_area")]
 visible = false
-position = Vector2(302, 56)
+position = Vector2(290, 53)
 target_zone = "zone_pharmacy_backyard"
 entry_point = "from_pharmacy"
 
@@ -575,7 +575,7 @@ entry_point = "from_pharmacy"
 position = Vector2(-32, 0)
 
 [node name="ToMarket_modern" parent="Transitions" unique_id=273153519 groups=["era_modern", "transition"] instance=ExtResource("9_zone_transition_area")]
-position = Vector2(318, -327)
+position = Vector2(324, -337)
 target_zone = "zone_market"
 entry_point = "from_pharmacy_modern"
 
