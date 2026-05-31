@@ -54,8 +54,37 @@ func _ready() -> void:
 	# 快取 DialogueUI 參照，避免每次互動都遍歷場景樹
 	_dialogue_ui = _find_dialogue_ui()
 
+	# 信任變動時在頭頂冒浮動箭頭（綠↑/紅↓）
+	AIClient.trust_changed.connect(_on_trust_changed)
+
 	# 初始化 wander 行為（若 config 有設）
 	_init_wander()
+
+# ── 信任浮動特效 ───────────────────────────────────────────────────────────────
+## 信任變動時，在此 NPC 頭頂冒出綠↑/紅↓，上飄 + 淡出。只對自己 npc_id 反應。
+func _on_trust_changed(changed_npc_id: String, direction: int) -> void:
+	if npc_config == null or changed_npc_id != npc_config.npc_id:
+		return
+	var label: Label = Label.new()
+	label.text = "↑" if direction > 0 else "↓"
+	label.add_theme_font_size_override("font_size", 28)
+	label.add_theme_color_override(
+		"font_color",
+		Color(0.3, 1.0, 0.4) if direction > 0 else Color(1.0, 0.35, 0.35)
+	)
+	label.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.8))
+	label.add_theme_constant_override("outline_size", 4)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.z_index = 100
+	# 置於頭頂中央（sprite 約 24px 高，往上偏移）
+	label.position = Vector2(-12, -42)
+	add_child(label)
+
+	var tween: Tween = create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(label, "position:y", label.position.y - 24.0, 0.9)
+	tween.tween_property(label, "modulate:a", 0.0, 0.9).set_ease(Tween.EASE_IN)
+	tween.chain().tween_callback(label.queue_free)
 
 # ── Wander logic ─────────────────────────────────────────────────────────────
 func _init_wander() -> void:
