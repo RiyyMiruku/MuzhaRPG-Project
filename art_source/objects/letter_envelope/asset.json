@@ -1,35 +1,36 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:46:44",
-  "updated_at": "2026-05-30T18:26:58",
+  "updated_at": "2026-06-01T02:14:03",
   "tags": [
     "zone:zone_apartment_muzha",
     "zone:zone_law_office",
     "category:decoration",
-    "chapter:1"
+    "chapter:1",
+    "category:item"
   ],
   "object_id": "pixflux:letter_envelope",
   "kind": "iso_building",
-  "description": "isometric pixel art, 30-degree top-down angled view, formal letter envelope with law firm stamp, white envelope slightly opened",
+  "description": "isometric pixel art, 30-degree top-down angled view, paper letter envelope lying flat, white rectangle with v-fold flap, chinese address written on front, thin flat paper object",
   "size": {
-    "width": 32,
+    "width": 48,
     "height": 32
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-30T18:26:57",
+      "completed_at": "2026-06-01T02:14:03",
       "paths": [
         "art_source\\objects\\letter_envelope\\letter_envelope.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-30T18:26:57",
+      "completed_at": "2026-06-01T02:14:03",
       "paths": [
         "art_source\\objects\\letter_envelope\\letter_envelope.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-30T18:26:58",
+      "completed_at": "2026-06-01T02:14:03",
       "paths": [
         "game\\assets\\textures\\props\\letter_envelope.png",
         "game\\src\\maps\\props\\letter_envelope.tscn"
@@ -37,7 +38,7 @@
     }
   },
   "local_path": "art_source\\objects\\letter_envelope\\letter_envelope.png",
-  "imported_at": "2026-05-30T18:26:58",
+  "imported_at": "2026-06-01T02:14:03",
   "game_png_path": "game\\assets\\textures\\props\\letter_envelope.png",
   "game_tscn_path": "game\\src\\maps\\props\\letter_envelope.tscn",
   "collision": "bottom_16x16",

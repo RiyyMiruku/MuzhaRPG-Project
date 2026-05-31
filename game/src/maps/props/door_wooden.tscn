@@ -1,21 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwogsm3ple4q4e"]
+[gd_scene format=3 uid="uid://cdqilcia3jmyt"]
 
 [ext_resource type="PackedScene" uid="uid://muzha_prop_template" path="res://src/maps/props/PropTemplate.tscn" id="4_tmpl"]
-[ext_resource type="Texture2D" uid="uid://blggoteijakpm" path="res://assets/textures/props/calendar_torn_page.png" id="3_tex"]
+[ext_resource type="Texture2D" uid="uid://c64i19bz0bpr9o" path="res://assets/textures/props/door_wooden.png" id="3_tex"]
 
 [sub_resource type="ConvexPolygonShape2D" id="1_shape"]
-points = PackedVector2Array(-0.5, 10.0, 10.0, 0.0, -0.5, -10.0, -11.0, 0.0)
+points = PackedVector2Array(-11.0, 0.0, -10.0, 0.0, -11.0, 0.0, -12.0, 0.0)
 
 [sub_resource type="RectangleShape2D" id="2_irect"]
 size = Vector2(32.0, 16.0)
 
-[node name="calendar_torn_page" instance=ExtResource("4_tmpl")]
+[node name="door_wooden" instance=ExtResource("4_tmpl")]
 has_collision = true
-iso_sort_offset = 14.0
+iso_sort_offset = 3.0
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("3_tex")
-offset = Vector2(0, -10.0)
+offset = Vector2(0, -29.0)
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
 shape = SubResource("1_shape")

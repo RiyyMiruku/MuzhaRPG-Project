@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dianiw54rlpk8" path="res://src/maps/props/photograph_old.tscn" id="10_prop_photograph_old"]
 [ext_resource type="PackedScene" uid="uid://b3bjje8647nw3" path="res://src/maps/props/notebook_leather.tscn" id="11_prop_notebook_leathe"]
 [ext_resource type="Script" uid="uid://k3da00wfirxt" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="12_8mlw8"]
-[ext_resource type="PackedScene" uid="uid://ciibwp217agk7" path="res://src/maps/props/fountain_pen_old.tscn" id="12_prop_fountain_pen_ol"]
 [ext_resource type="PackedScene" uid="uid://dqouehtlmafo" path="res://src/maps/props/backpack_travel.tscn" id="100_backpack_t"]
 [ext_resource type="PackedScene" uid="uid://c8r8abhc40ls6" path="res://src/maps/props/coffee_mug.tscn" id="101_coffee_mug"]
 [ext_resource type="PackedScene" uid="uid://dt7i1oe136rc8" path="res://src/maps/props/folding_table.tscn" id="102_folding_ta"]
@@ -23,6 +22,18 @@
 [ext_resource type="PackedScene" uid="uid://c2w27h3mha1cm" path="res://src/maps/props/photo_frame_family.tscn" id="108_photo_fram"]
 [ext_resource type="PackedScene" uid="uid://dpil0ptblhtmi" path="res://src/maps/props/suitcase_travel.tscn" id="110_suitcase_t"]
 [ext_resource type="PackedScene" uid="uid://myxx8umayu3p" path="res://src/maps/props/water_bottle_plastic.tscn" id="111_water_bott"]
+[ext_resource type="PackedScene" uid="uid://ca1jej6kqmiat" path="res://src/maps/props/sticky_notes_wall.tscn" id="113_sticky_n"]
+[ext_resource type="PackedScene" uid="uid://br2r2sksfhmos" path="res://src/maps/props/calendar_torn_page.tscn" id="114_calendar"]
+[ext_resource type="PackedScene" uid="uid://ddcwvssan3ely" path="res://src/maps/props/comic_book_stack.tscn" id="115_comic_bo"]
+[ext_resource type="PackedScene" uid="uid://bebgiylajxbn3" path="res://src/maps/props/clock_alarm_wind.tscn" id="116_clock_al"]
+[ext_resource type="PackedScene" uid="uid://v5ni27nbmim3" path="res://src/maps/props/shoe_rack_wood.tscn" id="117_shoe_rac"]
+[ext_resource type="PackedScene" uid="uid://dbri52vr4n6ce" path="res://src/maps/props/trash_bin_green.tscn" id="118_trash_bi"]
+[ext_resource type="PackedScene" uid="uid://dux6u4pga2cxp" path="res://src/maps/props/electric_meter_box.tscn" id="121_electric"]
+[ext_resource type="PackedScene" uid="uid://crmgbik2xxwvn" path="res://src/maps/props/potted_plant_clay.tscn" id="122_potted_p"]
+[ext_resource type="PackedScene" uid="uid://508cb13dbeum" path="res://src/maps/props/potted_plant_office.tscn" id="123_potted_p"]
+[ext_resource type="PackedScene" uid="uid://cn1di67rix1bd" path="res://src/maps/props/banyan_tree_small.tscn" id="124_banyan_t"]
+[ext_resource type="PackedScene" uid="uid://cdqilcia3jmyt" path="res://src/maps/props/door_wooden.tscn" id="126_door_nor"]
+[ext_resource type="PackedScene" uid="uid://c7e22k4h6mes1" path="res://src/maps/props/bed_single_old.tscn" id="127_bed_singl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8mlw8"]
 texture = ExtResource("7_atlas_market_concret")
@@ -181,58 +192,194 @@ godot_4_3_compatibility = false
 y_sort_enabled = true
 
 [node name="Player" parent="YSortRoot" unique_id=792381551 instance=ExtResource("4_player")]
-position = Vector2(6, 131)
+position = Vector2(-55, -42)
 
-[node name="id_card_old" parent="YSortRoot" unique_id=1834990063 groups=["prop"] instance=ExtResource("9_prop_id_card_old")]
-position = Vector2(-210, -48)
+[node name="id_card_old" parent="YSortRoot" unique_id=1834990063 groups=["era_modern", "prop"] instance=ExtResource("9_prop_id_card_old")]
+z_index = 1
+position = Vector2(-214, -62.999996)
+scale = Vector2(0.4, 0.4)
 
-[node name="photograph_old" parent="YSortRoot" unique_id=324690568 groups=["prop"] instance=ExtResource("10_prop_photograph_old")]
-position = Vector2(16, 8)
+[node name="photograph_old" parent="YSortRoot" unique_id=324690568 groups=["era_modern", "prop"] instance=ExtResource("10_prop_photograph_old")]
+position = Vector2(-135, -107.00001)
+skew = -0.26703537
 
-[node name="notebook_leather" parent="YSortRoot" unique_id=1011501703 groups=["prop"] instance=ExtResource("11_prop_notebook_leathe")]
-position = Vector2(-164, -94)
+[node name="notebook_leather" parent="YSortRoot" unique_id=1011501703 groups=["era_modern", "prop"] instance=ExtResource("11_prop_notebook_leathe")]
+position = Vector2(-58, -138)
+scale = Vector2(0.5, 0.5)
 
-[node name="fountain_pen_old" parent="YSortRoot" unique_id=515900245 groups=["prop"] instance=ExtResource("12_prop_fountain_pen_ol")]
-position = Vector2(-157, -93)
-scale = Vector2(0.3, 1)
+[node name="notebook_leather3" parent="YSortRoot" unique_id=1427660139 groups=["era_modern", "prop"] instance=ExtResource("11_prop_notebook_leathe")]
+position = Vector2(-10, -142)
+scale = Vector2(-0.5, 0.5)
+iso_sort_offset = 5.0
+
+[node name="notebook_leather2" parent="YSortRoot" unique_id=896037853 groups=["era_modern", "prop"] instance=ExtResource("11_prop_notebook_leathe")]
+position = Vector2(140, -64)
+scale = Vector2(0.5, 0.5)
+iso_sort_offset = 5.0
 
 [node name="mod_suitcase" parent="YSortRoot" unique_id=269820595 groups=["era_modern", "prop"] instance=ExtResource("110_suitcase_t")]
-position = Vector2(-238, -15)
+position = Vector2(-256, -11)
 
 [node name="mod_laptop" parent="YSortRoot" unique_id=269820596 groups=["era_modern", "prop"] instance=ExtResource("103_laptop_mod")]
-position = Vector2(-112, -123)
+position = Vector2(-218, -54)
+scale = Vector2(0.6, 0.6)
 
 [node name="mod_coffee" parent="YSortRoot" unique_id=269820597 groups=["era_modern", "prop"] instance=ExtResource("101_coffee_mug")]
-position = Vector2(16, 5)
+z_index = 1
+position = Vector2(-238, -46)
+scale = Vector2(0.5, 0.5)
 
 [node name="mod_box" parent="YSortRoot" unique_id=269820598 groups=["era_modern", "prop"] instance=ExtResource("106_moving_box")]
-position = Vector2(-249, -48)
+position = Vector2(55, -126)
 
 [node name="mod_box2" parent="YSortRoot" unique_id=269820599 groups=["era_modern", "prop"] instance=ExtResource("106_moving_box")]
-position = Vector2(-225, -61)
+position = Vector2(36, -137)
 
 [node name="mod_table" parent="YSortRoot" unique_id=269820600 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
-position = Vector2(-74, -117)
+position = Vector2(-243, -44)
+
+[node name="mod_table2" parent="YSortRoot" unique_id=16257531 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-235, -49)
+
+[node name="mod_table3" parent="YSortRoot" unique_id=2136416658 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-227, -54)
+
+[node name="mod_table4" parent="YSortRoot" unique_id=1149007212 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-221, -32)
+
+[node name="mod_table5" parent="YSortRoot" unique_id=750262205 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-213, -37)
+
+[node name="mod_table6" parent="YSortRoot" unique_id=339155139 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-205, -42)
+
+[node name="mod_table7" parent="YSortRoot" unique_id=1781296755 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-267, -29)
+
+[node name="mod_table8" parent="YSortRoot" unique_id=2059610685 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-259, -34)
+
+[node name="mod_table9" parent="YSortRoot" unique_id=1163896921 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-251, -39)
+
+[node name="mod_table10" parent="YSortRoot" unique_id=2135452912 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-245, -17)
+
+[node name="mod_table11" parent="YSortRoot" unique_id=1132654659 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-238, -22)
+
+[node name="mod_table12" parent="YSortRoot" unique_id=2051057698 groups=["era_modern", "prop"] instance=ExtResource("102_folding_ta")]
+position = Vector2(-229, -27)
 
 [node name="mod_letter" parent="YSortRoot" unique_id=269820601 groups=["era_modern", "prop"] instance=ExtResource("104_letter_env")]
-position = Vector2(-227, -53)
+position = Vector2(-120, -104)
+scale = Vector2(0.4, 0.4)
+
+[node name="mod_letter2" parent="YSortRoot" unique_id=474757694 groups=["era_modern", "prop"] instance=ExtResource("104_letter_env")]
+position = Vector2(-120, -101)
+scale = Vector2(0.4, 0.4)
+iso_sort_offset = 2.0
 
 [node name="mod_backpack" parent="YSortRoot" unique_id=269820602 groups=["era_modern", "prop"] instance=ExtResource("100_backpack_t")]
-position = Vector2(-25, -64)
+z_index = 1
+position = Vector2(-231, -73)
+scale = Vector2(0.7, 0.7)
 
 [node name="mod_mattress" parent="YSortRoot" unique_id=269820604 groups=["era_modern", "prop"] instance=ExtResource("105_mattress_f")]
-position = Vector2(-90, -128)
+position = Vector2(123, -91)
 
 [node name="mod_water" parent="YSortRoot" unique_id=269820605 groups=["era_modern", "prop"] instance=ExtResource("111_water_bott")]
-position = Vector2(-66, -91)
+position = Vector2(-221, -23.000002)
+scale = Vector2(0.4, 0.4)
+
+[node name="mod_water2" parent="YSortRoot" unique_id=275799180 groups=["era_modern", "prop"] instance=ExtResource("111_water_bott")]
+position = Vector2(-217, -26)
+scale = Vector2(0.4, 0.4)
+iso_sort_offset = 3.0
 
 [node name="mod_photo" parent="YSortRoot" unique_id=269820606 groups=["era_modern", "prop"] instance=ExtResource("108_photo_fram")]
-position = Vector2(0, -11)
+position = Vector2(68, -123)
+
+[node name="mod_sticky_notes" parent="YSortRoot" unique_id=1881661351 groups=["era_modern", "prop"] instance=ExtResource("113_sticky_n")]
+position = Vector2(30, -131.00002)
+rotation = 0.5235988
+scale = Vector2(-1, 1)
+skew = -0.5742133
+
+[node name="mod_calendar" parent="YSortRoot" unique_id=1881661352 groups=["era_modern", "prop"] instance=ExtResource("114_calendar")]
+position = Vector2(-111, -132)
+
+[node name="mod_comics5" parent="YSortRoot" unique_id=580498663 groups=["era_modern", "prop"] instance=ExtResource("115_comic_bo")]
+position = Vector2(-17, -150)
+scale = Vector2(0.5, 0.5)
+
+[node name="mod_comics6" parent="YSortRoot" unique_id=603487626 groups=["era_modern", "prop"] instance=ExtResource("115_comic_bo")]
+position = Vector2(-16, -147)
+scale = Vector2(0.5, 0.5)
+
+[node name="mod_comics7" parent="YSortRoot" unique_id=845223588 groups=["era_modern", "prop"] instance=ExtResource("115_comic_bo")]
+position = Vector2(-76, -138)
+scale = Vector2(-0.5, 0.5)
+
+[node name="mod_alarm_clock" parent="YSortRoot" unique_id=1881661354 groups=["era_modern", "prop"] instance=ExtResource("116_clock_al")]
+z_index = 1
+position = Vector2(-255, -55)
+
+[node name="mod_shoe_rack" parent="YSortRoot" unique_id=1881661355 groups=["era_modern", "prop"] instance=ExtResource("117_shoe_rac")]
+position = Vector2(-117, -133)
+
+[node name="mod_shoe_rack7" parent="YSortRoot" unique_id=1759510065 groups=["era_modern", "prop"] instance=ExtResource("117_shoe_rac")]
+position = Vector2(-168, -110)
+
+[node name="mod_shoe_rack2" parent="YSortRoot" unique_id=2103369851 groups=["era_modern", "prop"] instance=ExtResource("117_shoe_rac")]
+position = Vector2(-93, -143)
+
+[node name="mod_shoe_rack3" parent="YSortRoot" unique_id=1387009746 groups=["era_modern", "prop"] instance=ExtResource("117_shoe_rac")]
+position = Vector2(-70, -152)
+
+[node name="mod_shoe_rack4" parent="YSortRoot" unique_id=1876686373 groups=["era_modern", "prop"] instance=ExtResource("117_shoe_rac")]
+position = Vector2(-46, -162)
+
+[node name="mod_shoe_rack5" parent="YSortRoot" unique_id=353818736 groups=["era_modern", "prop"] instance=ExtResource("117_shoe_rac")]
+position = Vector2(-14, -162)
+scale = Vector2(-1, 1)
+
+[node name="mod_shoe_rack6" parent="YSortRoot" unique_id=379796182 groups=["era_modern", "prop"] instance=ExtResource("117_shoe_rac")]
+position = Vector2(9, -152)
+scale = Vector2(-1, 1)
+
+[node name="mod_trash" parent="YSortRoot" unique_id=1881661356 groups=["era_modern", "prop"] instance=ExtResource("118_trash_bi")]
+position = Vector2(149, -74)
+
+[node name="mod_meter_box" parent="YSortRoot" unique_id=1881661359 groups=["era_modern", "prop"] instance=ExtResource("121_electric")]
+position = Vector2(127, -90)
+
+[node name="mod_plant" parent="YSortRoot" unique_id=1881661360 groups=["era_modern", "prop"] instance=ExtResource("122_potted_p")]
+position = Vector2(153, -22)
+
+[node name="mod_plant2" parent="YSortRoot" unique_id=1881661361 groups=["era_modern", "prop"] instance=ExtResource("122_potted_p")]
+position = Vector2(7, 50)
+
+[node name="mod_plant_office" parent="YSortRoot" unique_id=1881661362 groups=["era_modern", "prop"] instance=ExtResource("123_potted_p")]
+position = Vector2(-96, 54)
+
+[node name="mod_tree" parent="YSortRoot" unique_id=1881661363 groups=["era_modern", "prop"] instance=ExtResource("124_banyan_t")]
+position = Vector2(183, -42)
+
+[node name="mod_tree2" parent="YSortRoot" unique_id=1653866904 groups=["era_modern", "prop"] instance=ExtResource("124_banyan_t")]
+position = Vector2(-48, 73)
+
+[node name="mod_door" parent="YSortRoot" unique_id=1881661364 groups=["era_modern", "prop"] instance=ExtResource("126_door_nor")]
+position = Vector2(-144, -112)
+
+[node name="mod_bed" parent="YSortRoot" unique_id=2136416659 groups=["era_modern", "prop"] instance=ExtResource("127_bed_singl")]
+position = Vector2(-183, -57.000004)
+scale = Vector2(1.2, 1.2)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=439103828]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(6, 131)
+position = Vector2(-55, -42)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1369980063]
@@ -242,7 +389,7 @@ script = ExtResource("6_pcam_host_script")
 
 [node name="DefaultCam" type="Node2D" parent="." unique_id=1439229450 node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(6, 131)
+position = Vector2(-55, -42)
 script = ExtResource("5_pcam_script")
 follow_mode = 1
 follow_target = NodePath("../YSortRoot/Player")
@@ -253,7 +400,7 @@ tween_on_load = false
 [node name="Transitions" type="Node2D" parent="." unique_id=1145967704]
 
 [node name="ToMarket" parent="Transitions" unique_id=1467371586 groups=["transition"] instance=ExtResource("8_zone_transition_area")]
-position = Vector2(-40, -160)
+position = Vector2(-136, -122)
 target_zone = "zone_market"
 entry_point = "from_apartment"
 

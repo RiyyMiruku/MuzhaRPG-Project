@@ -1,35 +1,36 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T21:44:12",
-  "updated_at": "2026-05-30T18:33:36",
+  "updated_at": "2026-06-01T01:51:41",
   "tags": [
     "zone:zone_apartment_muzha",
     "zone:zone_law_office",
     "category:decoration",
-    "chapter:1"
+    "chapter:1",
+    "category:item"
   ],
   "object_id": "pixflux:laptop_modern",
   "kind": "iso_building",
-  "description": "isometric pixel art, 30-degree top-down angled view, modern laptop computer, screen open and glowing, slim design",
+  "description": "isometric pixel art, 30-degree top-down angled view, open laptop computer, thin screen tilted back showing display, keyboard visible on base, silver aluminum body, clearly a thin flat device",
   "size": {
-    "width": 48,
+    "width": 64,
     "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-30T18:33:35",
+      "completed_at": "2026-06-01T01:51:41",
       "paths": [
         "art_source\\objects\\laptop_modern\\laptop_modern.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-30T18:33:35",
+      "completed_at": "2026-06-01T01:51:41",
       "paths": [
         "art_source\\objects\\laptop_modern\\laptop_modern.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-30T18:33:36",
+      "completed_at": "2026-06-01T01:51:41",
       "paths": [
         "game\\assets\\textures\\props\\laptop_modern.png",
         "game\\src\\maps\\props\\laptop_modern.tscn"
@@ -37,7 +38,7 @@
     }
   },
   "local_path": "art_source\\objects\\laptop_modern\\laptop_modern.png",
-  "imported_at": "2026-05-30T18:33:35",
+  "imported_at": "2026-06-01T01:51:41",
   "game_png_path": "game\\assets\\textures\\props\\laptop_modern.png",
   "game_tscn_path": "game\\src\\maps\\props\\laptop_modern.tscn",
   "collision": "bottom_16x16",

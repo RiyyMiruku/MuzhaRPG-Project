@@ -1,44 +1,47 @@
 {
   "status": "completed",
   "created_at": "2026-05-12T17:35:46",
-  "updated_at": "2026-05-20T16:22:14",
+  "updated_at": "2026-06-01T02:15:03",
   "tags": [
     "category:key_item",
     "chapter:1",
-    "zone:*"
+    "zone:*",
+    "zone:zone_apartment_muzha",
+    "category:item"
   ],
-  "object_id": "3102e7c2-e0e0-42bc-94ec-b427d5d40ed9",
-  "kind": "iso_prop",
-  "description": "old taiwanese paper identification card from the early 1980s, yellowed white background, small black-and-white portrait photo, handwritten chinese name field, official red seal, slightly creased from years in wallet",
+  "object_id": "pixflux:id_card_old",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, old taiwanese identity card lying flat on surface, small rectangular card with ID photo and chinese text, yellowed paper card, clearly flat 2D card",
   "size": {
-    "width": 16,
-    "height": 16
+    "width": 48,
+    "height": 32
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-12T17:36:17",
+      "completed_at": "2026-06-01T02:15:03",
       "paths": [
-        "art_source/objects/id_card_old/id_card_old.png"
+        "art_source\\objects\\id_card_old\\id_card_old.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-12T17:36:17",
+      "completed_at": "2026-06-01T02:15:03",
       "paths": [
-        "art_source/objects/id_card_old/id_card_old.png"
+        "art_source\\objects\\id_card_old\\id_card_old.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-20T16:22:14",
+      "completed_at": "2026-06-01T02:15:03",
       "paths": [
         "game\\assets\\textures\\props\\id_card_old.png",
         "game\\src\\maps\\props\\id_card_old.tscn"
       ]
     }
   },
-  "local_path": "art_source/objects/id_card_old/id_card_old.png",
-  "imported_at": "2026-05-20T16:22:14",
+  "local_path": "art_source\\objects\\id_card_old\\id_card_old.png",
+  "imported_at": "2026-06-01T02:15:03",
   "game_png_path": "game\\assets\\textures\\props\\id_card_old.png",
   "game_tscn_path": "game\\src\\maps\\props\\id_card_old.tscn",
   "collision": "bottom_16x16",
-  "flip_h": true
+  "flip_h": true,
+  "view": "high_top_down"
 }

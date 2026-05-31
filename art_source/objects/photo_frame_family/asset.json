@@ -1,34 +1,34 @@
 {
   "status": "completed",
   "created_at": "2026-05-21T22:10:27",
-  "updated_at": "2026-05-21T22:11:52",
+  "updated_at": "2026-06-01T02:18:49",
   "tags": [
     "zone:zone_apartment_muzha",
     "category:decoration",
     "chapter:1"
   ],
-  "object_id": "37bb1fc9-e686-4557-9f0a-5a27c04b6f7f",
-  "kind": "iso_prop",
-  "description": "small photo frame with family photo, father and son, on desk",
+  "object_id": "pixflux:photo_frame_family",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, small framed family photo, thin wooden picture frame with family portrait inside, frame standing upright on surface, flat thin frame with photo, not a cube",
   "size": {
-    "width": 16,
-    "height": 16
+    "width": 48,
+    "height": 48
   },
   "stages": {
     "generate_object": {
-      "completed_at": "2026-05-21T22:11:52",
+      "completed_at": "2026-06-01T02:18:48",
       "paths": [
         "art_source\\objects\\photo_frame_family\\photo_frame_family.png"
       ]
     },
     "chroma_key": {
-      "completed_at": "2026-05-21T22:11:52",
+      "completed_at": "2026-06-01T02:18:48",
       "paths": [
         "art_source\\objects\\photo_frame_family\\photo_frame_family.png"
       ]
     },
     "import_to_godot": {
-      "completed_at": "2026-05-21T22:11:52",
+      "completed_at": "2026-06-01T02:18:49",
       "paths": [
         "game\\assets\\textures\\props\\photo_frame_family.png",
         "game\\src\\maps\\props\\photo_frame_family.tscn"
@@ -36,8 +36,9 @@
     }
   },
   "local_path": "art_source\\objects\\photo_frame_family\\photo_frame_family.png",
-  "imported_at": "2026-05-21T22:11:52",
+  "imported_at": "2026-06-01T02:18:49",
   "game_png_path": "game\\assets\\textures\\props\\photo_frame_family.png",
   "game_tscn_path": "game\\src\\maps\\props\\photo_frame_family.tscn",
-  "collision": "none"
+  "collision": "bottom_16x16",
+  "view": "high_top_down"
 }

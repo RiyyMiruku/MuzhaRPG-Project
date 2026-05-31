@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-06-01T01:53:52",
+  "updated_at": "2026-06-01T01:54:13",
+  "tags": [
+    "zone:zone_apartment_muzha",
+    "category:furniture",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:door_wooden",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, simple wooden interior door slightly ajar, brown wood grain, door frame visible, no lock no chain, normal apartment door, warm wood color",
+  "view": "high_top_down",
+  "size": {
+    "width": 32,
+    "height": 64
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-06-01T01:54:13",
+      "paths": [
+        "art_source\\objects\\door_wooden\\door_wooden.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-06-01T01:54:13",
+      "paths": [
+        "art_source\\objects\\door_wooden\\door_wooden.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-06-01T01:54:13",
+      "paths": [
+        "game\\assets\\textures\\props\\door_wooden.png",
+        "game\\src\\maps\\props\\door_wooden.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\door_wooden\\door_wooden.png",
+  "imported_at": "2026-06-01T01:54:13",
+  "game_png_path": "game\\assets\\textures\\props\\door_wooden.png",
+  "game_tscn_path": "game\\src\\maps\\props\\door_wooden.tscn",
+  "collision": "bottom_16x16"
+}
