@@ -17,6 +17,7 @@ func _initialize() -> void:
 func _run_tests() -> void:
 	_test_save_roundtrip()
 	_test_apply_order()
+	_test_load_parse()
 	if _fail == 0:
 		print("ALL PASS")
 		quit(0)
@@ -57,6 +58,19 @@ func _test_apply_order() -> void:
 	var gm: Node = get_root().get_node("GameManager")
 	_assert(gm.get_time_played_sec() == 123.0, "遊玩時間還原")
 
+
+func _test_load_parse() -> void:
+	print("[load 讀檔解析]")
+	var save: Node = get_root().get_node("SaveManager")
+	_assert(save.read_slot_data(98).is_empty(), "不存在 slot 回空 dict")
+	var sm: Node = get_root().get_node("StoryManager")
+	_reset_story(sm)
+	sm.set_flag("rk", true)
+	save.save_to_slot(97)
+	var d: Dictionary = save.read_slot_data(97)
+	_assert(not d.is_empty(), "讀回非空")
+	_assert(d.get("story", {}).get("player_flags", {}).get("rk", false) == true, "讀回內容正確")
+	DirAccess.remove_absolute(save._slot_path(97))
 
 func _reset_story(sm: Node) -> void:
 	sm.completed_events.clear()

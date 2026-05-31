@@ -121,6 +121,49 @@ func apply_save_data(data: Dictionary) -> void:
 	GameManager.apply_loaded_runtime(time_played, pos)
 
 
+## 讀檔並解析 JSON。不存在/壞檔回空 Dictionary。
+func read_slot_data(slot: Variant) -> Dictionary:
+	if not has_slot(slot):
+		return {}
+	var file: FileAccess = FileAccess.open(_slot_path(slot), FileAccess.READ)
+	if file == null:
+		return {}
+	var json: JSON = JSON.new()
+	if json.parse(file.get_as_text()) != OK:
+		file.close()
+		push_error("SaveManager: corrupt save slot %s" % str(slot))
+		return {}
+	file.close()
+	return json.data
+
+## 完整載入：讀檔 → 重載主場景 → 套狀態 → 跳 zone → 套 era 濾鏡。回是否成功。
+func load_from_slot(slot: Variant) -> bool:
+	var data: Dictionary = read_slot_data(slot)
+	if data.is_empty():
+		EventBus.hud_message_requested.emit("讀取存檔失敗", 2.0)
+		save_failed.emit(slot, "讀檔失敗")
+		return false
+	GameManager.change_state(GameManager.GameState.LOADING)
+	get_tree().reload_current_scene()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	apply_save_data(data)
+	var player_data: Dictionary = data.get("player", {})
+	var zone_id: String = player_data.get("zone", "zone_apartment_muzha")
+	EventBus.zone_transition_requested.emit(zone_id, "default")
+	EraManager.apply_to_current_zone()
+	GameManager.change_state(GameManager.GameState.EXPLORING)
+	print("SaveManager: loaded slot %s" % str(slot))
+	load_completed.emit(slot)
+	EventBus.hud_message_requested.emit("遊戲已載入", 2.0)
+	return true
+
+## 刪除手動 slot 檔案（auto slot 不開放刪除由 UI 控制）。
+func delete_slot(slot: Variant) -> void:
+	if has_slot(slot):
+		DirAccess.remove_absolute(_slot_path(slot))
+
+
 # ── Autosave ────────────────────────────────────────────────────────────────
 func _on_autosave_tick() -> void:
 	# 只在探索狀態存，避免存到 cutscene/對話/載入中的中間狀態
