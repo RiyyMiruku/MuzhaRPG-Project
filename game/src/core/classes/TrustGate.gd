@@ -13,6 +13,7 @@ extends RefCounted
 ##   trust           - 當前信任值（StoryManager.npc_relationships.get(npc_id, 0)）
 ##   flags           - 玩家 flags（StoryManager.player_flags）
 ##   chapter_overlay - 章節差異片段（ChapterManager.get_npc_overlay(npc_id)）
+##   player_identity - 玩家在本章的身分（ChapterManager.get_player_identity()）
 ##
 ## 回傳：拼好的 system prompt 字串
 static func build_system_prompt(
@@ -20,12 +21,18 @@ static func build_system_prompt(
 	trust: int,
 	flags: Dictionary,
 	chapter_overlay: String = "",
-	stage_attitude: String = ""
+	stage_attitude: String = "",
+	player_identity: String = ""
 ) -> String:
 	var parts: Array[String] = []
 
 	# 1. 基底人格
 	parts.append(profile.system_prompt)
+
+	# 1.5 對話對象（玩家身分）— 緊接人格之後，讓模型清楚「在跟誰說話」，
+	#     避免把自己的人格（如「72 歲阿嬤」）鏡射成玩家身分而錯稱玩家。
+	if not player_identity.is_empty():
+		parts.append("[對話對象] " + player_identity)
 
 	# 2. 章節 overlay
 	if not chapter_overlay.is_empty():
@@ -73,7 +80,7 @@ static func build_system_prompt(
 	parts.append(
 		"[信任評分] 在你回覆的最後，依玩家這一輪的態度附上一個隱藏標記 <trust±N>"
 		+ "（N 為 0 到 3 的整數）。評分標準：玩家溫和有禮、尊重你、展現可信、不過度逼問隱私 → 正值；"
-		+ "冒犯、逼問太緊、自稱知道不該知道的事、說出與『南部來打工的表親之子』身分矛盾的話 → 負值；"
+		+ "冒犯、逼問太緊、自稱知道不該知道的事、說出與上述「對話對象」身分矛盾的話 → 負值；"
 		+ "一般寒暄問路給 <trust+0>。多數情況給 0 或 1。例：<trust+1>"
 	)
 
@@ -140,6 +147,13 @@ static func parse_trust_delta(text: String) -> int:
 
 ## 移除回應中所有 <trust±N> tag，回傳乾淨內容（前後去空白）。
 static func strip_trust_tag(text: String) -> String:
-	var re: RegEx = RegEx.new()
-	re.compile("<trust[+-]\\d+>")
-	return re.sub(text, "", true).strip_edges()
+	var result: String = text
+	# 1. 剝掉所有 trust 標籤變體：<trust+2>、</trust>、<trust>、< trust ... >
+	var re_trust: RegEx = RegEx.new()
+	re_trust.compile("<\\s*/?\\s*trust[^>]*>")
+	result = re_trust.sub(result, "", true)
+	# 2. 模型有時誤用 HTML：<br>、<br/>、<br /> → 換行
+	var re_br: RegEx = RegEx.new()
+	re_br.compile("<\\s*br\\s*/?\\s*>")
+	result = re_br.sub(result, "\n", true)
+	return result.strip_edges()
