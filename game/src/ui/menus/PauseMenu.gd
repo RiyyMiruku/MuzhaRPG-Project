@@ -20,6 +20,8 @@ func _ready() -> void:
 	_settings_btn.pressed.connect(_on_settings)
 	_audio_btn.pressed.connect(_on_audio)
 	_main_menu_btn.pressed.connect(_on_main_menu)
+	for b: Button in [_resume_btn, _save_btn, _load_btn, _settings_btn, _audio_btn, _main_menu_btn]:
+		b.pressed.connect(UISfx.play_click)
 
 func _input(event: InputEvent) -> void:
 	if GameManager.current_state == GameManager.GameState.DIALOGUE:
@@ -34,22 +36,23 @@ func _input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 func _update_info() -> void:
-	_zone_label.text = "Location: " + Zones.display_name(StoryManager.current_zone)
-	_time_label.text = "Time: " + StoryManager._get_time_string()
-	_load_btn.disabled = not GameManager.has_save(1)
+	_zone_label.text = "地點：" + Zones.display_name(StoryManager.current_zone)
+	_time_label.text = "時間：" + StoryManager._get_time_string()
+	_load_btn.disabled = false
 	_status_label.text = ""
 
 func _on_resume() -> void:
 	UIManager.pop()
 
 func _on_save() -> void:
-	GameManager.save_game(1)
-	_status_label.text = "Saved!"
-	_load_btn.disabled = false
+	var panel: SaveLoadPanel = UIManager.get_panel("SaveLoadPanel") as SaveLoadPanel
+	if panel != null:
+		panel.open(SaveLoadPanel.Mode.SAVE)
 
 func _on_load() -> void:
-	UIManager.pop_all()
-	GameManager.load_game(1)
+	var panel: SaveLoadPanel = UIManager.get_panel("SaveLoadPanel") as SaveLoadPanel
+	if panel != null:
+		panel.open(SaveLoadPanel.Mode.LOAD)
 
 func _on_settings() -> void:
 	UIManager.push("KeybindSettings")

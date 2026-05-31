@@ -22,6 +22,7 @@ func _ready() -> void:
 		AudioSettings.SFX: {"slider": _sfx_slider, "value": _sfx_value},
 	}
 	_close_btn.pressed.connect(_on_close)
+	_close_btn.pressed.connect(UISfx.play_click)
 	_master_slider.value_changed.connect(_on_slider_changed.bind(AudioSettings.MASTER))
 	_music_slider.value_changed.connect(_on_slider_changed.bind(AudioSettings.MUSIC))
 	_sfx_slider.value_changed.connect(_on_slider_changed.bind(AudioSettings.SFX))

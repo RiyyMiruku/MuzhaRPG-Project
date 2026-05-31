@@ -16,6 +16,9 @@ func _input(event: InputEvent) -> void:
 			_refresh()
 			UIManager.toggle("QuestJournal")
 		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("pause") and UIManager.current_panel == "QuestJournal":
+		UIManager.pop()
+		get_viewport().set_input_as_handled()
 
 func _refresh() -> void:
 	_clear_list(_active_list)
@@ -23,7 +26,7 @@ func _refresh() -> void:
 
 	var active: Array[QuestData] = QuestManager.get_active_quests()
 	if active.is_empty():
-		_add_item(_active_list, "(none)", Color(0.5, 0.5, 0.5))
+		_add_item(_active_list, "（無）", Color(0.5, 0.5, 0.5))
 	else:
 		for q: QuestData in active:
 			_add_item(_active_list, q.title, Color.WHITE)
@@ -36,7 +39,7 @@ func _refresh() -> void:
 
 	var completed: Array[String] = QuestManager._completed_quests
 	if completed.is_empty():
-		_add_item(_completed_list, "(none)", Color(0.5, 0.5, 0.5))
+		_add_item(_completed_list, "（無）", Color(0.5, 0.5, 0.5))
 	else:
 		for qid: String in completed:
 			var q: QuestData = QuestManager.get_quest(qid)

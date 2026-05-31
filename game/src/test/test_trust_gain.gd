@@ -16,6 +16,7 @@ func _init() -> void:
 	_test_parse_trust_delta()
 	_test_strip_trust_tag()
 	_test_prompt_has_rubric()
+	_test_prompt_has_player_identity()
 	# 需 autoload 的整合測試延後到 autoload 就緒
 	call_deferred("_run_deferred")
 
@@ -43,6 +44,8 @@ func _test_strip_trust_tag() -> void:
 	_assert(TrustGate.strip_trust_tag("你好。<trust+2>") == "你好。", "剝除尾端 tag")
 	_assert(TrustGate.strip_trust_tag("乾淨內容") == "乾淨內容", "無 tag 原樣")
 	_assert(TrustGate.strip_trust_tag("a<trust+1>b<trust-2>c") == "abc", "剝除多個 tag")
+	_assert(TrustGate.strip_trust_tag("你好。</trust>") == "你好。", "剝除閉合式 </trust>")
+	_assert(TrustGate.strip_trust_tag("第一行<br><br>第二行") == "第一行\n\n第二行", "<br> 轉換行")
 
 func _test_prompt_has_rubric() -> void:
 	print("[build_system_prompt 含評分指令]")
@@ -51,6 +54,19 @@ func _test_prompt_has_rubric() -> void:
 	var prompt: String = TrustGate.build_system_prompt(p, 0, {})
 	_assert(prompt.contains("<trust"), "prompt 含 tag 格式說明")
 	_assert(prompt.contains("[信任評分]"), "prompt 含評分指令標頭")
+
+func _test_prompt_has_player_identity() -> void:
+	# 回歸測試（修復「NPC 把自己身分鏡射給玩家」bug）：
+	# 有傳 player_identity 時，prompt 必須含「對話對象」區塊，模型才知道在跟誰說話。
+	print("[build_system_prompt 含對話對象區塊]")
+	var p: NPCProfile = NPCProfile.new()
+	p.system_prompt = "你是一位 72 歲的長者"
+	var ident: String = "阿謙,一個年輕後生,不是你本人"
+	var prompt: String = TrustGate.build_system_prompt(p, 0, {}, "", "", ident)
+	_assert(prompt.contains("[對話對象]"), "有 identity → 含對話對象標頭")
+	_assert(prompt.contains(ident), "有 identity → 含注入的玩家身分原文")
+	var prompt_empty: String = TrustGate.build_system_prompt(p, 0, {})
+	_assert(not prompt_empty.contains("[對話對象]"), "無 identity → 不憑空注入標頭")
 
 func _test_trust_crosses_threshold() -> void:
 	print("[信任跨門檻 → 派生事件]")

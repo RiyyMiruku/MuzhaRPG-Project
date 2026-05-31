@@ -27,11 +27,13 @@ EventBus="*res://src/autoload/EventBus.gd"
 UIManager="*res://src/autoload/UIManager.gd"
 ChapterManager="*res://src/autoload/ChapterManager.gd"
 EraManager="*res://src/autoload/EraManager.gd"
+SaveManager="*res://src/autoload/SaveManager.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 AudioSettings="*res://src/audio/audio_settings.gd"
 SurfaceRegistry="*res://src/audio/surface_registry.gd"
 FootstepPlayer="*res://src/audio/footstep_player.gd"
 MusicPlayer="*res://src/audio/music_player.gd"
+UISfx="*res://src/audio/ui_sfx.gd"
 
 [debug]
 
@@ -103,3 +105,7 @@ toggle_journal={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
+[gui]
+
+theme/custom="res://src/ui/ui_theme.tres"

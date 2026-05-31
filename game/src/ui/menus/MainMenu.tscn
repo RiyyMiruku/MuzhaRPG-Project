@@ -69,15 +69,12 @@ layout_mode = 2
 
 [node name="StartButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
-text = "New Game"
-theme_override_font_sizes/font_size = 16
+text = "新遊戲"
 
 [node name="LoadButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
-text = "Load Game"
-theme_override_font_sizes/font_size = 16
+text = "讀取進度"
 
 [node name="QuitButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
-text = "Quit"
-theme_override_font_sizes/font_size = 16
+text = "離開"

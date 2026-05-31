@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://muzha_ui_theme"]
+
+[ext_resource type="FontFile" uid="uid://wy3uk1o317pj" path="res://assets/fonts/NotoSansCJKtc-Regular.otf" id="1_cjk_font"]
+
+[resource]
+default_font = ExtResource("1_cjk_font")
+default_font_size = 16
+Label/colors/font_color = Color(0.92, 0.92, 0.92, 1)
+Label/font_sizes/font_size = 14
+Button/font_sizes/font_size = 15

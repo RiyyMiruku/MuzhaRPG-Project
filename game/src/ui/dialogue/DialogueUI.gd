@@ -52,6 +52,7 @@ func _ready() -> void:
 	add_child(_typewriter_timer)
 
 	_send_btn.pressed.connect(_on_send_pressed)
+	_send_btn.pressed.connect(UISfx.play_click)
 	_input_line.text_submitted.connect(_on_line_edit_submitted)
 
 	# 動態建 ChoiceButtonsContainer（同層級在 InputRow 之下）
@@ -129,6 +130,7 @@ func show_choices(choices: Array) -> void:
 		var btn: Button = Button.new()
 		btn.text = str(c.get("text", "..."))
 		btn.pressed.connect(func() -> void: beat_choice_made.emit(i))
+		btn.pressed.connect(UISfx.play_click)
 		_choice_container.add_child(btn)
 	_choice_container.show()
 
