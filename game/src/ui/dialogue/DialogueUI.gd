@@ -61,6 +61,7 @@ func _ready() -> void:
 	# Connect AI signals
 	AIClient.response_complete.connect(_on_ai_response_complete)
 	AIClient.request_failed.connect(_on_ai_request_failed)
+	AIClient.trust_changed.connect(_on_trust_changed)
 
 # ── Public API ─────────────────────────────────────────────────────────────
 ## AI mode：開啟對話讓玩家自由輸入
@@ -212,3 +213,9 @@ func _on_ai_response_complete(text: String, npc_id: String) -> void:
 func _on_ai_request_failed(error_msg: String) -> void:
 	hide_thinking_indicator()
 	_dialogue_text.text += "\n[系統] 連線失敗：" + error_msg + "\n"
+
+## 信任變動的微妙回饋：在對話框尾端附一個小箭頭（不報數字），保留推理空間。
+func _on_trust_changed(npc_id: String, direction: int) -> void:
+	if npc_id != _current_npc_id:
+		return
+	_dialogue_text.text += "  ﹙↑﹚" if direction > 0 else "  ﹙↓﹚"
