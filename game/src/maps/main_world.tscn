@@ -35,6 +35,7 @@ layer = 20
 
 [node name="QuestJournal" parent="UILayer" unique_id=464695461 instance=ExtResource("9_quest_journal")]
 
+[node name="SaveLoadPanel" parent="UILayer" instance=ExtResource("13_saveload")]
 
 [node name="PauseMenu" parent="UILayer" unique_id=471413147 instance=ExtResource("5_pause_menu")]
 
