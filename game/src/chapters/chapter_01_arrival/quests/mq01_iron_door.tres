@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3 uid="uid://muzha_quest_ch1_mq01"]
+
+[ext_resource type="Script" path="res://src/core/classes/QuestData.gd" id="1_quest_data"]
+
+[resource]
+script = ExtResource("1_quest_data")
+quest_id = "ch1_mq01_iron_door"
+title = "鐵門後"
+description = "整理這間塵封四十年的榮昌中藥行，看看裡面藏了什麼。"
+target_zone = "zone_pharmacy"
+required_events = []
+objectives = Array[Dictionary]([{
+"id": "see_photo",
+"desc": "看清楚牆上那張全家福",
+"flag": "saw_blacked_photo"
+}, {
+"id": "travel",
+"desc": "翻找櫃台抽屜，觸碰古地圖上的紅點",
+"event": "ch1_first_travel_done"
+}])

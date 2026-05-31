@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3 uid="uid://muzha_quest_ch1_mq03"]
+
+[ext_resource type="Script" path="res://src/core/classes/QuestData.gd" id="1_quest_data"]
+
+[resource]
+script = ExtResource("1_quest_data")
+quest_id = "ch1_mq03_apprentice"
+title = "榮昌中藥行的學徒"
+description = "在藥行幹活、跑腿、別說錯話——慢慢取得林榮昌的信任。"
+giver_npc_id = "lin_rongchang"
+target_npc_id = "lin_rongchang"
+target_zone = "zone_market"
+required_events = ["ch1_started_living_in_pharmacy"]
+objectives = Array[Dictionary]([{
+"id": "trust",
+"desc": "取得林榮昌的基礎信任",
+"event": "ch1_rongchang_trust_ok"
+}])

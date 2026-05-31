@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3 uid="uid://muzha_quest_ch1_mq06"]
+
+[ext_resource type="Script" path="res://src/core/classes/QuestData.gd" id="1_quest_data"]
+
+[resource]
+script = ExtResource("1_quest_data")
+quest_id = "ch1_mq06_finale_name"
+title = "通關之夜：那個名字"
+description = "帶著遺物去找林榮昌。引導他走過情緒，讓他親口說出那個被抹除的名字。"
+giver_npc_id = "lin_rongchang"
+target_npc_id = "lin_rongchang"
+required_events = ["ch1_found_relic"]
+objectives = Array[Dictionary]([{
+"id": "show_relic",
+"desc": "把林榮華的遺物拿給林榮昌看",
+"event": "ch1_relic_shown"
+}, {
+"id": "say_name",
+"desc": "在長對話中讓林榮昌說出弟弟的名字",
+"event": "ch1_finale_said_brother_name"
+}])

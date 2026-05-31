@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3 uid="uid://muzha_quest_ch1_mq04"]
+
+[ext_resource type="Script" path="res://src/core/classes/QuestData.gd" id="1_quest_data"]
+
+[resource]
+script = ExtResource("1_quest_data")
+quest_id = "ch1_mq04_three_wrong_things"
+title = "不對勁的三件事"
+description = "全家福被塗黑的臉、後院上鎖的房間、阿嬤的燒香——這個家在隱瞞什麼。"
+target_zone = "zone_pharmacy"
+required_events = ["ch1_started_living_in_pharmacy"]
+objectives = Array[Dictionary]([{
+"id": "xiaowei",
+"desc": "向堂叔林小威打聽家裡沒人提的叔叔",
+"event": "ch1_xiaowei_talked"
+}, {
+"id": "incense",
+"desc": "撞見林阿嬤在後院燒香",
+"event": "ch1_saw_ama_incense"
+}, {
+"id": "lawyer",
+"desc": "（選擇）找律師對質「祖父林榮昌」的矛盾",
+"event": "ch1_lawyer_visited",
+"optional": true
+}])

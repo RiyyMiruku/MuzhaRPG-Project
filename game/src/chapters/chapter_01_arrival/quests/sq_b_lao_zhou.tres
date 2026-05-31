@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3 uid="uid://muzha_quest_ch1_sqb"]
+
+[ext_resource type="Script" path="res://src/core/classes/QuestData.gd" id="1_quest_data"]
+
+[resource]
+script = ExtResource("1_quest_data")
+quest_id = "ch1_sq_b_lao_zhou"
+title = "老周的繞圈話"
+description = "市場入口的耆老老周認識整個林家。去現代的市場跟他聊聊。"
+giver_npc_id = "lao_zhou"
+target_npc_id = "lao_zhou"
+target_zone = "zone_market"
+required_events = ["ch1_first_travel_done"]
+objectives = Array[Dictionary]([{
+"id": "ask_lao_zhou",
+"desc": "向老周打聽林家的舊事",
+"event": "ch1_met_lao_zhou"
+}])

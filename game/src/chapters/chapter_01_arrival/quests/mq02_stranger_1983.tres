@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3 uid="uid://muzha_quest_ch1_mq02"]
+
+[ext_resource type="Script" path="res://src/core/classes/QuestData.gd" id="1_quest_data"]
+
+[resource]
+script = ExtResource("1_quest_data")
+quest_id = "ch1_mq02_stranger_1983"
+title = "1983 的陌生人"
+description = "櫃台後那個皺眉看你的中年男子是誰？想辦法在這裡待下來。"
+giver_npc_id = "lin_rongchang"
+target_npc_id = "lin_rongchang"
+target_zone = "zone_pharmacy"
+required_events = ["ch1_first_travel_done"]
+objectives = Array[Dictionary]([{
+"id": "stay",
+"desc": "向林榮昌攀談，編個身分留在藥行打工",
+"event": "ch1_started_living_in_pharmacy"
+}])

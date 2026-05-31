@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=2 format=3 uid="uid://muzha_quest_ch1_sqe"]
+
+[ext_resource type="Script" path="res://src/core/classes/QuestData.gd" id="1_quest_data"]
+
+[resource]
+script = ExtResource("1_quest_data")
+quest_id = "ch1_sq_e_atao_truth"
+title = "阿桃姨知道的事"
+description = "隔壁賣菜的阿桃姨跟林榮華從小一起長大。取得她的信任，也許能問出 1976 年那年的真相。"
+giver_npc_id = "a_tao_yi"
+target_npc_id = "a_tao_yi"
+target_zone = "zone_market"
+required_events = ["ch1_started_living_in_pharmacy"]
+objectives = Array[Dictionary]([{
+"id": "atao_trust",
+"desc": "取得阿桃姨的信任，聽她說出 1976 年的事",
+"event": "ch1_atao_truth"
+}])
