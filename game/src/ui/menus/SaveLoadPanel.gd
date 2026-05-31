@@ -16,6 +16,14 @@ func _ready() -> void:
 	_close_btn.pressed.connect(func() -> void: UIManager.pop())
 	_close_btn.pressed.connect(UISfx.play_click)
 
+## ESC（pause action）關閉面板，與其他面板一致。
+func _input(event: InputEvent) -> void:
+	if not visible:
+		return
+	if event.is_action_pressed("pause"):
+		UIManager.pop()
+		get_viewport().set_input_as_handled()
+
 ## 開啟面板（指定模式）。由 PauseMenu / MainMenu 呼叫。
 func open(mode: Mode) -> void:
 	_mode = mode
