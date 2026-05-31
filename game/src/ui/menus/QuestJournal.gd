@@ -16,6 +16,9 @@ func _input(event: InputEvent) -> void:
 			_refresh()
 			UIManager.toggle("QuestJournal")
 		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("pause") and UIManager.current_panel == "QuestJournal":
+		UIManager.pop()
+		get_viewport().set_input_as_handled()
 
 func _refresh() -> void:
 	_clear_list(_active_list)
