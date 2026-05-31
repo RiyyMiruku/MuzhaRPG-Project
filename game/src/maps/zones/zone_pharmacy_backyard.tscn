@@ -187,6 +187,8 @@ theme_override_font_sizes/font_size = 14
 text = "榮昌中藥行後院 (1983)"
 horizontal_alignment = 1
 
+[node name="EraTint" type="CanvasModulate" parent="." unique_id=1718195452]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1090454771]
 
 [node name="TileMapDual" type="TileMapLayer" parent="TileMapLayer" unique_id=494669438 groups=["ground_layer"]]
