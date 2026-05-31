@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T21:00:06",
+  "updated_at": "2026-05-31T21:00:34",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:furniture",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:blood_pressure_machine",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — freestanding electronic blood pressure machine on pole stand, digital display, modern pharmacy medical equipment, taiwan present day",
+  "view": "high_top_down",
+  "size": {
+    "width": 48,
+    "height": 48
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T21:00:34",
+      "paths": [
+        "art_source\\objects\\blood_pressure_machine\\blood_pressure_machine.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T21:00:34",
+      "paths": [
+        "art_source\\objects\\blood_pressure_machine\\blood_pressure_machine.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T21:00:34",
+      "paths": [
+        "game\\assets\\textures\\props\\blood_pressure_machine.png",
+        "game\\src\\maps\\props\\blood_pressure_machine.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\blood_pressure_machine\\blood_pressure_machine.png",
+  "imported_at": "2026-05-31T21:00:34",
+  "game_png_path": "game\\assets\\textures\\props\\blood_pressure_machine.png",
+  "game_tscn_path": "game\\src\\maps\\props\\blood_pressure_machine.tscn",
+  "collision": "bottom_16x16"
+}

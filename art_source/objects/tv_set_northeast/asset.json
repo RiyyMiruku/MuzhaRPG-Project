@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T21:20:05",
+  "updated_at": "2026-05-31T21:45:17",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:furniture",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:tv_set_northeast",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — old CRT television viewed from behind, the BACK of the TV faces the viewer, NO screen visible, rear plastic casing with ventilation slots, power cable hanging down, wooden TV cabinet underneath, 1990s taiwan household",
+  "view": "high_top_down",
+  "size": {
+    "width": 48,
+    "height": 48
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T21:43:50",
+      "paths": [
+        "art_source\\objects\\tv_set_northeast\\tv_set_northeast.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T21:45:15",
+      "paths": [
+        "art_source\\objects\\tv_set_northeast\\tv_set_northeast.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T21:45:17",
+      "paths": [
+        "game\\assets\\textures\\props\\tv_set_northeast.png",
+        "game\\src\\maps\\props\\tv_set_northeast.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\tv_set_northeast\\tv_set_northeast.png",
+  "imported_at": "2026-05-31T21:45:17",
+  "game_png_path": "game\\assets\\textures\\props\\tv_set_northeast.png",
+  "game_tscn_path": "game\\src\\maps\\props\\tv_set_northeast.tscn",
+  "collision": "bottom_16x16"
+}

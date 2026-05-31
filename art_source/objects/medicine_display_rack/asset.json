@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T21:00:06",
+  "updated_at": "2026-05-31T21:00:44",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:furniture",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:medicine_display_rack",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — tall freestanding metal display rack with shelves of medicine boxes and bottles, modern pharmacy retail shelf, organized medicines",
+  "view": "high_top_down",
+  "size": {
+    "width": 64,
+    "height": 80
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T21:00:44",
+      "paths": [
+        "art_source\\objects\\medicine_display_rack\\medicine_display_rack.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T21:00:44",
+      "paths": [
+        "art_source\\objects\\medicine_display_rack\\medicine_display_rack.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T21:00:44",
+      "paths": [
+        "game\\assets\\textures\\props\\medicine_display_rack.png",
+        "game\\src\\maps\\props\\medicine_display_rack.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\medicine_display_rack\\medicine_display_rack.png",
+  "imported_at": "2026-05-31T21:00:44",
+  "game_png_path": "game\\assets\\textures\\props\\medicine_display_rack.png",
+  "game_tscn_path": "game\\src\\maps\\props\\medicine_display_rack.tscn",
+  "collision": "bottom_16x16"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T21:00:06",
+  "updated_at": "2026-05-31T21:00:31",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:furniture",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:pharmacy_fridge",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — freestanding glass-door refrigerator display case for medicine, transparent front showing medicine rows inside, modern pharmacy cold storage",
+  "view": "high_top_down",
+  "size": {
+    "width": 48,
+    "height": 64
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T21:00:31",
+      "paths": [
+        "art_source\\objects\\pharmacy_fridge\\pharmacy_fridge.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T21:00:31",
+      "paths": [
+        "art_source\\objects\\pharmacy_fridge\\pharmacy_fridge.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T21:00:31",
+      "paths": [
+        "game\\assets\\textures\\props\\pharmacy_fridge.png",
+        "game\\src\\maps\\props\\pharmacy_fridge.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\pharmacy_fridge\\pharmacy_fridge.png",
+  "imported_at": "2026-05-31T21:00:31",
+  "game_png_path": "game\\assets\\textures\\props\\pharmacy_fridge.png",
+  "game_tscn_path": "game\\src\\maps\\props\\pharmacy_fridge.tscn",
+  "collision": "bottom_16x16"
+}

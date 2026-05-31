@@ -122,6 +122,10 @@ export function StageSection({ asset, stage, realized, refreshKey, onPixelSaved 
         <ObjectKindOverride asset={asset} />
       )}
 
+      {asset.asset_type === "object" && stage === "generate_object" && (
+        <ObjectFacingControl asset={asset} />
+      )}
+
       {hasPrompt ? (
         <PromptEditor
           asset={asset}
@@ -421,6 +425,82 @@ function ObjectKindOverride({ asset }: { asset: AssetSummary }) {
     </div>
   )
 }
+
+// ── Facing direction (flip_h) control ────────────────────────────────────────
+
+const ISO_DIRS = [
+  { label: "NE →", value: false, desc: "正面朝東北（預設）" },
+  { label: "← NW", value: true,  desc: "正面朝西北（水平翻轉）" },
+] as const
+
+function ObjectFacingControl({ asset }: { asset: AssetSummary }) {
+  const currentFlipH = asset.extra?.flip_h ?? false
+  const [picked, setPicked] = useState<boolean>(currentFlipH)
+  const [busy, setBusy] = useState(false)
+  const [err, setErr] = useState<string | null>(null)
+
+  const changed = picked !== currentFlipH
+
+  const submit = async () => {
+    if (!changed) return
+    const from = currentFlipH ? "← NW" : "NE →"
+    const to   = picked       ? "← NW" : "NE →"
+    if (!window.confirm(
+      `Change facing: "${from}" → "${to}"?\n\n` +
+      `Will re-run generate_object (1 Pixellab credit) + chroma_key + import_to_godot.\n` +
+      `下游 stage 不會自動失效，若需要請分別 remake。`
+    )) return
+    setBusy(true); setErr(null)
+    try {
+      await api.remakeWithOverrides("object", asset.name, "generate_object", { flip_h: picked })
+    } catch (e) {
+      setErr((e as Error).message)
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  return (
+    <div className="mt-2 rounded border border-sky-900/40 bg-stone-950 p-2">
+      <div className="mb-1 flex items-center justify-between text-[10px]">
+        <span className="font-mono text-sky-400">facing direction</span>
+        <span className="text-stone-500">
+          current: <code>{currentFlipH ? "← NW" : "NE →"}</code>
+        </span>
+      </div>
+      <div className="flex items-center gap-2">
+        {ISO_DIRS.map(({ label, value, desc }) => (
+          <button
+            key={label}
+            type="button"
+            title={desc}
+            onClick={() => setPicked(value)}
+            disabled={busy}
+            className={
+              "rounded border px-2 py-1 text-xs font-mono " +
+              (picked === value
+                ? "border-sky-600 bg-sky-900/40 text-sky-100"
+                : "border-stone-700 bg-stone-950 text-stone-400 hover:border-stone-600")
+            }
+          >
+            {label}
+          </button>
+        ))}
+        <button
+          type="button"
+          onClick={submit}
+          disabled={!changed || busy}
+          className="ml-auto rounded bg-sky-700 px-2 py-1 text-xs text-sky-50 hover:bg-sky-600 disabled:bg-stone-700 disabled:text-stone-500"
+        >
+          {busy ? "Applying…" : "Apply & Remake"}
+        </button>
+      </div>
+      {err && <p className="mt-1 text-xs text-red-400">{err}</p>}
+    </div>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 interface StripProps {
   images: StageImage[]

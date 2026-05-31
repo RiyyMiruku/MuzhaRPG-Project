@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T21:48:52",
+  "updated_at": "2026-05-31T21:50:20",
+  "tags": [
+    "zone:zone_pharmacy",
+    "category:furniture",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:tv_cabinet_back",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — low wooden television cabinet viewed from behind, flat dark brown wooden back panel, no screen visible, simple boxy furniture with short legs, slightly worn wood grain, 1990s taiwan household",
+  "view": "high_top_down",
+  "size": {
+    "width": 48,
+    "height": 48
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T21:49:19",
+      "paths": [
+        "art_source\\objects\\tv_cabinet_back\\tv_cabinet_back.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T21:50:18",
+      "paths": [
+        "art_source\\objects\\tv_cabinet_back\\tv_cabinet_back.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T21:50:20",
+      "paths": [
+        "game\\assets\\textures\\props\\tv_cabinet_back.png",
+        "game\\src\\maps\\props\\tv_cabinet_back.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\tv_cabinet_back\\tv_cabinet_back.png",
+  "imported_at": "2026-05-31T21:50:20",
+  "game_png_path": "game\\assets\\textures\\props\\tv_cabinet_back.png",
+  "game_tscn_path": "game\\src\\maps\\props\\tv_cabinet_back.tscn",
+  "collision": "bottom_16x16"
+}
