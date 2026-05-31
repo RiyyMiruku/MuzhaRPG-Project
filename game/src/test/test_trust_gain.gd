@@ -16,6 +16,11 @@ func _init() -> void:
 	_test_parse_trust_delta()
 	_test_strip_trust_tag()
 	_test_prompt_has_rubric()
+	# 需 autoload 的整合測試延後到 autoload 就緒
+	call_deferred("_run_deferred")
+
+func _run_deferred() -> void:
+	_test_trust_crosses_threshold()
 	if _fail == 0:
 		print("ALL PASS")
 		quit(0)
@@ -46,3 +51,20 @@ func _test_prompt_has_rubric() -> void:
 	var prompt: String = TrustGate.build_system_prompt(p, 0, {})
 	_assert(prompt.contains("<trust"), "prompt 含 tag 格式說明")
 	_assert(prompt.contains("[信任評分]"), "prompt 含評分指令標頭")
+
+func _test_trust_crosses_threshold() -> void:
+	print("[信任跨門檻 → 派生事件]")
+	var sm: Node = get_root().get_node("StoryManager")
+	sm.completed_events.clear()
+	sm.player_flags.clear()
+	sm.npc_relationships.clear()
+	sm._relationship_triggers.clear()
+	sm.register_relationship_event("lin_rongchang", 60, "ch1_rongchang_trust_ok")
+	# 模擬多輪 +3 對話：解析 + 累加，第 20 輪跨 60
+	var total: int = 0
+	for i: int in range(20):
+		var delta: int = TrustGate.parse_trust_delta("回應 <trust+3>")
+		sm.update_relationship("lin_rongchang", delta)
+		total += delta
+	_assert(sm.npc_relationships.get("lin_rongchang", 0) == 60, "20×3 = 60")
+	_assert(sm.completed_events.has("ch1_rongchang_trust_ok"), "跨門檻派生事件已記錄")
