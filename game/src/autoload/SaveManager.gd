@@ -99,6 +99,28 @@ func list_slots() -> Array[Dictionary]:
 	result.append(auto_info)
 	return result
 
+# ── Load 編排 ───────────────────────────────────────────────────────────────
+## 依正確順序把存檔資料套回各 manager（不含場景 reload — 供 load_from_slot 與測試共用）。
+## 順序關鍵：Story（flags/events）→ Chapter（re-register events，補回 _relationship_triggers）
+## → Quest（reevaluate 此時看得到完整 triggers）→ Era；最後還原 GameManager runtime。
+func apply_save_data(data: Dictionary) -> void:
+	if data.has("story"):
+		StoryManager.deserialize(data["story"])
+	if data.has("chapter"):
+		ChapterManager.deserialize(data["chapter"])
+	if data.has("quests"):
+		QuestManager.deserialize(data["quests"])
+	if data.has("era"):
+		EraManager.deserialize(data["era"])
+	var time_played: float = float(data.get("time_played_sec", 0.0))
+	var player_data: Dictionary = data.get("player", {})
+	var pos: Vector2 = Vector2(
+		float(player_data.get("position_x", 0.0)),
+		float(player_data.get("position_y", 0.0))
+	)
+	GameManager.apply_loaded_runtime(time_played, pos)
+
+
 # ── Autosave ────────────────────────────────────────────────────────────────
 func _on_autosave_tick() -> void:
 	# 只在探索狀態存，避免存到 cutscene/對話/載入中的中間狀態
