@@ -3,14 +3,14 @@ class_name KeybindSettings
 extends Control
 
 const REBINDABLE_ACTIONS: Dictionary = {
-	"move_up":        "Move Up",
-	"move_down":      "Move Down",
-	"move_left":      "Move Left",
-	"move_right":     "Move Right",
-	"interact":       "Interact",
-	"pause":          "Pause",
-	"toggle_map":     "Map",
-	"toggle_journal": "Journal",
+	"move_up":        "上移",
+	"move_down":      "下移",
+	"move_left":      "左移",
+	"move_right":     "右移",
+	"interact":       "互動",
+	"pause":          "暫停",
+	"toggle_map":     "地圖",
+	"toggle_journal": "任務日誌",
 }
 
 const SAVE_PATH: String = "user://keybinds.json"
@@ -25,6 +25,7 @@ var _waiting_button: Button = null
 func _ready() -> void:
 	UIManager.register("KeybindSettings", self)
 	_close_btn.pressed.connect(_on_close)
+	_close_btn.pressed.connect(UISfx.play_click)
 	load_keybinds()
 	visibility_changed.connect(_on_visibility_changed)
 
@@ -74,6 +75,7 @@ func _rebuild_list() -> void:
 		btn.custom_minimum_size = Vector2(100, 28)
 		btn.add_theme_font_size_override("font_size", 12)
 		btn.pressed.connect(_on_rebind_pressed.bind(action, btn))
+		btn.pressed.connect(UISfx.play_click)
 		row.add_child(btn)
 
 		_list.add_child(row)
@@ -81,8 +83,8 @@ func _rebuild_list() -> void:
 func _on_rebind_pressed(action: String, btn: Button) -> void:
 	_waiting_for_key = action
 	_waiting_button = btn
-	btn.text = "Press a key..."
-	_status_label.text = "Press any key to rebind"
+	btn.text = "按任意鍵…"
+	_status_label.text = "按任意鍵重新綁定"
 
 func _rebind_action(action: String, event: InputEventKey) -> void:
 	var old_events: Array[InputEvent] = InputMap.action_get_events(action)
@@ -91,7 +93,7 @@ func _rebind_action(action: String, event: InputEventKey) -> void:
 	InputMap.action_add_event(action, event)
 
 	_waiting_for_key = ""
-	_status_label.text = "Saved!"
+	_status_label.text = "已儲存！"
 	if _waiting_button:
 		_waiting_button.text = _get_key_name(action)
 		_waiting_button = null
