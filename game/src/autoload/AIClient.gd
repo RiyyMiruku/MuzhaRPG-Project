@@ -10,9 +10,18 @@ signal trust_changed(npc_id: String, direction: int)
 # ── Config ──────────────────────────────────────────────────────────────────
 var server_url: String = "http://127.0.0.1:8000"
 var is_server_online: bool = false
-var default_temperature: float = 0.7
+var default_temperature: float = 0.85
 var default_max_tokens: int = 200
 var request_timeout_sec: float = 30.0
+## 防鬼打牆（重複迴圈）的取樣參數。小模型(0.8B)無這些會一直重複。
+## repeat_penalty: 對近期出現過的 token 加懲罰；DRY: 偵測並壓制重複 n-gram。
+var repeat_penalty: float = 1.15
+var repeat_last_n: int = 256
+var presence_penalty: float = 0.4
+var frequency_penalty: float = 0.4
+var dry_multiplier: float = 0.8
+var dry_base: float = 1.75
+var dry_allowed_length: int = 2
 ## llama-server 的 context 視窗大小;同步自 config.json 的 server.context_size。
 ## 用於 client 端 pre-flight 預算檢查 — 估算 prompt 超量時自動裁掉最舊的 history。
 var context_size: int = 8192
