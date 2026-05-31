@@ -140,6 +140,7 @@ func _clear_choice_buttons() -> void:
 
 func close_dialogue() -> void:
 	_typewriter_timer.stop()
+	_pending_trust_arrow = ""   # 防禦：箭頭不跨對話場次外溢
 	# 取消任何進行中的 AI 請求，避免關閉後仍消耗資源 / 收到 stale response
 	AIClient.abort_current_request()
 	hide_thinking_indicator()
