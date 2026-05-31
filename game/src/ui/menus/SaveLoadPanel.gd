@@ -14,6 +14,7 @@ var _mode: Mode = Mode.SAVE
 func _ready() -> void:
 	UIManager.register("SaveLoadPanel", self)
 	_close_btn.pressed.connect(func() -> void: UIManager.pop())
+	_close_btn.pressed.connect(UISfx.play_click)
 
 ## 開啟面板（指定模式）。由 PauseMenu / MainMenu 呼叫。
 func open(mode: Mode) -> void:
@@ -47,6 +48,7 @@ func _make_row(info: Dictionary) -> Control:
 			SaveManager.save_to_slot(slot)
 			_refresh()
 		)
+		save_btn.pressed.connect(UISfx.play_click)
 		row.add_child(save_btn)
 	if _mode == Mode.LOAD and info.get("exists", false):
 		var load_btn: Button = Button.new()
@@ -55,6 +57,7 @@ func _make_row(info: Dictionary) -> Control:
 			UIManager.pop_all()
 			SaveManager.load_from_slot(slot)
 		)
+		load_btn.pressed.connect(UISfx.play_click)
 		row.add_child(load_btn)
 	if not is_auto and info.get("exists", false):
 		var del_btn: Button = Button.new()
@@ -63,6 +66,7 @@ func _make_row(info: Dictionary) -> Control:
 			SaveManager.delete_slot(slot)
 			_refresh()
 		)
+		del_btn.pressed.connect(UISfx.play_click)
 		row.add_child(del_btn)
 	return row
 
