@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://src/ui/menus/HUD.tscn" id="6_hud"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/MainMenu.tscn" id="7_main_menu"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/QuestJournal.tscn" id="9_quest_journal"]
+[ext_resource type="PackedScene" path="res://src/ui/menus/SaveLoadPanel.tscn" id="13_saveload"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/KeybindSettings.tscn" id="10_keybind"]
 [ext_resource type="Script" uid="uid://8845qi6h8yww" path="res://src/core/cutscene/CutsceneDirector.gd" id="11_cutscene"]
 [ext_resource type="PackedScene" path="res://src/ui/menus/AudioSettingsPanel.tscn" id="12_audio_panel"]
@@ -33,6 +34,7 @@ layer = 20
 [node name="DialogueUI" parent="UILayer" unique_id=866830441 instance=ExtResource("2_dialogue_ui")]
 
 [node name="QuestJournal" parent="UILayer" unique_id=464695461 instance=ExtResource("9_quest_journal")]
+
 
 [node name="PauseMenu" parent="UILayer" unique_id=471413147 instance=ExtResource("5_pause_menu")]
 

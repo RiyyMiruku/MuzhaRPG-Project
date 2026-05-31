@@ -36,20 +36,21 @@ func _input(event: InputEvent) -> void:
 func _update_info() -> void:
 	_zone_label.text = "Location: " + Zones.display_name(StoryManager.current_zone)
 	_time_label.text = "Time: " + StoryManager._get_time_string()
-	_load_btn.disabled = not GameManager.has_save(1)
+	_load_btn.disabled = false
 	_status_label.text = ""
 
 func _on_resume() -> void:
 	UIManager.pop()
 
 func _on_save() -> void:
-	GameManager.save_game(1)
-	_status_label.text = "Saved!"
-	_load_btn.disabled = false
+	var panel: SaveLoadPanel = UIManager.get_panel("SaveLoadPanel") as SaveLoadPanel
+	if panel != null:
+		panel.open(SaveLoadPanel.Mode.SAVE)
 
 func _on_load() -> void:
-	UIManager.pop_all()
-	GameManager.load_game(1)
+	var panel: SaveLoadPanel = UIManager.get_panel("SaveLoadPanel") as SaveLoadPanel
+	if panel != null:
+		panel.open(SaveLoadPanel.Mode.LOAD)
 
 func _on_settings() -> void:
 	UIManager.push("KeybindSettings")
