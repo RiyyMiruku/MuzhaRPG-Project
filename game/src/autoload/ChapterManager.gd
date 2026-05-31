@@ -69,6 +69,12 @@ func get_npc_overlay(npc_id: String) -> String:
 		return ""
 	return _current.get_npc_overlay(npc_id)
 
+## 取得玩家在當前章節的身分描述（給 AIClient 組 prompt 注入「對話對象」用）。無章節回空字串。
+func get_player_identity() -> String:
+	if _current == null:
+		return ""
+	return _current.get_player_identity()
+
 ## 當前章節的 stage_rules（給 StoryManager 推導 current_stage）。無章節回空陣列。
 func get_current_stage_rules() -> Array:
 	if _current == null:

@@ -54,6 +54,7 @@ func build_ai_context(npc_id: String) -> Dictionary:
 		"player_visited_zones": unlocked_zones.duplicate(),
 		"conversation_history": conversation_histories.get(npc_id, []).duplicate(),
 		"chapter_overlay": ChapterManager.get_npc_overlay(npc_id),
+		"player_identity": ChapterManager.get_player_identity(),
 		"story_stage": get_current_stage(),
 		"stage_order": ChapterManager.get_current_stage_order(),
 		"player_flags": player_flags.duplicate(),

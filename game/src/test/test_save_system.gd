@@ -19,6 +19,7 @@ func _run_tests() -> void:
 	_test_apply_order()
 	_test_load_parse()
 	_test_autosave_gate()
+	_test_mainmenu_load_no_popup()
 	if _fail == 0:
 		print("ALL PASS")
 		quit(0)
@@ -95,6 +96,32 @@ func _test_autosave_gate() -> void:
 	save._on_autosave_tick()
 	_assert(save.has_slot("auto"), "EXPLORING 時自動存檔")
 	save.delete_slot("auto")
+
+## 回歸：load_from_slot 用 reload_current_scene 重載場景時 state==LOADING，
+## 此時 MainMenu._ready 不可自動彈出主選單（否則讀檔被標題畫面蓋住）。
+## state==MAIN_MENU（冷啟動/回主選單）時則應彈出。
+func _test_mainmenu_load_no_popup() -> void:
+	print("[讀檔重載不彈回主選單]")
+	var ui: Node = get_root().get_node("UIManager")
+	var gm: Node = get_root().get_node("GameManager")
+	var scene: PackedScene = load("res://src/ui/menus/MainMenu.tscn")
+
+	# 模擬讀檔重載：LOADING → 不該彈出
+	ui.pop_all()
+	gm.change_state(gm.GameState.LOADING)
+	var mm: Node = scene.instantiate()
+	get_root().add_child(mm)  # add_child 同步觸發 _ready
+	_assert(ui.current_panel != "MainMenu", "LOADING 時 MainMenu 不自動彈出")
+	mm.free()
+
+	# 對照：MAIN_MENU → 應彈出
+	ui.pop_all()
+	gm.change_state(gm.GameState.MAIN_MENU)
+	var mm2: Node = scene.instantiate()
+	get_root().add_child(mm2)
+	_assert(ui.current_panel == "MainMenu", "MAIN_MENU 時 MainMenu 自動彈出")
+	ui.pop_all()
+	mm2.free()
 
 func _test_save_roundtrip() -> void:
 	print("[save round-trip]")

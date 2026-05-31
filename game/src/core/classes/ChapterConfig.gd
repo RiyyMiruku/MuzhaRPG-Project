@@ -28,6 +28,12 @@ extends Resource
 ## AIClient 在組合 prompt 時會注入。
 @export var npc_overlays: Dictionary = {}
 
+## 玩家在本章的身分／掩護故事。會以「對話對象」區塊注入每個 NPC 的 system prompt，
+## 讓 NPC 知道自己正在跟誰說話，避免模型把自己的人格鏡射成玩家身分。
+## 為什麼放章節層（而非 NPC 或全域常數）：掩護身分隨章節/時代改變
+## （ch1 在 1983 假冒表親之子；後續章節時代不同，身分也不同）。
+@export_multiline var player_identity: String = ""
+
 # ── 章節事件腳本 ──────────────────────────────────────────────────────────
 ## 章節啟動時執行的腳本（含信號連接、quest 註冊等）。
 ## 預期 Script 有 register(manager) 與 unregister(manager) 兩個方法。
@@ -57,6 +63,10 @@ extends Resource
 ## 取得指定 NPC 在本章的對話差異片段；無則回空字串。
 func get_npc_overlay(npc_id: String) -> String:
 	return npc_overlays.get(npc_id, "")
+
+## 取得玩家在本章的身分描述（給 AIClient 注入「對話對象」用）。
+func get_player_identity() -> String:
+	return player_identity
 
 ## 該 NPC 是否在本章節出場
 func includes_npc(npc_id: String) -> bool:

@@ -12,6 +12,7 @@ prerequisites = []
 zones_used = ["zone_apartment_muzha", "zone_market", "zone_pharmacy", "zone_pharmacy_backyard", "zone_law_office"]
 npcs_present = ["lin_rongchang", "lin_ama", "lin_xiaowei", "lao_zhou", "lawyer_muzha"]
 npc_overlays = {}
+player_identity = "對話對象是「阿謙」——南部來、自稱林榮昌遠房表親之子、經介紹來藥行打工的年輕後生。他是外來年輕人，不是你本人;別用「老人家」等敬老稱呼叫他。"
 events_script = ExtResource("2_events")
 quests = []
 completion_flags = ["chapter_completed_ch01_arrival"]

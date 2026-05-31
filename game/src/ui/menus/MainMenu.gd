@@ -15,8 +15,11 @@ func _ready() -> void:
 	_load_btn.pressed.connect(UISfx.play_click)
 	_quit_btn.pressed.connect(UISfx.play_click)
 	_load_btn.disabled = not (SaveManager.has_slot(1) or SaveManager.has_slot(2) or SaveManager.has_slot(3) or SaveManager.has_slot("auto"))
-	# 遊戲啟動時顯示主選單
-	UIManager.push("MainMenu")
+	# 只在「冷啟動 / 回主選單」時自動顯示主選單。
+	# load_from_slot 也會 reload_current_scene（state==LOADING），那時不可彈回主選單，
+	# 否則讀檔會被主選單蓋住。權威判斷用 GameManager.current_state（SSOT，不加旗標）。
+	if GameManager.current_state == GameManager.GameState.MAIN_MENU:
+		UIManager.push("MainMenu")
 
 func _on_start() -> void:
 	UIManager.pop_all()

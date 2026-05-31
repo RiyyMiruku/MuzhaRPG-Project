@@ -49,6 +49,10 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/TileMapDual/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
+[gui]
+
+theme/custom="res://src/ui/ui_theme.tres"
+
 [input]
 
 move_up={
@@ -105,7 +109,3 @@ toggle_journal={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-
-[gui]
-
-theme/custom="res://src/ui/ui_theme.tres"

@@ -198,7 +198,8 @@ func _build_chat_payload(npc_config: Resource, user_input: String, context: Dict
 		int(context.get("relationship", 0)),
 		context.get("player_flags", {}),
 		context.get("chapter_overlay", ""),
-		stage_attitude
+		stage_attitude,
+		str(context.get("player_identity", ""))
 	)
 	# 追加 per-call 動態情境（time / zone / recent events）— 不適合進 TrustGate
 	system_content += "\n\n" + _build_context_string(context)
