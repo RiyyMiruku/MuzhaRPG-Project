@@ -22,6 +22,7 @@ func _run_tests() -> void:
 	_test_relationship_event_hook()
 	_test_objective_eval()
 	_test_questmanager_integration()
+	_test_chapter1_mainline_flow()
 	if _fail == 0:
 		print("ALL PASS")
 		quit(0)
@@ -145,3 +146,52 @@ func _test_questmanager_integration() -> void:
 	# 完成第二個 objective（flag）→ set_flag 觸發 flag_changed → 整體完成
 	sm.set_flag("flag_y", true)
 	_assert(qm.is_quest_completed("t_quest"), "兩步全達 → 完成")
+
+func _test_chapter1_mainline_flow() -> void:
+	print("[第一章主線全鏈]")
+	var sm: Node = get_root().get_node("StoryManager")
+	var qm: Node = get_root().get_node("QuestManager")
+	_reset_story(sm)
+	_reset_quests(qm)
+	# 註冊信任門檻（模擬 events.gd register）
+	sm.register_relationship_event("lin_rongchang", 60, "ch1_rongchang_trust_ok")
+	# 確保第一章任務已載入（autoload _ready 已載；保險起見再載一次，idempotent）
+	qm._load_quests_from_dir("res://src/chapters/chapter_01_arrival/quests/")
+
+	# MQ01 開章自動開始（required 空）
+	qm.reevaluate()
+	_assert(qm.is_quest_active("ch1_mq01_iron_door"), "MQ01 自動開始")
+	# 穿越流程
+	sm.set_flag("saw_blacked_photo", true)
+	sm.set_flag("first_time_traveled", true)
+	sm.record_event("ch1_first_travel_done")
+	_assert(qm.is_quest_completed("ch1_mq01_iron_door"), "MQ01 完成")
+	_assert(qm.is_quest_active("ch1_mq02_stranger_1983"), "MQ02 自動開始")
+	# 留下打工
+	sm.set_flag("started_pharmacy_work", true)
+	sm.record_event("ch1_started_living_in_pharmacy")
+	_assert(qm.is_quest_completed("ch1_mq02_stranger_1983"), "MQ02 完成")
+	_assert(qm.is_quest_active("ch1_mq03_apprentice"), "MQ03 自動開始")
+	_assert(qm.is_quest_active("ch1_mq04_three_wrong_things"), "MQ04 自動開始")
+	# 信任達標 → MQ03 完成
+	sm.update_relationship("lin_rongchang", 60)
+	_assert(qm.is_quest_completed("ch1_mq03_apprentice"), "MQ03 由信任事件完成")
+	# MQ04 兩個非選配
+	sm.set_flag("clue_locked_room", true)
+	sm.record_event("ch1_xiaowei_talked")
+	sm.set_flag("saw_ama_incense", true)
+	sm.record_event("ch1_saw_ama_incense")
+	_assert(qm.is_quest_completed("ch1_mq04_three_wrong_things"), "MQ04 完成（不需 optional 律師）")
+	_assert(qm.is_quest_active("ch1_mq05_locked_room"), "MQ05 自動開始")
+	# MQ05
+	sm.set_flag("got_locked_room_key", true)
+	sm.record_event("ch1_got_key")
+	sm.set_flag("found_ronghua_relic", true)
+	sm.record_event("ch1_found_relic")
+	_assert(qm.is_quest_completed("ch1_mq05_locked_room"), "MQ05 完成")
+	_assert(qm.is_quest_active("ch1_mq06_finale_name"), "MQ06 自動開始")
+	# MQ06
+	sm.set_flag("finale_night_ready", true)
+	sm.record_event("ch1_relic_shown")
+	sm.record_event("ch1_finale_said_brother_name")
+	_assert(qm.is_quest_completed("ch1_mq06_finale_name"), "MQ06 完成（章節主線走完）")
