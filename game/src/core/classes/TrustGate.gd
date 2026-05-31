@@ -69,6 +69,14 @@ static func build_system_prompt(
 	# 7. 信任值
 	parts.append("[對玩家信任度] %d/100" % trust)
 
+	# 8. 信任評分指令：要 NPC 在回覆最後輸出隱藏 tag（client 會剝除）
+	parts.append(
+		"[信任評分] 在你回覆的最後，依玩家這一輪的態度附上一個隱藏標記 <trust±N>"
+		+ "（N 為 0 到 3 的整數）。評分標準：玩家溫和有禮、尊重你、展現可信、不過度逼問隱私 → 正值；"
+		+ "冒犯、逼問太緊、自稱知道不該知道的事、說出與『南部來打工的表親之子』身分矛盾的話 → 負值；"
+		+ "一般寒暄問路給 <trust+0>。多數情況給 0 或 1。例：<trust+1>"
+	)
+
 	return "\n".join(parts)
 
 
@@ -117,3 +125,21 @@ static func resolve_stage_attitude(
 		if p.stage_attitudes.has(sid):
 			return str(p.stage_attitudes[sid])
 	return ""
+
+
+## 從 LLM 回應解析信任 delta。抓最後一個 <trust±N>，clamp 到 -3..3。無 tag 回 0。
+static func parse_trust_delta(text: String) -> int:
+	var re: RegEx = RegEx.new()
+	re.compile("<trust([+-]\\d+)>")
+	var matches: Array[RegExMatch] = re.search_all(text)
+	if matches.is_empty():
+		return 0
+	var last: RegExMatch = matches[matches.size() - 1]
+	var val: int = last.get_string(1).to_int()
+	return clampi(val, -3, 3)
+
+## 移除回應中所有 <trust±N> tag，回傳乾淨內容（前後去空白）。
+static func strip_trust_tag(text: String) -> String:
+	var re: RegEx = RegEx.new()
+	re.compile("<trust[+-]\\d+>")
+	return re.sub(text, "", true).strip_edges()
