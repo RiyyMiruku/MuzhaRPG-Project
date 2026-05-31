@@ -12,7 +12,7 @@ ops = Array[Dictionary]([{
 "text": "鐵門吱呀地打開。藥行裡積了四十年的灰。藥櫃還在,櫃台還在,牆上的全家福還在 ——"
 }, {
 "op": "camera_to",
-"target_path": "YSortRoot/family_photo_blacked_modern",
+"target_path": "YSortRoot/mod_family_photo",
 "zoom": [6.0, 6.0],
 "duration": 1.2
 }, {
@@ -28,7 +28,7 @@ ops = Array[Dictionary]([{
 "seconds": 0.4
 }, {
 "op": "camera_to",
-"target_path": "YSortRoot/old_map_paper_modern",
+"target_path": "YSortRoot/mod_map",
 "zoom": [6.0, 6.0],
 "duration": 1.0
 }, {
