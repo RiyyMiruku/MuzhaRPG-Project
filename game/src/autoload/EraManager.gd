@@ -49,6 +49,8 @@ func travel_to(target_era: String) -> void:
 
 	var old_era: String = current_era
 	era_transition_started.emit(target_era)
+	# 穿越轉場：音樂快速淡出，轉場結束後淡入
+	MusicPlayer.fade_out()
 
 	# 1. 找當前 zone 的 EraTint 節點(可能不存在 — 單時空 zone)
 	var tint: CanvasModulate = _find_era_tint()
@@ -62,6 +64,7 @@ func travel_to(target_era: String) -> void:
 	current_era = target_era
 	era_changed.emit(old_era, target_era)
 	era_transition_finished.emit(target_era)
+	MusicPlayer.fade_in()
 
 ## 給新 zone 載入完後手動呼叫:套用當前 era 的可見性 + tint
 ## (因為 zone .tscn 預設可見的 era 可能跟 current_era 不一致)
