@@ -72,6 +72,7 @@ func open_dialogue(npc_config: NPCConfig) -> void:
 	UIManager.pop_all()
 	_mode = Mode.AI
 	_current_npc_id = npc_config.npc_id
+	_pending_trust_arrow = ""   # 防禦：避免上一場對話殘留的箭頭外溢
 	_name_label.text = npc_config.display_name
 	_portrait.texture = npc_config.get_portrait()
 	_dialogue_text.text = "（與 %s 對話中，輸入訊息後按 Enter 發送）" % npc_config.display_name
