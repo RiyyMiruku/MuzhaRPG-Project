@@ -23,6 +23,7 @@ func _run_tests() -> void:
 	_test_objective_eval()
 	_test_questmanager_integration()
 	_test_chapter1_mainline_flow()
+	_test_start_chapter_triggers_quests()
 	if _fail == 0:
 		print("ALL PASS")
 		quit(0)
@@ -110,6 +111,20 @@ func _test_objective_eval() -> void:
 func _reset_quests(qm: Node) -> void:
 	qm._active_quests.clear()
 	qm._completed_quests.clear()
+
+## 回歸：開章（start_chapter）應自動觸發任務評估，讓開場引導任務（MQ01，
+## required_events 空）立即 active——不需玩家先觸發任何事件。
+## 對應 bug：進遊戲時 journal 空白，因為沒有任何流程呼叫 reevaluate()。
+func _test_start_chapter_triggers_quests() -> void:
+	print("[start_chapter 觸發任務評估]")
+	var sm: Node = get_root().get_node("StoryManager")
+	var qm: Node = get_root().get_node("QuestManager")
+	var cm: Node = get_root().get_node("ChapterManager")
+	_reset_story(sm)
+	_reset_quests(qm)
+	# 關鍵：不手動呼叫 reevaluate；start_chapter 必須自己觸發評估
+	cm.start_chapter("ch01_arrival")
+	_assert(qm.is_quest_active("ch1_mq01_iron_door"), "開章後 MQ01 自動 active（無需手動 reevaluate）")
 
 func _test_questmanager_integration() -> void:
 	print("[QuestManager 整合：objectives + 自動開始/完成]")
