@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T20:28:17",
+  "updated_at": "2026-05-31T20:28:58",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:playground",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:playground_climbing_bars",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — 1980s taiwan park climbing bars horizontal bar set, iron frame with multiple rungs and monkey bars, classic school playground equipment, red or blue paint",
+  "view": "high_top_down",
+  "size": {
+    "width": 80,
+    "height": 80
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T20:28:58",
+      "paths": [
+        "art_source\\objects\\playground_climbing_bars\\playground_climbing_bars.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T20:28:58",
+      "paths": [
+        "art_source\\objects\\playground_climbing_bars\\playground_climbing_bars.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T20:28:58",
+      "paths": [
+        "game\\assets\\textures\\props\\playground_climbing_bars.png",
+        "game\\src\\maps\\props\\playground_climbing_bars.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\playground_climbing_bars\\playground_climbing_bars.png",
+  "imported_at": "2026-05-31T20:28:58",
+  "game_png_path": "game\\assets\\textures\\props\\playground_climbing_bars.png",
+  "game_tscn_path": "game\\src\\maps\\props\\playground_climbing_bars.tscn",
+  "collision": "bottom_16x16"
+}

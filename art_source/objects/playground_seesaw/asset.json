@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T20:27:29",
+  "updated_at": "2026-05-31T20:28:17",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:playground",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:playground_seesaw",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — 1980s taiwan park seesaw teeter-totter, two seats on metal plank balanced on central pivot, red painted iron, weathered paint",
+  "view": "high_top_down",
+  "size": {
+    "width": 96,
+    "height": 64
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T20:28:16",
+      "paths": [
+        "art_source\\objects\\playground_seesaw\\playground_seesaw.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T20:28:16",
+      "paths": [
+        "art_source\\objects\\playground_seesaw\\playground_seesaw.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T20:28:17",
+      "paths": [
+        "game\\assets\\textures\\props\\playground_seesaw.png",
+        "game\\src\\maps\\props\\playground_seesaw.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\playground_seesaw\\playground_seesaw.png",
+  "imported_at": "2026-05-31T20:28:17",
+  "game_png_path": "game\\assets\\textures\\props\\playground_seesaw.png",
+  "game_tscn_path": "game\\src\\maps\\props\\playground_seesaw.tscn",
+  "collision": "bottom_16x16"
+}

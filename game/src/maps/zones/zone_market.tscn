@@ -230,7 +230,7 @@ godot_4_3_compatibility = false
 y_sort_enabled = true
 
 [node name="Player" parent="YSortRoot" unique_id=1265905023 instance=ExtResource("4_player")]
-position = Vector2(-20, 55)
+position = Vector2(-12, 41)
 
 [node name="1983_pharmacy_rongchang" parent="YSortRoot" unique_id=871580648 groups=["era_1983", "prop"] instance=ExtResource("15_peqgg")]
 visible = false
@@ -932,7 +932,7 @@ position = Vector2(195, 199)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=699273048]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(-33, 145)
+position = Vector2(-25, 131)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1287668839]
@@ -942,7 +942,7 @@ script = ExtResource("6_pcam_host_script")
 
 [node name="DefaultCam" type="Node2D" parent="." unique_id=1839438757 node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(-33, 145)
+position = Vector2(-25, 131)
 script = ExtResource("5_pcam_script")
 follow_mode = 1
 follow_target = NodePath("../YSortRoot/Player")

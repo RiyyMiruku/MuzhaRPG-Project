@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "created_at": "2026-05-31T20:27:29",
+  "updated_at": "2026-05-31T20:28:29",
+  "tags": [
+    "zone:zone_pharmacy_backyard",
+    "category:playground",
+    "chapter:1"
+  ],
+  "object_id": "pixflux:playground_swing_set",
+  "kind": "iso_building",
+  "description": "isometric pixel art, 30-degree top-down angled view, transparent background — 1980s taiwan park swing set, two metal swings hanging from iron A-frame, red and yellow painted chains, slightly rusted, dirt patch underneath",
+  "view": "high_top_down",
+  "size": {
+    "width": 128,
+    "height": 96
+  },
+  "stages": {
+    "generate_object": {
+      "completed_at": "2026-05-31T20:28:29",
+      "paths": [
+        "art_source\\objects\\playground_swing_set\\playground_swing_set.png"
+      ]
+    },
+    "chroma_key": {
+      "completed_at": "2026-05-31T20:28:29",
+      "paths": [
+        "art_source\\objects\\playground_swing_set\\playground_swing_set.png"
+      ]
+    },
+    "import_to_godot": {
+      "completed_at": "2026-05-31T20:28:29",
+      "paths": [
+        "game\\assets\\textures\\props\\playground_swing_set.png",
+        "game\\src\\maps\\props\\playground_swing_set.tscn"
+      ]
+    }
+  },
+  "local_path": "art_source\\objects\\playground_swing_set\\playground_swing_set.png",
+  "imported_at": "2026-05-31T20:28:29",
+  "game_png_path": "game\\assets\\textures\\props\\playground_swing_set.png",
+  "game_tscn_path": "game\\src\\maps\\props\\playground_swing_set.tscn",
+  "collision": "bottom_16x16"
+}

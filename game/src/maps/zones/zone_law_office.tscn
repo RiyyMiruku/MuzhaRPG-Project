@@ -9,36 +9,36 @@
 [ext_resource type="Texture2D" uid="uid://chiheg4h6wpxj" path="res://assets/textures/tilesets/market_tile_concrete.png" id="7_atlas_market_concret"]
 [ext_resource type="PackedScene" path="res://src/entities/npcs/BaseNPC.tscn" id="8_base_npc"]
 [ext_resource type="PackedScene" uid="uid://cu5f7uuu238si" path="res://src/core/components/ZoneTransitionArea.tscn" id="9_zone_transition_area"]
-[ext_resource type="PackedScene" uid="uid://c397ha5qirx5uk" path="res://src/maps/props/law_office_muzha.tscn" id="10_prop_law_office_muzh"]
+[ext_resource type="PackedScene" uid="uid://n0pjqq7nwawg" path="res://src/maps/props/law_office_muzha.tscn" id="10_prop_law_office_muzh"]
 [ext_resource type="PackedScene" uid="uid://mpxuvx03qfeb" path="res://src/maps/props/shop_counter_wood.tscn" id="11_prop_shop_counter_wo"]
 [ext_resource type="PackedScene" uid="uid://b3bjje8647nw3" path="res://src/maps/props/notebook_leather.tscn" id="12_prop_notebook_leathe"]
 [ext_resource type="Resource" path="res://src/chapters/chapter_01_arrival/npcs/lawyer_muzha.tres" id="13_npccfg_lawyer_muzha"]
 [ext_resource type="Script" uid="uid://k3da00wfirxt" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_ybjxd"]
-[ext_resource type="PackedScene" uid="uid://ctm7u6qffvhk8p" path="res://src/maps/props/mod_clock.tscn" id="36_7qgvb"]
-[ext_resource type="PackedScene" uid="uid://ceeop1hj9xjhwh" path="res://src/maps/props/bookshelf_law.tscn" id="100_bookshelf_"]
-[ext_resource type="PackedScene" uid="uid://c6fe9f9nanr38e" path="res://src/maps/props/certificate_frame.tscn" id="101_certificat"]
-[ext_resource type="PackedScene" uid="uid://c4pzvux6qivt9p" path="res://src/maps/props/desk_lamp_brass.tscn" id="102_desk_lamp_"]
-[ext_resource type="PackedScene" uid="uid://cr1xs1xp0bcvza" path="res://src/maps/props/filing_cabinet_metal.tscn" id="103_filing_cab"]
-[ext_resource type="PackedScene" uid="uid://ct26xgixg9ldyn" path="res://src/maps/props/filing_tray_stack.tscn" id="104_filing_tra"]
-[ext_resource type="PackedScene" uid="uid://ccqdvxclmiw5ie" path="res://src/maps/props/potted_plant_office.tscn" id="105_potted_pla"]
-[ext_resource type="PackedScene" uid="uid://cff98wz4e0wbad" path="res://src/maps/props/rotary_phone.tscn" id="106_rotary_pho"]
-[ext_resource type="PackedScene" uid="uid://cpjblxjnbwp4zn" path="res://src/maps/props/rubber_stamp_set.tscn" id="107_rubber_sta"]
-[ext_resource type="PackedScene" uid="uid://csiulee7zqi5af" path="res://src/maps/props/typewriter_old.tscn" id="108_typewriter"]
-[ext_resource type="PackedScene" uid="uid://c1ov3l5w5uuwjd" path="res://src/maps/props/desk_wooden_old.tscn" id="109_desk_woo"]
-[ext_resource type="PackedScene" uid="uid://cb4o4h05f7exyh" path="res://src/maps/props/abacus_wood.tscn" id="110_abacus_w"]
-[ext_resource type="PackedScene" uid="uid://cdxu7mzjlljtpl" path="res://src/maps/props/tea_set_ceramic.tscn" id="111_tea_set_"]
-[ext_resource type="PackedScene" uid="uid://c8n9tyxz0gpule" path="res://src/maps/props/paper_weight_jade.tscn" id="112_paper_we"]
-[ext_resource type="PackedScene" uid="uid://cmgo2qkcbyp9lm" path="res://src/maps/props/fan_standing.tscn" id="113_fan_stan"]
-[ext_resource type="PackedScene" uid="uid://cpn2lbwec2itia" path="res://src/maps/props/fountain_pen_old.tscn" id="114_fountain"]
-[ext_resource type="PackedScene" uid="uid://c37bwxqi3ss0vn" path="res://src/maps/props/wooden_stool_old.tscn" id="115_wooden_s"]
-[ext_resource type="PackedScene" uid="uid://cndnl9bk4qqsja" path="res://src/maps/props/light_bulb_hanging.tscn" id="117_light_bu"]
-[ext_resource type="PackedScene" uid="uid://cmby5aks6v3czg" path="res://src/maps/props/radio_old_brown.tscn" id="118_radio_ol"]
-[ext_resource type="PackedScene" uid="uid://cwrp8tdvn9yhfa" path="res://src/maps/props/globe_desk.tscn" id="120_globe_de"]
-[ext_resource type="PackedScene" uid="uid://clx9vwfsr6iinc" path="res://src/maps/props/woodsign.tscn" id="121_woodsign"]
-[ext_resource type="PackedScene" uid="uid://c9872myhmm7olj" path="res://src/maps/props/potted_plant_clay.tscn" id="122_potted_p"]
-[ext_resource type="PackedScene" uid="uid://c6i6xagnablepg" path="res://src/maps/props/umbrella_stand.tscn" id="123_umbrella"]
-[ext_resource type="PackedScene" uid="uid://cwogsm3ple4q4e" path="res://src/maps/props/calendar_torn_page.tscn" id="125_calendar"]
-[ext_resource type="PackedScene" uid="uid://cpjs0y0rux1y6i" path="res://src/maps/props/newspaper_clipping_wall.tscn" id="126_newspape"]
+[ext_resource type="PackedScene" uid="uid://cl8p7h6vg1ckv" path="res://src/maps/props/mod_clock.tscn" id="36_7qgvb"]
+[ext_resource type="PackedScene" uid="uid://ctc2fg0qrvqap" path="res://src/maps/props/bookshelf_law.tscn" id="100_bookshelf_"]
+[ext_resource type="PackedScene" uid="uid://cr7iounyjp8ba" path="res://src/maps/props/certificate_frame.tscn" id="101_certificat"]
+[ext_resource type="PackedScene" uid="uid://3s44j7getycl" path="res://src/maps/props/desk_lamp_brass.tscn" id="102_desk_lamp_"]
+[ext_resource type="PackedScene" uid="uid://0yn2piguvncg" path="res://src/maps/props/filing_cabinet_metal.tscn" id="103_filing_cab"]
+[ext_resource type="PackedScene" uid="uid://c17shapwt44bt" path="res://src/maps/props/filing_tray_stack.tscn" id="104_filing_tra"]
+[ext_resource type="PackedScene" uid="uid://508cb13dbeum" path="res://src/maps/props/potted_plant_office.tscn" id="105_potted_pla"]
+[ext_resource type="PackedScene" uid="uid://duxlb0kuuajml" path="res://src/maps/props/rotary_phone.tscn" id="106_rotary_pho"]
+[ext_resource type="PackedScene" uid="uid://cdqckdc02hq3l" path="res://src/maps/props/rubber_stamp_set.tscn" id="107_rubber_sta"]
+[ext_resource type="PackedScene" uid="uid://bhvge50hb2vll" path="res://src/maps/props/typewriter_old.tscn" id="108_typewriter"]
+[ext_resource type="PackedScene" uid="uid://bw37gsu4b0wc0" path="res://src/maps/props/desk_wooden_old.tscn" id="109_desk_woo"]
+[ext_resource type="PackedScene" uid="uid://kdgu0lv1q7cp" path="res://src/maps/props/abacus_wood.tscn" id="110_abacus_w"]
+[ext_resource type="PackedScene" uid="uid://cejj0yy2fv22t" path="res://src/maps/props/tea_set_ceramic.tscn" id="111_tea_set_"]
+[ext_resource type="PackedScene" uid="uid://6n7nh4grg3vi" path="res://src/maps/props/paper_weight_jade.tscn" id="112_paper_we"]
+[ext_resource type="PackedScene" uid="uid://c5jnxfxaoorgc" path="res://src/maps/props/fan_standing.tscn" id="113_fan_stan"]
+[ext_resource type="PackedScene" uid="uid://ciibwp217agk7" path="res://src/maps/props/fountain_pen_old.tscn" id="114_fountain"]
+[ext_resource type="PackedScene" uid="uid://k357cjsoq4xj" path="res://src/maps/props/wooden_stool_old.tscn" id="115_wooden_s"]
+[ext_resource type="PackedScene" uid="uid://d2h7g563gpbdy" path="res://src/maps/props/light_bulb_hanging.tscn" id="117_light_bu"]
+[ext_resource type="PackedScene" uid="uid://c0tqhgf5l1tt5" path="res://src/maps/props/radio_old_brown.tscn" id="118_radio_ol"]
+[ext_resource type="PackedScene" uid="uid://bvc782qvbccyo" path="res://src/maps/props/globe_desk.tscn" id="120_globe_de"]
+[ext_resource type="PackedScene" uid="uid://cn4h4bfqvg0h1" path="res://src/maps/props/woodsign.tscn" id="121_woodsign"]
+[ext_resource type="PackedScene" uid="uid://crmgbik2xxwvn" path="res://src/maps/props/potted_plant_clay.tscn" id="122_potted_p"]
+[ext_resource type="PackedScene" uid="uid://cvy6i1nx6jirc" path="res://src/maps/props/umbrella_stand.tscn" id="123_umbrella"]
+[ext_resource type="PackedScene" uid="uid://br2r2sksfhmos" path="res://src/maps/props/calendar_torn_page.tscn" id="125_calendar"]
+[ext_resource type="PackedScene" uid="uid://cd8qlthk3smag" path="res://src/maps/props/newspaper_clipping_wall.tscn" id="126_newspape"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybjxd"]
 texture = ExtResource("7_atlas_market_concret")
@@ -197,7 +197,7 @@ godot_4_3_compatibility = false
 y_sort_enabled = true
 
 [node name="Player" parent="YSortRoot" unique_id=599072748 instance=ExtResource("4_player")]
-position = Vector2(-66, -10)
+position = Vector2(-217, -52)
 
 [node name="mod_law_office" parent="YSortRoot" unique_id=225183697 groups=["era_modern", "prop"] instance=ExtResource("10_prop_law_office_muzh")]
 position = Vector2(-281, -105)
@@ -713,7 +713,7 @@ position = Vector2(-63, -9)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1757539213]
 physics_interpolation_mode = 1
 top_level = true
-position = Vector2(-66, -10)
+position = Vector2(-217, -52)
 zoom = Vector2(3, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D" unique_id=1934283897]
@@ -723,7 +723,7 @@ script = ExtResource("6_pcam_host_script")
 
 [node name="DefaultCam" type="Node2D" parent="." unique_id=428744041 node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(-66, -10)
+position = Vector2(-217, -52)
 script = ExtResource("5_pcam_script")
 follow_mode = 1
 follow_target = NodePath("../YSortRoot/Player")
