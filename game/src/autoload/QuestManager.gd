@@ -173,3 +173,6 @@ func serialize() -> Dictionary:
 func deserialize(data: Dictionary) -> void:
 	_active_quests.assign(data.get("active_quests", []))
 	_completed_quests.assign(data.get("completed_quests", []))
+	# 任務的 objective 進度不另存，靠 reevaluate 從 StoryManager 已還原的
+	# events/flags 重算；載入後立即對帳一次，避免已滿足的任務卡在 active。
+	reevaluate()
